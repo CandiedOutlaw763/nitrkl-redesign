@@ -43,6 +43,10 @@ window.dataLayer = window.dataLayer || [];
 <!-- Website to visit when clicked in fb or WhatsApp-->
 <meta content="https://www.nitrkl.ac.in/" property="og:url"/>
 <title>NIT Rourkela  </title>
+<!-- Google Fonts: Noto Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <!-- Favicon -->
 <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -65,6 +69,8 @@ window.dataLayer = window.dataLayer || [];
 <!-- Custome Style -->
 <link href="assets/css/theme-style.min.css" rel="stylesheet"/>
 <link href="assets/css/nitrkl-accessibility.css" rel="stylesheet"/>
+<link href="assets/css/tilted-grid-hero.css" rel="stylesheet"/>
+<link href="assets/css/about-3d.css" rel="stylesheet"/>
 </link></meta></meta></meta></head>
 <body class="body">
 <!-- Google Tag Manager (noscript) -->
@@ -159,7 +165,7 @@ window.dataLayer = window.dataLayer || [];
 <li><a href="/Institute/RankingRecognition/" id="submenu-rankings">Ranking and Recognition</a></li>
 <li><a href="/Institute/CampusFacility/" id="submenu-campusfacility">Campus and Facilities</a></li>
 <li><a href="/Institute/CampusMap/" id="submenu-campusmap">Campus Map</a></li>
-<li><a href="/Institute/Gallery/" id="submenu-gallery">Gallery</a></li>
+<li><a href="gallery.html" id="submenu-gallery">Gallery</a></li>
 <li><a href="/Institute/ContactUs/" id="submenu-contactus">Contact Us</a></li>
 </ul>
 </li>
@@ -284,7 +290,7 @@ window.dataLayer = window.dataLayer || [];
 <h5><a href="">Prospective Students</a></h5>
 <ul>
 <li><a href="/Student/WhyNITR/" id="submenu-why">Why NIT Rourkela</a></li>
-<li><a href="/Institute/Gallery/">Gallery</a></li>
+<li><a href="gallery.html">Gallery</a></li>
 <li><a href="/Institute/CampusFacility/">Campus Life</a></li>
 <li><a href="/InternationalStudent/" id="submenu-international">For International Students</a></li>
 <li><a href="/Student/Scholarships_Financial_Assistance/" id="submenu-finassist">Scholarships and Financial Assistance</a></li>
@@ -473,81 +479,196 @@ window.dataLayer = window.dataLayer || [];
 </marquee>
 </section>
 <!--end Hero video and image slider -->
-<section class="about-section">
-<div class="container-fluid">
-<div class="about-row">
-<div class="about-content">
-<div class="about-box">
-<h2>About the Institute</h2>
-<div class="desc">
-<p>
+<section class="about-section-3d" id="about-section-3d">
+  <!-- Magic UI Dot Pattern Background (for this section only) -->
+  <svg aria-hidden="true" class="about-dot-pattern" width="100%" height="100%">
+    <defs>
+      <pattern id="magicui-about-dots" width="20" height="20" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" x="0" y="0">
+        <circle id="pattern-circle" cx="1" cy="1" r="1"></circle>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" stroke-width="0" fill="url(#magicui-about-dots)"></rect>
+  </svg>
 
-                            NIT Rourkela is one of the premier national level institutions for technical education in the country and is funded by the Government of India.
+  <!-- Glowing 3D ambient light orbs -->
+  <div class="about-3d-orb about-3d-orb-1" aria-hidden="true"></div>
+  <div class="about-3d-orb about-3d-orb-2" aria-hidden="true"></div>
 
-                            The Government of India has elevated the Regional Engineering College, Rourkela to a university under the name of National Institute of Technology, Rourkela.
+  <div class="about-3d-container">
+    <!-- Editorial Section Header -->
+    <div class="notched-section-header">
+      <div class="notched-section-kicker">
+        <span class="notched-kicker-dot"></span>
+        <span>Institute of National Importance &bull; Estd. 1961</span>
+      </div>
+      <h2 class="notched-section-title">
+        Legacy, Vision &amp; <span class="text-accent">Mission</span>
+      </h2>
+      <p class="notched-section-subtitle">
+        Empowering generations of engineers, researchers, and global leaders through academic excellence, Industry 4.0 innovation, and dedicated service to the nation.
+      </p>
+    </div>
 
-                        </p>
+    <!-- 3 Notched Project Cards: Borderless Layout matching 21st.dev reference -->
+    <div class="notched-cards-grid">
+      <!-- Card 1: About the Institute -->
+      <a href="/Institute/Welcome/" class="notched-card monochrome" style="--card-accent: #771D1D;" aria-label="About the Institute">
+        <div class="notched-card-cover">
+          <img src="assets/images/campus.jpeg" alt="NIT Rourkela Main Campus" loading="lazy">
+          
+          <div class="notched-badge">Estd. 1961</div>
 
-                        The main objective of the Institute is to produce quality Engineers and Scientists in Graduate and Post-Graduate levels in various branches of Engineering and Science.
+          <!-- Signature Inverted Corner Notch Cutout -->
+          <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+            <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+          </svg>
 
-                        The Institute is managed by the Board of Governors of National Institute of Technology (Rourkela) Society...
+          <!-- Circular Action Button -->
+          <div class="notched-arrow-btn">
+            <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </div>
 
-                        <a class="btn-learn-more" href="/Institute/Welcome/"> <span>Learn More <i class="bi bi-arrow-right"></i></span></a>
-</div>
-<hr/>
-<div class="vision-mission-row">
-<div class="item-vission">
-<div class="item-img">
-<img alt="NIT Rourkela Vision" class="img-fluid" loading="lazy" src="assets/images/vision.png"/>
-</div>
-<div class="item-content">
-<h5>Vision</h5>
+        <div class="notched-content">
+          <h3 class="notched-title">About the Institute</h3>
+          <p class="notched-desc">
+            Elevated from Regional Engineering College, Rourkela to a premier national university, producing world-class engineers, scientists, and leaders across 20 specialized departments.
+          </p>
+          <div class="notched-tags">
+            <span class="notched-tag">National Importance</span>
+            <span class="notched-tag">NIRF Top Ranked</span>
+            <span class="notched-tag">Research Hub</span>
+          </div>
+        </div>
+      </a>
 
-                                To become an internationally acclaimed institution of higher learning that will serve as a source of knowledge and expertise for the society and be a
+      <!-- Card 2: Institute Vision (B&W default, blooms to Color on hover) -->
+      <a href="/Institute/Welcome/" class="notched-card monochrome" style="--card-accent: #DA8956;" aria-label="Institute Vision">
+        <div class="notched-card-cover">
+          <img src="assets/images/gallery7.webp" alt="Academic Precinct at NIT Rourkela" loading="lazy">
+          
+          <div class="notched-badge">Strategic Vision</div>
 
-                                preferred destination for undergraduate and graduate studies.
+          <!-- Signature Inverted Corner Notch Cutout -->
+          <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+            <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+          </svg>
 
-                            </div>
-</div>
-<div class="item-vission">
-<div class="item-img">
-<img alt="NIT Rourkela Mission" class="img-fluid" loading="lazy" src="assets/images/mission.png"/>
-</div>
-<div class="item-content">
-<h5>Mission</h5>
+          <div class="notched-arrow-btn accent-orange">
+            <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </div>
 
-                                To advance and spread knowledge in the area of science and technology leading to creation of wealth and welfare of humanity.
+        <div class="notched-content">
+          <h3 class="notched-title">Institute Vision</h3>
+          <p class="notched-desc">
+            To become an internationally acclaimed institution of higher learning serving as a source of knowledge and expertise, and a preferred destination for undergraduate and graduate studies.
+          </p>
+          <div class="notched-tags">
+            <span class="notched-tag">Global Acclaim</span>
+            <span class="notched-tag">Knowledge Fountain</span>
+            <span class="notched-tag">Premier Destination</span>
+          </div>
+        </div>
+      </a>
 
-                            </div>
-</div>
-</div>
-</div>
-</div>
-<div class="item-director">
-<h2>Message from Director</h2>
-<div class="message-row">
-<div class="item-content">
-<p>
+      <!-- Card 3: Institute Mission -->
+      <a href="/Institute/Welcome/" class="notched-card monochrome" style="--card-accent: #771D1D;" aria-label="Institute Mission">
+        <div class="notched-card-cover">
+          <img src="assets/images/gallery9.webp" alt="Technology Precinct at NIT Rourkela" loading="lazy">
+          
+          <div class="notched-badge">Core Purpose</div>
 
-                            It is a privilege for me to have assumed the position of Director, NIT Rourkela, on 18th February 2022. NIT Rourkela has a rich legacy of sixty dedicated
+          <!-- Signature Inverted Corner Notch Cutout -->
+          <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+            <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+          </svg>
 
-                            years of service to the nation and is the pride of Odisha. Excellence in teaching and high-quality research are the pillars on which the Institute is built.
+          <div class="notched-arrow-btn">
+            <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </div>
 
-                            The Institute aims to foster 21st-century skills and competencies supported by defined learning frameworks and industrial internships for the students as
+        <div class="notched-content">
+          <h3 class="notched-title">Institute Mission</h3>
+          <p class="notched-desc">
+            To advance and spread knowledge in science and technology leading to the creation of wealth and welfare of humanity, powered by Industry 4.0 learning frameworks and cutting-edge research.
+          </p>
+          <div class="notched-tags">
+            <span class="notched-tag">Knowledge Creation</span>
+            <span class="notched-tag">Humanity &amp; Welfare</span>
+            <span class="notched-tag">Industry 4.0</span>
+          </div>
+        </div>
+      </a>
+    </div>
 
-                            part of Industry 4.0. With these skillsets, our students are future-ready to make an impact at work in general and society in particular.
+    <!-- Full-Width Horizontal Director's Message Card -->
+    <div class="director-featured-wrapper">
+      <div class="director-card-wide" data-card="director">
+        <!-- Photo Column on the Left -->
+        <div class="director-wide-media">
+          <img src="assets/images/director.webp" alt="Prof. K. Umamaheshwar Rao - Director, NIT Rourkela" loading="lazy">
+          <div class="director-wide-scrim"></div>
+          
+          <div class="director-wide-badge">
+            <span class="director-badge-dot"></span>
+            <span>Director &bull; Leadership</span>
+          </div>
+        </div>
 
-                            <a class="btn-learn-more" href="/About/DirectorsMessage/"> <span>Learn More <i class="bi bi-arrow-right"></i></span></a>
-</p>
-<h5>Prof. K. Umamaheshwar Rao</h5>
-</div>
-<div class="item-img">
-<img alt="NIT Rourkela Director" class="img-fluid" loading="lazy" src="assets/images/director.webp"/>
-</div>
-</div>
-</div>
-</div>
-</div>
+        <!-- Rich Text Column on the Right Covering the Entire Space -->
+        <div class="director-wide-content">
+          <div>
+            <div class="director-wide-kicker">
+              <span class="director-badge-dot"></span>
+              <span>Message from the Director</span>
+            </div>
+
+            <h3 class="director-wide-name">
+              <span class="name-first">Prof. K.</span> <span class="name-last">Umamaheshwar Rao</span>
+            </h3>
+            <p class="director-wide-role">Director &bull; National Institute of Technology Rourkela</p>
+
+            <blockquote class="director-wide-quote">
+              &ldquo;With sixty dedicated years of service to the nation, NIT Rourkela stands as a global beacon of academic rigor, research excellence, and sustainable innovation.&rdquo;
+            </blockquote>
+
+            <div class="director-wide-paragraphs">
+              <p class="director-wide-paragraph">
+                It is a privilege for me to serve as Director of NIT Rourkela. Our institution is built upon strong foundational pillars of teaching excellence, cutting-edge translational research, and dedicated service to the nation. We cultivate visionary engineers, scientists, and entrepreneurs ready to lead in an increasingly complex and interconnected world.
+              </p>
+              <p class="director-wide-paragraph">
+                As we navigate the transformative demands of Industry 4.0 and emerging computational disciplines, our focus remains firmly on interdisciplinary learning, fostering world-class incubation, and creating sustainable technological wealth and welfare for all humanity.
+              </p>
+            </div>
+          </div>
+
+          <div class="director-wide-footer">
+            <div class="director-credentials">
+              <span class="cred-tag">Director's Desk</span>
+              <span>&bull;</span>
+              <span>Office of the Director, NIT Rourkela</span>
+            </div>
+
+            <a href="/About/DirectorsMessage/" class="btn-director-action">
+              <span>Read Full Director's Address</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- start About section with Video -->
 <!-- End About section with video -->
@@ -1718,6 +1839,49 @@ IAS Student Travel Award
 </div>
 </section>
 <!--end Statistics-->
+
+<!--start Campus Life 3D Tilted Grid Hero Showcase-->
+<section id="campus-gallery-section" class="campus-gallery-showcase-section">
+  <div class="container-fluid px-lg-5">
+    <div class="gallery-section-header text-center">
+      <div class="gallery-badge-pill">
+        <i class="fa-solid fa-cube"></i> NIT ROURKELA CAMPUS LIFE
+      </div>
+      <h2 class="gallery-main-heading">
+        Every Frame, <span class="highlight-text">Brought Into Focus</span>
+      </h2>
+      <p class="gallery-description">
+        Images curve in from one edge, flatten out at the centre, then fade away round the other. Explore the vibrant moments across our 1200-acre lush green campus.
+      </p>
+    </div>
+
+    <!-- The 3D Tilted Grid Hero Full Container -->
+    <div id="full-tilted-hero" class="tilted-grid-hero-root full-hero-mode" data-tile-height="32" data-aspect-ratio="1.777" data-speed="4" data-curve="78" role="region" aria-roledescription="gallery" aria-label="3D Cylindrical Campus Photo Carousel">
+      <!-- Overlay Hero Content rendered above the band -->
+      <div class="tgh-hero-overlay">
+        <div class="tgh-overlay-top">
+          <span class="tgh-orbit-indicator"><span class="orbit-dot"></span> Interactive 3D Cylindrical Orbit</span>
+        </div>
+        <div class="tgh-overlay-bottom">
+          <div class="tgh-controls-bar">
+            <button type="button" class="tgh-control-btn" id="tgh-full-toggle" aria-label="Pause orbit animation" title="Pause / Play orbit">
+              <i class="fa-solid fa-pause"></i> <span>Pause</span>
+            </button>
+            <div class="tgh-speed-selector">
+              <span>Speed:</span>
+              <button type="button" class="speed-btn active" data-speed="4">1x</button>
+              <button type="button" class="speed-btn" data-speed="2.5">1.5x</button>
+              <button type="button" class="speed-btn" data-speed="6">0.5x</button>
+            </div>
+            <span class="tgh-hint"><i class="fa-solid fa-hand-pointer"></i> Click any photo to inspect in full resolution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--end Campus Life 3D Tilted Grid Hero Showcase-->
+
 <footer>
 <div class="container">
 <div class="footer-row">
@@ -1788,51 +1952,32 @@ IAS Student Travel Award
 </ul>
 </div>
 </div>
-<div class="item footer-photo-gallery gallery">
-<div class="item-img">
-<a href="assets/images/gallery1.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery1.webp"/>
-</a>
+<div class="item footer-tilted-gallery-item">
+<h4>PHOTO GALLERY <span class="tgh-badge">3D Orbit</span></h4>
+<p class="tgh-footer-tagline">Campus life brought into curved 3D focus.</p>
+<div id="footer-tilted-hero" class="tilted-grid-hero-root footer-mini-mode" role="region" aria-roledescription="gallery" aria-label="Campus photographs in 3D cylindrical orbit">
+  <!-- Fallback grid for progressive enhancement -->
+  <noscript>
+    <div class="tgh-fallback-grid">
+      <img src="assets/images/gallery1.webp" alt="NIT Rourkela Insignia">
+      <img src="assets/images/gallery2.webp" alt="Main Entrance Gateway">
+      <img src="assets/images/gallery3.webp" alt="Academic Quadrangle">
+      <img src="assets/images/gallery4.webp" alt="Campus Road Mist">
+      <img src="assets/images/gallery5.webp" alt="Student Residences & Lake">
+      <img src="assets/images/gallery6.webp" alt="BBA Auditorium">
+      <img src="assets/images/gallery7.webp" alt="Lecture Hall Complex">
+      <img src="assets/images/gallery8.webp" alt="Departmental Quadrangle">
+      <img src="assets/images/gallery9.webp" alt="Technology Precinct">
+    </div>
+  </noscript>
 </div>
-<div class="item-img">
-<a href="assets/images/gallery2.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery2.webp"/>
-</a>
-</div>
-<div class="item-img">
-<a href="assets/images/gallery3.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery3.webp"/>
-</a>
-</div>
-<div class="item-img">
-<a href="assets/images/gallery4.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery4.webp"/>
-</a>
-</div>
-<div class="item-img">
-<a href="assets/images/gallery5.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery5.webp"/>
-</a>
-</div>
-<div class="item-img">
-<a href="assets/images/gallery6.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery6.webp"/>
-</a>
-</div>
-<div class="item-img">
-<a href="assets/images/gallery7.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery7.webp"/>
-</a>
-</div>
-<div class="item-img">
-<a href="assets/images/gallery8.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery8.webp"/>
-</a>
-</div>
-<div class="item-img">
-<a href="assets/images/gallery9.webp">
-<img alt="NIT Rourkela Gallery Image" class="img-fluid" src="assets/images/gallery9.webp"/>
-</a>
+<div class="tgh-footer-actions">
+  <button type="button" class="tgh-pause-btn" id="tgh-footer-pause" aria-label="Pause orbit animation" title="Pause / Play orbit">
+    <i class="fa-solid fa-pause"></i>
+  </button>
+  <a href="#campus-gallery-section" class="tgh-explore-link" title="Scroll up to full 3D Showcase">
+    <span>Full 3D View</span> <i class="fa-solid fa-arrow-up"></i>
+  </a>
 </div>
 </div>
 </div>
@@ -1898,6 +2043,8 @@ IAS Student Travel Award
 </script>
 <script defer="" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
 <script src="assets/js/loader.js"></script>
+<script src="assets/js/tilted-grid-hero.js"></script>
+<script src="assets/js/about-3d.js"></script>
 <script>
 
         $(document).ready(function(){
