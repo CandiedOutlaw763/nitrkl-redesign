@@ -1,0 +1,13 @@
+{
+  "name": "nitrdesign-km",
+  "version": "1.0.0",
+  "description": "NIT Rourkela Website Redesign",
+  "scripts": {
+    "dev": "npx serve nitrkl -l 3000",
+    "start": "npx serve nitrkl -l 3000",
+    "serve": "npx serve nitrkl -l 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
