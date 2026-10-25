@@ -13,7 +13,7 @@ $(window).scroll(function () {
         });
         $('.nav-menu>li.active>a').css({
             'color': '#fff',
-            'background-color': '#c35839',
+            'background-color': '#771D1D',
         });
         $('.nav-menu>li .submenu-indicator-chevron').css({
             'border-color': '#000',

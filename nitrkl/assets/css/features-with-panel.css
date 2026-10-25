@@ -1,7 +1,7 @@
 /* ==========================================================================
    Features With Panel — Incubations@NITR Component Styles
    Theme: Screen Recording Exact Match (In Brand Color Theme)
-   Brand Colors: Cinnamon Crimson (#771D1D), Warm Amber (#DA8956), Slate (#111827)
+   Brand Colors: Cinnamon Crimson (#771D1D), Warm Amber (#D75151), Slate (#111827)
    Layout:
      - Left Column: Sticky Large Media Showcase with Title, Descriptions & Explore Link
      - Right Column: Vertical List with Numbers, Arrow Hover, and Solid Crimson Active State
@@ -138,7 +138,7 @@
   content: '';
   height: 100%;
   width: 38px;
-  background: #DA8956;
+  background: #D75151;
   border-radius: 0;
 }
 
@@ -187,7 +187,7 @@
 .fwp-toggle-btn.is-active {
   background: #771D1D;
   color: #ffffff;
-  border-color: #DA8956;
+  border-color: #D75151;
   box-shadow: 0 4px 16px rgba(119, 29, 29, 0.3);
 }
 
@@ -379,7 +379,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #DA8956;
+  color: #D75151;
   margin-bottom: 8px;
 }
 
@@ -417,7 +417,7 @@
   color: #cbd5e1;
   margin: 0 0 24px 0;
   padding-left: 12px;
-  border-left: 2px solid #DA8956;
+  border-left: 2px solid #D75151;
   opacity: 0.9;
 }
 
@@ -446,7 +446,7 @@
 
 .fwp-explore-link:hover {
   background: #771D1D;
-  border-color: #DA8956;
+  border-color: #D75151;
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(119, 29, 29, 0.5);
@@ -567,14 +567,14 @@
    ========================================================================== */
 .fwp-item.active {
   background: #771D1D !important;
-  border-left: 4px solid #DA8956;
+  border-left: 4px solid #D75151;
   border-bottom-color: rgba(0, 0, 0, 0.1);
   padding-left: 32px;
   box-shadow: 0 8px 24px rgba(119, 29, 29, 0.3);
 }
 
 .fwp-item.active .fwp-item-num {
-  color: #DA8956;
+  color: #D75151;
 }
 
 .fwp-item.active .fwp-item-title {
@@ -584,7 +584,7 @@
 .fwp-item.active .fwp-hover-arrow {
   opacity: 1;
   transform: translateX(0);
-  color: #DA8956;
+  color: #D75151;
 }
 
 .fwp-item.active .fwp-item-cat {
@@ -610,7 +610,7 @@
 .fwp-progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #DA8956 0%, #ffffff 100%);
+  background: linear-gradient(90deg, #D75151 0%, #ffffff 100%);
   box-shadow: 0 0 6px rgba(218, 137, 86, 0.8);
   transition: width 0.1s linear;
 }
