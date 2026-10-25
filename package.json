@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "serve": "npx serve nitrkl -l 3000"
+    "serve": "npx -y serve nitrkl -l 3000",
+    "start": "npx -y serve nitrkl -l 3000"
   },
   "keywords": [],
   "author": "",

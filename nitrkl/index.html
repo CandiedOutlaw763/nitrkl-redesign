@@ -81,7 +81,8 @@ window.dataLayer = window.dataLayer || [];
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <link href="assets/css/achievements-carousel.css" rel="stylesheet"/>
 <link href="assets/css/social-initiatives.css" rel="stylesheet"/>
-
+<link href="assets/css/social-hub.css" rel="stylesheet"/>
+<link href="assets/css/newsroom.css" rel="stylesheet"/>
 </head>
 <body class="body">
 <!-- Google Tag Manager (noscript) -->
@@ -104,8 +105,8 @@ window.dataLayer = window.dataLayer || [];
 <div class="item">
 <ul>
 <li><a class="outside-link" href="https://www.instagram.com/nitrourkela1961/" target="_blank" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
-<li><a class="outside-link" href="https://twitter.com/nitrourkela" target="_blank" title="Twitter"><i class="fa-brands fa-square-x-twitter"></i></a></li>
-<li><a class="outside-link" href="https://www.facebook.com/nitrkl1" target="_blank" title="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+<li><a class="outside-link" href="https://x.com/nitrourkela" target="_blank" title="X"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+<li><a class="outside-link" href="https://www.facebook.com/share/1ZLvg3dqeG/" target="_blank" title="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
 <li><a class="outside-link" href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" target="_blank" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a></li>
 <li><a class="outside-link" href="https://www.youtube.com/@NITROURKELA1961" target="_blank" title="Youtube"><i class="fa-brands fa-square-youtube"></i></a></li>
 </ul>
@@ -938,92 +939,161 @@ window.dataLayer = window.dataLayer || [];
 <div class="container">
 <div class="upcoming-row">
 <div class="item-event">
-<h2>Latest News <a href="/Home/AllNews/">View ALL</a> </h2>
-<div class="owl-carousel owl-theme upcoming-event-slider wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Latest News NIT Rourkela received 1,340 offers in 2025–26 Placement Drive" class="img-fluid" loading="lazy" src="docs/News/placement2025.webp"/>
+<div class="newsroom" id="newsroom">
+<div class="nr-head">
+<div>
+<span class="nr-eyebrow"><span class="nr-pulse"></span>Newsroom</span>
+<h2 class="nr-title">Latest News</h2>
 </div>
-<div class="card-body">
-
-                                NIT Rourkela received 1,340 offers in 2025–26 Placement Drive
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/AllNews/?id=10109">Know More</a>
-<a href="/Home/AllNews/?id=10109"><i class="bi bi-arrow-right"></i></a>
+<a class="nr-viewall" href="/Home/AllNews/">View all <i class="bi bi-arrow-right"></i></a>
 </div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Latest News NIT Rourkela Researchers Develop Reconfigurable
-
-Fractal Antenna for Next-Generation Space and Wireless
-
-Applications" class="img-fluid" loading="lazy" src="docs/News/ReconfigurableFactoralAntenna.webp"/>
-</div>
-<div class="card-body">
-
-                                NIT Rourkela Researchers Develop Reconfigurable
-
-Fractal Antenna for Next-Generation Space and Wireless
-
-Applications
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/AllNews/?id=10107">Know More</a>
-<a href="/Home/AllNews/?id=10107"><i class="bi bi-arrow-right"></i></a>
+<div class="nr-ticker" aria-label="Headlines">
+<span class="nr-ticker-label"><i class="bi bi-lightning-charge-fill"></i> Headlines</span>
+<div class="nr-ticker-track">
+<ul class="nr-ticker-list">
+<li><button type="button" data-nr-open="0">NIT Rourkela received 1,340 offers in 2025–26 Placement Drive</button></li>
+<li><button type="button" data-nr-open="1">Researchers develop reconfigurable fractal antenna for next-generation space and wireless applications</button></li>
+<li><button type="button" data-nr-open="2">Advanced chipless RFID sensor developed for environmental monitoring</button></li>
+<li><button type="button" data-nr-open="3">India–Bhutan student–faculty exchange on solid waste management concludes in Bhutan</button></li>
+<li><button type="button" data-nr-open="4">THE Asia Rankings 2026: NIT Rourkela retains top spot among NITs</button></li>
+</ul>
 </div>
 </div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Latest News NIT Rourkela Researchers Develop Advanced Chipless RFID Sensor for Environmental Monitoring" class="img-fluid" loading="lazy" src="docs/News/ChiplessRFID.webp"/>
-</div>
-<div class="card-body">
-
-                                NIT Rourkela Researchers Develop Advanced Chipless RFID Sensor for Environmental Monitoring
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/AllNews/?id=10106">Know More</a>
-<a href="/Home/AllNews/?id=10106"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Latest News India–Bhutan Student–Faculty Exchange Programme on Solid Waste Management Concludes in Bhutan" class="img-fluid" loading="lazy" src="docs/News/India–Bhutan-Student–Faculty-Exchange.webp"/>
-</div>
-<div class="card-body">
-
-                                India–Bhutan Student–Faculty Exchange Programme on Solid Waste Management Concludes in Bhutan
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/AllNews/?id=10105">Know More</a>
-<a href="/Home/AllNews/?id=10105"><i class="bi bi-arrow-right"></i></a>
+<div class="nr-grid">
+<article class="nr-card nr-featured" data-nr-index="0" data-nr-tag="Placements" data-nr-img="docs/News/placement2025.webp" data-nr-link="/Home/AllNews/?id=10109" data-nr-summary="A record placement season: 1,340 offers from top recruiters across core engineering, IT, consulting and analytics for the 2025–26 batch.">
+<button type="button" class="nr-media" data-nr-open="0" aria-label="Quick view: NIT Rourkela received 1,340 offers in 2025–26 Placement Drive">
+<img alt="NIT Rourkela Latest News NIT Rourkela received 1,340 offers in 2025–26 Placement Drive" loading="lazy" src="docs/News/placement2025.webp"/>
+<span class="nr-badge nr-badge-hot"><i class="bi bi-star-fill"></i> Featured</span>
+<span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+</button>
+<div class="nr-body">
+<span class="nr-tag">Placements</span>
+<h3>NIT Rourkela received 1,340 offers in 2025–26 Placement Drive</h3>
+<p>A record placement season: 1,340 offers from top recruiters across core engineering, IT, consulting and analytics.</p>
+<div class="nr-actions">
+<button type="button" class="nr-btn" data-nr-open="0">Quick view <i class="bi bi-eye"></i></button>
+<a class="nr-link" href="/Home/AllNews/?id=10109">Read story <i class="bi bi-arrow-right"></i></a>
 </div>
 </div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Latest News THE Asia Rankings 2026: NIT Rourkela Retains Top Spot Among NITs; Secures 186th Rank in Asia, 8th in India!" class="img-fluid" loading="lazy" src="docs/News/AsiaUniversity2026.webp"/>
+</article>
+<article class="nr-card" data-nr-index="1" data-nr-tag="Research" data-nr-img="docs/News/ReconfigurableFactoralAntenna.webp" data-nr-link="/Home/AllNews/?id=10107" data-nr-summary="Researchers at NIT Rourkela have built a reconfigurable fractal antenna for next-generation space and wireless communication systems.">
+<button type="button" class="nr-media" data-nr-open="1" aria-label="Quick view: Reconfigurable fractal antenna">
+<img alt="NIT Rourkela Latest News NIT Rourkela Researchers Develop Reconfigurable Fractal Antenna for Next-Generation Space and Wireless Applications" loading="lazy" src="docs/News/ReconfigurableFactoralAntenna.webp"/>
+<span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+</button>
+<div class="nr-body">
+<span class="nr-tag">Research</span>
+<h3>NIT Rourkela Researchers Develop Reconfigurable Fractal Antenna for Next-Generation Space and Wireless Applications</h3>
+<a class="nr-link" href="/Home/AllNews/?id=10107">Read story <i class="bi bi-arrow-right"></i></a>
 </div>
-<div class="card-body">
-
-                                THE Asia Rankings 2026: NIT Rourkela Retains Top Spot Among NITs; Secures 186th Rank in Asia, 8th in India!
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/AllNews/?id=10104">Know More</a>
-<a href="/Home/AllNews/?id=10104"><i class="bi bi-arrow-right"></i></a>
+</article>
+<article class="nr-card" data-nr-index="2" data-nr-tag="Research" data-nr-img="docs/News/ChiplessRFID.webp" data-nr-link="/Home/AllNews/?id=10106" data-nr-summary="A new chipless RFID sensor from NIT Rourkela enables low-cost, battery-free environmental monitoring.">
+<button type="button" class="nr-media" data-nr-open="2" aria-label="Quick view: Chipless RFID sensor">
+<img alt="NIT Rourkela Latest News NIT Rourkela Researchers Develop Advanced Chipless RFID Sensor for Environmental Monitoring" loading="lazy" src="docs/News/ChiplessRFID.webp"/>
+<span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+</button>
+<div class="nr-body">
+<span class="nr-tag">Research</span>
+<h3>NIT Rourkela Researchers Develop Advanced Chipless RFID Sensor for Environmental Monitoring</h3>
+<a class="nr-link" href="/Home/AllNews/?id=10106">Read story <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+<article class="nr-card" data-nr-index="3" data-nr-tag="Global" data-nr-img="docs/News/India-Bhutan-Student-Faculty-Exchange.webp" data-nr-link="/Home/AllNews/?id=10105" data-nr-summary="Students and faculty from India and Bhutan collaborated on solid waste management in an exchange programme that concluded in Bhutan.">
+<button type="button" class="nr-media" data-nr-open="3" aria-label="Quick view: India–Bhutan exchange programme">
+<img alt="NIT Rourkela Latest News India–Bhutan Student–Faculty Exchange Programme on Solid Waste Management Concludes in Bhutan" loading="lazy" src="docs/News/India-Bhutan-Student-Faculty-Exchange.webp"/>
+<span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+</button>
+<div class="nr-body">
+<span class="nr-tag">Global</span>
+<h3>India–Bhutan Student–Faculty Exchange Programme on Solid Waste Management Concludes in Bhutan</h3>
+<a class="nr-link" href="/Home/AllNews/?id=10105">Read story <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+<article class="nr-card" data-nr-index="4" data-nr-tag="Rankings" data-nr-img="docs/News/AsiaUniversity2026.webp" data-nr-link="/Home/AllNews/?id=10104" data-nr-summary="NIT Rourkela retains the top spot among NITs in the THE Asia University Rankings 2026, ranking 186th in Asia and 8th in India.">
+<button type="button" class="nr-media" data-nr-open="4" aria-label="Quick view: THE Asia Rankings 2026">
+<img alt="NIT Rourkela Latest News THE Asia Rankings 2026: NIT Rourkela Retains Top Spot Among NITs; Secures 186th Rank in Asia, 8th in India!" loading="lazy" src="docs/News/AsiaUniversity2026.webp"/>
+<span class="nr-badge">#1 among NITs</span>
+<span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
+</button>
+<div class="nr-body">
+<span class="nr-tag">Rankings</span>
+<h3>THE Asia Rankings 2026: NIT Rourkela Retains Top Spot Among NITs; Secures 186th Rank in Asia, 8th in India!</h3>
+<a class="nr-link" href="/Home/AllNews/?id=10104">Read story <i class="bi bi-arrow-right"></i></a>
+</div>
+</article>
+</div>
+</div>
+<div class="nr-modal" id="nr-modal" role="dialog" aria-modal="true" aria-labelledby="nr-modal-title" hidden>
+<div class="nr-modal-backdrop" data-nr-close></div>
+<div class="nr-modal-panel" tabindex="-1">
+<button type="button" class="nr-modal-close" data-nr-close aria-label="Close"><i class="bi bi-x-lg"></i></button>
+<div class="nr-modal-media"><img alt="" id="nr-modal-img" src=""/></div>
+<div class="nr-modal-body">
+<div class="nr-modal-meta"><span class="nr-tag" id="nr-modal-tag"></span><span class="nr-modal-count" id="nr-modal-count"></span></div>
+<h3 id="nr-modal-title"></h3>
+<p id="nr-modal-summary"></p>
+<div class="nr-modal-foot">
+<a class="nr-btn nr-btn-solid" id="nr-modal-link" href="#">Read full story <i class="bi bi-arrow-right"></i></a>
+<div class="nr-modal-nav">
+<button type="button" data-nr-step="-1" aria-label="Previous story"><i class="bi bi-chevron-left"></i></button>
+<button type="button" data-nr-step="1" aria-label="Next story"><i class="bi bi-chevron-right"></i></button>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="item-resources">
 <h2>Social Media</h2>
-<div class="item-notice-board">
-<iframe allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen="true" frameborder="0" height="490" scrolling="no" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fnitrkl1&amp;tabs=timeline&amp;width=450&amp;height=490&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId" style="border:none;overflow:hidden" width="450"></iframe>
+<div class="social-hub wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
+<div class="hub-hero">
+<h3>Be part of the <span>NITR</span> story</h3>
+<p>Campus moments, research breakthroughs, placements and events, straight from NIT Rourkela.</p>
+<span class="hub-tag">#NITRourkela</span>
+</div>
+<ul class="hub-grid">
+<li>
+<a class="hub-card is-instagram outside-link" href="https://www.instagram.com/nitrourkela1961/" rel="noopener" target="_blank" aria-label="Follow NIT Rourkela on Instagram">
+<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-instagram"></i></span><i class="fa-solid fa-arrow-up-right-from-square hub-arrow"></i></span>
+<span><span class="hub-name">Instagram</span><span class="hub-handle">@nitrourkela1961</span></span>
+<p class="hub-blurb">Reels and stories from campus life.</p>
+<span class="hub-cta">Follow <i class="bi bi-arrow-right"></i></span>
+</a>
+</li>
+<li>
+<a class="hub-card is-facebook outside-link" href="https://www.facebook.com/share/1ZLvg3dqeG/" rel="noopener" target="_blank" aria-label="Follow NIT Rourkela on Facebook">
+<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-facebook-f"></i></span><i class="fa-solid fa-arrow-up-right-from-square hub-arrow"></i></span>
+<span><span class="hub-name">Facebook</span><span class="hub-handle">NIT Rourkela</span></span>
+<p class="hub-blurb">News, albums and community updates.</p>
+<span class="hub-cta">Like page <i class="bi bi-arrow-right"></i></span>
+</a>
+</li>
+<li>
+<a class="hub-card is-linkedin outside-link" href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" rel="noopener" target="_blank" aria-label="Follow NIT Rourkela on LinkedIn">
+<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-linkedin-in"></i></span><i class="fa-solid fa-arrow-up-right-from-square hub-arrow"></i></span>
+<span><span class="hub-name">LinkedIn</span><span class="hub-handle">NIT Rourkela</span></span>
+<p class="hub-blurb">Alumni, careers and research network.</p>
+<span class="hub-cta">Connect <i class="bi bi-arrow-right"></i></span>
+</a>
+</li>
+<li>
+<a class="hub-card is-x outside-link" href="https://x.com/nitrourkela" rel="noopener" target="_blank" aria-label="Follow NIT Rourkela on X">
+<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-x-twitter"></i></span><i class="fa-solid fa-arrow-up-right-from-square hub-arrow"></i></span>
+<span><span class="hub-name">X</span><span class="hub-handle">@nitrourkela</span></span>
+<p class="hub-blurb">Live announcements and quick updates.</p>
+<span class="hub-cta">Follow <i class="bi bi-arrow-right"></i></span>
+</a>
+</li>
+</ul>
+<div class="hub-strip">
+<p><b>Follow us everywhere</b>, one tap away</p>
+<ul>
+<li><a class="outside-link is-instagram" href="https://www.instagram.com/nitrourkela1961/" rel="noopener" target="_blank" title="Instagram" aria-label="NIT Rourkela on Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+<li><a class="outside-link is-facebook" href="https://www.facebook.com/share/1ZLvg3dqeG/" rel="noopener" target="_blank" title="Facebook" aria-label="NIT Rourkela on Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+<li><a class="outside-link is-linkedin" href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" rel="noopener" target="_blank" title="LinkedIn" aria-label="NIT Rourkela on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+<li><a class="outside-link is-x" href="https://x.com/nitrourkela" rel="noopener" target="_blank" title="X" aria-label="NIT Rourkela on X"><i class="fa-brands fa-x-twitter"></i></a></li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -2170,8 +2240,8 @@ Applications
 <div class="social-links">
 <ul>
 <li><a class="outside-link" href="https://www.instagram.com/nitrourkela1961/" target="_blank" title="Instagram"><i class="fa-brands fa-square-instagram"></i></a></li>
-<li><a class="outside-link" href="https://twitter.com/nitrourkela" target="_blank" title="Twitter"><i class="fa-brands fa-square-x-twitter"></i></a></li>
-<li><a class="outside-link" href="https://www.facebook.com/nitrkl1" target="_blank" title="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
+<li><a class="outside-link" href="https://x.com/nitrourkela" target="_blank" title="X"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+<li><a class="outside-link" href="https://www.facebook.com/share/1ZLvg3dqeG/" target="_blank" title="Facebook"><i class="fa-brands fa-square-facebook"></i></a></li>
 <li><a class="outside-link" href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" target="_blank" title="Linkedin"><i class="fa-brands fa-linkedin"></i></a></li>
 <li><a class="outside-link" href="https://www.youtube.com/@NITROURKELA1961" target="_blank" title="Youtube"><i class="fa-brands fa-square-youtube"></i></a></li>
 </ul>
@@ -2303,6 +2373,7 @@ Applications
 <script src="assets/js/custome-script.js"></script>
 <script src="assets/js/layout.js"></script>
 <script src="assets/js/nitrkl-accessibility.js"></script>
+<script src="assets/js/newsroom.js"></script>
 <script>
 </script>
 <!-- Google Translate Script -->
