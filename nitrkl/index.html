@@ -69,11 +69,19 @@ window.dataLayer = window.dataLayer || [];
 <!-- Custome Style -->
 <link href="assets/css/theme-style.min.css" rel="stylesheet"/>
 <link href="assets/css/nitrkl-accessibility.css" rel="stylesheet"/>
+<link href="assets/css/scroll-expansion-hero.css" rel="stylesheet"/>
 <link href="assets/css/tilted-grid-hero.css" rel="stylesheet"/>
 <link href="assets/css/about-3d.css" rel="stylesheet"/>
 <link href="assets/css/features-with-panel.css" rel="stylesheet"/>
 <link href="assets/css/placement-events-layout.css" rel="stylesheet"/>
 <link href="assets/css/study-at-nitr.css" rel="stylesheet"/>
+<!-- Google Fonts: Noto Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link href="assets/css/achievements-carousel.css" rel="stylesheet"/>
+<link href="assets/css/social-initiatives.css" rel="stylesheet"/>
+
 </head>
 <body class="body">
 <!-- Google Tag Manager (noscript) -->
@@ -415,73 +423,112 @@ window.dataLayer = window.dataLayer || [];
 </div>
 </section>
 </header>
-<!--start Hero video and image slider -->
-<section class="banner-section">
-<div class="carousel slide home-slider" data-bs-ride="carousel" id="carouselExampleCaptions">
-<!-- <div class="carousel-indicators">
+<!--start Scroll-Expansion Hero & Banner Media -->
+<section class="seh-hero-section" id="seh-hero-section" aria-label="Campus Hero Media Showcase">
+  <div class="seh-sticky-stage" id="seh-sticky-stage">
+    <!-- Cinnamon Red Ambient Background Layer with Flowing Wavy Light Ribbons -->
+    <div class="seh-ambient-bg" aria-hidden="true">
+      <div class="seh-cinnamon-glow seh-glow-1"></div>
+      <div class="seh-cinnamon-glow seh-glow-2"></div>
+      <div class="seh-cinnamon-glow seh-glow-3"></div>
+      
+      <!-- Flowing Light Ribbons (Matching Edolus Cinematic Wave in Cinnamon Red: #771D1D, #A72626, #D75151, #FAAAAA, #FCDADA) -->
+      <svg class="seh-ribbon-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="cinnamon-ribbon-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4d1111" stop-opacity="0" />
+            <stop offset="25%" stop-color="#771D1D" stop-opacity="0.85" />
+            <stop offset="50%" stop-color="#A72626" stop-opacity="0.95" />
+            <stop offset="75%" stop-color="#D75151" stop-opacity="0.9" />
+            <stop offset="90%" stop-color="#FAAAAA" stop-opacity="0.8" />
+            <stop offset="100%" stop-color="#FCDADA" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="cinnamon-ribbon-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#300a0a" stop-opacity="0" />
+            <stop offset="35%" stop-color="#771D1D" stop-opacity="0.75" />
+            <stop offset="65%" stop-color="#D75151" stop-opacity="0.85" />
+            <stop offset="85%" stop-color="#FAAAAA" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#4d1111" stop-opacity="0" />
+          </linearGradient>
+          <filter id="cinnamon-ribbon-blur" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="32" result="blur1" />
+            <feGaussianBlur stdDeviation="14" result="blur2" />
+            <feMerge>
+              <feMergeNode in="blur1" />
+              <feMergeNode in="blur2" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- Flowing Organic Ribbons -->
+        <path class="seh-ribbon-path seh-ribbon-1" d="M -80 820 C 350 940 580 620 960 680 C 1380 740 1620 480 2000 560" fill="none" stroke="url(#cinnamon-ribbon-grad-1)" stroke-width="14" filter="url(#cinnamon-ribbon-blur)" />
+        <path class="seh-ribbon-path seh-ribbon-2" d="M -60 580 C 380 460 620 840 1060 720 C 1440 620 1680 840 2020 760" fill="none" stroke="url(#cinnamon-ribbon-grad-2)" stroke-width="10" filter="url(#cinnamon-ribbon-blur)" />
+        <path class="seh-ribbon-path seh-ribbon-3" d="M -100 700 Q 520 480 960 700 T 2020 600" fill="none" stroke="url(#cinnamon-ribbon-grad-1)" stroke-width="32" opacity="0.38" filter="url(#cinnamon-ribbon-blur)" />
+      </svg>
 
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+      <div class="seh-ambient-overlay"></div>
+    </div>
 
-                aria-current="true" aria-label="Slide 1"></button>
+    <!-- Cards Track Stage: Horizontal scroll from left to right, then center card zoom expansion -->
+    <div class="seh-stage" id="seh-stage">
+      <div class="seh-cards-track" id="seh-cards-track">
+        <!-- Card 0: Pure Photo (Student Convocation & Celebration) -->
+        <div class="seh-card" data-index="0" data-type="image">
+          <div class="seh-card-inner">
+            <img src="docs/Slider/28092026201750363For Website.jpg" alt="NIT Rourkela Convocation & Campus" loading="eager" />
+            <div class="seh-card-shine"></div>
+          </div>
+        </div>
 
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        <!-- Card 1: Pure Photo (Main Campus Aerial & Clock Tower) -->
+        <div class="seh-card" data-index="1" data-type="image">
+          <div class="seh-card-inner">
+            <img src="assets/images/campus.jpeg" alt="NIT Rourkela Main Campus" loading="eager" />
+            <div class="seh-card-shine"></div>
+          </div>
+        </div>
 
-                aria-label="Slide 2"></button>
+        <!-- Card 2: Pure Photo (Advanced Research & Innovation Labs) -->
+        <div class="seh-card" data-index="2" data-type="image">
+          <div class="seh-card-inner">
+            <img src="docs/Slider/08102026094147725Research Impact conlave.jpg" alt="NIT Rourkela Research & Innovation" loading="eager" />
+            <div class="seh-card-shine"></div>
+          </div>
+        </div>
 
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        <!-- Card 3: Pure Photo (Central Library Architecture) -->
+        <div class="seh-card" data-index="3" data-type="image">
+          <div class="seh-card-inner">
+            <img src="assets/images/gallery7.webp" alt="NIT Rourkela Biju Pattnaik Central Library" loading="eager" />
+            <div class="seh-card-shine"></div>
+          </div>
+        </div>
 
-                aria-label="Slide 3"></button>
+        <!-- Card 4: Pure Photo (Cyber Security & Future Tech Conclave) -->
+        <div class="seh-card" data-index="4" data-type="image">
+          <div class="seh-card-inner">
+            <img src="docs/Slider/12102026164440120Cyber Security.jpg" alt="NIT Rourkela Cyber Security & Technology" loading="eager" />
+            <div class="seh-card-shine"></div>
+          </div>
+        </div>
 
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+        <!-- Card 5 (THE LAST BANNER - VIDEO): 4K Drone Aerial Showcase (Expands to Fullscreen) -->
+        <div class="seh-card seh-card-focal" id="seh-focal-card" data-index="5" data-type="video">
+          <div class="seh-card-inner">
+            <video autoplay loop muted playsinline preload="auto" poster="assets/images/campus.jpeg" id="seh-focal-video">
+              <source src="docs/Slider/hero.mp4" type="video/mp4" />
+            </video>
+            <div class="seh-card-shine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                aria-label="Slide 3"></button>
-
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
-
-                aria-label="Slide 3"></button>
-
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
-
-                aria-label="Slide 3"></button>
-
-        </div> -->
-<div class="carousel-inner">
-<div class="carousel-item active" data-bs-interval="5000">
-<img alt="NIT Rourkela Banner" class="d-block w-100" loading="eager" src="docs/Slider/12102026164440120Cyber Security.jpg"/>
-</div>
-<div class="carousel-item" data-bs-interval="5000">
-<img alt="NIT Rourkela Banner" class="d-block w-100" loading="eager" src="docs/Slider/28092026201750363For Website.jpg"/>
-</div>
-<div class="carousel-item" data-bs-interval="5000">
-<img alt="NIT Rourkela Banner" class="d-block w-100" loading="eager" src="docs/Slider/28092026122848510Environment Congress.jpg.jpeg"/>
-</div>
-<div class="carousel-item" data-bs-interval="5000">
-<img alt="NIT Rourkela Banner" class="d-block w-100" loading="eager" src="docs/Slider/08102026094147725Research Impact conlave.jpg"/>
-</div>
-<div class="carousel-item" data-bs-interval="5000">
-<img alt="NIT Rourkela Banner" class="d-block w-100" loading="eager" src="docs/Slider/04082026172959867Anti-Ragging_NITR-Web.jpg.jpeg"/>
-</div>
-<div class="carousel-item" data-bs-interval="30000">
-<video autoplay="" muted="" playsinline="">
-<source src="docs/Slider/hero.mp4" type="video/mp4"/>
-</video>
-</div>
-</div>
-<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions" type="button">
-<span aria-hidden="true" class="carousel-control-prev-icon"></span>
-<span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleCaptions" type="button">
-<span aria-hidden="true" class="carousel-control-next-icon"></span>
-<span class="visually-hidden">Next</span>
-</button>
-</div>
-<marquee behavior="" class="horaizontaly-scroll" direction="" onmouseout="this.start();" onmouseover="this.stop();">
-<ul>
-</ul>
-</marquee>
+    <!-- Seamless Cinnamon Red bottom blend into #about-section-3d -->
+    <div class="seh-bottom-fade"></div>
+  </div>
 </section>
-<!--end Hero video and image slider -->
+<!--end Scroll-Expansion Hero & Banner Media -->
 <section class="about-section-3d" id="about-section-3d">
   <!-- Magic UI Dot Pattern Background (for this section only) -->
   <svg aria-hidden="true" class="about-dot-pattern" width="100%" height="100%">
@@ -669,11 +716,15 @@ window.dataLayer = window.dataLayer || [];
 <!-- 1. Placement Statistics & NIRF Ranking (Full Width Top Showcase) -->
 <div class="item-news">
 <h2>Placement Statistics <a href="placement-report.html" target="_blank">View Details <i class="fa-solid fa-arrow-right"></i></a></h2>
-<div class="placement-banner-card">
-<a href="placement-report.html" target="_blank" title="Click to open interactive placement report">
-<img alt="NIT Rourkela Annual Placement Report 2025-26" class="img-fluid" src="assets/images/placement/placement-report-thumbnail.png"/>
-<span class="placement-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Interactive Placement Report</span>
-</a>
+<div class="placement-dashboard-embed-wrapper" id="placementDashboardWrapper">
+    <iframe id="placementReportFrame" 
+            src="placement-report.html?embed=true" 
+            title="NIT Rourkela Annual Placement Report 2025-26"
+            scrolling="no"
+            loading="lazy"
+            allow="fullscreen"
+            style="width: 100%; height: 750px; border: none; overflow: hidden; display: block;">
+    </iframe>
 </div>
 <div class="item-campus">
 <div class="admision-link">
@@ -1400,150 +1451,122 @@ Applications
 </section>
 <!--end Incubation@NITR-->
 <!--start Faculty Awards-->
-<section class="faculty-awards secondBG">
-<div class="container">
-<div class="faculty-awards-row">
-<div class="item-awards">
-<h2>Faculty Achievements <a href="/Home/FacultyAwards/?id=0">View ALL</a> </h2>
-<div class="owl-carousel owl-theme faculty-awards-slider wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Faculty Awards NIT Rourkela Secures Over ₹8.50 Crore in ANRF Advanced Research Grants" class="img-fluid" loading="lazy" src="docs/AwardsAchievements/fac-ANRF.webp"/>
-</div>
-<div class="card-body">
+<!--start Achievements Carousel (Profile Card Testimonial Style)-->
+<!--start Achievements Showcase (Unified Faculty & Student with Toolbar)-->
+<section class="fasa-section" id="achievements-section" aria-label="Faculty and Student Achievements">
+  <!-- Glowing ambient light orbs -->
+  <div class="fasa-glow-orb fasa-glow-1" aria-hidden="true"></div>
+  <div class="fasa-glow-orb fasa-glow-2" aria-hidden="true"></div>
 
-                                NIT Rourkela Secures Over ₹8.50 Crore in ANRF Advanced Research Grants
+  <div class="fasa-container">
+    <!-- Top Header: Section Title "ACHIEVEMENTS" and Toolbar -->
+    <div class="fasa-top-header">
+      <div class="fasa-title-group">
+        <div class="fasa-kicker-badge">
+          <span class="fasa-kicker-bar"></span>
+          <span class="fasa-kicker-label">DISTINCTIONS &amp; HONORS</span>
+        </div>
+        <h2 class="fasa-section-main-title">ACHIEVEMENTS</h2>
+      </div>
+      <div class="fasa-toolbar" role="tablist" aria-label="Achievements Filter">
+        <button class="fasa-toolbar-btn is-active" data-category="all" type="button">All</button>
+        <button class="fasa-toolbar-btn" data-category="faculty" type="button">Faculty</button>
+        <button class="fasa-toolbar-btn" data-category="student" type="button">Student</button>
+      </div>
+    </div>
 
-                            </div>
-<div class="card-footer">
-<a href="/Home/FacultyAwards/?id=31">Know More</a>
-<a href="/Home/FacultyAwards/?id=31"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Faculty Awards 69 Faculty Members from NIT Rourkela Featured in SciRank
+    <!-- Split Layout Grid (Locked Height, Zero Shaking) -->
+    <div class="fasa-layout-grid">
+      <!-- Left Column: Editorial Content & Controls -->
+      <div class="fasa-editorial-col">
+        <!-- Sub-Kicker Tag -->
+        <div class="fasa-editorial-kicker">
+          <div class="fasa-kicker-badge">
+            <span class="fasa-kicker-bar"></span>
+            <span class="fasa-kicker-label" id="fasa-category-tag">RESEARCH &amp; ADVANCED GRANTS</span>
+          </div>
+        </div>
 
-Global's World's Top 5% Scientists List" class="img-fluid" loading="lazy" src="docs/AwardsAchievements/fa-SciRank.webp"/>
-</div>
-<div class="card-body">
+        <!-- Headline & Description with Smooth Transition -->
+        <div class="fasa-story-wrap">
+          <h2 class="fasa-headline" id="fasa-headline">
+            NIT Rourkela Secures Over ₹8.50 Crore in ANRF Advanced Research Grants
+          </h2>
+          <p class="fasa-description" id="fasa-description">
+            Faculty members have secured over ₹8.50 Crore in prestigious Advanced Research Grants from the Anusandhan National Research Foundation (ANRF), driving cutting-edge translational investigations across engineering and physical sciences.
+          </p>
+        </div>
 
-                                69 Faculty Members from NIT Rourkela Featured in SciRank
+        <!-- Action Links -->
+        <div class="fasa-action-group">
+          <a class="fasa-cta-btn" id="fasa-knowmore-btn" href="/Home/FacultyAwards/?id=31">
+            <span>KNOW MORE</span>
+            <svg class="fasa-cta-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a class="fasa-secondary-link" id="fasa-all-link" href="/Home/FacultyAwards/?id=0">
+            View All Honors →
+          </a>
+        </div>
 
-Global's World's Top 5% Scientists List
+        <!-- Bespoke Navigation Controls (Matching Screen Recording fasa) -->
+        <div class="fasa-nav-controls">
+          <button class="fasa-arrow-btn fasa-prev" id="fasa-prev-btn" type="button" aria-label="Previous Achievement">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="fasa-arrow-btn fasa-next" id="fasa-next-btn" type="button" aria-label="Next Achievement">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
 
-                            </div>
-<div class="card-footer">
-<a href="/Home/FacultyAwards/?id=29">Know More</a>
-<a href="/Home/FacultyAwards/?id=29"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Faculty Awards NIT Rourkela Scientist Honoured with INSA Associate Fellowship!" class="img-fluid" loading="lazy" src="docs/AwardsAchievements/fac-award-insa.webp"/>
-</div>
-<div class="card-body">
+          <div class="fasa-counter-display">
+            <span class="fasa-count-current" id="fasa-counter-current">01</span>
+            <span class="fasa-count-divider">/</span>
+            <span class="fasa-count-total" id="fasa-counter-total">08</span>
+          </div>
 
-                                NIT Rourkela Scientist Honoured with INSA Associate Fellowship!
+          <button class="fasa-playpause-btn" id="fasa-playpause-btn" type="button" title="Pause auto-scroll" aria-label="Toggle auto-scroll">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+              <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+            </svg>
+          </button>
+        </div>
+      </div>
 
-                            </div>
-<div class="card-footer">
-<a href="/Home/FacultyAwards/?id=27">Know More</a>
-<a href="/Home/FacultyAwards/?id=27"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Faculty Awards PMECRG awarded to Faculty members of NIT Rourkela!" class="img-fluid" loading="lazy" src="docs/AwardsAchievements/fac-PMECRG.webp"/>
-</div>
-<div class="card-body">
-
-                                PMECRG awarded to Faculty members of NIT Rourkela!
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/FacultyAwards/?id=26">Know More</a>
-<a href="/Home/FacultyAwards/?id=26"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+      <!-- Right Column: Cinematic Sliding Cards Gallery (Strict 4:3 Ratio) -->
+      <div class="fasa-gallery-col">
+        <div class="fasa-gallery-stage" id="fasa-gallery-stage">
+          <div class="fasa-cards-track" id="fasa-cards-track">
+            <!-- Dynamically populated card items -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!--end Faculty Awards-->
-<!--start Student Awards-->
-<section class="upcoming-section">
+<!--end Achievements Showcase-->
+<!--start Seminars Section (Centered Dark Theme)-->
+<section class="upcoming-section seminar-centered-section" id="seminars-section">
 <div class="container">
-<div class="upcoming-row">
-<div class="item-event">
-<h2>Student Achievements <a href="/Home/StudentAchievements/?id=0">View ALL</a> </h2>
-<div class="owl-carousel owl-theme upcoming-event-slider wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Student Achievements on NIT Rourkela Ph.D . Scholar Receives Prestigious IEEE
-
-IAS Student Travel Award" class="img-fluid" loading="lazy" src="docs/AwardsAchievements/std-award12.webp"/>
-</div>
-<div class="card-body">
-
-                                NIT Rourkela Ph.D . Scholar Receives Prestigious IEEE
-
-IAS Student Travel Award
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/StudentAchievements/?id=32">Know More</a>
-<a href="/Home/StudentAchievements/?id=32"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Student Achievements on NIT Rourkela Students Win Multiple Awards at BTTD-2026" class="img-fluid" loading="lazy" src="docs/AwardsAchievements/std-BTTD-2026.webp"/>
-</div>
-<div class="card-body">
-
-                                NIT Rourkela Students Win Multiple Awards at BTTD-2026
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/StudentAchievements/?id=30">Know More</a>
-<a href="/Home/StudentAchievements/?id=30"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Student Achievements on MTech students selected as 'Delegates' under IEEE SPACE 2026!" class="img-fluid" loading="lazy" src="docs/AwardsAchievements/std-award210426.webp"/>
-</div>
-<div class="card-body">
-
-                                MTech students selected as 'Delegates' under IEEE SPACE 2026!
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/StudentAchievements/?id=24">Know More</a>
-<a href="/Home/StudentAchievements/?id=24"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Student Achievements on NIT Rourkela Team Wins First Prize at 'Robofest Gujarat 5.0'" class="img-fluid" loading="lazy" src="docs/AwardsAchievements/RobofestGujarat5.0.webp"/>
-</div>
-<div class="card-body">
-
-                                NIT Rourkela Team Wins First Prize at 'Robofest Gujarat 5.0'
-
-                            </div>
-<div class="card-footer">
-<a href="/Home/StudentAchievements/?id=23">Know More</a>
-<a href="/Home/StudentAchievements/?id=23"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-</div>
-</div>
+<div class="seminar-center-container">
 <div class="item-seminar">
-<h2>Seminars <a href="/Research/Seminars/">All Seminars</a></h2>
-<ul class="seminar-scroll wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms" id="ulSeminar">
+  <div class="seminar-header-group">
+    <div class="fasa-kicker-badge">
+      <span class="fasa-kicker-bar"></span>
+      <span class="fasa-kicker-label">RESEARCH &amp; ACADEMIC DISCOURSE</span>
+    </div>
+    <div class="seminar-title-bar">
+      <h2 class="seminar-main-heading">Seminars</h2>
+      <a class="seminar-all-link" href="/Research/Seminars/">All Seminars →</a>
+    </div>
+  </div>
+  <ul class="seminar-scroll wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms" id="ulSeminar">
 <li>
 <div class="date">13<br/> Oct</div>
 <div class="desc">
@@ -1630,80 +1653,126 @@ IAS Student Travel Award
 </div>
 </section>
 <!--end Student Awards-->
-<!--start Social Initiatives-->
-<section class="faculty-awards secondBG">
-<div class="container">
-<div class="faculty-awards-row">
-<div class="item-awards">
-<h2>Social Initiatives </h2>
-<div class="owl-carousel owl-theme faculty-awards-slider wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Social Initiatives Unnat Bharat Abhiyan" class="img-fluid" loading="lazy" src="docs/SocialInitiatives/UBA.jpg"/>
-</div>
-<div class="card-body">
-<b>Unnat Bharat Abhiyan</b> seeks to transform rural development by harnessing the expertise of knowledge institutions. Through innovative solutions and community engagement,
+<!--start Social Initiatives (Diagonal Alternating Flow, No Carousel, No Boxes)-->
+<section class="social-initiatives-section" id="social-initiatives" aria-label="Social Initiatives at NIT Rourkela">
+  <div class="si-container">
+    <!-- Section Header (Clean Title Only) -->
+    <div class="si-section-header">
+      <h2 class="si-main-title">Social Initiatives</h2>
+    </div>
 
-                            the program empowers villages, fostering sustainable growth and contributing to the creation of a more inclusive and equitable India.
+    <!-- Diagonal Flow (Down to Down) -->
+    <div class="si-diagonal-feed">
 
-                        </div>
-<div class="card-footer">
-<a href="https://uba.nitrkl.ac.in">Know More</a>
-<a href="https://uba.nitrkl.ac.in"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Social Initiatives NSS" class="img-fluid" loading="lazy" src="docs/SocialInitiatives/NSS.jpg"/>
-</div>
-<div class="card-body">
-<b>National Service Scheme (NSS)</b>, NIT Rourkela instills social responsibility and leadership through community engagement. Guided by the motto “Not Me, But You,”
+      <!-- Item 1: NSS (Image Right, Text Left) -->
+      <article class="si-item si-image-right">
+        <div class="si-text-col">
+          <span class="si-item-num">01</span>
+          <span class="si-item-badge">NATIONAL SERVICE</span>
+          <h3 class="si-item-title">National Service Scheme (NSS)</h3>
+          <p class="si-item-desc">
+            Guided by the motto <strong>“Not Me, But You,”</strong> NSS NIT Rourkela instills selfless service, civic leadership, and social responsibility. Student volunteers lead extensive cleanliness drives, mass tree plantation campaigns, voluntary blood donation camps, and rural welfare awareness programs fostering sustainable development.
+          </p>
+          <a class="si-action-link" href="https://nitrkl.ac.in/EAA" target="_blank" rel="noopener">
+            <span>Discover NSS Initiatives</span>
+            <svg class="si-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="si-media-col">
+          <div class="si-img-wrapper">
+            <span class="si-media-tag">NSS NITR</span>
+            <img src="docs/SocialInitiatives/NSS.jpg" alt="National Service Scheme (NSS) Volunteers at NIT Rourkela" loading="lazy" />
+          </div>
+        </div>
+      </article>
 
-                            it promotes selfless service and teamwork. Volunteers conduct cleanliness drives, tree plantations, blood donation camps, and awareness programs, fostering civic
+      <!-- Item 2: The Rotaract Club (Image Left, Text Right - DIAGONAL from Item 1!) -->
+      <article class="si-item si-image-left">
+        <div class="si-media-col">
+          <div class="si-img-wrapper">
+            <span class="si-media-tag">ROTARACT CLUB</span>
+            <img src="docs/SocialInitiatives/Rotract.jpg" alt="Rotaract Club Youth Community Outreach at NIT Rourkela" loading="lazy" />
+          </div>
+        </div>
+        <div class="si-text-col">
+          <span class="si-item-num">02</span>
+          <span class="si-item-badge">YOUTH &amp; HEALTH LEADERSHIP</span>
+          <h3 class="si-item-title">The Rotaract Club</h3>
+          <p class="si-item-desc">
+            The Rotaract Club at NIT Rourkela fosters grassroots community and international service while nurturing leadership among youth. Its flagship initiative, <strong>SaPNA (Sanitary Pads &amp; Awareness)</strong>, spreads menstrual hygiene education and distributes sanitary kits across rural schools, alongside vital blood donation and community welfare programs.
+          </p>
+          <a class="si-action-link" href="docs/SocialInitiatives/ROTAMagazine.pdf" target="_blank" rel="noopener">
+            <span>Read ROTA Magazine</span>
+            <svg class="si-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
 
-                            responsibility and sustainable development.
+      <!-- Item 3: AASRA (Image Right, Text Left - DIAGONAL from Item 2!) -->
+      <article class="si-item si-image-right">
+        <div class="si-text-col">
+          <span class="si-item-num">03</span>
+          <span class="si-item-badge">CHILD DEVELOPMENT &amp; EDUCATION</span>
+          <h3 class="si-item-title">AASRA</h3>
+          <p class="si-item-desc">
+            AASRA is an impassioned student-led social service club focused on education and child development. Through regular evening tutoring sessions, digital literacy classes, and sports mentorship, AASRA bridges learning gaps among underprivileged children, fostering compassion, hope, and academic ambition in the community.
+          </p>
+          <a class="si-action-link" href="https://nitrkl.ac.in" target="_blank" rel="noopener">
+            <span>Learn About AASRA</span>
+            <svg class="si-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+        <div class="si-media-col">
+          <div class="si-img-wrapper">
+            <span class="si-media-tag">AASRA NITR</span>
+            <img src="docs/SocialInitiatives/AASRA.jpg" alt="AASRA Education and Mentorship for Underprivileged Children" loading="lazy" />
+          </div>
+        </div>
+      </article>
 
-                        </div>
-<div class="card-footer">
-<a href="https://nitrkl.ac.in/EAA">Know More</a>
-<a href="https://nitrkl.ac.in/EAA"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Social Initiatives Rotract" class="img-fluid" loading="lazy" src="docs/SocialInitiatives/Rotract.jpg"/>
-</div>
-<div class="card-body">
+      <!-- Item 4: Unnat Bharat Abhiyan (Image Left, Text Right - DIAGONAL from Item 3!) -->
+      <article class="si-item si-image-left">
+        <div class="si-media-col">
+          <div class="si-img-wrapper">
+            <span class="si-media-tag">UBA MISSION</span>
+            <img src="docs/SocialInitiatives/UBA.jpg" alt="Unnat Bharat Abhiyan Rural Transformation Project" loading="lazy" />
+          </div>
+        </div>
+        <div class="si-text-col">
+          <span class="si-item-num">04</span>
+          <span class="si-item-badge">RURAL INNOVATION</span>
+          <h3 class="si-item-title">Unnat Bharat Abhiyan (UBA)</h3>
+          <p class="si-item-desc">
+            Unnat Bharat Abhiyan transforms rural livelihoods by channeling the technological and scientific expertise of NIT Rourkela into village communities. Through sustainable energy solutions, clean water initiatives, agricultural modernization, and skill workshops, UBA empowers villages toward economic self-reliance.
+          </p>
+          <a class="si-action-link" href="https://uba.nitrkl.ac.in" target="_blank" rel="noopener">
+            <span>Explore UBA Portal</span>
+            <svg class="si-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </article>
 
-                            The <b>Rotaract Club</b> at NIT Rourkela promotes community and international service while nurturing leadership and management skills among students. Its flagship initiative,
+      <!-- Diagonal Accent Divider (Kept ONLY after the last image) -->
+      <div class="si-diagonal-separator" aria-hidden="true">
+        <span class="si-slash si-slash-1"></span>
+        <span class="si-slash si-slash-2"></span>
+        <span class="si-slash si-slash-3"></span>
+      </div>
 
-                            SaPNA (Sanitary Pads &amp; Awareness), spreads menstrual hygiene awareness, along with organizing blood donation drives and other community development activities.
-
-                        </div>
-<div class="card-footer">
-<a href="docs/SocialInitiatives/ROTAMagazine.pdf">Know More</a>
-<a href="docs/SocialInitiatives/ROTAMagazine.pdf"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Social Initiatives AASRA" class="img-fluid" loading="lazy" src="docs/SocialInitiatives/AASRA.jpg"/>
-</div>
-<div class="card-body">
-<b>AASRA</b> is a student-led social service club at NIT Rourkela focused on education and child development. Through regular teaching sessions and mentorship,
-
-                            it bridges learning gaps among underprivileged children, fostering hope, compassion, and social responsibility within the NIT Rourkela community.
-
-                        </div>
-<div class="card-footer">
-<a href="#">Know More</a>
-<a href="#"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    </div>
+  </div>
 </section>
 <!--end Social Initiatives-->
 <!--start awards,recognittion and study@NITR -->
@@ -2241,10 +2310,12 @@ IAS Student Travel Award
 </script>
 <script defer="" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
 <script src="assets/js/loader.js"></script>
+<script src="assets/js/scroll-expansion-hero.js"></script>
 <script src="assets/js/tilted-grid-hero.js"></script>
 <script src="assets/js/about-3d.js"></script>
 <script src="assets/js/features-with-panel.js"></script>
 <script src="assets/js/study-at-nitr.js"></script>
+<script src="assets/js/achievements-carousel.js"></script>
 <script>
 
         $(document).ready(function(){
@@ -2253,6 +2324,16 @@ IAS Student Travel Award
 
             $('#ulSeminar').css("padding","0");
 
+        });
+
+        // Auto-resize listener for embedded Placement Report Dashboard
+        window.addEventListener('message', function(event) {
+            if (event.data && event.data.type === 'NITR_PLACEMENT_RESIZE') {
+                var frame = document.getElementById('placementReportFrame');
+                if (frame && event.data.height && event.data.height > 100) {
+                    frame.style.height = event.data.height + 'px';
+                }
+            }
         });
 
     </script>

@@ -244,14 +244,40 @@
             .marquee-content, .card-hero::after { animation: none !important; }
             .reveal { opacity: 1; translate: none; }
         }
+
+        /* ---------- Embedded Mode Styles ---------- */
+        .is-embedded-doc body, body.is-embedded {
+            background-color: transparent !important;
+            min-height: 0 !important;
+            height: auto !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .is-embedded-doc #scrollProgress, body.is-embedded #scrollProgress,
+        .is-embedded-doc #topReturnBar, body.is-embedded #topReturnBar,
+        .is-embedded-doc #placementHeader, body.is-embedded #placementHeader,
+        .is-embedded-doc #placementFooter, body.is-embedded #placementFooter {
+            display: none !important;
+        }
+        .is-embedded-doc main, body.is-embedded main {
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+            flex-grow: 0 !important;
+        }
     </style>
+    <script>
+        if ((window.self !== window.top) || new URLSearchParams(window.location.search).get('embed') === 'true') {
+            document.documentElement.classList.add('is-embedded-doc');
+        }
+    </script>
 </head>
 <body class="antialiased min-h-screen flex flex-col font-sans">
 
     <div id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Top Return Navigation Bar -->
-    <div class="w-full bg-[#771D1D] text-white px-4 py-2 flex items-center justify-between shadow-md" style="z-index: 9999; position: relative;">
+    <div id="topReturnBar" class="w-full bg-[#771D1D] text-white px-4 py-2 flex items-center justify-between shadow-md" style="z-index: 9999; position: relative;">
         <a href="index.html" class="inline-flex items-center gap-2 text-white hover:text-[#FFC107] font-semibold text-sm transition-colors duration-200">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Return to NIT Rourkela Main Portal</span>
@@ -261,7 +287,7 @@
 
 
     <!-- Header Section -->
-    <header class="border-b border-linen w-full bg-inclusive">
+    <header id="placementHeader" class="border-b border-linen w-full bg-inclusive">
         <div class="max-w-[1600px] mx-auto px-4 py-6 sm:py-8 flex flex-col md:flex-row items-center justify-between w-full gap-6 md:gap-0">
             
             <!-- Mobile view dual logos -->
@@ -459,7 +485,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-4 py-6 border-t border-linen text-center bg-inclusive w-full">
+    <footer id="placementFooter" class="mt-4 py-6 border-t border-linen text-center bg-inclusive w-full">
         <p class="text-earthy font-bold text-xs sm:text-sm">© 2026 National Institute of Technology, Rourkela. All Rights Reserved.</p>
     </footer>
 
@@ -834,6 +860,40 @@
                 });
             }, { threshold: 0.15 });
             cards.forEach(c => io.observe(c));
+        })();
+
+        // PostMessage auto-resizing when embedded in parent iframe
+        (function() {
+            const isEmbed = (window.self !== window.top) || new URLSearchParams(window.location.search).get('embed') === 'true';
+            if (!isEmbed) return;
+            document.body.classList.add('is-embedded');
+
+            function sendPlacementHeight() {
+                const main = document.querySelector('main');
+                if (!main) return;
+                const rect = main.getBoundingClientRect();
+                const height = Math.ceil(rect.height);
+                if (height > 50 && window.parent) {
+                    window.parent.postMessage({ type: 'NITR_PLACEMENT_RESIZE', height: height }, '*');
+                }
+            }
+
+            // Send height at multiple milestones to account for Chart rendering & font loading
+            window.addEventListener('load', () => {
+                sendPlacementHeight();
+                setTimeout(sendPlacementHeight, 100);
+                setTimeout(sendPlacementHeight, 350);
+                setTimeout(sendPlacementHeight, 800);
+                setTimeout(sendPlacementHeight, 1500);
+            });
+            window.addEventListener('resize', sendPlacementHeight);
+
+            if (window.ResizeObserver) {
+                const main = document.querySelector('main');
+                if (main) {
+                    new ResizeObserver(() => sendPlacementHeight()).observe(main);
+                }
+            }
         })();
     </script>
 </body>
