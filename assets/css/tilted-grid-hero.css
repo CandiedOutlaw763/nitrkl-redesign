@@ -61,7 +61,7 @@
   font-weight: 800;
   color: #111827;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   line-height: 1.25;
 }
 
@@ -84,7 +84,7 @@
 .tilted-grid-hero-root {
   position: relative;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 0;
   overflow: hidden;
   background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f4f5f7 100%);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -98,7 +98,7 @@
 
 .tilted-grid-hero-root.footer-mini-mode {
   height: 220px;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 .tgh-band-viewport {

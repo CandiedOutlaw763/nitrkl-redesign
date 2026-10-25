@@ -190,7 +190,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 10;
-  border-radius: 22px;
+  border-radius: 0;
   overflow: hidden;
   background: #f3f4f6;
   border: none !important;
@@ -230,7 +230,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 5px 14px;
-  border-radius: 20px;
+  border-radius: 0;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   pointer-events: none;
 }
@@ -254,7 +254,7 @@
   height: 3.5px;
   background: linear-gradient(90deg, #771D1D, #D75151);
   transform: skewX(-35deg);
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow: 0 2px 6px rgba(119, 29, 29, 0.2);
   transition: all 0.3s ease;
 }
