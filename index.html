@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Life – Photo Gallery | NIT Rourkela</title>
+<!-- Google Fonts: Noto Sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="nitrkl/assets/css/about-3d.css">
+</head>
+<body>
+
+<a class="skip" href="#gallery-section">Skip to photo gallery</a>
+
+<!-- Site Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="header-brand" href="/">
+      <img src="assets/images/logo2.png" alt="NIT Rourkela Crest" width="48" height="48">
+      <div class="brand-text">
+        <h1>National Institute of Technology Rourkela</h1>
+        <p>An Institute of National Importance</p>
+      </div>
+    </a>
+    <nav class="header-nav">
+      <a href="/nitrkl/" class="nav-link">Main Portal</a>
+      <a href="/nitrkl/index.html#study-at-nitr" class="nav-link">Study@NITR</a>
+      <a href="/nitrkl/gallery.html" class="nav-link">Full Gallery</a>
+      <a href="#stats-section" class="nav-link">Statistics</a>
+      <a href="#gallery-section" class="nav-btn">Explore 3D Gallery</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Statistics Section ("number of faculties and all") -->
+  <section class="stats-section" id="stats-section" aria-label="Institute Statistics">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <img src="assets/images/department-p.png" alt="Departments icon" width="42" height="42">
+        </div>
+        <div class="stat-number">20</div>
+        <div class="stat-label">Departments</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <img src="assets/images/student-icon-p.png" alt="Students icon" width="42" height="42">
+        </div>
+        <div class="stat-number">8,000+</div>
+        <div class="stat-label">Students</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <img src="assets/images/faculty-p.png" alt="Faculty icon" width="42" height="42">
+        </div>
+        <div class="stat-number">410+</div>
+        <div class="stat-label">Faculty</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <img src="assets/images/staff-p.png" alt="Staff icon" width="42" height="42">
+        </div>
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Staff</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aesthetic 3D About & Director Section with 21st.dev Notched Project Cards -->
+  <section class="about-section-3d" id="about-section-3d">
+    <!-- Magic UI Dot Pattern Background (for this section only) -->
+    <svg aria-hidden="true" class="about-dot-pattern" width="100%" height="100%">
+      <defs>
+        <pattern id="magicui-about-dots-root" width="20" height="20" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" x="0" y="0">
+          <circle id="pattern-circle-root" cx="1" cy="1" r="1"></circle>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" stroke-width="0" fill="url(#magicui-about-dots-root)"></rect>
+    </svg>
+
+    <div class="about-3d-orb about-3d-orb-1" aria-hidden="true"></div>
+    <div class="about-3d-orb about-3d-orb-2" aria-hidden="true"></div>
+
+    <div class="about-3d-container" id="notched-preview-container">
+      <!-- Interactive Preview Controls (Matching 21st.dev Screenshot Toolbar) -->
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+        <div class="preview-toolbar" role="toolbar" aria-label="Card preview controls">
+          <button class="preview-tool-btn" id="btn-fullscreen-toggle" title="Toggle Expanded Container" aria-label="Toggle Expanded Container">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+          </button>
+          <button class="preview-tool-btn" id="btn-theme-toggle" title="Toggle Dark/Light Mode" aria-label="Toggle Dark Mode">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="preview-tool-btn" id="btn-reset-view" title="Reset Animations" aria-label="Reset View">
+            <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+          </button>
+          <div class="preview-toolbar-divider"></div>
+          <button class="view-mode-pill active" id="btn-view-demo" onclick="switchCardView('demo')">21st.dev Demo</button>
+          <button class="view-mode-pill" id="btn-view-institute" onclick="switchCardView('institute')">NIT Rourkela Legacy</button>
+        </div>
+      </div>
+
+      <!-- Section Header -->
+      <div class="notched-section-header" id="section-header-content">
+        <div class="notched-section-kicker">
+          <span class="notched-kicker-dot"></span>
+          <span id="kicker-text">21st.dev Component Showcase &bull; Maud Benaddi</span>
+        </div>
+        <h2 class="notched-section-title" id="section-title-text">
+          Notched Project <span class="text-accent">Cards</span>
+        </h2>
+        <p class="notched-section-subtitle" id="section-subtitle-text">
+          Three cards, one per device (desktop, phone, tablet), and three confessions from a designer who would rather not build her own cards.
+        </p>
+      </div>
+
+      <!-- 3 Notched Project Cards: 21st.dev Demo Set (Active by Default, Matching Screenshot Exactly) -->
+      <div class="notched-cards-grid" id="grid-demo-view">
+        <!-- Card 1: Ctrl+C, Ctrl+V, Ship -->
+        <a href="#about-section-3d" class="notched-card monochrome" style="--card-accent: #DA8956;" aria-label="Ctrl+C, Ctrl+V, Ship">
+          <div class="notched-card-cover">
+            <img src="https://cdn.21st.dev/assets/mirror/c5/c5c57791868384517fc58d770bd31ef697db8f20d82c2472fcdfbca4746cd9c9.jpg" alt="Hallway corridor" loading="lazy">
+            
+            <div class="notched-badge">2026</div>
+
+            <!-- Signature Inverted Corner Notch Cutout -->
+            <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+              <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+            </svg>
+
+            <!-- Nested Circular Action Arrow Button -->
+            <div class="notched-arrow-btn">
+              <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="notched-content">
+            <h3 class="notched-title">Ctrl+C, Ctrl+V, Ship</h3>
+            <p class="notched-desc">
+              A landing page built in the time it took my coffee to cool. Searched 21st.dev, found a card, pasted it. Nobody needs to know.
+            </p>
+            <div class="notched-tags">
+              <span class="notched-tag">Copy-paste</span>
+              <span class="notched-tag">Speedrun</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2: The Button I Didn't Design (B&W default, blooms to Color on hover) -->
+        <a href="#about-section-3d" class="notched-card monochrome" style="--card-accent: #DA8956;" aria-label="The Button I Didn't Design">
+          <div class="notched-card-cover">
+            <img src="https://cdn.21st.dev/assets/mirror/41/419cedf31b174aecd64085fa834ce51a307f65ab5245408c5fe988c3f8c42eb5.jpg" alt="Workspace desk with devices" loading="lazy">
+            
+            <div class="notched-badge">2025</div>
+
+            <!-- Signature Inverted Corner Notch Cutout -->
+            <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+              <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+            </svg>
+
+            <!-- Nested Terracotta Orange Circular Action Button -->
+            <div class="notched-arrow-btn accent-orange">
+              <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="notched-content">
+            <h3 class="notched-title">The Button I Didn't Design</h3>
+            <p class="notched-desc">
+              Three weeks agonising over a border radius. Then I found one on 21st.dev that was already perfect. Therapy is expensive, components are free.
+            </p>
+            <div class="notched-tags">
+              <span class="notched-tag">Self-care</span>
+              <span class="notched-tag">Zero effort</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: Dashboard, Eventually -->
+        <a href="#about-section-3d" class="notched-card monochrome" style="--card-accent: #DA8956;" aria-label="Dashboard, Eventually">
+          <div class="notched-card-cover">
+            <img src="https://cdn.21st.dev/assets/mirror/da/da6e06827db10c0af8f419f8eca7041264c487235b31f8302cced094c16e657a.jpg" alt="Team members working on laptop" loading="lazy">
+            
+            <div class="notched-badge">2024</div>
+
+            <!-- Signature Inverted Corner Notch Cutout -->
+            <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+              <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+            </svg>
+
+            <!-- Nested Circular Action Arrow Button -->
+            <div class="notched-arrow-btn">
+              <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="notched-content">
+            <h3 class="notched-title">Dashboard, Eventually</h3>
+            <p class="notched-desc">
+              Planned to build it from scratch this weekend. Installed it from 21st.dev in one command instead, then took a well-deserved nap.
+            </p>
+            <div class="notched-tags">
+              <span class="notched-tag">Nap-driven</span>
+              <span class="notched-tag">With AI</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- 3 Notched Project Cards: NIT Rourkela Legacy Set (Same Borderless Structure & Noto Sans) -->
+      <div class="notched-cards-grid" id="grid-institute-view" style="display: none;">
+        <!-- Card 1: About the Institute -->
+        <a href="/nitrkl/" class="notched-card monochrome" style="--card-accent: #771D1D;" aria-label="About the Institute">
+          <div class="notched-card-cover">
+            <img src="assets/images/campus.jpeg" alt="NIT Rourkela Main Campus" loading="lazy">
+            
+            <div class="notched-badge">Estd. 1961</div>
+
+            <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+              <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+            </svg>
+
+            <div class="notched-arrow-btn">
+              <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="notched-content">
+            <h3 class="notched-title">About the Institute</h3>
+            <p class="notched-desc">
+              Elevated from Regional Engineering College, Rourkela to a premier national university, producing world-class engineers, scientists, and leaders across 20 specialized departments.
+            </p>
+            <div class="notched-tags">
+              <span class="notched-tag">National Importance</span>
+              <span class="notched-tag">NIRF Top Ranked</span>
+              <span class="notched-tag">Research Hub</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 2: Institute Vision (B&W default, blooms to Color on hover) -->
+        <a href="/nitrkl/" class="notched-card monochrome" style="--card-accent: #DA8956;" aria-label="Institute Vision">
+          <div class="notched-card-cover">
+            <img src="assets/images/gallery7.webp" alt="Academic Precinct at NIT Rourkela" loading="lazy">
+            
+            <div class="notched-badge">Strategic Vision</div>
+
+            <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+              <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+            </svg>
+
+            <div class="notched-arrow-btn accent-orange">
+              <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="notched-content">
+            <h3 class="notched-title">Institute Vision</h3>
+            <p class="notched-desc">
+              To become an internationally acclaimed institution of higher learning serving as a source of knowledge and expertise, and a preferred destination for undergraduate and graduate studies.
+            </p>
+            <div class="notched-tags">
+              <span class="notched-tag">Global Acclaim</span>
+              <span class="notched-tag">Knowledge Fountain</span>
+              <span class="notched-tag">Premier Destination</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Card 3: Institute Mission -->
+        <a href="/nitrkl/" class="notched-card monochrome" style="--card-accent: #771D1D;" aria-label="Institute Mission">
+          <div class="notched-card-cover">
+            <img src="assets/images/gallery9.webp" alt="Technology Precinct at NIT Rourkela" loading="lazy">
+            
+            <div class="notched-badge">Core Purpose</div>
+
+            <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
+              <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
+            </svg>
+
+            <div class="notched-arrow-btn">
+              <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </div>
+
+          <div class="notched-content">
+            <h3 class="notched-title">Institute Mission</h3>
+            <p class="notched-desc">
+              To advance and spread knowledge in science and technology leading to the creation of wealth and welfare of humanity, powered by Industry 4.0 learning frameworks and cutting-edge research.
+            </p>
+            <div class="notched-tags">
+              <span class="notched-tag">Knowledge Creation</span>
+              <span class="notched-tag">Humanity &amp; Welfare</span>
+              <span class="notched-tag">Industry 4.0</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Full-Width Horizontal Director's Message Card (Pure Borderless Layout) -->
+      <div class="director-featured-wrapper">
+        <div class="director-card-wide" data-card="director">
+          <!-- Photo Column on the Left -->
+          <div class="director-wide-media">
+            <img src="assets/images/director.webp" alt="Prof. K. Umamaheshwar Rao - Director, NIT Rourkela" loading="lazy">
+            <div class="director-wide-scrim"></div>
+            
+            <div class="director-wide-badge">
+              <span class="director-badge-dot"></span>
+              <span>Director &bull; Leadership</span>
+            </div>
+          </div>
+
+          <!-- Rich Text Column on the Right Covering the Entire Space -->
+          <div class="director-wide-content">
+            <div>
+              <div class="director-wide-kicker">
+                <span class="director-badge-dot"></span>
+                <span>Message from the Director</span>
+              </div>
+
+              <h3 class="director-wide-name">
+                <span class="name-first">Prof. K.</span> <span class="name-last">Umamaheshwar Rao</span>
+              </h3>
+              <p class="director-wide-role">Director &bull; National Institute of Technology Rourkela</p>
+
+              <blockquote class="director-wide-quote">
+                &ldquo;With sixty dedicated years of service to the nation, NIT Rourkela stands as a global beacon of academic rigor, research excellence, and sustainable innovation.&rdquo;
+              </blockquote>
+
+              <div class="director-wide-paragraphs">
+                <p class="director-wide-paragraph">
+                  It is a privilege for me to serve as Director of NIT Rourkela. Our institution is built upon strong foundational pillars of teaching excellence, cutting-edge translational research, and dedicated service to the nation. We cultivate visionary engineers, scientists, and entrepreneurs ready to lead in an increasingly complex and interconnected world.
+                </p>
+                <p class="director-wide-paragraph">
+                  As we navigate the transformative demands of Industry 4.0 and emerging computational disciplines, our focus remains firmly on interdisciplinary learning, fostering world-class incubation, and creating sustainable technological wealth and welfare for all humanity.
+                </p>
+              </div>
+            </div>
+
+            <div class="director-wide-footer">
+              <div class="director-credentials">
+                <span class="cred-tag">Director's Desk</span>
+                <span>&bull;</span>
+                <span>Office of the Director, NIT Rourkela</span>
+              </div>
+
+              <a href="/nitrkl/" class="btn-director-action">
+                <span>Explore Leadership Portal</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete 3D Tilted Grid Hero Gallery Section -->
+  <section class="gallery" id="gallery-section" aria-labelledby="gallery-title">
+    <div class="gallery__head">
+      <div class="gallery-badge">
+        <i class="fa-solid fa-cube"></i> 3D Curved Cylindrical Horizon
+      </div>
+      <h2 id="gallery-title">Every Frame, <span>Brought Into Focus</span></h2>
+      <p>Moments from across the NIT Rourkela campus. Images curve along the cylindrical horizon. Select any photo to view in full resolution.</p>
+    </div>
+
+    <!-- Stage: 3D Curved Orbit Container -->
+    <div class="stage" id="stage" role="region" aria-roledescription="gallery" aria-label="Campus photographs in 3D orbit">
+      <ul class="track" id="track">
+        <li><button class="tile" type="button" data-full="assets/images/gallery1.webp" data-caption="NIT Rourkela Golden Insignia and Crest"><img src="assets/images/gallery1.webp" width="640" height="420" loading="lazy" alt="NIT Rourkela Golden Insignia - Central Heritage Plaza"></button></li>
+        <li><button class="tile" type="button" data-full="assets/images/gallery2.webp" data-caption="NIT Rourkela Main Entrance Arch Gateway"><img src="assets/images/gallery2.webp" width="640" height="420" loading="lazy" alt="NIT Rourkela Main Entrance Archway Gateway"></button></li>
+        <li><button class="tile" type="button" data-full="assets/images/gallery3.webp" data-caption="Departmental Complex & Academic Quadrangle"><img src="assets/images/gallery3.webp" width="640" height="420" loading="lazy" alt="Departmental Complex and Academic Quadrangle"></button></li>
+        <li><button class="tile" type="button" data-full="assets/images/gallery4.webp" data-caption="Morning Mist Along Campus Road"><img src="assets/images/gallery4.webp" width="640" height="420" loading="lazy" alt="Morning mist along the tree-lined campus road"></button></li>
+        <li><button class="tile" type="button" data-full="assets/images/gallery5.webp" data-caption="Hostels & Lakefront Promenade"><img src="assets/images/gallery5.webp" width="640" height="420" loading="lazy" alt="Student residences bordering the campus lake"></button></li>
+        <li><button class="tile" type="button" data-full="assets/images/gallery6.webp" data-caption="Bhubaneswar Behera Auditorium (BBA)"><img src="assets/images/gallery6.webp" width="640" height="420" loading="lazy" alt="Bhubaneswar Behera Auditorium (BBA) hall"></button></li>
+        <li><button class="tile" type="button" data-full="assets/images/gallery7.webp" data-caption="Lecture Hall Complex & Academic Precinct"><img src="assets/images/gallery7.webp" width="640" height="420" loading="lazy" alt="Lecture Hall Complex & Academic Precinct"></button></li>
+        <li><button class="tile" type="button" data-full="assets/images/gallery8.webp" data-caption="Tropical Flora & Departmental Quadrangle"><img src="assets/images/gallery8.webp" width="640" height="420" loading="lazy" alt="Tropical flora and departmental buildings"></button></li>
+        <li><button class="tile" type="button" data-full="assets/images/gallery9.webp" data-caption="Golden Jubilee Technology Precinct"><img src="assets/images/gallery9.webp" width="640" height="420" loading="lazy" alt="Golden Jubilee Technology Precinct"></button></li>
+      </ul>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls" id="controls" hidden>
+      <button type="button" class="btn" id="prev" aria-label="Previous photo">&#8592; Previous</button>
+      <button type="button" class="btn btn--primary" id="toggle" aria-pressed="false">Pause</button>
+      <button type="button" class="btn" id="next" aria-label="Next photo">Next &#8594;</button>
+      <a class="btn btn--link" href="/nitrkl/gallery.html">Open Full Portal Gallery &#8599;</a>
+    </div>
+    <p class="sr-only" id="status" role="status" aria-live="polite"></p>
+  </section>
+</main>
+
+<!-- Full-size Modal Viewer -->
+<dialog id="viewer" class="viewer" aria-labelledby="viewer-caption">
+  <figure>
+    <img id="viewer-img" alt="">
+    <figcaption id="viewer-caption"></figcaption>
+  </figure>
+  <div class="viewer__bar">
+    <button type="button" class="btn" id="v-prev">&#8592; Previous</button>
+    <button type="button" class="btn" id="v-next">Next &#8594;</button>
+    <a class="btn" id="v-download" href="#" download>Download Original</a>
+    <button type="button" class="btn btn--primary" id="v-close">Close</button>
+  </div>
+</dialog>
+
+<!-- Site Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>NATIONAL INSTITUTE OF TECHNOLOGY ROURKELA</h4>
+      <p>Rourkela, Odisha, India, 769008<br>Phone: 0661-246-2020 / 2002<br>Email: registrar@nitrkl.ac.in</p>
+    </div>
+    <div class="footer-col">
+      <h4>EXPLORE</h4>
+      <ul>
+        <li><a href="/nitrkl/">Institute Website</a></li>
+        <li><a href="/nitrkl/gallery.html">Campus Photo Gallery</a></li>
+        <li><a href="#stats-section">Key Statistics</a></li>
+        <li><a href="/Academic/Admission/">Admissions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>QUICK LINKS</h4>
+      <ul>
+        <li><a href="https://mail.nitrkl.ac.in/">Webmail</a></li>
+        <li><a href="https://eapplication.nitrkl.ac.in/nitris/">NITRis Portal</a></li>
+        <li><a href="https://nitrianparent.nitrkl.ac.in/">NITRian Parent</a></li>
+        <li><a href="https://crf.nitrkl.ac.in/">Central Research Facility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Copyright &copy; 2026 National Institute of Technology Rourkela. All Rights Reserved.
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="nitrkl/assets/js/about-3d.js"></script>
+</body>
+</html>

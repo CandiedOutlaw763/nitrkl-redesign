@@ -43,10 +43,10 @@ window.dataLayer = window.dataLayer || [];
 <!-- Website to visit when clicked in fb or WhatsApp-->
 <meta content="https://www.nitrkl.ac.in/" property="og:url"/>
 <title>NIT Rourkela  </title>
-<!-- Google Fonts: Noto Sans -->
+<!-- Google Fonts: Noto Sans & Playfair Display -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
 <!-- Favicon -->
 <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
@@ -71,10 +71,12 @@ window.dataLayer = window.dataLayer || [];
 <link href="assets/css/nitrkl-accessibility.css" rel="stylesheet"/>
 <link href="assets/css/tilted-grid-hero.css" rel="stylesheet"/>
 <link href="assets/css/about-3d.css" rel="stylesheet"/>
+<link href="assets/css/features-with-panel.css" rel="stylesheet"/>
 <link href="assets/css/placement-events-layout.css" rel="stylesheet"/>
+<link href="assets/css/study-at-nitr.css" rel="stylesheet"/>
 <link href="assets/css/social-hub.css" rel="stylesheet"/>
 <link href="assets/css/newsroom.css" rel="stylesheet"/>
-</link></meta></meta></meta></head>
+</head>
 <body class="body">
 <!-- Google Tag Manager (noscript) -->
 <!-- End Google Tag Manager (noscript) -->
@@ -498,19 +500,6 @@ window.dataLayer = window.dataLayer || [];
   <div class="about-3d-orb about-3d-orb-2" aria-hidden="true"></div>
 
   <div class="about-3d-container">
-    <!-- Editorial Section Header -->
-    <div class="notched-section-header">
-      <div class="notched-section-kicker">
-        <span class="notched-kicker-dot"></span>
-        <span>Institute of National Importance &bull; Estd. 1961</span>
-      </div>
-      <h2 class="notched-section-title">
-        Legacy, Vision &amp; <span class="text-accent">Mission</span>
-      </h2>
-      <p class="notched-section-subtitle">
-        Empowering generations of engineers, researchers, and global leaders through academic excellence, Industry 4.0 innovation, and dedicated service to the nation.
-      </p>
-    </div>
 
     <!-- 3 Notched Project Cards: Borderless Layout matching 21st.dev reference -->
     <div class="notched-cards-grid">
@@ -1302,88 +1291,182 @@ window.dataLayer = window.dataLayer || [];
 </section>
 <!--End Research and Innovation and Research Statistics-->
 <!--start Incubation@NITR-->
-<section class="incubation-section">
-<div class="container">
-<div class="incubation-section-row">
-<div class="item-incubation">
-<h2>Incubations@NITR <a href="#">View All</a> </h2>
-<div class="owl-carousel owl-theme incubation-slider wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Startup on Stethaim (AI powered lung health auscultation and monitoring)" class="img-fluid" loading="lazy" src="docs/Entrepreneurship/images/Stethaim.webp"/>
-</div>
-<div class="card-body">
+<section class="fwp-incubation-section" id="incubation-section">
+<div class="fwp-container">
+  <!-- Header with Live Controls -->
+  <div class="fwp-header">
+    <div>
+      <h2 class="fwp-title">
+        <span>Incubations@NITR</span>
+        <span class="fwp-title-bar" aria-hidden="true"></span>
+      </h2>
+    </div>
+    <div class="fwp-header-actions">
+      <button type="button" class="fwp-toggle-btn" id="fwp-toggle-autoplay" aria-label="Pause auto-scroll">
+        <i class="fa-solid fa-pause"></i>
+        <span class="fwp-toggle-text">Auto-scroll Active</span>
+      </button>
+      <a href="/Resources/FTBI/" class="fwp-view-all">
+        <span>View All</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
 
-                                Respiratory diseases such as COPD, pneumonia, and asthma remain major health concerns. Traditional stethoscope diagnosis depends on clinician experience and subjective interpretation, which may delay detection. Stethaim is an AI-powered smart auscultation device that captures lung sounds, detects wheezes and crackles, measures respiratory rate, and provides structured clinical insights for early diagnosis.
+  <!-- Two-column Features Layout (Matching Screen Recording: Left = Large Media Showcase, Right = Interactive List) -->
+  <div class="fwp-grid">
+    <!-- Left Column: Sticky Featured Media Showcase Card -->
+    <div class="fwp-sticky-wrapper">
+      <div class="fwp-hud-frame">
+        <div class="fwp-panel-card">
+          <!-- Slide 1: Stethaim -->
+          <div class="fwp-media-slide active" data-slide="0">
+            <img src="docs/Entrepreneurship/images/Stethaim.webp" alt="Stethaim Auscultation Device" class="fwp-media-img" loading="lazy">
+            <div class="fwp-media-scrim">
+              <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> HealthTech &bull; AI Diagnostics</span>
+              <h3 class="fwp-media-title">Stethaim</h3>
+              <p class="fwp-media-desc-primary">Respiratory diseases such as COPD, pneumonia, and asthma remain major health concerns. Stethaim is an AI-powered smart auscultation device that captures lung sounds, detects wheezes and crackles, measures respiratory rate, and provides structured clinical insights for early diagnosis.</p>
+              <p class="fwp-media-desc-secondary">Clinical-grade acoustics developed and incubated at FTBI &bull; TIIR NIT Rourkela.</p>
+              <a href="https://www.stethaim.com" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+                <span>Explore Startup</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
 
-                            </div>
-<div class="card-footer">
-<a href="https://www.stethaim.com">Know More</a>
-<a href="https://www.stethaim.com"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Startup on IVAPLUS" class="img-fluid" loading="lazy" src="docs/Entrepreneurship/images/Companypic.webp"/>
-</div>
-<div class="card-body">
+          <!-- Slide 2: IVAPLUS -->
+          <div class="fwp-media-slide" data-slide="1">
+            <img src="docs/Entrepreneurship/images/Companypic.webp" alt="IVAPLUS Software" class="fwp-media-img" loading="lazy">
+            <div class="fwp-media-scrim">
+              <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Enterprise AI &bull; EdTech</span>
+              <h3 class="fwp-media-title">IVAPLUS Software</h3>
+              <p class="fwp-media-desc-primary">Specializing in building highly scalable, cloud-ready, comprehensive AI-driven solutions with primary focus on end-to-end automation of enterprise processes, examination administration, and automated learning evaluation suites.</p>
+              <p class="fwp-media-desc-secondary">Scale-ready cloud architecture powering large academic institutions and enterprise workflows.</p>
+              <a href="https://www.ivaplus.co.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+                <span>Explore Startup</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
 
-                                IVAPLUS, is a software development Company specializing in building highly-scalable, cloud-ready, comprehensive AI-driven Solutions with primary focus on End-to-End automation of Enterprise processes. Recently launched suite of products for education sector include XAMLY- Institute Exam Administration, XAMLY- TeacherPlus, XAMLY-Student Preparation and XAMLY-Online Test
+          <!-- Slide 3: IOTA Design -->
+          <div class="fwp-media-slide" data-slide="2">
+            <img src="docs/Entrepreneurship/images/IOTA.webp" alt="IOTA 3D Bioprinting" class="fwp-media-img" loading="lazy">
+            <div class="fwp-media-scrim">
+              <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> DeepTech &bull; Biomedical R&amp;D</span>
+              <h3 class="fwp-media-title">IOTA Design &amp; Innovations</h3>
+              <p class="fwp-media-desc-primary">DeepTech R&amp;D company specializing in advanced medical devices and 3D printing technologies. Developed an indigenous 3D bioprinter for cell printing in biotech research, along with diagnostics for early detection of Dry Eye and Parkinson’s disease.</p>
+              <p class="fwp-media-desc-secondary">Breakthrough biomedical instrumentation advancing cellular research across Indian laboratories.</p>
+              <a href="https://iotadesign.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+                <span>Explore Startup</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
 
-                            </div>
-<div class="card-footer">
-<a href="https://www.ivaplus.co.in/">Know More</a>
-<a href="https://www.ivaplus.co.in/"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Startup on IOTA" class="img-fluid" loading="lazy" src="docs/Entrepreneurship/images/IOTA.webp"/>
-</div>
-<div class="card-body">
+          <!-- Slide 4: Quidle -->
+          <div class="fwp-media-slide" data-slide="3">
+            <img src="docs/Entrepreneurship/images/Quidle.webp" alt="Quidle Green Solutions" class="fwp-media-img" loading="lazy">
+            <div class="fwp-media-scrim">
+              <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> CleanTech &bull; Sustainability</span>
+              <h3 class="fwp-media-title">Quidle Enterprise</h3>
+              <p class="fwp-media-desc-primary">A DPIIT-recognized green venture focused on sustainable urban ecology solutions. Specializes in urban micro-gardening, architectural vertical green walls, and innovative smart planters for modern homes, universities, and commercial complexes.</p>
+              <p class="fwp-media-desc-secondary">Government-recognized green innovation turning urban infrastructure into thriving ecosystems.</p>
+              <a href="https://quidle.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+                <span>Explore Startup</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
 
-                                IOTA Design &amp; Innovations Lab Pvt. Ltd. is an R&amp;D company specializing in medical devices and 3D printing technologies. It has developed a 3D bioprinter for cell printing to support biotechnology and life science research. The company has also created a device for early detection of Dry Eye disease and is developing technologies for early detection of Parkinson’s disease.
+          <!-- Slide 5: Hoardspace -->
+          <div class="fwp-media-slide" data-slide="4">
+            <img src="docs/Entrepreneurship/images/hoardspace.webp" alt="Hoardspace Advertising" class="fwp-media-img" loading="lazy">
+            <div class="fwp-media-scrim">
+              <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> AdTech &bull; DOOH Marketplace</span>
+              <h3 class="fwp-media-title">Hoardspace Media</h3>
+              <p class="fwp-media-desc-primary">Founded by student entrepreneurs from NIT Rourkela, Hoardspace provides an intelligent digital marketplace for Out-of-Home (OOH) and Digital Out-of-Home (DOOH) advertising, enabling brands to discover, compare, and book billboards and digital displays in real time.</p>
+              <p class="fwp-media-desc-secondary">Student-led innovation pioneering programmatic outdoor advertising across Indian tier-1 and tier-2 hubs.</p>
+              <a href="https://www.hoardspace.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+                <span>Explore Startup</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                            </div>
-<div class="card-footer">
-<a href="https://iotadesign.in/">Know More</a>
-<a href="https://iotadesign.in/"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Startup on Quidle" class="img-fluid" loading="lazy" src="docs/Entrepreneurship/images/Quidle.webp"/>
-</div>
-<div class="card-body">
+    <!-- Right Column: Interactive Vertical List matching Screen Recording -->
+    <div class="fwp-list-wrapper">
+      <ul class="fwp-list" role="tablist">
+        <!-- Item 1 -->
+        <li class="fwp-item active" data-index="0" role="tab" aria-selected="true" tabindex="0">
+          <span class="fwp-item-num">01</span>
+          <h4 class="fwp-item-title">
+            <span class="fwp-hover-arrow">→ </span>
+            <span>Stethaim &bull; AI Lung Diagnostics</span>
+          </h4>
+          <span class="fwp-item-cat">HealthTech &bull; Biomedical Diagnostics</span>
+          <div class="fwp-progress-track">
+            <div class="fwp-progress-bar"></div>
+          </div>
+        </li>
 
-                                Quidle Enterprise Private Limited is a DPIIT-recognized startup by the Government of India
-focused on creating sustainable urban green solutions. The company specializes in urban
-gardening, landscape design, vertical green walls, and innovative smart planters for homes,
-offices, and institutions, helping transform modern spaces into greener and healthier environments.
+        <!-- Item 2 -->
+        <li class="fwp-item" data-index="1" role="tab" aria-selected="false" tabindex="0">
+          <span class="fwp-item-num">02</span>
+          <h4 class="fwp-item-title">
+            <span class="fwp-hover-arrow">→ </span>
+            <span>IVAPLUS Software</span>
+          </h4>
+          <span class="fwp-item-cat">Enterprise AI &bull; EdTech Cloud Automation</span>
+          <div class="fwp-progress-track">
+            <div class="fwp-progress-bar"></div>
+          </div>
+        </li>
 
-                            </div>
-<div class="card-footer">
-<a href="https://quidle.in/">Know More</a>
-<a href="https://quidle.in/"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-<div class="item card shadow-md">
-<div class="img-box">
-<img alt="NIT Rourkela Startup on Hoardspace" class="img-fluid" loading="lazy" src="docs/Entrepreneurship/images/hoardspace.webp"/>
-</div>
-<div class="card-body">
+        <!-- Item 3 -->
+        <li class="fwp-item" data-index="2" role="tab" aria-selected="false" tabindex="0">
+          <span class="fwp-item-num">03</span>
+          <h4 class="fwp-item-title">
+            <span class="fwp-hover-arrow">→ </span>
+            <span>IOTA Design &amp; Innovations</span>
+          </h4>
+          <span class="fwp-item-cat">DeepTech &bull; 3D Bioprinting &amp; Diagnostics</span>
+          <div class="fwp-progress-track">
+            <div class="fwp-progress-bar"></div>
+          </div>
+        </li>
 
-                                Hoardspace Bookings Private Limited is an AdTech startup founded by first-year students from the National Institute of Technology Rourkela. It provides a digital marketplace for Out-of-Home (OOH) and Digital Out-of-Home (DOOH) advertising, enabling brands and agencies to discover, compare, and book billboards, hoardings, and digital screens across cities, making outdoor advertising more transparent and accessible.
+        <!-- Item 4 -->
+        <li class="fwp-item" data-index="3" role="tab" aria-selected="false" tabindex="0">
+          <span class="fwp-item-num">04</span>
+          <h4 class="fwp-item-title">
+            <span class="fwp-hover-arrow">→ </span>
+            <span>Quidle Enterprise</span>
+          </h4>
+          <span class="fwp-item-cat">CleanTech &bull; Urban Green Living</span>
+          <div class="fwp-progress-track">
+            <div class="fwp-progress-bar"></div>
+          </div>
+        </li>
 
-                            </div>
-<div class="card-footer">
-<a href="https://www.hoardspace.in/">Know More</a>
-<a href="https://www.hoardspace.in/"><i class="bi bi-arrow-right"></i></a>
-</div>
-</div>
-</div>
-</div>
-</div>
+        <!-- Item 5 -->
+        <li class="fwp-item" data-index="4" role="tab" aria-selected="false" tabindex="0">
+          <span class="fwp-item-num">05</span>
+          <h4 class="fwp-item-title">
+            <span class="fwp-hover-arrow">→ </span>
+            <span>Hoardspace Media</span>
+          </h4>
+          <span class="fwp-item-cat">AdTech &bull; Digital DOOH Network</span>
+          <div class="fwp-progress-track">
+            <div class="fwp-progress-bar"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 </section>
 <!--end Incubation@NITR-->
@@ -1695,136 +1778,268 @@ IAS Student Travel Award
 </section>
 <!--end Social Initiatives-->
 <!--start awards,recognittion and study@NITR -->
-<section class="academic-programe">
-<div class="container">
-<div class="academic-programe-box">
-<nav class="nav nav-pills flex-column" id="myTab">
-<h2>Study@NITR</h2>
-<a class="active nav-link" data-bs-toggle="pill" href="#category_tab1">UNDERGRADUATE</a>
-<a class="nav-link" data-bs-toggle="pill" href="#category_tab2">POSTGRADUATE</a>
-<a class="nav-link" data-bs-toggle="pill" href="#category_tab3">DOCTORAL</a>
-<a class="nav-link" data-bs-toggle="pill" href="#category_tab4">EXECUTIVE PH.D.</a>
-<a class="nav-link" data-bs-toggle="pill" href="#category_tab5">PART TIME PROGRAMMES</a>
-</nav>
-<div class="tab-content">
-<article class="tab-pane fade show active" id="category_tab1">
-<h2>UNDERGRADUATE</h2>
+<section class="study-at-nitr-section" id="study-at-nitr" aria-label="Academic Programmes at NIT Rourkela">
+  <div class="san-section-anchor" id="study-anchor"></div>
+  
+  <div class="san-split-wrapper">
+    <!-- LEFT PANEL: Crimson Editorial Navigation Panel (Casa Vicens Split Recording Match) -->
+    <div class="san-menu-panel">
+      <div class="san-menu-inner">
+        <!-- Section Heading: Study @ NITR -->
+        <div class="san-menu-header">
+          <h2 class="san-menu-title">Study @ NITR</h2>
+        </div>
 
-                    Admission to undergraduate courses is made in the autumn semester at the first-year level through JEE (Main) or similar test approved by NIT Council,
+        <!-- Main Programme Navigation List (Editorial Serif Display) -->
+        <ul class="san-nav-list" role="tablist" aria-label="Academic Programmes">
+          <!-- 01: Undergraduate -->
+          <li class="san-nav-item active" data-index="0" role="tab" aria-selected="true" tabindex="0">
+            <a href="#study-at-nitr" class="san-nav-link">
+              <span class="san-item-title">Undergraduate</span>
+              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
 
-                    the counselling for which is done by Joint Seat Allocation Authority (<a class="outside-link text-warning" href="https://josaa.nic.in/" target="_blank">JoSAA</a>)
+          <!-- 02: Postgraduate -->
+          <li class="san-nav-item" data-index="1" role="tab" aria-selected="false" tabindex="0">
+            <a href="#study-at-nitr" class="san-nav-link">
+              <span class="san-item-title">Postgraduate</span>
+              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
 
-                    and Central Seat Allocation Board (<a class="outside-link text-warning" href="https://csab.nic.in/" target="_blank">CSAB</a>) or its equivalent approved by the NIT Council and/or
+          <!-- 03: Doctoral -->
+          <li class="san-nav-item" data-index="2" role="tab" aria-selected="false" tabindex="0">
+            <a href="#study-at-nitr" class="san-nav-link">
+              <span class="san-item-title">Doctoral</span>
+              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
 
-                    Central Government. Besides, a specified number of foreign nationals selected under the policy of the Government of India may be admitted directly to the 1st-year of any
+          <!-- 04: Executive Ph.D. -->
+          <li class="san-nav-item" data-index="3" role="tab" aria-selected="false" tabindex="0">
+            <a href="#study-at-nitr" class="san-nav-link">
+              <span class="san-item-title">Executive Ph.D.</span>
+              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
 
-                    of the programmes.
+          <!-- 05: Part Time Programmes -->
+          <li class="san-nav-item" data-index="4" role="tab" aria-selected="false" tabindex="0">
+            <a href="#study-at-nitr" class="san-nav-link">
+              <span class="san-item-title">Part Time Programmes</span>
+              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        </ul>
 
+        <!-- Secondary Sublinks Grid -->
+        <div class="san-sublinks-wrapper">
+          <div class="san-sublinks-grid">
+            <a href="https://josaa.nic.in/" target="_blank" rel="noopener" class="san-sublink-item">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>JoSAA Counselling</span>
+            </a>
+            <a href="https://csab.nic.in/" target="_blank" rel="noopener" class="san-sublink-item">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>CSAB Portal</span>
+            </a>
+            <a href="https://ccmt.nic.in/" target="_blank" rel="noopener" class="san-sublink-item">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>CCMT PG Portal</span>
+            </a>
+            <a href="https://online-inspire.gov.in/" target="_blank" rel="noopener" class="san-sublink-item">
+              <i class="fa-solid fa-award"></i>
+              <span>DST Fellowships</span>
+            </a>
+            <a href="/Academic/Admission/" class="san-sublink-item">
+              <i class="fa-solid fa-scroll"></i>
+              <span>Academic Regulations</span>
+            </a>
+            <a href="/Institute/Rules_Regulations/" class="san-sublink-item">
+              <i class="fa-solid fa-file-invoice"></i>
+              <span>Fee Ordinances</span>
+            </a>
+          </div>
+        </div>
 
+        <!-- Bottom Footer: Social & Institute Portals -->
+        <div class="san-menu-footer">
+          <div class="san-footer-socials">
+            <a href="https://www.instagram.com/nitrourkela1961/" target="_blank" rel="noopener" class="san-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/nitrourkela" target="_blank" rel="noopener" class="san-social-btn" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/nitrkl1" target="_blank" rel="noopener" class="san-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" target="_blank" rel="noopener" class="san-social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@NITROURKELA1961" target="_blank" rel="noopener" class="san-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+          <a href="https://eapplication.nitrkl.ac.in/nitris/" target="_blank" rel="noopener" class="san-portal-link">
+            <span>NITRis ERP</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
 
-                </article>
-<article class="tab-pane fade" id="category_tab2">
-<h2>POSTGRADUATE</h2>
-<h4 class="mt-5" style="color:#fff;">M. Tech.</h4>
-<p>
+    <!-- RIGHT PANEL: Atmospheric Stage with 100% Readable Full Text and Calm Backgrounds -->
+    <div class="san-stage-panel">
+      <!-- Watermark Ghost Background Typography -->
+      <div class="san-watermark-wrapper" aria-hidden="true">
+        <div class="san-watermark-top">National Institute of Technology</div>
+        <div class="san-watermark-main">STUDY@NITR</div>
+      </div>
 
-                        The courses leading to M. Tech. degree are open to candidates who have obtained the requisite qualification with 60% marks or 6.50 CGPA in aggregate in the qualifying examination.
+      <!-- Top Right Header Action Badges -->
+      <div class="san-stage-toolbar">
+        <a href="/Academic/Admission/" class="san-toolbar-pill">
+          <i class="fa-solid fa-graduation-cap"></i> Admissions 2026
+        </a>
+      </div>
 
-                        Admission for the GATE qualified candidates is made through Common Admission Process called Central Counselling for Master’s of Technology
+      <!-- Center Panes: Full Original Text Displayed with Absolute Clarity -->
+      <div class="san-panes-wrapper">
 
-                        (<a class="outside-link text-warning" href="https://ccmt.nic.in/" target="_blank">CCMT</a>).  Relaxation up to 5% of marks
+        <!-- Pane 0: Undergraduate -->
+        <div class="san-pane active" data-slide="0" role="tabpanel" aria-label="Undergraduate Programmes">
+          <div class="san-pane-bg" style="background-image: url('assets/images/campus.jpeg');"></div>
+          <div class="san-pane-scrim"></div>
+          <div class="san-content-card">
+            <h2 class="san-content-title">UNDERGRADUATE</h2>
+            <p>
+              Admission to undergraduate courses is made in the autumn semester at the first-year level through JEE (Main) or similar test approved by NIT Council, the counselling for which is done by Joint Seat Allocation Authority (<a class="san-inline-link" href="https://josaa.nic.in/" target="_blank" rel="noopener">JoSAA</a>) and Central Seat Allocation Board (<a class="san-inline-link" href="https://csab.nic.in/" target="_blank" rel="noopener">CSAB</a>) or its equivalent approved by the NIT Council and/or Central Government. Besides, a specified number of foreign nationals selected under the policy of the Government of India may be admitted directly to the 1st-year of any of the programmes.
+            </p>
+            <div class="san-pane-footer">
+              <a href="https://josaa.nic.in/" target="_blank" rel="noopener" class="san-btn-action">
+                <span>JoSAA Portal</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="https://csab.nic.in/" target="_blank" rel="noopener" class="san-btn-action">
+                <span>CSAB Portal</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
-                        or 0.5 CGPA is allowed by senate for sponsored candidates with proven research or profession experience.
+        <!-- Pane 1: Postgraduate -->
+        <div class="san-pane" data-slide="1" role="tabpanel" aria-label="Postgraduate Programmes">
+          <div class="san-pane-bg" style="background-image: url('assets/images/gallery3.webp');"></div>
+          <div class="san-pane-scrim"></div>
+          <div class="san-content-card">
+            <h2 class="san-content-title">POSTGRADUATE</h2>
+            
+            <h4 class="san-content-subtitle">M. Tech.</h4>
+            <p>
+              The courses leading to M. Tech. degree are open to candidates who have obtained the requisite qualification with 60% marks or 6.50 CGPA in aggregate in the qualifying examination. Admission for the GATE qualified candidates is made through Common Admission Process called Central Counselling for Master’s of Technology (<a class="san-inline-link" href="https://ccmt.nic.in/" target="_blank" rel="noopener">CCMT</a>). Relaxation up to 5% of marks or 0.5 CGPA is allowed by senate for sponsored candidates with proven research or profession experience.
+            </p>
 
-                    </p>
-<h4 style="color:#fff;">M.Sc.</h4>
-<p>
+            <h4 class="san-content-subtitle">M.Sc.</h4>
+            <p>
+              For admission to M. Sc., candidates must have required B. Sc. degree with the subject applied for as one of the subjects (either Pass or Honours), Mathematics in +2 levels is compulsory for all courses except Life Science. The admission to the above programmes is made through Centralized Counselling for M.Sc.
+            </p>
 
-                        For admission to M. Sc., candidates must have required B. Sc. degree with the subject applied for as one of the subjects (either Pass or Honours), Mathematics in +2 levels
+            <h4 class="san-content-subtitle">M. A. (Development Studies)</h4>
+            <p>
+              The requisite academic qualification for MA in Development Studies is B. Tech. / B. A. / B. Sc. / B. Com. with 55% marks or 6.00 CGPA. Amongst B. A. / B. Sc. / B. Com. applicants with honours are given preference. Admission to the programme is made on the basis of career marks.
+            </p>
 
-                        is compulsory for all courses except Life Science. The admission to the above programmes is made through Centralized Counselling for M.Sc.
+            <h4 class="san-content-subtitle">M. B. A.</h4>
+            <p>
+              Minimum eligibility criterion for admission to MBA is any Graduate with 60% or 6.5 CGPA (on 10-point scale) and 55% or 6.0 CGPA in case of SC/ST candidates. Applicants who have qualified at national/international tests for admission to business schools with high scores get preference. Final selection is based on group discussion and personal interview conducted at the Institute, along with academic career and score of national or international tests.
+            </p>
 
-                    </p>
-<h4 style="color:#fff;">M. A. (Development Studies)</h4>
-<p>
+            <h4 class="san-content-subtitle">M.Tech (Research)</h4>
+            <p>
+              A few departments offer M.Tech by research. This course don’t have a time bound and the course work will be decided by the Masters Scrutiny Committee (MSC). This course requires a submission of original research in form of a thesis..The minimum qualification required for admission to the program is one of the following.
+            </p>
+            <ol class="san-eligibility-list">
+              <li>B.E/B.Tech/B.Pharm/MCA or equivalent in relevant discipline with 7.0 CGPA or 65% marks in aggregate.</li>
+              <li>M.Sc in Basic Sciences with CGPA 6.5 or 60% marks in aggregate in relevant disciplines.</li>
+              <li>M.B.B.S with CGPA 6.5 or 60% marks in aggregate.</li>
+              <li>M.Sc./M.A/MBA/M.Com. in Humanities and Social Sciences or Management with CGPA 6.5 or 60% marks.</li>
+            </ol>
 
-                        The requisite academic qualification for MA in Development Studies is B. Tech. / B. A. / B. Sc. / B. Com. with 55% marks or 6.00 CGPA.
+            <div class="san-pane-footer">
+              <a href="https://ccmt.nic.in/" target="_blank" rel="noopener" class="san-btn-action">
+                <span>CCMT PG Portal</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="/Academic/Admission/" class="san-btn-action">
+                <span>Academic Admissions</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
-                        Amongst B. A. / B. Sc. / B. Com. applicants with honours are given preference.  Admission to the programme is made on the basis of career marks.
+        <!-- Pane 2: Doctoral -->
+        <div class="san-pane" data-slide="2" role="tabpanel" aria-label="Doctoral Programmes">
+          <div class="san-pane-bg" style="background-image: url('assets/images/gallery1.webp');"></div>
+          <div class="san-pane-scrim"></div>
+          <div class="san-content-card">
+            <h2 class="san-content-title">DOCTORAL</h2>
+            <p>
+              The institute offers various research centric courses in various departments/ Centers like Post Doc, PhD, M.Tech. research under various schemes with fellowship like <a class="san-inline-link" href="https://online-inspire.gov.in/" target="_blank" rel="noopener">DST Inspire</a>, <a class="san-inline-link" href="https://www.meity.gov.in/offerings/schemes-and-services/details/visvesvaraya-phd-scheme-for-electronics-it" target="_blank" rel="noopener">Visvesvaraya PhD Scheme for Electronics and IT</a>, and sponsored programs like QIP and self-financed.
+            </p>
 
-                    </p>
-<h4 style="color:#fff;">M. B. A.</h4>
-<p>
+            <h4 class="san-content-subtitle">Doctor of Philosophy (Ph.D.)</h4>
+            <p>
+              The Institute provides facilities for research leading to the Degree of Doctor of Philosophy (PhD) in Engineering, Science, Management, Planning and Architecture, Humanities and Social Sciences in various disciplines. Candidates except the members of the Institute faculty, QIP scholars and scholars nominated by the Central Government have to be selected by Departmental Research Committee (DRC) on the basis of their academic background, performance in written test and/or interview.
+            </p>
 
-                        Minimum eligibility criterion for admission to MBA is any Graduate with 60% or 6.5 CGPA (on 10-point scale) and 55% or 6.0 CGPA in case of SC/ST candidates.
+            <div class="san-pane-footer">
+              <a href="/Academic/Admission/" class="san-btn-action">
+                <span>Doctoral Admissions</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="/Research/PublicationsPatents/" class="san-btn-action">
+                <span>Research Facilities</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
-                        Applicants who have qualified at national/international tests for admission to business schools with high scores get preference.  Final selection is based on group
+        <!-- Pane 3: Executive Ph.D. -->
+        <div class="san-pane" data-slide="3" role="tabpanel" aria-label="Executive Ph.D. Programmes">
+          <div class="san-pane-bg" style="background-image: url('assets/images/gallery9.webp');"></div>
+          <div class="san-pane-scrim"></div>
+          <div class="san-content-card">
+            <h2 class="san-content-title">EXECUTIVE PH.D.</h2>
+            <p>
+              NIT Rourkela has opened its doors for working professionals by offering programmes which are designed to enable them to pursue their doctorate degree while continuing in their Job/Profession in order to help them to accelerate their career. Candidates with minimum eligibility criteria as per NIT guidelines can apply and they will be selected based upon their academic background, performance in written test and/or interview.
+            </p>
 
-                        discussion and personal interview conducted at the Institute, along with academic career and score of national or international tests.
+            <div class="san-pane-footer">
+              <a href="/Academic/Admission/" class="san-btn-action">
+                <span>Apply for Executive Ph.D.</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
-                    </p>
-<h4 style="color:#fff;">M.Tech(Research)</h4>
-<p>
+        <!-- Pane 4: Part Time Programmes -->
+        <div class="san-pane" data-slide="4" role="tabpanel" aria-label="Part Time Programmes">
+          <div class="san-pane-bg" style="background-image: url('assets/images/gallery4.webp');"></div>
+          <div class="san-pane-scrim"></div>
+          <div class="san-content-card">
+            <h2 class="san-content-title">PART TIME PROGRAMMES</h2>
+            <p>
+              NIT Rourkela has opened its doors for working professionals. These programmes are designed to enable them to pursue higher study while continuing in their Job/Profession in order to help them to accelerate their career.
+            </p>
 
-                        A few departments offer M.Tech by research. This course don’t have a time bound and the course work will be decided by the Masters Scrutiny Committee (MSC).
+            <div class="san-pane-footer">
+              <a href="/Academic/Admission/" class="san-btn-action">
+                <span>Explore Part Time Programmes</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
 
-                        This course requires a submission of original research in form of a thesis..The minimum qualification required for admission to the program is one of the following.
-
-                    </p>
-<ol style="list-style:decimal">
-<li>B.E/B.Tech/B.Pharm/MCA or equivalent in relevant discipline with 7.0 CGPA or 65% marks in aggregate. </li>
-<li>M.Sc in Basic Sciences with CGPA 6.5 or 60% marks in aggregate in relevant disciplines.</li>
-<li>M.B.B.S with CGPA 6.5 or 60% marks in aggregate. </li>
-<li>M.Sc./M.A/MBA/M.Com. in Humanities and Social Sciences or Management with CGPA 6.5 or 60% marks. </li>
-</ol>
-</article>
-<article class="tab-pane fade" id="category_tab3">
-<h2>DOCTORAL</h2>
-
-                    The institute offers various research centric courses in various departments/ Centers like Post Doc, PhD, M.Tech. research under various schemes
-
-                    with fellowship like <a class="outside-link text-decoration-none text-white" href="https://online-inspire.gov.in/" target="_blank">DST Inspire</a>,
-
-                    <a class="outside-link text-decoration-none text-white" href="https://www.meity.gov.in/offerings/schemes-and-services/details/visvesvaraya-phd-scheme-for-electronics-it" target="_blank">
-
-                        Visvesvaraya PhD Scheme for Electronics and IT
-
-                    </a>,
-
-                    and sponsored programs like QIP and self-financed.
-
-                    <h4 style="color:#fff;">Doctor of Philosophy (Ph.D.)</h4>
-<p>
-
-                        The Institute provides facilities for research leading to the Degree of Doctor of Philosophy (PhD) in Engineering, Science, Management,
-
-                        Planning and Architecture, Humanities and Social Sciences in various disciplines. Candidates except the members of the Institute faculty, QIP scholars and
-
-                        scholars nominated by the Central Government have to be selected by Departmental Research Committee (DRC) on the basis of their academic background,
-
-                        performance in written test and/or interview.
-
-                    </p>
-</article>
-<article class="tab-pane fade" id="category_tab4">
-<h2>EXECUTIVE PH.D.</h2>
-
-                    NIT Rourkela has opened its doors for working professionals by offering programmes which are designed to enable them to pursue their doctorate degree while continuing in
-
-                    their Job/Profession in order to help them to accelerate their career. Candidates with minimum eligibility criteria as per NIT guidelines can apply and they will be selected
-
-                    based upon their academic background, performance in written test and/or interview.
-
-                </article>
-<article class="tab-pane fade" id="category_tab5">
-<h2>PART TIME PROGRAMMES</h2>
-
-                    NIT Rourkela has opened its doors for working professionals. These programmes are designed to enable them to pursue higher study while continuing in their Job/Profession in order to help them to accelerate their career.
-
-                </article>
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 </section>
 <!--end awards,recognittion and study@NITR-->
 <!--start thought of the day-->
@@ -2100,6 +2315,8 @@ IAS Student Travel Award
 <script src="assets/js/loader.js"></script>
 <script src="assets/js/tilted-grid-hero.js"></script>
 <script src="assets/js/about-3d.js"></script>
+<script src="assets/js/features-with-panel.js"></script>
+<script src="assets/js/study-at-nitr.js"></script>
 <script>
 
         $(document).ready(function(){

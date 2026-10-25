@@ -8,3 +8,16 @@ desktop.ini
 .idea/
 *.swp
 *.swo
+
+# Dependencies & Build artifacts
+node_modules/
+dist/
+
+# Local Scratch & Screen Recordings
+/dbim_extracted.txt
+/scratch_notch.py
+/Recording menu.mp4
+/Screen Recording incubation.mp4
+/Screen Recording studyatnitr.mp4
+/405f7c961cef45c6689002aed6f8e08c.pdf
+/e3fecb3f602c50bec70eedc682d9a7d0.pdf

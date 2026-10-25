@@ -1,0 +1,307 @@
+/* ==========================================================================
+   NIT Rourkela - Placement Statistics & Announcements / Events Reordered Layout
+   ========================================================================== */
+
+.news-section {
+  padding: 50px 40px !important;
+  background-color: #fafbfd;
+}
+
+/* Master grid: Row 1 = Placement Statistics (full width), Row 2 = Announcements & Events (2 columns) */
+.news-section .news-section-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  column-gap: 40px !important;
+  row-gap: 45px !important;
+  align-items: start !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. TOP BLOCK: Placement Statistics & NIRF Ranking
+   -------------------------------------------------------------------------- */
+.news-section .news-section-row .item-news {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+  background: #ffffff;
+  border: 1px solid #e9edf3;
+  border-radius: 16px;
+  padding: 30px 35px;
+  box-shadow: 0 6px 24px rgba(0, 32, 74, 0.05);
+}
+
+.news-section .news-section-row .item-news h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #1a2238;
+  border-bottom: 2px solid #eef2f7;
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.news-section .news-section-row .item-news h2 a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--bs-primary, #b33919);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.news-section .news-section-row .item-news h2 a:hover {
+  transform: translateX(3px);
+  color: #8c2a11;
+}
+
+/* Placement Banner Wrapper */
+.placement-banner-card {
+  position: relative;
+  display: block;
+  max-width: 980px;
+  margin: 0 auto 30px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #ffffff;
+}
+
+.placement-banner-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+}
+
+.placement-banner-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.placement-banner-card .placement-badge {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  background: rgba(15, 23, 42, 0.88);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  backdrop-filter: blur(4px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+/* NIRF Ranking Section Inside Placement Block */
+.news-section .news-section-row .item-news .item-campus {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.news-section .news-section-row .item-news .item-campus .admision-link h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a2238;
+  border-bottom: 2px solid #eef2f7;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.news-section .news-section-row .item-news .item-campus .admision-link .item {
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+  color: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.news-section .news-section-row .item-news .item-campus .admision-link .item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+}
+
+.news-section .news-section-row .item-news .item-campus .admision-link .item h4.counter {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   2. BOTTOM ROW - LEFT: Announcements & Recruitment
+   -------------------------------------------------------------------------- */
+.news-section .news-section-row .item-notice {
+  grid-column: 1 !important;
+  width: 100% !important;
+  background: #ffffff;
+  border: 1px solid #e9edf3;
+  border-radius: 16px;
+  padding: 26px 28px;
+  box-shadow: 0 6px 24px rgba(0, 32, 74, 0.05);
+}
+
+.news-section .news-section-row .item-notice .nav-tabs {
+  border-bottom: 2px solid #eef2f7;
+  gap: 6px;
+  padding-bottom: 2px;
+}
+
+.news-section .news-section-row .item-notice .nav-tabs button {
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 9px 24px;
+  border-radius: 8px 8px 0 0;
+  background-color: #eef2f7;
+  color: #4a5568;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.news-section .news-section-row .item-notice .nav-tabs button.active {
+  background-color: var(--bs-primary, #b33919);
+  color: #ffffff;
+}
+
+.news-section .news-section-row .item-notice .tab-content {
+  padding: 16px 0 0 0;
+  height: 470px;
+}
+
+.news-section .news-section-row .item-notice .scrollbox {
+  height: 410px !important;
+}
+
+.news-section .news-section-row .item-notice .scrollgroup .scrollitem {
+  padding: 12px 6px;
+  border-bottom: 1px solid #f1f4f8;
+  transition: background-color 0.2s ease;
+}
+
+.news-section .news-section-row .item-notice .scrollgroup .scrollitem:hover {
+  background-color: #f8fafc;
+}
+
+.news-section .news-section-row .item-notice .scrollgroup .scrollitem a {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: #1a2238;
+}
+
+.news-section .news-section-row .item-notice .scrollgroup .scrollitem span {
+  font-size: 0.82rem;
+  color: #718096;
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   3. BOTTOM ROW - RIGHT: Upcoming Events
+   -------------------------------------------------------------------------- */
+.news-section .news-section-row .item-event {
+  grid-column: 2 !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+  background: #ffffff;
+  border: 1px solid #e9edf3;
+  border-radius: 16px;
+  padding: 26px 28px;
+  box-shadow: 0 6px 24px rgba(0, 32, 74, 0.05);
+}
+
+.news-section .news-section-row .item-event h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1a2238;
+  border-bottom: 2px solid #eef2f7;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.news-section .news-section-row .item-event h2 a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--bs-primary, #b33919);
+  text-decoration: none;
+}
+
+.news-section .news-section-row .item-event .event-scroll {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-section .news-section-row .item-event .event-scroll li {
+  margin: 10px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eef2f7;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #ffffff;
+}
+
+.news-section .news-section-row .item-event .event-scroll li:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.news-section .news-section-row .item-event .event-scroll li .desc {
+  padding: 10px 14px;
+  background-color: #fafbfd;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #2d3748;
+}
+
+.news-section .news-section-row .item-event .event-scroll li .desc span {
+  color: var(--bs-primary, #b33919);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.news-section .news-section-row .item-event .event-scroll li .desc a {
+  font-weight: 600;
+  color: #1a2238;
+  text-decoration: underline;
+  margin-left: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .news-section {
+    padding: 40px 25px !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .news-section .news-section-row {
+    grid-template-columns: 1fr !important;
+    gap: 35px !important;
+  }
+
+  .news-section .news-section-row .item-news,
+  .news-section .news-section-row .item-notice,
+  .news-section .news-section-row .item-event {
+    grid-column: 1 !important;
+  }
+
+  .news-section .news-section-row .item-notice,
+  .news-section .news-section-row .item-event {
+    padding: 20px;
+  }
+}
