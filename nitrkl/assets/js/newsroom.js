@@ -146,7 +146,7 @@
         .from(root.querySelector('.nr-title'), { y: 40, opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.25')
         .fromTo(root.querySelector('.nr-title'), { '--nr-underline': 0 }, { '--nr-underline': 1, duration: 0.8, ease: 'power2.inOut' }, '-=0.3')
         .from(root.querySelector('.nr-viewall'), { x: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, '-=0.7')
-        .fromTo(root.querySelector('.nr-ticker'), { clipPath: 'inset(0 100% 0 0 round 12px)' }, { clipPath: 'inset(0 0% 0 0 round 12px)', duration: 0.9, ease: 'power3.inOut' }, '-=0.4');
+        .fromTo(root.querySelector('.nr-ticker'), { clipPath: 'inset(0 100% 0 0 round 0px)' }, { clipPath: 'inset(0 0% 0 0 round 0px)', duration: 0.9, ease: 'power3.inOut' }, '-=0.4');
 
     // Featured story: image wipes in, text follows
     var featured = root.querySelector('.nr-featured');
