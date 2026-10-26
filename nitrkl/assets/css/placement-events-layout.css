@@ -172,10 +172,9 @@
 /* In-Banner Interactive Embed Frame */
 .placement-embed-frame-wrap {
   width: 100%;
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
   border: 1px solid #dbe2ea;
-  box-shadow: 0 12px 36px rgba(0, 32, 74, 0.09);
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -194,14 +193,13 @@
 }
 
 .placement-embed-header-bar {
-  background: linear-gradient(90deg, #150202 0%, #771D1D 50%, #1D0A69 100%);
+  background: #771D1D;
   color: #ffffff;
   padding: 10px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .embed-header-left {
@@ -209,20 +207,6 @@
   align-items: center;
   gap: 12px;
   overflow: hidden;
-}
-
-.embed-live-tag {
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  background: rgba(255, 255, 255, 0.18);
-  padding: 3px 9px;
-  border-radius: 12px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #ffc107;
 }
 
 .embed-heading {
@@ -242,10 +226,10 @@
 }
 
 .embed-action-btn {
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 0;
   padding: 5px 10px;
   font-size: 0.78rem;
   font-weight: 600;
@@ -257,18 +241,13 @@
 }
 
 .embed-action-btn:hover {
-  background: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.embed-action-btn.embed-close-btn {
-  background: rgba(220, 38, 38, 0.35);
-  border-color: rgba(220, 38, 38, 0.5);
 }
 
 .embed-action-btn.embed-close-btn:hover {
-  background: rgba(220, 38, 38, 0.85);
+  background: #ffffff;
+  color: #771D1D;
 }
 
 .placement-embed-viewport {
