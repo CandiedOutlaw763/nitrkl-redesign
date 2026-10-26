@@ -131,3 +131,10 @@ footer .social-links a:hover {
   background: #A72626;
   color: #ffffff;
 }
+
+/* Homepage footer without the photo gallery column */
+@media only screen and (min-width: 1025px) {
+  footer .footer-row.footer-row-3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
