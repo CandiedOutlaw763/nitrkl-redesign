@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "nitrkl-static",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "serve", "nitrkl", "-l", "3005"],
+      "port": 3005
     }
   ]
 }
