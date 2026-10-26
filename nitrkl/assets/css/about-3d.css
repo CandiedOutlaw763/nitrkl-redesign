@@ -704,13 +704,13 @@
   color: #111827;
 }
 
-/* Card Media Cover (Aspect 4/3, rounded 26px, borderless) */
+/* Card Media Cover (Aspect 4/3, square corners, borderless) */
 .notched-card-cover {
   position: relative;
   aspect-ratio: 4 / 3;
   width: 100%;
   overflow: hidden;
-  border-radius: 26px;
+  border-radius: 0;
   background: #f3f4f6;
   border: none !important;
   outline: none !important;
@@ -742,7 +742,7 @@
   background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: 9999px;
+  border-radius: 0;
   padding: 4px 14px;
   font-size: 12px;
   font-weight: 700;
@@ -758,6 +758,7 @@
    ========================================================================== */
 
 .notched-svg-cutout {
+  display: none; /* curved notch replaced by the square notch on the arrow button */
   position: absolute;
   bottom: -1px;
   right: -1px;
@@ -769,22 +770,23 @@
   transition: fill 0.3s ease;
 }
 
-/* Action Arrow Button in Bottom-Right Corner */
+/* Action Arrow Button in Bottom-Right Corner, set in a square notch */
 .notched-arrow-btn {
+  --notch-color: #ffffff;
   position: absolute;
-  bottom: 8px;
-  right: 8px;
+  bottom: 0;
+  right: 0;
   z-index: 20;
   width: 58px;
   height: 58px;
-  border-radius: 50%;
+  border-radius: 0;
   background: #f3f4f6;
   border: none;
   color: #111827;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: -8px -8px 0 0 var(--notch-color);
   transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
@@ -806,8 +808,7 @@
 }
 
 .notched-card:hover .notched-arrow-btn {
-  transform: scale(1.06);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: -8px -8px 0 0 var(--notch-color);
 }
 
 .notched-card:hover .notched-arrow-btn:not(.accent-orange) {
@@ -870,7 +871,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 5px 12px;
-  border-radius: 8px;
+  border-radius: 0;
   background: #f3f4f6;
   border: none !important;
   color: #4b5563;
@@ -1190,6 +1191,10 @@
 
 .about-section-3d.dark .notched-svg-cutout {
   fill: #09090b !important;
+}
+
+.about-section-3d.dark .notched-arrow-btn {
+  --notch-color: #09090b;
 }
 
 .about-section-3d.dark .notched-arrow-btn:not(.accent-orange) {
