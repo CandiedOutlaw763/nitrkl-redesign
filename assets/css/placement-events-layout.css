@@ -45,7 +45,7 @@
 .news-section .news-section-row .item-news h2 a {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--bs-primary, #b33919);
+  color: var(--bs-primary, #771D1D);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -55,10 +55,10 @@
 
 .news-section .news-section-row .item-news h2 a:hover {
   transform: translateX(3px);
-  color: #8c2a11;
+  color: #A72626;
 }
 
-/* Placement Banner Wrapper */
+/* Placement Banner Wrapper (Legacy Thumbnail Card) */
 .placement-banner-card {
   position: relative;
   display: block;
@@ -100,6 +100,28 @@
   align-items: center;
   gap: 6px;
   pointer-events: none;
+}
+
+/* Placement Interactive Dashboard Embed Wrapper */
+.placement-dashboard-embed-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 0 25px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 24px rgba(0, 32, 74, 0.05);
+  background: #ffffff;
+}
+
+.placement-dashboard-embed-wrapper iframe {
+  width: 100%;
+  height: 750px;
+  border: none;
+  display: block;
+  background: #ffffff;
+  overflow: hidden;
+  transition: height 0.2s ease;
 }
 
 /* NIRF Ranking Section Inside Placement Block */
@@ -170,7 +192,7 @@
 }
 
 .news-section .news-section-row .item-notice .nav-tabs button.active {
-  background-color: var(--bs-primary, #b33919);
+  background-color: var(--bs-primary, #771D1D);
   color: #ffffff;
 }
 
@@ -234,7 +256,7 @@
 .news-section .news-section-row .item-event h2 a {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--bs-primary, #b33919);
+  color: var(--bs-primary, #771D1D);
   text-decoration: none;
 }
 
@@ -267,7 +289,7 @@
 }
 
 .news-section .news-section-row .item-event .event-scroll li .desc span {
-  color: var(--bs-primary, #b33919);
+  color: var(--bs-primary, #771D1D);
   font-weight: 600;
   font-size: 0.85rem;
 }

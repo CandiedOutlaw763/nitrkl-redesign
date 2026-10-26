@@ -181,7 +181,7 @@
 }
 
 .card-3d-title .gold-accent {
-  background: linear-gradient(135deg, #771D1D 0%, #A72626 50%, #DA8956 100%);
+  background: linear-gradient(135deg, #771D1D 0%, #A72626 50%, #D75151 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -350,7 +350,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #DA8956;
+  background: #D75151;
   box-shadow: 0 0 8px rgba(218, 137, 86, 0.5);
 }
 
@@ -591,7 +591,7 @@
 }
 
 .notched-section-title .text-accent {
-  background: linear-gradient(135deg, #771D1D 0%, #A72626 50%, #DA8956 100%);
+  background: linear-gradient(135deg, #771D1D 0%, #A72626 50%, #D75151 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -790,7 +790,7 @@
 
 /* Card 2 Terracotta Orange Button (Matching Screenshot) */
 .notched-arrow-btn.accent-orange {
-  background: #DA8956;
+  background: #D75151;
   color: #111827;
 }
 
@@ -966,7 +966,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #DA8956;
+  background: #D75151;
   box-shadow: 0 0 8px rgba(218, 137, 86, 0.6);
 }
 

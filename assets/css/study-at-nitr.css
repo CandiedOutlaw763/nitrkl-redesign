@@ -1,7 +1,7 @@
 /* ==========================================================================
    Study@NITR — Luxury Editorial Academic Showcase
    Theme: Screen Recording Exact Match in Institute Color Theme
-   Palette: Cinnamon Red (#771D1D), Deep Crimson (#581414), Warm Amber (#DA8956)
+   Palette: Cinnamon Red (#771D1D), Deep Crimson (#581414), Warm Amber (#D75151)
    Readability Focus: High-Contrast Pristine Typography, Simple Backgrounds, No Box Clutter
    ========================================================================== */
 
@@ -10,7 +10,7 @@
   --san-key-dark: #581414;
   --san-key-deep: #3B0C0C;
   --san-key-bright: #9E2626;
-  --san-accent: #DA8956;
+  --san-accent: #D75151;
   --san-accent-light: #F6AD55;
   --san-dark-bg: #0C0707;
   --san-dark-surface: #140A0A;
@@ -654,7 +654,7 @@
 }
 
 .san-btn-action:hover {
-  background: linear-gradient(135deg, #DA8956 0%, #B86B3E 100%);
+  background: linear-gradient(135deg, #D75151 0%, #B86B3E 100%);
   color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(218, 137, 86, 0.45);

@@ -1,4 +1,4 @@
-﻿.translate-container {
+.translate-container {
     position: relative;
     display: inline-block;
 }
@@ -18,7 +18,7 @@
     position: absolute;
     top: 0;
     right: 100%;
-    background-color: #c35839;
+    background-color: #771D1D;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out;
     transform: translateX(-100%);

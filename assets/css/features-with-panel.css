@@ -1,7 +1,7 @@
 /* ==========================================================================
    Features With Panel — Incubations@NITR Component Styles
    Theme: Screen Recording Exact Match (In Brand Color Theme)
-   Brand Colors: Cinnamon Crimson (#771D1D), Warm Amber (#DA8956), Slate (#111827)
+   Brand Colors: Cinnamon Crimson (#771D1D), Warm Amber (#D75151), Slate (#111827)
    Layout:
      - Left Column: Sticky Large Media Showcase with Title, Descriptions & Explore Link
      - Right Column: Vertical List with Numbers, Arrow Hover, and Solid Crimson Active State
@@ -78,7 +78,7 @@
   margin-bottom: 8px;
   padding: 4px 12px;
   background: rgba(119, 29, 29, 0.06);
-  border-radius: 4px;
+  border-radius: 0;
   border-left: 3px solid #771D1D;
 }
 
@@ -131,15 +131,15 @@
   height: 100%;
   width: 80px;
   background: #771D1D;
-  border-radius: 3px;
+  border-radius: 0;
 }
 
 .fwp-title-bar::after {
   content: '';
   height: 100%;
   width: 38px;
-  background: #DA8956;
-  border-radius: 3px;
+  background: #D75151;
+  border-radius: 0;
 }
 
 .fwp-subtitle {
@@ -169,7 +169,7 @@
   cursor: pointer;
   background: #ffffff;
   color: #334155;
-  border-radius: 6px;
+  border-radius: 0;
   border: 1px solid rgba(119, 29, 29, 0.2);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   transition: all 0.25s ease;
@@ -187,7 +187,7 @@
 .fwp-toggle-btn.is-active {
   background: #771D1D;
   color: #ffffff;
-  border-color: #DA8956;
+  border-color: #D75151;
   box-shadow: 0 4px 16px rgba(119, 29, 29, 0.3);
 }
 
@@ -202,7 +202,7 @@
   color: #771D1D;
   text-decoration: none;
   padding: 9px 18px;
-  border-radius: 6px;
+  border-radius: 0;
   background: rgba(119, 29, 29, 0.06);
   border: 1px solid rgba(119, 29, 29, 0.25);
   box-shadow: 0 2px 6px rgba(119, 29, 29, 0.04);
@@ -298,7 +298,7 @@
   width: 100%;
   height: 100%;
   min-height: 540px;
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
   background: #09090b;
   border: 1px solid rgba(119, 29, 29, 0.22);
@@ -379,7 +379,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #DA8956;
+  color: #D75151;
   margin-bottom: 8px;
 }
 
@@ -417,7 +417,7 @@
   color: #cbd5e1;
   margin: 0 0 24px 0;
   padding-left: 12px;
-  border-left: 2px solid #DA8956;
+  border-left: 2px solid #D75151;
   opacity: 0.9;
 }
 
@@ -436,7 +436,7 @@
   padding: 11px 22px;
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 4px;
+  border-radius: 0;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -446,7 +446,7 @@
 
 .fwp-explore-link:hover {
   background: #771D1D;
-  border-color: #DA8956;
+  border-color: #D75151;
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(119, 29, 29, 0.5);
@@ -473,7 +473,7 @@
 .fwp-list-wrapper {
   background: #ffffff;
   border: 1px solid rgba(119, 29, 29, 0.16);
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
@@ -567,14 +567,14 @@
    ========================================================================== */
 .fwp-item.active {
   background: #771D1D !important;
-  border-left: 4px solid #DA8956;
+  border-left: 4px solid #D75151;
   border-bottom-color: rgba(0, 0, 0, 0.1);
   padding-left: 32px;
   box-shadow: 0 8px 24px rgba(119, 29, 29, 0.3);
 }
 
 .fwp-item.active .fwp-item-num {
-  color: #DA8956;
+  color: #D75151;
 }
 
 .fwp-item.active .fwp-item-title {
@@ -584,7 +584,7 @@
 .fwp-item.active .fwp-hover-arrow {
   opacity: 1;
   transform: translateX(0);
-  color: #DA8956;
+  color: #D75151;
 }
 
 .fwp-item.active .fwp-item-cat {
@@ -599,7 +599,7 @@
   height: 3px;
   background: rgba(255, 255, 255, 0.2);
   margin-top: 14px;
-  border-radius: 2px;
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -610,7 +610,7 @@
 .fwp-progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, #DA8956 0%, #ffffff 100%);
+  background: linear-gradient(90deg, #D75151 0%, #ffffff 100%);
   box-shadow: 0 0 6px rgba(218, 137, 86, 0.8);
   transition: width 0.1s linear;
 }

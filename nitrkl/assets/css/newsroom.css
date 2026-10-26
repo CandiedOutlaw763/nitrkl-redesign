@@ -9,8 +9,8 @@
 }
 
 .newsroom {
-  --nr-accent: var(--bs-primary, #c35839);
-  --nr-accent-2: #ff8a5c;
+  --nr-accent: #A72626;
+  --nr-accent-2: #D75151;
   --nr-ink: #1a2238;
   --nr-muted: #5b6478;
   --nr-line: #e6ebf2;

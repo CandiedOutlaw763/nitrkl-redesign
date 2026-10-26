@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
@@ -12,8 +12,15 @@
     --bs-white: #fff;
     --bs-gray: #6c757d;
     --bs-gray-dark: #343a40;
-    --bs-primary: #c35839;
-    --bs-secondary: #c15a5b;
+    --bs-primary: #771D1D;
+    --bs-primary-rgb: 119, 29, 29;
+    --bs-secondary: #A72626;
+    --bs-secondary-rgb: 167, 38, 38;
+    --cinnamon-dark: #771D1D;
+    --cinnamon-crimson: #A72626;
+    --cinnamon-coral: #D75151;
+    --cinnamon-light: #FAAAAA;
+    --cinnamon-tint: #FCDADA;
     --bs-success: #198754;
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
@@ -32,7 +39,7 @@ p {
 .heading {
     font-size: 22px;
     font-weight: 500;
-    color: #c35839;
+    color: #771D1D;
     text-align: left;
     margin-bottom: 20px;
     margin-bottom: 10px;
@@ -102,7 +109,7 @@ p {
 
 .common-link {
     text-decoration: none;
-    color: #c35839;
+    color: #771D1D;
     font-size: 14px;
 }
 
@@ -723,7 +730,7 @@ header {
     background-color: #fff;
     z-index: 10000;
     padding: 0 0;
-    border-bottom: 3px solid #c35839;
+    border-bottom: 3px solid #771D1D;
 }
 
     .fixed-header .onscroll-logo {
@@ -737,7 +744,7 @@ header {
         align-items: center;
         top: 0;
         z-index: 1000;
-        border-bottom: 4px solid #c35839;
+        border-bottom: 4px solid #771D1D;
     }
 
         .fixed-header .onscroll-logo img {
@@ -2139,14 +2146,14 @@ header {
     }
 
         .banner-section .link a {
-            background: linear-gradient(180deg,#c35839 0%,#aa3618 100%);
+            background: linear-gradient(180deg,#771D1D 0%,#561212 100%);
             text-decoration: none;
             color: var(--bs-white);
         }
 
             .banner-section .link a:hover {
                 transition: .5s;
-                background: linear-gradient(90deg,#aa3618 0%,#c35839 100%);
+                background: linear-gradient(90deg,#561212 0%,#771D1D 100%);
             }
 
     .banner-section .link2 {
@@ -2157,14 +2164,14 @@ header {
     }
 
         .banner-section .link2 a {
-            background: linear-gradient(180deg,#c35839 0%,#aa3618 100%);
+            background: linear-gradient(180deg,#771D1D 0%,#561212 100%);
             text-decoration: none;
             color: var(--bs-white);
         }
 
             .banner-section .link2 a:hover {
                 transition: .5s;
-                background: linear-gradient(90deg,#aa3618 0%,#c35839 100%);
+                background: linear-gradient(90deg,#561212 0%,#771D1D 100%);
             }
 
     .banner-section .horaizontaly-scroll {
@@ -3753,14 +3760,14 @@ header {
         }
 
             .inside-banner-section .inside-title h1 span {
-                background-color: #c35839;
+                background-color: #771D1D;
                 border: 1px solid #fff;
                 padding: 6px 40px;
             }
 
             .inside-banner-section .inside-title h1 small {
                 font-size: 2rem;
-                background-color: #c35839;
+                background-color: #771D1D;
                 border: 1px solid #fff;
                 padding: 5px 40px;
                 text-transform: lowercase;
@@ -4019,7 +4026,7 @@ header {
             }
 
             .with-right-bar-row .document-link ul li a {
-                background-color: #C35839;
+                background-color: #771D1D;
                 padding: 5px 30px;
                 border-radius: 50px;
                 color: #fff;
@@ -4074,7 +4081,7 @@ header {
                         width: 90px;
                         height: 90px;
                         overflow: hidden;
-                        border: 3px solid #c35839;
+                        border: 3px solid #771D1D;
                     }
 
                     .head-of-departments-section .head-of-departments-list ul li fieldset .head-row .item-info h5 {
@@ -4316,14 +4323,14 @@ header {
 }
 
     .item-faculty .alpha-serch a {
-        border: 1px solid #c35839;
+        border: 1px solid #771D1D;
         text-decoration: none;
-        color: #c35839;
+        color: #771D1D;
         padding: 2px 10px;
     }
 
         .item-faculty .alpha-serch a:hover, .item-faculty .alpha-serch a.active {
-            background-color: #c35839;
+            background-color: #771D1D;
             color: #fff;
         }
 
@@ -4342,7 +4349,7 @@ header {
 
         .item-faculty .faculty-row .fac-item .img-box .social-link {
             position: absolute;
-            background-color: #c35839;
+            background-color: #771D1D;
             width: 40px;
             padding: 10px 5px;
             text-align: center;
@@ -4400,7 +4407,7 @@ header {
     }
 
     .item-faculty .faculty-row .fac-item:hover .btn-view {
-        background-color: #c35839;
+        background-color: #771D1D;
         color: #fff;
     }
 
@@ -4448,7 +4455,7 @@ header {
         .faculty-profile-row .item-pic .img-box .social-link {
             position: absolute;
             right: 0;
-            background-color: #c35839;
+            background-color: #771D1D;
             width: 45px;
             top: 0;
             text-align: center;
@@ -4558,7 +4565,7 @@ header {
                     }
 
                 .faculty-profile-row .item-info .basic-ifo .item .biosketch a {
-                    color: #c35839;
+                    color: #771D1D;
                     font-weight: 600;
                     text-decoration: none;
                 }
@@ -4679,7 +4686,7 @@ header {
                 .faculty-profile-row .item-info .accordion .accordion-item .accordion-body .experience .experience-list h5::before {
                     content: '';
                     height: 3px;
-                    background-color: #c35839;
+                    background-color: #771D1D;
                     width: 100px;
                     bottom: 0;
                     position: absolute;
@@ -4721,7 +4728,7 @@ header {
                     .faculty-profile-row .item-info .accordion .accordion-item .accordion-body .expertise-information-list ul li h5::before {
                         content: '';
                         height: 3px;
-                        background-color: #c35839;
+                        background-color: #771D1D;
                         width: 100px;
                         bottom: 0;
                         position: absolute;
@@ -4790,7 +4797,7 @@ header {
                 .faculty-profile-row .item-info .accordion .accordion-item .accordion-body .pub-list h5::before {
                     content: '';
                     height: 3px;
-                    background-color: #c35839;
+                    background-color: #771D1D;
                     width: 100px;
                     bottom: 0;
                     position: absolute;
@@ -4829,7 +4836,7 @@ header {
             .faculty-profile-row .item-info .accordion .accordion-item .accordion-body .research-scholars-list h5::before {
                 content: '';
                 height: 3px;
-                background-color: #c35839;
+                background-color: #771D1D;
                 width: 100px;
                 bottom: 0;
                 position: absolute;
@@ -4859,7 +4866,7 @@ header {
             .faculty-profile-row .item-info .accordion .accordion-item .accordion-body .dissertations-list h5::before {
                 content: '';
                 height: 3px;
-                background-color: #c35839;
+                background-color: #771D1D;
                 width: 100px;
                 bottom: 0;
                 position: absolute;
@@ -4896,7 +4903,7 @@ header {
                 .faculty-profile-row .item-info .accordion .accordion-item .accordion-body .awards-honours-list blockquote h5::before {
                     content: '';
                     height: 3px;
-                    background-color: #c35839;
+                    background-color: #771D1D;
                     width: 100px;
                     bottom: 0;
                     position: absolute;
@@ -5473,13 +5480,13 @@ header {
 .p-9-dec-top h3 {
     font-size: 36px;
     font-weight: 300;
-    color: #c35839;
+    color: #771D1D;
     margin-left: 100px;
 }
 .p-9-dec-top h2 {
     font-size: 46px;
     font-weight: 700;
-    color: #c35839;
+    color: #771D1D;
     margin-left: 100px;
 }
 .p-9-dec-top ul li h4 {
@@ -5553,7 +5560,7 @@ header {
         .engineering-about .about-content .item-content h2 {
             font-size: 3rem;
             font-weight: 600;
-            color: #c35839;
+            color: #771D1D;
             text-align: left;
             margin-bottom: 25px;
         }
@@ -5612,7 +5619,7 @@ header {
     .at-glance h2 {
         font-size: 2.5rem;
         font-weight: 600;
-        color: #c35839;
+        color: #771D1D;
         text-align: center;
         margin-bottom: 60px;
     }
@@ -5637,7 +5644,7 @@ header {
 
             .at-glance .at-glance-row .item h3 {
                 font-size: 2rem;
-                color: #c35839;
+                color: #771D1D;
             }
 
     .former-directors {
@@ -5667,7 +5674,7 @@ header {
                     }
 
                         .former-directors .director-row .director-list ul li .item-content h4 {
-                            color: #c35839;
+                            color: #771D1D;
                             text-decoration: none;
                         }
 
@@ -5678,7 +5685,7 @@ header {
         .ntr-news h2 {
             font-size: 2.5rem;
             font-weight: 600;
-            color: #c35839;
+            color: #771D1D;
             text-align: left;
             margin-bottom: 25px;
         }
@@ -5697,7 +5704,7 @@ header {
                 }
 
                     .ntr-news .news-row .item-big-news h4 a {
-                        color: #c35839;
+                        color: #771D1D;
                         text-decoration: none;
                     }
 
@@ -5726,18 +5733,18 @@ header {
                     }
 
                         .ntr-news .news-row .item-news-list ul li h4 a {
-                            color: #c35839;
+                            color: #771D1D;
                             text-decoration: none;
                         }
 
     .message-section .message-content {
         text-align: center;
         font-size: 2.3rem;
-        color: #c35839;
+        color: #771D1D;
     }
 
     .message-section h4 {
-        color: #c35839;
+        color: #771D1D;
         font-style: italic;
         text-align: center;
         margin-top: 40px;
@@ -6121,7 +6128,7 @@ header {
         .science-about .container h2 {
             font-size: 3rem;
             font-weight: 600;
-            color: #c35839;
+            color: #771D1D;
             text-align: left;
             margin-bottom: 25px;
         }
@@ -6227,7 +6234,7 @@ header {
 
             .academic-regulations ul li a {
                 text-decoration: none;
-                color: #c35839;
+                color: #771D1D;
             }
 
                 .academic-regulations ul li a:hover {
@@ -6275,7 +6282,7 @@ header {
             }
 
                 .small-box3 .item .btn-view:hover {
-                    background-color: #c35839;
+                    background-color: #771D1D;
                     color: #fff;
                 }
 
@@ -6320,7 +6327,7 @@ header {
             }
 
                 .small-box4 .item .btn-view:hover {
-                    background-color: #c35839;
+                    background-color: #771D1D;
                     color: #fff;
                 }
 
@@ -6346,11 +6353,11 @@ header {
         }
 
         .gridFilter button.active {
-            color: #c35839;
+            color: #771D1D;
         }
 
         .gridFilter a.active {
-            color: #c35839;
+            color: #771D1D;
         }
 
         .gridFilter button + button {
@@ -6390,14 +6397,14 @@ header {
                 height: 120px;
                 border-radius: 100%;
                 overflow: hidden;
-                border: 2px solid #c35839;
+                border: 2px solid #771D1D;
             }
 
         .rs-testimonial.style2 .testi-wrap .content-part .desc {
             font-size: 18px;
             font-weight: 600;
             line-height: 25px;
-            color: #C35839; /* #112958;*/
+            color: #771D1D; /* #112958;*/
             position: relative;
         }
 
@@ -6490,7 +6497,7 @@ header {
             height: 110px;
             border-radius: 100%;
             overflow: hidden;
-            border: 2px solid #c35839;
+            border: 2px solid #771D1D;
         }
 
         .rs-testimonial.style4 .testi-item .user-info {
@@ -6502,12 +6509,12 @@ header {
                 line-height: 1.2;
                 font-weight: 600;
                 margin: 0;
-                color: #c35839;
+                color: #771D1D;
             }
 
                 .rs-testimonial.style4 .testi-item .user-info .name a {
                     text-decoration: none;
-                    color: #c35839;
+                    color: #771D1D;
                 }
 
                     .rs-testimonial.style4 .testi-item .user-info .name a:hover {
@@ -6525,7 +6532,7 @@ header {
             }
 
                 .rs-testimonial.style4 .testi-item .user-info .desc i {
-                    color: #c35839;
+                    color: #771D1D;
                 }
 
     .rs-testimonial.style4 .center .testi-item {
@@ -6547,7 +6554,7 @@ header {
             height: 100px;
             border-radius: 100%;
             overflow: hidden;
-            border: 2px solid #c35839;
+            border: 2px solid #771D1D;
         }
 
         .rs-testimonial.style4 .testi-item1 .user-info {
@@ -6556,7 +6563,7 @@ header {
 
             .rs-testimonial.style4 .testi-item1 .user-info a {
                 text-decoration: none;
-                color: #c35839;
+                color: #771D1D;
             }
 
             .rs-testimonial.style4 .testi-item1 .user-info .name {
@@ -6564,7 +6571,7 @@ header {
                 line-height: 1.2;
                 font-weight: 600;
                 margin: 0;
-                color: #c35839;
+                color: #771D1D;
             }
 
             .rs-testimonial.style4 .testi-item1 .user-info .designation {
@@ -6582,7 +6589,7 @@ header {
             }
 
                 .rs-testimonial.style4 .testi-item1 .user-info .email i {
-                    color: #c35839;
+                    color: #771D1D;
                 }
 
             .rs-testimonial.style4 .testi-item1 .user-info .desc {
@@ -6590,7 +6597,7 @@ header {
             }
 
                 .rs-testimonial.style4 .testi-item1 .user-info .desc i {
-                    color: #c35839;
+                    color: #771D1D;
                 }
 
     .rs-testimonial.style4 .center .testi-item1 {
@@ -6676,7 +6683,7 @@ header {
             }
 
     .btn-common {
-        background-color: #C35839;
+        background-color: #771D1D;
         padding: 5px 30px;
         border-radius: 50px;
         color: #fff;
@@ -6797,7 +6804,7 @@ header {
         }
 
     .rs-blog.style1 .continuing-education-list blockquote {
-        border-left: 3px solid #c35839;
+        border-left: 3px solid #771D1D;
         background-color: #f9f8f8;
         padding: 15px;
         margin: 10px 0;
@@ -6869,7 +6876,7 @@ header {
                 }
 
                     .rs-team.home-style15 .team-item .team-wrap .team-content .name a:hover {
-                        color: #c35839;
+                        color: #771D1D;
                     }
 
     .contact-page-section .inner-part .title {
@@ -6936,7 +6943,7 @@ header {
             }
 
                 .contact-page-section .contact-address-section .contact-info .icon-part i {
-                    color: #c35839;
+                    color: #771D1D;
                     font-size: 20px;
                     margin: 0;
                     padding: 0;
@@ -6995,7 +7002,7 @@ header {
     }
 
         .myicon i {
-            color: #c35839;
+            color: #771D1D;
             font-size: 18px;
             margin: 0 12px 0 0;
             padding: 0;
@@ -7046,7 +7053,7 @@ header {
         background: rgba(246,120,84,.2);
         text-align: center;
         transition: all .3s ease;
-        color: #c35839;
+        color: #771D1D;
         margin-right: 15px;
     }
 
@@ -7063,9 +7070,9 @@ header {
         }
 
     .rs-categories.style1 .categories-item:hover {
-        background: #c35839;
+        background: #771D1D;
         color: #fff;
-        border-color: #c35839;
+        border-color: #771D1D;
     }
 
         .rs-categories.style1 .categories-item:hover .icon-part {
@@ -7229,12 +7236,12 @@ header {
                     display: block;
                     padding: 15px 15px;
                     text-decoration: none;
-                    background: #c35839;
+                    background: #771D1D;
                 }
 
                     .rs-faq-part .content-part .accordion .card .card-header .card-link.collapsed {
                         background: #f9f8ff;
-                        color: #c35839;
+                        color: #771D1D;
                     }
 
             .rs-faq-part .content-part .accordion .card .card-body {
@@ -7253,7 +7260,7 @@ header {
 
         .rs-faq-part.style1 .main-part .title .text-part {
             font-size: 26px;
-            color: #c35839;
+            color: #771D1D;
             line-height: 30px;
             font-weight: 700;
             margin-top: 30px;
@@ -7289,7 +7296,7 @@ header {
                         line-height: 65px;
                         font-size: 16px;
                         font-weight: 600;
-                        background: #c35839;
+                        background: #771D1D;
                         box-shadow: 0 0 10px 0 rgba(0,0,0,.18);
                         color: #fff;
                     }
@@ -7635,7 +7642,7 @@ header {
             }
 
             .rs-cta.home-style14 .content-part .avg {
-                color: #c35839;
+                color: #771D1D;
                 font-size: 12px;
                 font-weight: 600;
             }
@@ -8403,7 +8410,7 @@ header {
         .message-section .message-content {
             text-align: center;
             font-size: 2rem;
-            color: #c35839;
+            color: #771D1D;
         }
 
         .engineering-about .about-content, .ntr-news .news-row {
@@ -8537,7 +8544,7 @@ header {
         .message-section .message-content {
             text-align: center;
             font-size: 1.5rem;
-            color: #c35839;
+            color: #771D1D;
         }
 
         .ntr-news .news-row .item-news-list ul li img {
@@ -8564,7 +8571,7 @@ header {
 
             .inside-banner-section .inside-title h1 small {
                 font-size: .7rem;
-                background-color: #c35839;
+                background-color: #771D1D;
                 border: 1px solid #fff;
                 padding: 3px 40px;
                 text-transform: lowercase;
@@ -9169,7 +9176,7 @@ header {
 
     .news-section .news-section-row .item-campus li {
         position: relative;
-        border: 1px solid #C35839;
+        border: 1px solid #771D1D;
         margin-bottom: 12px;
         border-radius: 3px;
         padding: 20px;
@@ -9183,8 +9190,8 @@ header {
             top: 50%;
             transform: translateY(-50%);
             text-align: center;
-            color: #C35839;
-            border-right: 1px solid #C35839;
+            color: #771D1D;
+            border-right: 1px solid #771D1D;
             padding-right: 10px;
             font-weight: 600;
             width: 60px;
