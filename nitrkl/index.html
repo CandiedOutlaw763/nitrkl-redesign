@@ -84,6 +84,7 @@ window.dataLayer = window.dataLayer || [];
 <link href="assets/css/social-hub.css" rel="stylesheet"/>
 <link href="assets/css/newsroom.css" rel="stylesheet"/>
 <link href="assets/css/cinnamon-theme.css" rel="stylesheet"/>
+<link href="assets/css/campus-gallery.css" rel="stylesheet"/>
 </head>
 <body class="body">
 <!-- Google Tag Manager (noscript) -->
@@ -2215,41 +2216,46 @@ window.dataLayer = window.dataLayer || [];
 </section>
 <!--end Statistics-->
 
-<!--start Campus Life 3D Tilted Grid Hero Showcase-->
-<section id="campus-gallery-section" class="campus-gallery-showcase-section">
-  <div class="container-fluid px-lg-5">
-    <div class="gallery-section-header text-center">
-      <h2 class="gallery-main-heading">
-        Campus Gallery
-      </h2>
+<!--start Campus Gallery-->
+<section id="campus-gallery-section" class="cg-section" aria-labelledby="cg-title" data-interval="6000">
+  <div class="cg-inner">
+    <div class="cg-head">
+      <div>
+        <h2 id="cg-title" class="cg-title">Campus Gallery</h2>
+        <p class="cg-lede">A walk through NIT Rourkela, from the main gateway and academic quadrangles to the lakeside residences.</p>
+      </div>
+      <a class="cg-all" href="gallery.html">See all photos <i class="fa-solid fa-images" aria-hidden="true"></i></a>
     </div>
 
-    <!-- The 3D Tilted Grid Hero Full Container -->
-    <div id="full-tilted-hero" class="tilted-grid-hero-root full-hero-mode" data-tile-height="32" data-aspect-ratio="1.777" data-speed="4" data-curve="78" role="region" aria-roledescription="gallery" aria-label="3D Cylindrical Campus Photo Carousel">
-      <!-- Overlay Hero Content rendered above the band -->
-      <div class="tgh-hero-overlay">
-        <div class="tgh-overlay-top">
-          <span class="tgh-orbit-indicator"><span class="orbit-dot"></span> Interactive 3D Cylindrical Orbit</span>
-        </div>
-        <div class="tgh-overlay-bottom">
-          <div class="tgh-controls-bar">
-            <button type="button" class="tgh-control-btn" id="tgh-full-toggle" aria-label="Pause orbit animation" title="Pause / Play orbit">
-              <i class="fa-solid fa-pause"></i> <span>Pause</span>
-            </button>
-            <div class="tgh-speed-selector">
-              <span>Speed:</span>
-              <button type="button" class="speed-btn active" data-speed="4">1x</button>
-              <button type="button" class="speed-btn" data-speed="2.5">1.5x</button>
-              <button type="button" class="speed-btn" data-speed="6">0.5x</button>
-            </div>
-            <span class="tgh-hint"><i class="fa-solid fa-hand-pointer"></i> Click any photo to inspect in full resolution</span>
-          </div>
-        </div>
+    <div class="cg-stage">
+      <figure class="cg-feature" id="cg-feature" role="tabpanel" aria-live="polite">
+        <a class="cg-feature-link" href="assets/images/gallery2.webp" aria-label="Open full-size photo: Main entrance gateway">
+          <img class="cg-layer" src="assets/images/gallery2.webp" alt="Main entrance gateway, NIT Rourkela" loading="lazy">
+        </a>
+        <span class="cg-wipe" aria-hidden="true"></span>
+        <figcaption class="cg-caption">
+          <p class="cg-caption-name">Main entrance gateway</p>
+          <span class="cg-caption-meta"><span class="cg-count">1 / 9</span><i class="fa-solid fa-expand" aria-hidden="true"></i></span>
+        </figcaption>
+      </figure>
+
+      <div class="cg-index-wrap">
+        <ol class="cg-index" role="tablist" aria-label="Campus places">
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="true" aria-controls="cg-feature" tabindex="0" data-src="assets/images/gallery2.webp"><img src="assets/images/gallery2.webp" alt="" loading="lazy"><span class="cg-tab-name">Main entrance gateway</span></button></li>
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="false" aria-controls="cg-feature" tabindex="-1" data-src="assets/images/gallery3.webp"><img src="assets/images/gallery3.webp" alt="" loading="lazy"><span class="cg-tab-name">Academic quadrangle</span></button></li>
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="false" aria-controls="cg-feature" tabindex="-1" data-src="assets/images/gallery7.webp"><img src="assets/images/gallery7.webp" alt="" loading="lazy"><span class="cg-tab-name">Lecture hall complex</span></button></li>
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="false" aria-controls="cg-feature" tabindex="-1" data-src="assets/images/gallery9.webp"><img src="assets/images/gallery9.webp" alt="" loading="lazy"><span class="cg-tab-name">Technology precinct</span></button></li>
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="false" aria-controls="cg-feature" tabindex="-1" data-src="assets/images/gallery8.webp"><img src="assets/images/gallery8.webp" alt="" loading="lazy"><span class="cg-tab-name">Departmental quadrangle</span></button></li>
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="false" aria-controls="cg-feature" tabindex="-1" data-src="assets/images/gallery6.webp"><img src="assets/images/gallery6.webp" alt="" loading="lazy"><span class="cg-tab-name">BBA auditorium</span></button></li>
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="false" aria-controls="cg-feature" tabindex="-1" data-src="assets/images/gallery5.webp"><img src="assets/images/gallery5.webp" alt="" loading="lazy"><span class="cg-tab-name">Student residences and lake</span></button></li>
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="false" aria-controls="cg-feature" tabindex="-1" data-src="assets/images/gallery4.webp"><img src="assets/images/gallery4.webp" alt="" loading="lazy"><span class="cg-tab-name">Campus road in the mist</span></button></li>
+          <li><button type="button" class="cg-tab" role="tab" aria-selected="false" aria-controls="cg-feature" tabindex="-1" data-src="assets/images/gallery1.webp"><img src="assets/images/gallery1.webp" alt="" loading="lazy"><span class="cg-tab-name">The institute insignia</span></button></li>
+        </ol>
       </div>
     </div>
   </div>
 </section>
-<!--end Campus Life 3D Tilted Grid Hero Showcase-->
+<!--end Campus Gallery-->
 
 <footer>
 <div class="container">
@@ -2415,6 +2421,7 @@ window.dataLayer = window.dataLayer || [];
 <script src="assets/js/loader.js"></script>
 <script src="assets/js/scroll-expansion-hero.js"></script>
 <script src="assets/js/tilted-grid-hero.js"></script>
+<script src="assets/js/campus-gallery.js"></script>
 <script src="assets/js/about-3d.js"></script>
 <script src="assets/js/features-with-panel.js"></script>
 <script src="assets/js/study-at-nitr.js"></script>
