@@ -244,20 +244,39 @@
             .marquee-content, .card-hero::after { animation: none !important; }
             .reveal { opacity: 1; translate: none; }
         }
+
+        /* In iframe mode - seamlessly integrated within portal */
+        html.in-iframe #topReturnNav,
+        body.in-iframe #topReturnNav,
+        .in-iframe #topReturnNav {
+            display: none !important;
+        }
+        html.in-iframe #scrollProgress { display: none !important; }
     </style>
+    <script>
+        if (window.self !== window.top) {
+            document.documentElement.classList.add('in-iframe');
+        }
+    </script>
 </head>
 <body class="antialiased min-h-screen flex flex-col font-sans">
 
     <div id="scrollProgress" aria-hidden="true"></div>
 
     <!-- Top Return Navigation Bar -->
-    <div class="w-full bg-[#771D1D] text-white px-4 py-2 flex items-center justify-between shadow-md" style="z-index: 9999; position: relative;">
+    <div id="topReturnNav" class="w-full bg-[#771D1D] text-white px-4 py-2 flex items-center justify-between shadow-md" style="z-index: 9999; position: relative;">
         <a href="index.html" class="inline-flex items-center gap-2 text-white hover:text-[#FFC107] font-semibold text-sm transition-colors duration-200">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Return to NIT Rourkela Main Portal</span>
         </a>
         <span class="text-xs text-white/80 hidden sm:inline">National Institute of Technology Rourkela &bull; Placement Portal</span>
     </div>
+    <script>
+        if (window.self !== window.top) {
+            var topNavEl = document.getElementById('topReturnNav');
+            if (topNavEl) topNavEl.style.setProperty('display', 'none', 'important');
+        }
+    </script>
 
 
     <!-- Header Section -->

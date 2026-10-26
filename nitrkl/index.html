@@ -669,13 +669,55 @@ window.dataLayer = window.dataLayer || [];
 <div class="container-fluid">
 <div class="news-section-row">
 <!-- 1. Placement Statistics & NIRF Ranking (Full Width Top Showcase) -->
-<div class="item-news">
-<h2>Placement Statistics <a href="placement-report.html" target="_blank">View Details <i class="fa-solid fa-arrow-right"></i></a></h2>
-<div class="placement-banner-card">
-<a href="placement-report.html" target="_blank" title="Click to open interactive placement report">
+<div class="item-news" id="placementSection">
+<div class="placement-title-wrap">
+<h2>Placement Statistics</h2>
+<button type="button" class="placement-toggle-action-btn" id="placementToggleBtn" aria-expanded="false" title="Toggle interactive placement report">
+<span class="btn-state-text">View Details / Dashboard</span>
+<i class="fa-solid fa-chart-column"></i>
+</button>
+</div>
+<div class="placement-banner-container" id="placementBannerContainer">
+<!-- 1. Banner Preview State -->
+<div class="placement-banner-card" id="placementBannerCard" role="button" tabindex="0" title="Click to open interactive placement report right here" aria-label="Open Interactive Placement Report within this section">
+<div class="placement-banner-media">
 <img alt="NIT Rourkela Annual Placement Report 2025-26" class="img-fluid" src="assets/images/placement/placement-report-thumbnail.png"/>
-<span class="placement-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Interactive Placement Report</span>
-</a>
+<div class="placement-banner-cta-badge">
+<span class="pulse-indicator"></span>
+<i class="fa-solid fa-chart-line"></i>
+<span>Open Interactive Placement Report</span>
+</div>
+</div>
+</div>
+<!-- 2. Interactive In-Banner Embed State (opens right within banner section) -->
+<div class="placement-embed-frame-wrap" id="placementEmbedFrameWrap" style="display: none;" aria-hidden="true">
+<div class="placement-embed-header-bar">
+<div class="embed-header-left">
+<span class="embed-live-tag"><i class="fa-solid fa-circle-dot"></i> Live Report</span>
+<h4 class="embed-heading">Annual Placement Report 2025–26</h4>
+</div>
+<div class="embed-header-actions">
+<button type="button" class="embed-action-btn" id="embedReloadBtn" title="Reload Placement Report">
+<i class="fa-solid fa-rotate-right"></i> <span class="action-label">Reload</span>
+</button>
+<button type="button" class="embed-action-btn" id="embedFullscreenBtn" title="View Fullscreen">
+<i class="fa-solid fa-expand"></i> <span class="action-label">Fullscreen</span>
+</button>
+<button type="button" class="embed-action-btn embed-close-btn" id="embedCollapseBtn" title="Close report and return to banner preview">
+<i class="fa-solid fa-xmark"></i> <span class="action-label">Close</span>
+</button>
+</div>
+</div>
+<div class="placement-embed-viewport">
+<div class="placement-iframe-loader" id="placementIframeLoader">
+<div class="spinner-border text-danger" role="status">
+<span class="visually-hidden">Loading placement report...</span>
+</div>
+<p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #1a2238;">Loading Interactive Placement Report...</p>
+</div>
+<iframe id="placementIframe" title="NIT Rourkela Placement Report 2025-26" data-src="placement-report.html" frameborder="0"></iframe>
+</div>
+</div>
 </div>
 <div class="item-campus">
 <div class="admision-link">
@@ -2317,6 +2359,7 @@ IAS Student Travel Award
 <script src="assets/js/about-3d.js"></script>
 <script src="assets/js/features-with-panel.js"></script>
 <script src="assets/js/study-at-nitr.js"></script>
+<script src="assets/js/placement-embed.js"></script>
 <script>
 
         $(document).ready(function(){
