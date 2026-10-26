@@ -24,6 +24,19 @@
   font-family: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
 }
 
+/* Keep Font Awesome icons working inside the blocks above */
+.about-section-3d :is(.fa-solid, .fa-regular, .fas, .far),
+.director-featured-wrapper :is(.fa-solid, .fa-regular, .fas, .far),
+.director-card-wide :is(.fa-solid, .fa-regular, .fas, .far) {
+  font-family: 'Font Awesome 6 Free' !important;
+}
+
+.about-section-3d :is(.fa-brands, .fab),
+.director-featured-wrapper :is(.fa-brands, .fab),
+.director-card-wide :is(.fa-brands, .fab) {
+  font-family: 'Font Awesome 6 Brands' !important;
+}
+
 .about-section-3d {
   position: relative;
   background: #ffffff;
@@ -903,7 +916,7 @@
   display: flex;
   background: transparent !important;
   border: none !important;
-  border-radius: 28px;
+  border-radius: 0;
   overflow: visible;
   box-shadow: none !important;
   width: 100%;
@@ -917,7 +930,7 @@
   min-width: 340px;
   height: 480px;
   background: #f1f5f9;
-  border-radius: 26px;
+  border-radius: 0;
   overflow: hidden;
   border: none !important;
   flex-shrink: 0;
@@ -954,7 +967,7 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 9999px;
+  border-radius: 0;
   padding: 6px 16px;
   font-size: 11.5px;
   font-weight: 700;
@@ -966,7 +979,7 @@
 .director-badge-dot {
   width: 7px;
   height: 7px;
-  border-radius: 50%;
+  border-radius: 0;
   background: #D75151;
   box-shadow: 0 0 8px rgba(218, 137, 86, 0.6);
 }
@@ -992,7 +1005,7 @@
   background: rgba(119, 29, 29, 0.06);
   border: 1px solid rgba(119, 29, 29, 0.15);
   padding: 6px 16px;
-  border-radius: 9999px;
+  border-radius: 0;
   margin-bottom: 16px;
   width: fit-content;
 }
@@ -1082,7 +1095,7 @@
   align-items: center;
   gap: 10px;
   padding: 12px 26px;
-  border-radius: 9999px;
+  border-radius: 0;
   background: #771D1D;
   color: #ffffff;
   font-size: 13.5px;
