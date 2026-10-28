@@ -24,6 +24,13 @@
         var $settings = settings;
 
         var counterUpper = function() {
+            // Waypoints 4 ignores triggerOnce, so guard against re-entry
+            // (overlapping runs end with .shift() on a nulled list)
+            if($this.data('counterup-started')) {
+                return;
+            }
+            $this.data('counterup-started', true);
+
             if(!$this.data('counterupTo')) {
                 $this.data('counterupTo',$this.text());
             }
