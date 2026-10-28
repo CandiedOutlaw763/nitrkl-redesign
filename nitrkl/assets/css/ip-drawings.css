@@ -1,0 +1,401 @@
+/* ==========================================================================
+   NIT Rourkela - Intellectual Property@NITR
+   Each invention is shown as a patent drawing sheet: ruler edge, the
+   drawing itself uncropped, and an engineering title block. Square corners.
+   ========================================================================== */
+
+.ipd-section {
+  --ipd-table: #4A1212;
+  --ipd-table-2: #3A0D0D;
+  --ipd-paper: #FFFFFF;
+  --ipd-ink: #1F1414;
+  --ipd-ink-2: #5A4646;
+  --ipd-rule: #2B1A1A;
+  --ipd-hair: #E4D6D6;
+  --ipd-red: #A72626;
+  --ipd-dark: #771D1D;
+  --ipd-coral: #D75151;
+  --ipd-tint: #FCDADA;
+  --ipd-ease: cubic-bezier(0.65, 0, 0.25, 1);
+
+  position: relative;
+  padding: clamp(56px, 7vw, 96px) 0;
+  color: #FFFFFF;
+  font-family: 'Noto Sans', Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(215, 81, 81, 0.18), transparent 60%),
+    var(--ipd-table);
+  overflow: hidden;
+}
+
+.ipd-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 48px);
+}
+
+/* ---------- Head ---------- */
+.ipd-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 20px 48px;
+  margin-bottom: 34px;
+}
+
+.ipd-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 4.8vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0 0 14px;
+}
+
+.ipd-lede {
+  max-width: 54ch;
+  margin: 0;
+  text-align: left;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--ipd-tint);
+}
+
+.ipd-lede strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.ipd-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid rgba(252, 218, 218, 0.55);
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.ipd-all:hover,
+.ipd-all:focus-visible {
+  background: #FFFFFF;
+  color: var(--ipd-dark);
+}
+
+/* ---------- Drawing sheet ---------- */
+.ipd-sheet {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  background: var(--ipd-paper);
+  color: var(--ipd-ink);
+  /* drafting border: outer frame + inner frame */
+  border: 10px solid var(--ipd-paper);
+  outline: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    inset 0 0 0 1.5px var(--ipd-rule),
+    0 30px 60px -30px rgba(0, 0, 0, 0.6);
+}
+
+/* Ruler along the top edge: minor ticks every 8px, major every 40px */
+.ipd-ruler {
+  grid-column: 1 / -1;
+  height: 22px;
+  border-bottom: 1.5px solid var(--ipd-rule);
+  background-image:
+    repeating-linear-gradient(90deg, var(--ipd-rule) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(90deg, rgba(43, 26, 26, 0.55) 0 1px, transparent 1px 8px);
+  background-size: 100% 12px, 100% 6px;
+  background-position: 0 100%, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.ipd-figure {
+  position: relative;
+  margin: 0;
+  min-height: clamp(320px, 34vw, 460px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 3vw, 36px);
+  overflow: hidden;
+}
+
+.ipd-drawing {
+  max-width: 100%;
+  max-height: clamp(280px, 30vw, 400px);
+  width: auto;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Plotter: the new drawing is revealed top to bottom under a moving head */
+.ipd-drawing.is-plotting {
+  animation: ipdPlot 0.9s var(--ipd-ease) both;
+}
+
+.ipd-plotter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: var(--ipd-red);
+  box-shadow: 0 0 10px 2px rgba(215, 81, 81, 0.45);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ipd-plotter.is-running {
+  animation: ipdHead 0.9s var(--ipd-ease) both;
+}
+
+@keyframes ipdPlot {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes ipdHead {
+  0%   { top: 0;    opacity: 1; }
+  90%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.ipd-figlabel {
+  position: absolute;
+  left: clamp(14px, 2vw, 24px);
+  bottom: 12px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ipd-ink-2);
+}
+
+/* Title block, as on an engineering drawing */
+.ipd-block {
+  display: flex;
+  flex-direction: column;
+  border-left: 1.5px solid var(--ipd-rule);
+  margin: 0;
+}
+
+.ipd-row {
+  margin: 0;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--ipd-rule);
+}
+
+.ipd-row dt {
+  margin-bottom: 4px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--ipd-ink-2);
+}
+
+.ipd-row dd {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ipd-ink);
+}
+
+.ipd-row-title {
+  flex: 1 1 auto;
+}
+
+.ipd-row-title dd {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.ipd-row-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+}
+
+.ipd-row-pair > dl {
+  margin: 0;
+  padding: 12px 18px;
+}
+
+.ipd-row-pair > dl + dl {
+  border-left: 1px solid var(--ipd-rule);
+}
+
+.ipd-sheetno {
+  font-variant-numeric: tabular-nums;
+}
+
+.ipd-actions {
+  display: flex;
+  border-bottom: 0;
+  padding: 0;
+}
+
+.ipd-more {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--ipd-dark);
+  color: #FFFFFF;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.ipd-more:hover,
+.ipd-more:focus-visible {
+  background: var(--ipd-red);
+  color: #FFFFFF;
+}
+
+.ipd-step {
+  width: 52px;
+  border: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  background: var(--ipd-ink);
+  color: #FFFFFF;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ipd-step:hover {
+  background: var(--ipd-red);
+}
+
+.ipd-step:focus-visible,
+.ipd-more:focus-visible {
+  outline: 3px solid var(--ipd-coral);
+  outline-offset: -3px;
+}
+
+/* ---------- Sheet tabs ---------- */
+.ipd-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ipd-tab {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 10px 12px;
+  border: 1px solid rgba(252, 218, 218, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ipd-tint);
+  text-align: left;
+  font: inherit;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.ipd-tab-thumb {
+  display: block;
+  aspect-ratio: 4 / 3;
+  background: #FFFFFF;
+  padding: 6px;
+}
+
+.ipd-tab-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  opacity: 0.75;
+  transition: opacity 0.25s ease;
+}
+
+.ipd-tab:hover {
+  border-color: rgba(252, 218, 218, 0.55);
+  color: #FFFFFF;
+}
+
+.ipd-tab:hover img {
+  opacity: 1;
+}
+
+.ipd-tab:focus-visible {
+  outline: 3px solid var(--ipd-coral);
+  outline-offset: 2px;
+}
+
+.ipd-tab[aria-selected="true"] {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: var(--ipd-ink);
+  font-weight: 600;
+  transform: translateY(-6px);
+  box-shadow: 0 -4px 0 var(--ipd-coral) inset;
+}
+
+.ipd-tab[aria-selected="true"] img {
+  opacity: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .ipd-head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .ipd-all {
+    justify-self: start;
+  }
+  .ipd-sheet {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ipd-block {
+    border-left: 0;
+    border-top: 1.5px solid var(--ipd-rule);
+  }
+}
+
+@media (max-width: 767px) {
+  .ipd-tabs {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-top: 8px;
+  }
+  .ipd-tabs li {
+    flex: 0 0 150px;
+    scroll-snap-align: start;
+  }
+  .ipd-figure {
+    min-height: 260px;
+  }
+  .ipd-drawing {
+    max-height: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ipd-drawing.is-plotting,
+  .ipd-plotter.is-running {
+    animation: none;
+  }
+  .ipd-tab {
+    transition: none;
+  }
+}
