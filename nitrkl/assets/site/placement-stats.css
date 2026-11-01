@@ -1,0 +1,11 @@
+/* NIT Rourkela homepage: Placement Statistics and NIRF Ranking as two separate cards.
+   placement-stats.js sizes the report's frame to the report itself, so it needs no
+   scrollbar of its own; in fullscreen the frame fills the screen and scrolls as before. */
+
+/* NIRF stands alone now: no divider from the placement card above it */
+.news-section .news-section-row .item-news.item-nirf .item-campus { margin-top: 0; padding-top: 0; border-top: 0; }
+
+/* The report frame takes the report's own height (set on the iframe by placement-stats.js) */
+.news-section .placement-embed-frame-wrap.is-fitted:not(:fullscreen) .placement-embed-viewport { height: auto; }
+.news-section .placement-embed-frame-wrap.is-fitted:not(:fullscreen) .placement-embed-viewport iframe { display: block; overflow: hidden; }
+.news-section .placement-embed-frame-wrap:fullscreen .placement-embed-viewport iframe { height: 100% !important; }

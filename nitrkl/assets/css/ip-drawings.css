@@ -44,7 +44,7 @@
 }
 
 .ipd-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-weight: 700;
   font-size: clamp(2.2rem, 4.8vw, 4rem);
   line-height: 1;
@@ -171,7 +171,7 @@
   position: absolute;
   left: clamp(14px, 2vw, 24px);
   bottom: 12px;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-style: italic;
   font-size: 1rem;
   color: var(--ipd-ink-2);
@@ -210,7 +210,7 @@
 }
 
 .ipd-row-title dd {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: clamp(1.1rem, 1.6vw, 1.35rem);
   font-weight: 600;
   line-height: 1.3;
@@ -397,5 +397,133 @@
   }
   .ipd-tab {
     transition: none;
+  }
+}
+
+/* ==========================================================================
+   Fit to one screen below the sticky menu: a tighter head, a drawing sheet
+   sized to what the screen leaves (drawing scaled to fit inside it) and the
+   five inventions as one compact row of tabs (thumbnail beside the label).
+   ========================================================================== */
+.ipd-section {
+  --ipd-sheet-h: clamp(300px, calc(100svh - 300px), 460px);
+  padding: clamp(24px, 4vh, 44px) 0;
+}
+
+.ipd-head {
+  margin-bottom: clamp(12px, 2vh, 20px);
+}
+
+.ipd-title {
+  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.25rem); /* DBIM H1 at most: 36px */
+  margin-bottom: 6px;
+}
+
+.ipd-lede {
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+/* Drawing sheet: a fixed height, the drawing scaled down inside it */
+.ipd-sheet {
+  height: var(--ipd-sheet-h);
+}
+
+.ipd-figure {
+  min-height: 0;
+  height: 100%;
+  padding: clamp(14px, 2vw, 28px);
+}
+
+.ipd-drawing {
+  max-height: calc(var(--ipd-sheet-h) - 70px);
+  max-width: 100%;
+}
+
+.ipd-block {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.ipd-row {
+  padding: 9px 16px;
+}
+
+.ipd-row-pair > dl {
+  padding: 9px 16px;
+}
+
+.ipd-row-title dd {
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.ipd-more {
+  padding: 11px 14px;
+}
+
+/* Inventions: one compact row, small thumbnail beside the label */
+.ipd-tabs {
+  margin-top: 12px;
+  gap: 8px;
+}
+
+.ipd-tab {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  padding: 7px 10px 7px 7px;
+  font-size: .82rem;
+  line-height: 1.3;
+}
+
+.ipd-tab-thumb {
+  flex: 0 0 56px;
+  width: 56px;
+  padding: 3px;
+}
+
+/* One column (tablet, phone): the sheet stacks the drawing over the details */
+@media (max-width: 991px) {
+  .ipd-section {
+    --ipd-sheet-h: auto;
+  }
+  .ipd-sheet {
+    height: auto;
+  }
+  .ipd-figure {
+    height: clamp(140px, calc(100svh - 680px), 320px);
+    padding: 12px;
+  }
+  .ipd-drawing {
+    max-height: calc(clamp(140px, calc(100svh - 680px), 320px) - 24px);
+  }
+  /* Every invention's assignee is the institute itself, already named by the section */
+  .ipd-block > .ipd-row:not(.ipd-row-title):not(.ipd-row-pair):not(.ipd-actions) {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .ipd-section {
+    padding: 16px 0;
+  }
+  .ipd-title {
+    font-size: 1.5rem; /* DBIM mobile H1: 24px */
+  }
+  .ipd-head {
+    gap: 10px;
+  }
+  .ipd-lede {
+    font-size: .875rem;
+  }
+  .ipd-all {
+    padding: 9px 16px;
+  }
+  .ipd-row-title dd {
+    font-size: .95rem;
+  }
+  .ipd-tabs li {
+    flex: 0 0 190px;
   }
 }

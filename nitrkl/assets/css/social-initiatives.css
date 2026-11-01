@@ -322,3 +322,127 @@
     margin: 18px 0;
   }
 }
+
+/* ==========================================================================
+   Fit to one screen: the four initiatives as cards side by side (photo on top),
+   so the whole section shows at once below the sticky menu. Below 900px the
+   cards become a row you swipe through, keeping the section one screen tall.
+   ========================================================================== */
+.social-initiatives-section {
+  padding: clamp(32px, 5vh, 56px) 0;
+}
+
+.si-section-header {
+  margin-bottom: clamp(20px, 3.5vh, 36px);
+}
+
+.si-main-title {
+  font-size: clamp(2rem, 1.4rem + 1.6vw, 2.5rem);
+}
+
+.si-diagonal-feed {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(20px, 2.2vw, 32px);
+}
+
+.si-item,
+.si-item.si-image-left {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+  align-items: stretch;
+}
+
+/* Photo first in every card, whichever side it sat on before */
+.si-item.si-image-right .si-media-col,
+.si-item.si-image-left .si-media-col {
+  order: -1;
+}
+
+.si-img-wrapper {
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 14px 30px -14px rgba(119, 29, 29, 0.22), 0 8px 16px -10px rgba(0, 0, 0, 0.1);
+}
+
+.si-media-tag {
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  font-size: 10px;
+}
+
+.si-text-col {
+  justify-content: flex-start;
+  padding: 0;
+  flex: 1;
+}
+
+.si-item-num {
+  font-size: 1.75rem;
+  margin-bottom: 2px;
+}
+
+.si-item-badge {
+  font-size: 10.5px;
+  letter-spacing: 1.4px;
+  margin-bottom: 4px;
+}
+
+.si-item-title {
+  font-size: clamp(1.05rem, 0.9rem + 0.35vw, 1.25rem);
+  line-height: 1.25;
+  margin: 0 0 8px 0;
+}
+
+.si-item-desc {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin: 0 0 12px 0;
+  /* The theme justifies every <p>; in a narrow card that opens wide gaps between words */
+  text-align: left;
+}
+
+/* The link sits at the foot of each card, level across the row */
+.si-action-link {
+  margin-top: auto;
+  font-size: 13px;
+  gap: 8px;
+}
+
+/* The slashes closed the long alternating feed; the card row needs no ending */
+.si-diagonal-separator {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .si-item-title {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 899px) {
+  .si-container {
+    padding: 0;
+  }
+  .si-section-header {
+    padding: 0 20px;
+  }
+  .si-diagonal-feed {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 20px;
+    padding: 0 20px 12px;
+    scrollbar-width: thin;
+  }
+  .si-item,
+  .si-item.si-image-left {
+    flex: 0 0 min(82%, 340px);
+    scroll-snap-align: start;
+    gap: 12px;
+  }
+}

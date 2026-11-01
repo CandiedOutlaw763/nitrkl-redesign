@@ -1,0 +1,76 @@
+/* NIT Rourkela homepage: Gen-Z footer.
+   Rules from the Gen-Z site.css, every one scoped to .site-footer so they win over the
+   theme's own footer rules and stay out of the rest of the page. Behaviour: footer.js. */
+
+.site-footer {
+  --terra: #c35839;
+  --amber: #f9b117;
+  --white: #fff;
+  --cin: #771d1d;
+  --ink: #150202;
+  --display: "Noto Sans", sans-serif;
+  --font: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+  --fs-p1: 1rem;
+  --fs-p2: .875rem;
+  --fs-lead: clamp(1.125rem, 1.04rem + .3vw, 1.3125rem);
+  --maxw: 1440px;
+  --gutter: clamp(16px, 3vw, 40px);
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  /* The theme's footer: padding and a background image */
+  padding: 0;
+  background: var(--cin);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: var(--fs-p1);
+  line-height: 1.55;
+}
+
+/* ---------- Base (scoped) ---------- */
+.site-footer *, .site-footer *::before, .site-footer *::after { box-sizing: border-box; }
+.site-footer img { max-width: 100%; display: block; height: auto; }
+.site-footer a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 2px; }
+.site-footer ul { margin: 0; padding: 0; list-style: none; }
+.site-footer h3, .site-footer p { margin: 0; }
+.site-footer p { text-align: left; text-wrap: pretty; }
+.site-footer :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+.site-footer .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* ---------- Footer ---------- */
+.site-footer > .wrap { padding-top: clamp(64px, 7vw, 104px); }
+.site-footer .f-top { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px 56px; margin-bottom: clamp(48px, 5vw, 72px); }
+.site-footer .f-id { display: flex; gap: 16px; align-items: center; }
+.site-footer .f-id img { width: 64px; height: 64px; background: var(--white); border-radius: 50%; padding: 3px; }
+.site-footer .f-addr { font-weight: 700; font-size: var(--fs-lead); line-height: 1.35; }
+.site-footer .f-contact { display: grid; gap: 6px; }
+.site-footer .f-contact i { margin-right: 8px; }
+.site-footer .f-contact a { text-decoration: underline; }
+.site-footer .f-top-link { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-weight: 700; text-decoration: underline; }
+.site-footer .f-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px clamp(24px, 3vw, 56px); }
+.site-footer .f-links h3 { font-family: var(--display, "Noto Sans", sans-serif); font-stretch: 75%; font-weight: 800; text-transform: uppercase; font-size: 1.75rem; line-height: 1; margin-bottom: 16px; color: inherit; }
+.site-footer .f-links .f-h3-gap { margin-top: 36px; }
+.site-footer .f-links ul { display: grid; gap: 2px; }
+.site-footer .f-links a { display: inline-block; padding: 4px 0; text-decoration: none; }
+.site-footer .f-links a:hover { text-decoration: underline; color: var(--amber); }
+.site-footer .f-social { display: flex !important; gap: 6px !important; }
+.site-footer .f-social a { width: 44px; height: 44px; display: grid !important; place-items: center; background: rgba(255,255,255,.14); padding: 0 !important; }
+.site-footer .f-social a:hover { background: var(--white); color: var(--cin) !important; }
+.site-footer .f-lineage { margin-top: 64px; max-width: 80ch; }
+.site-footer .f-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding: 28px 0 8px; font-size: var(--fs-p2); }
+.site-footer .f-bottom ul { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.site-footer .f-bottom a { text-decoration: underline; }
+.site-footer .f-bottom a:hover { color: var(--amber); }
+.site-footer .f-name {
+  font-family: var(--display, "Noto Sans", sans-serif); font-stretch: 75%; font-weight: 900; text-transform: uppercase; white-space: nowrap; text-align: center;
+  font-size: 15.6vw; line-height: .78; letter-spacing: -.01em; color: rgba(255,255,255,.1); padding-top: 24px; margin-bottom: -.06em; overflow: hidden;
+}
+.site-footer .gov-logo { background: var(--white); color: var(--ink); position: relative; padding: 0; }
+.site-footer .gov-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: clamp(20px, 4vw, 64px); padding-block: 22px; }
+.site-footer .gov-row img { height: 52px; width: auto; }
+
+@media (max-width: 1100px) {
+  .site-footer .f-cols { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .site-footer .f-cols { grid-template-columns: 1fr; }
+  .site-footer .f-top-link { margin-left: 0; }
+}

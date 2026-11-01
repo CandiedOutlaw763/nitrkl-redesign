@@ -1,0 +1,156 @@
+/* NIT Rourkela homepage: GIGW 3.0 and DBIM 3.0 site-wide rules. Loaded last.
+   Typeface Noto Sans and left-aligned body text (DBIM 4.1.1), skip to main content (GIGW 3.0
+   Accessibility 27, WCAG 2.4.1), pause controls for moving content (WCAG 2.2.2) and the
+   cookie consent banner (DBIM 7.6). Behaviour: guidelines.js. */
+
+:root {
+  --gg-key: #771d1d;      /* DBIM Cinnamon Red, key colour (darkest shade) */
+  --gg-ink: #150202;      /* DBIM Deep Earthy Brown: text on light backgrounds */
+  --gg-linen: #ebeaea;    /* DBIM Linen: outlines, quiet backgrounds */
+  --gg-amber: #f9b117;
+}
+
+/* ---------- Typeface: Noto Sans throughout (Bootstrap's body font is system-ui) ---------- */
+body, button, input, select, textarea {
+  font-family: "Noto Sans", sans-serif;
+}
+/* The accessibility widget's panel takes its face from this token (the Dyslexic Font option still overrides it) */
+:root { --nitrkl-acc-font: "Noto Sans", sans-serif; }
+
+/* ---------- Body text is left-aligned (the theme justifies every paragraph) ---------- */
+p, li, dd, blockquote {
+  text-align: left;
+}
+
+/* ---------- Skip to main content: the first stop for keyboard users ---------- */
+.gg-skip {
+  position: fixed;
+  left: 16px;
+  top: -100px;
+  z-index: 1000020; /* above the opening sequence and the accessibility widget */
+  padding: 12px 18px;
+  background: var(--gg-ink);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.gg-skip:focus { top: 16px; outline: 3px solid var(--gg-amber); outline-offset: 2px; }
+main#main:focus { outline: none; }
+
+/* ---------- Pause / play buttons for moving content ---------- */
+.gg-pause {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 0;
+  background: transparent;
+  color: var(--gg-key);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+.gg-pause:hover { background: var(--gg-key); color: #fff; border-color: var(--gg-key); }
+.gg-pause:focus-visible { outline: 3px solid var(--gg-amber); outline-offset: 2px; }
+
+/* In the card heads the button sits before "View all" */
+.news-section .news-section-row .nb-card .nb-head { align-items: center; }
+.news-section .news-section-row .nb-card .nb-head .nb-title { margin-right: auto; }
+.news-section .news-section-row .item-news .placement-title-wrap .gg-pause { margin-left: 12px; }
+
+/* Latest News ticker: the button sits at its right end, the headlines stop when paused */
+.newsroom .nr-ticker { position: relative; padding-right: 40px; }
+.newsroom .nr-ticker .gg-pause { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; background: #fff; }
+.newsroom .nr-ticker .gg-pause:hover { background: var(--gg-key); }
+.newsroom .nr-ticker.is-paused .nr-ticker-list { animation-play-state: paused; }
+
+/* ---------- Footer: the cookie settings link sits with the website policies ---------- */
+.site-footer .gg-cookie-settings {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: .22em;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}
+.site-footer .gg-cookie-settings:hover { color: var(--gg-amber); }
+
+/* ---------- Cookie consent banner: at the foot of the page, Inclusive White ---------- */
+.gg-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000005; /* below the opening sequence, above page content */
+  background: #fff;
+  color: var(--gg-ink);
+  border-top: 4px solid var(--gg-key);
+  box-shadow: 0 -10px 30px -12px rgba(21, 2, 2, .25);
+}
+.gg-consent-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 32px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px clamp(16px, 3vw, 40px);
+}
+.gg-consent h2 { margin: 0 0 4px; font-size: 1.125rem; font-weight: 700; line-height: 1.3; color: var(--gg-ink); }
+.gg-consent p { margin: 0; font-size: .875rem; line-height: 1.5; color: var(--gg-ink); }
+.gg-consent a { color: var(--gg-key); font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
+.gg-consent-prefs { grid-column: 1 / -1; grid-row: 2; }
+.gg-consent-prefs fieldset { margin: 0; padding: 12px 16px; border: 1px solid var(--gg-linen); }
+.gg-consent-prefs legend { float: none; width: auto; margin: 0; padding: 0 6px; font-size: .875rem; font-weight: 700; }
+.gg-consent-prefs label { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; font-size: .875rem; line-height: 1.45; cursor: pointer; }
+.gg-consent-prefs input { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--gg-key); flex: 0 0 auto; }
+.gg-consent-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.gg-btn {
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 2px solid var(--gg-key);
+  border-radius: 0;
+  background: #fff;
+  color: var(--gg-key);
+  font-size: .9375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+.gg-btn:hover { background: var(--gg-key); color: #fff; }
+.gg-btn--solid { background: var(--gg-key); color: #fff; }
+.gg-btn--solid:hover { background: var(--gg-ink); border-color: var(--gg-ink); }
+.gg-btn--link { border-color: transparent; text-decoration: underline; text-underline-offset: .2em; }
+.gg-btn--link:hover { border-color: var(--gg-key); }
+.gg-btn:focus-visible { outline: 3px solid var(--gg-amber); outline-offset: 2px; }
+
+@media (max-width: 760px) {
+  .gg-consent-inner { grid-template-columns: minmax(0, 1fr); }
+  .gg-consent-prefs { grid-row: auto; }
+  .gg-consent-actions { justify-content: stretch; }
+  .gg-consent-actions .gg-btn { flex: 1 1 auto; }
+}
+
+/* ---------- Users who ask for less motion: no endless animations ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .newsroom .nr-ticker-list,
+  .newsroom .nr-featured .nr-media img,
+  .newsroom .nr-pulse { animation: none !important; }
+}
+
+/* ---------- Wide screens: the Placement / NIRF / Notices / Events block keeps the
+   same 1320px measure as the other sections instead of stretching edge to edge ---------- */
+.news-section > .container-fluid > .news-section-row {
+  max-width: 1320px;
+  margin-inline: auto;
+}

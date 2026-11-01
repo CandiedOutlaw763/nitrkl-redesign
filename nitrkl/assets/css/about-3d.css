@@ -1135,6 +1135,7 @@
   }
   .director-wide-media {
     width: 100%;
+    min-width: 0; /* the 340px desktop minimum overflowed a small phone's card */
     height: 380px;
   }
   .director-wide-content {

@@ -1,0 +1,78 @@
+/* NIT Rourkela homepage: Latest News and Social Media, side by side within one screen.
+   News: the featured story on the left, the other four as compact rows (thumbnail + headline)
+   stacked beside it. Social: a tighter intro and shorter platform tiles. Overrides newsroom.css
+   and social-hub.css for this section only; the quick-view modal and every link are unchanged. */
+
+section.upcoming-section.secondBG { padding-block: clamp(18px, 3vh, 40px); }
+
+/* Both columns start together; the social panel no longer needs to follow a tall news column */
+section.upcoming-section.secondBG .upcoming-row { align-items: start; }
+/* The theme stacks the two columns below 1200px; keep them side by side down to 992px */
+@media (min-width: 992px) {
+  section.upcoming-section.secondBG .upcoming-row { grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr); gap: clamp(24px, 3vw, 48px); }
+}
+@media (min-width: 1200px) {
+  section.upcoming-section.secondBG .upcoming-row .item-resources { position: static; }
+}
+
+/* ---------- Latest News ---------- */
+section.upcoming-section.secondBG .newsroom .nr-head { margin-bottom: 10px; padding-bottom: 8px; }
+section.upcoming-section.secondBG .newsroom .nr-title { font-size: clamp(1.6rem, 1.2rem + 1vw, 2rem); line-height: 1.1; }
+section.upcoming-section.secondBG .newsroom .nr-ticker { margin-bottom: 12px; }
+
+section.upcoming-section.secondBG .newsroom .nr-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  grid-auto-rows: auto;
+  gap: 10px 14px;
+}
+
+/* Featured story: full height of the left column, image over text */
+section.upcoming-section.secondBG .newsroom .nr-card.nr-featured {
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  display: flex;
+  flex-direction: column;
+}
+section.upcoming-section.secondBG .newsroom .nr-featured .nr-media { min-height: 0; height: auto; aspect-ratio: 16 / 9; }
+section.upcoming-section.secondBG .newsroom .nr-featured .nr-body { justify-content: flex-start; gap: 8px; padding: 14px 16px 16px; }
+section.upcoming-section.secondBG .newsroom .nr-featured .nr-body h3 { font-size: 1.05rem; -webkit-line-clamp: 3; }
+section.upcoming-section.secondBG .newsroom .nr-featured .nr-body p {
+  font-size: .875rem; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* The other four: compact rows in the right column */
+section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: start;
+  box-shadow: none;
+}
+section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-media { aspect-ratio: auto; height: 100%; min-height: 76px; }
+section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-zoom { display: none; }
+section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-body { gap: 3px; padding: 7px 10px 7px 12px; }
+section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-tag { padding: 1px 6px; font-size: .65rem; }
+section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-body h3 { font-size: .82rem; line-height: 1.3; -webkit-line-clamp: 3; }
+section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-link { font-size: .75rem; }
+
+/* ---------- Social Media ---------- */
+section.upcoming-section.secondBG .item-resources > h2 { margin-bottom: 10px; }
+section.upcoming-section.secondBG .social-hub { gap: 10px; }
+section.upcoming-section.secondBG .social-hub .hub-hero { padding: 14px 16px 12px; }
+section.upcoming-section.secondBG .social-hub .hub-hero h3 { font-size: 1.3rem; margin-bottom: 4px; }
+section.upcoming-section.secondBG .social-hub .hub-hero p { font-size: .85rem; line-height: 1.45; margin-bottom: 6px; max-width: none; }
+section.upcoming-section.secondBG .social-hub .hub-tag { padding: 3px 10px; }
+section.upcoming-section.secondBG .social-hub .hub-grid { gap: 10px; }
+section.upcoming-section.secondBG .social-hub .hub-card { gap: 6px; padding: 12px 14px; }
+section.upcoming-section.secondBG .social-hub .hub-icon { width: 34px; height: 34px; font-size: 1rem; }
+section.upcoming-section.secondBG .social-hub .hub-blurb { font-size: .8rem; line-height: 1.4; }
+section.upcoming-section.secondBG .social-hub .hub-strip { padding: 10px 14px; }
+
+/* ---------- Narrow screens: news rows go under the featured story ---------- */
+@media (max-width: 767px) {
+  section.upcoming-section.secondBG .newsroom .nr-grid { grid-template-columns: minmax(0, 1fr); }
+  section.upcoming-section.secondBG .newsroom .nr-card.nr-featured { grid-row: auto; }
+  section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) { grid-column: 1; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-body p { display: none; }
+}

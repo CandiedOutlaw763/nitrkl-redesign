@@ -349,18 +349,8 @@ if ($(".seminar-scroll").length > 0) {
 
 }
 
-if ($(".event-scroll").length > 0) {
-    $(".event-scroll").bootstrapNews({
-        newsPerPage: 5,
-        autoplay: true,
-        pauseOnHover: true,
-        navigation: false,
-        direction: 'up',
-        newsTickerInterval: 3000,
-        onToDo: function () { }
-    });
-
-}
+// .event-scroll (Events & Seminars) and the notice .scrollgroup are run by assets/site/guidelines.js,
+// which adds the pause/play control GIGW 3.0 requires for moving content (WCAG 2.2.2).
 
 
 
@@ -382,27 +372,7 @@ $(function () {
 
 
 
-(function () {
 
-    var timerId = null;
-
-    function startSetInterval() {
-        timerId = setInterval(function () {
-            $(".scrollitem:first").slideUp();
-            setTimeout(function () {
-                $(".scrollitem:first").fadeIn().appendTo(".scrollgroup")
-            }, 300);
-        }, 2000);
-    }
-    startSetInterval();
-
-    $('.scrollitem').mouseover(function () {
-        clearInterval(timerId);
-    }).mouseout(function () {
-        startSetInterval();
-    });
-
-})();
 
 $(document).ready(function () {
 

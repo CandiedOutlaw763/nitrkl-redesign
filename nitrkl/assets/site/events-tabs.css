@@ -1,0 +1,12 @@
+/* NIT Rourkela homepage: Events / Seminars tab panels in the Events & Seminars card.
+   The inactive panel stays laid out (hidden from view, not display: none) so the
+   bootstrapNews ticker can measure its items when the page loads. The tabs themselves are
+   styled with the Notice Board's in notice-board.css. Behaviour: events-tabs.js. */
+
+.news-section .item-event .event-panels { position: relative; }
+.news-section .item-event .event-panel[aria-hidden="true"] {
+  position: absolute; inset: 0 0 auto 0; pointer-events: none;
+}
+/* !important: wow.js writes visibility: visible inline onto the animated event list */
+.news-section .item-event .event-panel[aria-hidden="true"],
+.news-section .item-event .event-panel[aria-hidden="true"] * { visibility: hidden !important; }

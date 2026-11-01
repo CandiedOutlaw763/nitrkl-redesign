@@ -116,7 +116,7 @@
 }
 
 .san-menu-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: clamp(28px, 3.2vw, 38px);
   font-weight: 700;
   color: #ffffff;
@@ -169,7 +169,7 @@
   justify-content: space-between;
   text-decoration: none !important;
   color: rgba(255, 255, 255, 0.82) !important;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: clamp(23px, 2.6vw, 36px);
   font-weight: 600;
   line-height: 1.2;
@@ -191,7 +191,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: system-ui, sans-serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 24px;
   color: var(--san-accent);
   opacity: 0;
@@ -389,7 +389,7 @@
 }
 
 .san-watermark-top {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: clamp(28px, 4.5vw, 68px);
   font-weight: 700;
   letter-spacing: 0.18em;
@@ -400,7 +400,7 @@
 }
 
 .san-watermark-main {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: clamp(44px, 8vw, 120px);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -552,7 +552,7 @@
    Pristine Typography (NO Boxes, NO Pills)
    ========================================================================== */
 .san-content-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: clamp(26px, 3vw, 36px);
   font-weight: 700;
   color: #ffffff;
@@ -566,7 +566,7 @@
 }
 
 .san-content-subtitle {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 21px;
   font-weight: 600;
   color: var(--san-accent-light);

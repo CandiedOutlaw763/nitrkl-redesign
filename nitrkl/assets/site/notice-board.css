@@ -1,0 +1,255 @@
+/* NIT Rourkela homepage: Notice Board (Announcement / Recruitment) and Events & Seminars,
+   restyled as one matched pair in the Gen-Z voice (condensed Noto Sans titles, cinnamon and amber,
+   square edges). The two scrolling lists get a fixed height from the screen height, so the
+   pair always fits one screen below the sticky menu; the tickers keep scrolling inside it.
+   Overrides placement-events-layout.css, cinnamon-theme.css and the theme where they style
+   these cards (some of those rules are !important). */
+
+.news-section .news-section-row {
+  --nb-ink: #150202;
+  --nb-cin: #771d1d;
+  --nb-amber: #f9b117;
+  --nb-muted: #6b5f5f;
+  --nb-line: #ece4e3;
+  --nb-tint: #fbf6f5;
+  --nb-display: "Noto Sans", sans-serif;
+  /* Height of each scrolling list: what the screen leaves after the menu and the cards' own chrome */
+  --nb-list-h: clamp(240px, calc(100svh - 290px), 430px);
+}
+
+/* ---------- Card ---------- */
+/* Doubled class: outweighs placement-events-layout.css's .item-notice / .item-event card rules */
+.news-section .news-section-row .nb-card.nb-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--nb-line);
+  border-top: 4px solid var(--nb-cin);
+  border-radius: 0;
+  box-shadow: none;
+  padding: clamp(18px, 1.8vw, 26px) clamp(18px, 2vw, 28px);
+  color: var(--nb-ink);
+}
+
+.news-section .news-section-row .nb-card .nb-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.news-section .news-section-row .nb-card .nb-title {
+  font-family: var(--nb-display, "Noto Sans", sans-serif); font-stretch: 75%;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 1.3rem + 1vw, 2.25rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  color: var(--nb-ink);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.news-section .news-section-row .nb-card .nb-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--nb-cin);
+  text-decoration: underline;
+  text-underline-offset: .25em;
+  text-decoration-thickness: 2px;
+}
+.news-section .news-section-row .nb-card .nb-all i { transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+.news-section .news-section-row .nb-card .nb-all:hover i { transform: translateX(4px); }
+
+/* ---------- Tabs: one underline style for both cards ---------- */
+.news-section .news-section-row .nb-card .nav-tabs,
+.news-section .news-section-row .nb-card .event-tabs {
+  display: flex;
+  gap: 24px;
+  margin: 0 0 4px;
+  padding: 0;
+  border-bottom: 1px solid var(--nb-line);
+}
+
+.news-section .news-section-row .nb-card .nav-tabs button,
+.news-section .news-section-row .nb-card .event-tabs button {
+  margin: 0 0 -1px;
+  padding: 10px 0;
+  border: 0 !important;
+  border-bottom: 3px solid transparent !important;
+  border-radius: 0;
+  background: none !important;
+  color: var(--nb-muted) !important;
+  font-family: var(--nb-display, "Noto Sans", sans-serif); font-stretch: 75%;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: color .2s, border-color .2s;
+}
+
+.news-section .news-section-row .nb-card .nav-tabs button:hover,
+.news-section .news-section-row .nb-card .event-tabs button:hover { color: var(--nb-ink) !important; }
+
+.news-section .news-section-row .nb-card .nav-tabs button.active,
+.news-section .news-section-row .nb-card .event-tabs button[aria-selected="true"] {
+  background: none !important; /* cinnamon-theme.css fills the active tab red (!important) */
+  color: var(--nb-ink) !important;
+  border-bottom-color: var(--nb-cin) !important;
+}
+
+.news-section .news-section-row .nb-card .nav-tabs button:focus-visible,
+.news-section .news-section-row .nb-card .event-tabs button:focus-visible { outline: 3px solid var(--nb-amber); outline-offset: 2px; }
+
+/* ---------- The fixed-height list area ---------- */
+.news-section .news-section-row .item-notice.nb-card .tab-content { height: auto !important; padding: 0; }
+.news-section .news-section-row .item-notice.nb-card .scrollbox,
+.news-section .news-section-row .item-notice.nb-card .list { height: var(--nb-list-h) !important; overflow: hidden; }
+.news-section .news-section-row .item-event.nb-card .event-scroll { height: var(--nb-list-h) !important; overflow: hidden; margin: 0; padding: 0; }
+
+/* ---------- Rows: date and type first, then the title ---------- */
+.news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem,
+.news-section .news-section-row .item-notice.nb-card .list li,
+.news-section .news-section-row .item-event.nb-card .event-scroll li {
+  margin: 0;
+  padding: 12px 10px;
+  border: 0;
+  border-bottom: 1px solid var(--nb-line);
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transform: none;
+  transition: background-color .2s;
+}
+
+.news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem:hover,
+.news-section .news-section-row .item-notice.nb-card .list li:hover,
+.news-section .news-section-row .item-event.nb-card .event-scroll li:hover {
+  background: var(--nb-tint);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Notices: the date (the <span> after the link) moves above the title */
+.news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem { display: flex; flex-direction: column; gap: 3px; }
+.news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem > span {
+  order: -1;
+  margin: 0;
+  font-style: normal;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--nb-cin);
+}
+
+.news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem a,
+.news-section .news-section-row .item-notice.nb-card .list li a {
+  font-size: .95rem;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--nb-ink);
+  text-decoration: none;
+  text-align: left;
+}
+.news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem a b { font-weight: 600; }
+.news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem a:hover,
+.news-section .news-section-row .item-notice.nb-card .list li a:hover { color: var(--nb-cin) !important; text-decoration: underline; text-underline-offset: .2em; }
+
+.news-section .news-section-row .item-notice.nb-card .list { margin: 0; padding: 0; list-style: none; }
+.news-section .news-section-row .item-notice.nb-card .list li { display: flex; align-items: center; gap: 8px; }
+
+/* Events and seminars */
+.news-section .news-section-row .item-event.nb-card .event-scroll li .desc {
+  padding: 0;
+  background: none;
+  font-size: .95rem;
+  line-height: 1.45;
+  color: var(--nb-ink);
+}
+
+.news-section .news-section-row .item-event.nb-card .event-scroll li .desc .ev-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  margin-bottom: 3px;
+}
+
+.news-section .news-section-row .item-event.nb-card .event-scroll li .desc .ev-kind {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--nb-cin);
+}
+
+.news-section .news-section-row .item-event.nb-card .event-scroll li .desc .ev-date {
+  font-family: var(--nb-display, "Noto Sans", sans-serif); font-stretch: 75%;
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  color: var(--nb-ink);
+}
+
+.news-section .news-section-row .item-event.nb-card .event-scroll li .desc .ev-title {
+  margin: 0 0 4px;
+  font-size: .95rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: left;
+  color: var(--nb-ink);
+}
+
+.news-section .news-section-row .item-event.nb-card .event-scroll li .desc .ev-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--nb-cin);
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+
+/* "New" marker, in place of the animated GIF */
+.news-section .news-section-row .nb-card .nb-new {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 6px;
+  vertical-align: 2px;
+  background: var(--nb-amber);
+  color: var(--nb-ink);
+  font-size: .65rem;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: .08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+/* The theme makes every span in a notice row a full-width italic block */
+.news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem span.nb-new,
+.news-section .news-section-row .item-notice.nb-card .tab-content .list li span.nb-new {
+  display: inline-block;
+  margin: 0 0 0 6px;
+  font-size: .65rem;
+  font-style: normal;
+  color: var(--nb-ink);
+}
+
+/* ---------- Stacked (one column): each list takes half of what the screen leaves ---------- */
+@media (max-width: 991px) {
+  .news-section .news-section-row {
+    --nb-list-h: clamp(160px, calc(50svh - 232px), 320px);
+  }
+  .news-section .news-section-row .nb-card .nb-title { font-size: 1.75rem; }
+}

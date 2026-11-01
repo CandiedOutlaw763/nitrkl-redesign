@@ -69,7 +69,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'Outfit', 'Noto Sans', sans-serif !important;
+  font-family: 'Noto Sans', sans-serif !important;
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -256,7 +256,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'Outfit', 'Noto Sans', sans-serif !important;
+  font-family: 'Noto Sans', sans-serif !important;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -374,7 +374,7 @@
   align-items: center;
   gap: 7px;
   align-self: flex-start;
-  font-family: 'Outfit', 'Noto Sans', sans-serif !important;
+  font-family: 'Noto Sans', sans-serif !important;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -385,7 +385,7 @@
 
 /* Big Display Title matching the Video ("GROUNDWATER RESOURCES") */
 .fwp-media-title {
-  font-family: 'Outfit', 'Noto Sans', sans-serif !important;
+  font-family: 'Noto Sans', sans-serif !important;
   font-size: 34px;
   font-weight: 800;
   letter-spacing: -0.01em;
@@ -426,7 +426,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Outfit', 'Noto Sans', sans-serif !important;
+  font-family: 'Noto Sans', sans-serif !important;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -504,7 +504,7 @@
 /* Item Number on top */
 .fwp-item-num {
   display: block;
-  font-family: 'Outfit', 'Noto Sans', monospace !important;
+  font-family: 'Noto Sans', sans-serif !important;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;

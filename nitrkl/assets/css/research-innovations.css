@@ -48,7 +48,7 @@
 }
 
 .ri-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-weight: 700;
   font-size: clamp(2.3rem, 5vw, 4.2rem);
   line-height: 1;
@@ -219,7 +219,7 @@
 .ri-story-title {
   max-width: 30ch;
   margin: 0 0 18px;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: clamp(1.35rem, 2.3vw, 2rem);
   font-weight: 600;
   line-height: 1.2;
@@ -259,7 +259,7 @@
   grid-column: 1 / -1;
   margin: 0;
   padding: 22px clamp(20px, 3vw, 32px) 0;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--ri-ink);
@@ -538,5 +538,48 @@
   }
   .ri-bar-fill {
     transform: scaleX(1);
+  }
+}
+
+/* ==========================================================================
+   Research and Innovations fits one screen below the sticky menu; Research
+   output is its own section (#research-output) right after it.
+   ========================================================================== */
+#research-section {
+  padding: clamp(24px, 4vh, 44px) 0;
+}
+
+#research-section .ri-head {
+  margin-bottom: clamp(14px, 2.2vh, 24px);
+}
+
+#research-section .ri-title {
+  font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.25rem); /* DBIM H1 at most: 36px */
+  margin-bottom: 6px;
+}
+
+#research-section .ri-lede {
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+/* The story strip takes what the screen leaves after the menu, the padding and the head */
+#research-section .ri-stories {
+  height: clamp(300px, calc(100svh - 230px), 470px);
+}
+
+/* Research output: its own section, so no gap carried over from the stories above */
+#research-output {
+  padding: clamp(28px, 5vh, 56px) 0;
+  border-top: 0;
+}
+
+#research-output .ri-output {
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  #research-section .ri-stories {
+    height: clamp(380px, calc(100svh - 350px), 640px);
   }
 }
