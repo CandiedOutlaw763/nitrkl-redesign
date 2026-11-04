@@ -25,7 +25,7 @@ $(window).scroll(function () {
         $('.nav-container .container .navigation').removeClass('navigation-paading-left');
         $('.onscroll-logo').hide();
         $('.nav-menu').css({
-            'background': 'rgba(50,50,50,0.2)',
+            'background': 'rgba(21, 2, 2, 0.2)',
         });
         $('.nav-menu>li>a').css({
             'color': '#fff',

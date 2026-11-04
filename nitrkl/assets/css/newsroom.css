@@ -11,9 +11,9 @@
 .newsroom {
   --nr-accent: #A72626;
   --nr-accent-2: #D75151;
-  --nr-ink: #1a2238;
-  --nr-muted: #5b6478;
-  --nr-line: #e6ebf2;
+  --nr-ink: #150202;
+  --nr-muted: #606060;
+  --nr-line: #ebeaea;
   position: relative;
   text-align: left;
 }
@@ -91,7 +91,7 @@
   background: #fff;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(195, 88, 57, 0.08);
+  box-shadow: 0 4px 14px rgba(215, 81, 81, 0.08);
   transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -112,7 +112,7 @@
   color: #fff;
   border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(195, 88, 57, 0.28);
+  box-shadow: 0 8px 22px rgba(215, 81, 81, 0.28);
 }
 
 .newsroom .nr-viewall:hover::before,
@@ -136,10 +136,10 @@
   overflow: hidden;
   margin-bottom: 24px;
   border-radius: 0;
-  background: linear-gradient(90deg, #101626 0%, #172036 50%, #101626 100%);
+  background: linear-gradient(90deg, #150202 0%, #150202 50%, #150202 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 4px solid var(--nr-accent);
-  box-shadow: 0 12px 28px rgba(16, 22, 38, 0.16);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
 .newsroom .nr-ticker-label {
@@ -156,7 +156,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
-  background: linear-gradient(135deg, var(--nr-accent), #e06d48);
+  background: linear-gradient(135deg, var(--nr-accent), #d75151);
   box-shadow: 4px 0 16px rgba(0, 0, 0, 0.25);
 }
 
@@ -212,7 +212,7 @@
 
 .newsroom .nr-ticker-list button:hover,
 .newsroom .nr-ticker-list button:focus-visible {
-  color: #ff9d76;
+  color: #faaaaa;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -233,7 +233,7 @@
   border-radius: 0;
   background: #fff;
   border: 1px solid var(--nr-line);
-  box-shadow: 0 6px 20px rgba(26, 34, 56, 0.06);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
   transform-style: preserve-3d;
   transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
   will-change: transform;
@@ -255,8 +255,8 @@
 }
 
 .newsroom .nr-card:hover {
-  border-color: rgba(195, 88, 57, 0.45);
-  box-shadow: 0 20px 42px rgba(26, 34, 56, 0.14), 0 2px 8px rgba(195, 88, 57, 0.12);
+  border-color: rgba(215, 81, 81, 0.45);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(215, 81, 81, 0.12);
 }
 
 .newsroom .nr-card:hover::before {
@@ -287,7 +287,7 @@
   overflow: hidden;
   border: 0;
   border-radius: 0;
-  background: #0f1424;
+  background: #150202;
   cursor: zoom-in;
 }
 
@@ -308,7 +308,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(16, 22, 38, 0.5));
+  background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.5));
   opacity: 0.6;
   transition: opacity 0.4s ease;
 }
@@ -365,7 +365,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;
-  background: rgba(16, 22, 38, 0.88);
+  background: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
@@ -397,7 +397,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--nr-accent);
-  background: rgba(195, 88, 57, 0.08);
+  background: rgba(215, 81, 81, 0.08);
 }
 
 .newsroom .nr-body h3 {
@@ -492,7 +492,7 @@
   gap: 16px;
   padding: 30px 34px;
   background:
-    radial-gradient(120% 120% at 100% 0%, rgba(255, 138, 92, 0.09), transparent 65%),
+    radial-gradient(120% 120% at 100% 0%, rgba(215, 81, 81, 0.09), transparent 65%),
     #fff;
 }
 
@@ -526,12 +526,12 @@
   gap: 8px;
   padding: 10px 20px;
   border-radius: 0;
-  border: 1.5px solid var(--bs-primary, #c35839);
+  border: 1.5px solid var(--bs-primary, #d75151);
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--bs-primary, #c35839);
+  color: var(--bs-primary, #d75151);
   background: transparent;
   text-decoration: none;
   cursor: pointer;
@@ -543,7 +543,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: var(--bs-primary, #c35839);
+  background: var(--bs-primary, #d75151);
   transform: translateY(101%);
   transition: transform 0.35s cubic-bezier(.2, .8, .2, 1);
 }
@@ -553,7 +553,7 @@
   color: #fff;
   border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(195, 88, 57, 0.3);
+  box-shadow: 0 8px 20px rgba(215, 81, 81, 0.3);
 }
 
 .nr-btn:hover::before,
@@ -564,18 +564,18 @@
 .nr-btn-solid {
   color: #fff;
   border-color: transparent;
-  background: linear-gradient(135deg, var(--bs-primary, #c35839), #ff8a5c);
+  background: linear-gradient(135deg, var(--bs-primary, #d75151), #d75151);
 }
 
 .nr-btn-solid:hover,
 .nr-btn-solid:focus-visible {
   color: #fff;
-  box-shadow: 0 10px 24px rgba(195, 88, 57, 0.4);
+  box-shadow: 0 10px 24px rgba(215, 81, 81, 0.4);
 }
 
 .newsroom :focus-visible,
 .nr-modal :focus-visible {
-  outline: 3px solid var(--bs-primary, #c35839);
+  outline: 3px solid var(--bs-primary, #d75151);
   outline-offset: 3px;
 }
 
@@ -596,7 +596,7 @@
 .nr-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(14, 18, 34, 0.76);
+  background: rgba(0, 0, 0, 0.76);
   backdrop-filter: blur(8px);
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -629,7 +629,7 @@
 
 .nr-modal-media {
   min-height: 320px;
-  background: #0e1222;
+  background: #150202;
 }
 
 .nr-modal-media img {
@@ -654,7 +654,7 @@
   padding: 34px 32px 28px;
   overflow-y: auto;
   text-align: left;
-  border-top: 4px solid var(--bs-primary, #c35839);
+  border-top: 4px solid var(--bs-primary, #d75151);
 }
 
 .nr-modal-body > * {
@@ -676,20 +676,20 @@
 .nr-modal .nr-tag {
   padding: 4px 10px;
   border-radius: 0;
-  border-left: 3px solid var(--bs-primary, #c35839);
+  border-left: 3px solid var(--bs-primary, #d75151);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--bs-primary, #c35839);
-  background: rgba(195, 88, 57, 0.1);
+  color: var(--bs-primary, #d75151);
+  background: rgba(215, 81, 81, 0.1);
 }
 
 .nr-modal-count {
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: #8a92a6;
+  color: #606060;
 }
 
 .nr-modal-body h3 {
@@ -697,7 +697,7 @@
   font-size: 1.55rem;
   font-weight: 800;
   line-height: 1.3;
-  color: #1a2238;
+  color: #150202;
 }
 
 .nr-modal-body p {
@@ -705,7 +705,7 @@
   font-size: 1rem;
   line-height: 1.65;
   text-align: left;
-  color: #5b6478;
+  color: #606060;
 }
 
 .nr-modal-foot {
@@ -715,7 +715,7 @@
   gap: 12px;
   margin-top: auto;
   padding-top: 14px;
-  border-top: 1px solid #edf1f7;
+  border-top: 1px solid #ebeaea;
 }
 
 .nr-modal-nav {
@@ -731,8 +731,8 @@
   width: 42px;
   height: 42px;
   border-radius: 0;
-  border: 1px solid #e3e7ef;
-  color: #1a2238;
+  border: 1px solid #ebeaea;
+  color: #150202;
   background: #fff;
   cursor: pointer;
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
@@ -741,7 +741,7 @@
 .nr-modal-nav button:hover,
 .nr-modal-close:hover {
   color: #fff;
-  background: var(--bs-primary, #c35839);
+  background: var(--bs-primary, #d75151);
   border-color: transparent;
   transform: translateY(-2px);
 }
@@ -763,9 +763,9 @@ body.nr-lock {
 
 /* Keyframes */
 @keyframes nrPulse {
-  0% { box-shadow: 0 0 0 0 rgba(195, 88, 57, 0.55); }
-  70% { box-shadow: 0 0 0 10px rgba(195, 88, 57, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(195, 88, 57, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(215, 81, 81, 0.55); }
+  70% { box-shadow: 0 0 0 10px rgba(215, 81, 81, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(215, 81, 81, 0); }
 }
 
 @keyframes nrTicker {
@@ -779,8 +779,8 @@ body.nr-lock {
 }
 
 @keyframes nrGlow {
-  0%, 100% { box-shadow: 0 6px 14px rgba(195, 88, 57, 0.35); }
-  50% { box-shadow: 0 6px 24px rgba(255, 138, 92, 0.75); }
+  0%, 100% { box-shadow: 0 6px 14px rgba(215, 81, 81, 0.35); }
+  50% { box-shadow: 0 6px 24px rgba(215, 81, 81, 0.75); }
 }
 
 /* Responsive */
@@ -855,6 +855,59 @@ body.nr-lock {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+/* Story rotation (newsroom.js): controls under the featured story, a progress line along their top
+   edge, and a short fade while the cards change stories */
+.newsroom .nr-rotate {
+  position: relative;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px 12px;
+  border-top: 1px solid var(--nr-line);
+  background: #fff;
+}
+
+.newsroom .nr-rotate-prog {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  overflow: hidden;
+}
+
+.newsroom .nr-rotate-prog span {
+  display: block;
+  height: 100%;
+  background: var(--nr-accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.newsroom .nr-rotate-count {
+  margin-left: auto;
+  font-size: var(--t-p2);
+  font-weight: 600;
+  color: var(--nr-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.newsroom .nr-card .nr-media img {
+  transition: transform 0.8s cubic-bezier(.2, .8, .2, 1), filter 0.8s ease, opacity 0.25s ease;
+}
+
+.newsroom .nr-card .nr-media .nr-badge:not(.nr-badge-hot),
+.newsroom .nr-card .nr-body > * {
+  transition: opacity 0.25s ease;
+}
+
+.newsroom .nr-grid.is-switching .nr-card .nr-media img,
+.newsroom .nr-grid.is-switching .nr-card .nr-media .nr-badge:not(.nr-badge-hot),
+.newsroom .nr-grid.is-switching .nr-card .nr-body > * {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

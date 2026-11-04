@@ -27,6 +27,9 @@ window.dataLayer = window.dataLayer || [];
 <link href="assets/site/events-tabs.css" rel="stylesheet"/>
 <link href="assets/site/notice-board.css" rel="stylesheet"/>
 <link href="assets/site/news-social.css" rel="stylesheet"/>
+<link href="assets/site/social-cards.css" rel="stylesheet"/>
+<link href="assets/site/about.css" rel="stylesheet"/>
+<link href="assets/site/study.css" rel="stylesheet"/>
 <link href="assets/site/placement-stats.css" rel="stylesheet"/>
 <!-- Google Tag Manager -->
 <!-- End Google Tag Manager -->
@@ -70,9 +73,8 @@ window.dataLayer = window.dataLayer || [];
 <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"/>
 <!-- Bootstrap CSS -->
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/site/icons.css" rel="stylesheet"/>
 <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"/>
 <!-- linea-font css -->
 <link href="assets/fonts/linea-fonts.css" rel="stylesheet" type="text/css"/>
 <!-- flaticon css  -->
@@ -88,14 +90,11 @@ window.dataLayer = window.dataLayer || [];
 <!-- Custome Style -->
 <link href="assets/css/theme-style.min.css" rel="stylesheet"/>
 <link href="assets/css/nitrkl-accessibility.css" rel="stylesheet"/>
-<link href="assets/css/about-3d.css" rel="stylesheet"/>
 <link href="assets/css/features-with-panel.css" rel="stylesheet"/>
 <link href="assets/css/placement-events-layout.css" rel="stylesheet"/>
-<link href="assets/css/study-at-nitr.css" rel="stylesheet"/>
 <!-- Google Fonts: Noto Sans -->
 <link href="assets/css/achievements-carousel.css" rel="stylesheet"/>
 <link href="assets/css/social-initiatives.css" rel="stylesheet"/>
-<link href="assets/css/social-hub.css" rel="stylesheet"/>
 <link href="assets/css/newsroom.css" rel="stylesheet"/>
 <link href="assets/css/cinnamon-theme.css" rel="stylesheet"/>
 <link href="assets/css/research-innovations.css" rel="stylesheet"/>
@@ -104,6 +103,7 @@ window.dataLayer = window.dataLayer || [];
 </head>
 <body class="body">
 <a class="gg-skip" href="#main">Skip to main content</a>
+<div class="scroll-progress" aria-hidden="true"><span></span></div>
 <!-- Opening sequence: decorative, shown over the page while it loads -->
 <div class="intro" id="intro" aria-hidden="true">
   <canvas class="intro-canvas"></canvas>
@@ -122,7 +122,7 @@ window.dataLayer = window.dataLayer || [];
 <input id="topmenu" type="hidden" value=""/>
 <input id="submenu" type="hidden" value=""/>
 <input id="thirdmenu" type="hidden" value=""/>
-<!-- Gen-Z header (from the genz design; DBIM: user controls, highlighted search, global navigation). assets/site/header.css, header.js -->
+<!-- Header and main navigation (from the component library, nitrkl-components/components/02-header; DBIM: user controls, highlighted search, global navigation). assets/site/header.css, header.js -->
 <header class="site-header">
   <div class="util">
     <div class="wrap util-row">
@@ -135,22 +135,28 @@ window.dataLayer = window.dataLayer || [];
         <li><a class="outside-link" href="https://www.instagram.com/nitrourkela1961/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
         <li><a class="outside-link" href="https://x.com/nitrourkela" target="_blank" rel="noopener" title="X" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
         <li><a class="outside-link" href="https://www.facebook.com/share/1ZLvg3dqeG/" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
-        <li><a class="outside-link" href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" target="_blank" rel="noopener" title="Linkedin" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
-        <li><a class="outside-link" href="https://www.youtube.com/@NITROURKELA1961" target="_blank" rel="noopener" title="Youtube" aria-label="Youtube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+        <li><a class="outside-link" href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+        <li><a class="outside-link" href="https://www.youtube.com/@NITROURKELA1961" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
       </ul>
       <ul class="util-portals">
         <li><a href="https://mail.nitrkl.ac.in">Webmail</a></li>
         <li><a href="https://eapplication.nitrkl.ac.in/nitris/">NITRis</a></li>
         <li><a href="https://nitrianparent.nitrkl.ac.in/">NITRianParent</a></li>
+      </ul>
+      <ul class="util-controls" aria-label="User controls">
+        <li><a class="uc" href="#main" title="Skip to main content"><i class="bi bi-box-arrow-in-right" aria-hidden="true"></i><span class="uc-text">Skip to main content</span></a></li>
+        <li><a class="uc" href="screen-reader-access.html" title="Screen Reader Access"><i class="bi bi-volume-up" aria-hidden="true"></i><span class="uc-text">Screen Reader Access</span></a></li>
         <li class="translate-container lang">
           <button class="translate-btn lang-btn" type="button" aria-expanded="false" aria-controls="langMenu" title="Translate"><span aria-hidden="true" lang="hi">अ</span><span class="lang-sep" aria-hidden="true"></span><span aria-hidden="true">A</span><span class="visually-hidden">Choose language: English, हिन्दी, ଓଡ଼ିଆ</span></button>
           <div class="lang-menu" id="langMenu" hidden>
             <button type="button" data-lang="en" lang="en">English</button>
             <button type="button" data-lang="hi" lang="hi">हिन्दी</button>
             <button type="button" data-lang="or" lang="or">ଓଡ଼ିଆ</button>
+            <p class="lang-note">Hindi and Odia are machine translations by Google Translate, which sets a cookie. <a href="/Home/PrivacyPolicy/">Cookie policy</a></p>
             <div class="translate-panel" id="translatePanel"><div id="google_translate_element"></div></div>
           </div>
         </li>
+        <li><button class="uc uc-acc" type="button" aria-controls="nitrkl-accessibility-card" aria-expanded="false" aria-haspopup="dialog" title="Accessibility controls"><i class="bi bi-universal-access" aria-hidden="true"></i><span class="visually-hidden">Accessibility controls</span></button></li>
       </ul>
     </div>
   </div>
@@ -163,8 +169,8 @@ window.dataLayer = window.dataLayer || [];
       <p class="mast-slogan" translate="yes">An Institute of National Importance</p>
     </div>
     <form class="mast-search" action="/Search" method="get" role="search">
-      <label class="visually-hidden" for="search">Search</label>
-      <input id="search" name="q" placeholder="Search" type="search" autocomplete="off"/>
+      <label class="visually-hidden" for="search">Search the website</label>
+      <input id="search" name="q" placeholder="Search pages and documents" type="search" maxlength="500" autocomplete="off"/>
       <button type="submit" aria-label="Search"><i class="bi bi-search" aria-hidden="true"></i></button>
     </form>
   </div>
@@ -175,7 +181,7 @@ window.dataLayer = window.dataLayer || [];
     <a class="nav-mini-logo" href="/" aria-label="NIT Rourkela home"><img alt="" src="assets/site/seal.svg" width="40" height="40"/><span>NIT Rourkela</span></a>
     <button class="gz-nav-toggle" type="button" aria-expanded="false" aria-controls="navmenu"><span class="nav-toggle-bars" aria-hidden="true"></span><span class="nav-toggle-text">Menu</span></button>
     <ul class="gz-nav-menu" id="navmenu">
-      <li class="nav-home"><a href="/" aria-label="Home"><i class="bi bi-house-door-fill"></i></a></li>
+      <li class="nav-home"><a href="/" aria-label="Home"><i class="bi bi-house-door-fill" aria-hidden="true"></i></a></li>
       <li id="tmenu-institute" class="has-mega">
         <button type="button" class="nav-top" aria-expanded="false">Institute</button>
         <div class="mega">
@@ -218,7 +224,7 @@ window.dataLayer = window.dataLayer || [];
                 <li><a href="/Institute/Minutes_Senate/" id="submenu-msenate">Minutes of Senate</a></li>
                 <li><a href="/Institute/Rules_Regulations/" id="submenu-ruleregulation">Rules and Regulations</a></li>
                 <li><a href="/Institute/Annual_Reports/" id="submenu-annualreport">Annual Reports</a></li>
-                <li><a href="docs/IT Infrastructure Usage Policy.pdf" target="_blank">IT Infrastructure Usage Policy</a></li>
+                <li><a href="docs/IT Infrastructure Usage Policy.pdf" target="_blank" rel="noopener">IT Infrastructure Usage Policy <span class="file-meta">(PDF, 277 KB)</span> <span class="gg-file">(PDF, 277 KB)</span></a></li>
               </ul>
             </div>
             <div class="mega-col">
@@ -434,44 +440,40 @@ window.dataLayer = window.dataLayer || [];
   </div>
 </nav>
 <main id="main" tabindex="-1">
-<!-- Gen-Z hero (from the genz design): the campus film, then the institute's current banners (assets/site/hero.css, hero.js) -->
+<!-- Hero carousel (from the component library, nitrkl-components/components/03-hero): the campus film, then the institute's current banners (assets/site/hero.css, hero.js) -->
 <section class="hero chapter" data-chapter="dark" aria-roledescription="carousel" aria-label="Institute highlights">
+  <p class="visually-hidden" id="heroFilmDesc">Silent campus film with no speech or sound: the Main Building of NIT Rourkela, aerial views of the campus and its student residences, tree-lined roads, a cyclist and flower gardens, with the words "Welcome to NIT Rourkela".</p>
   <div class="hero-stage" id="heroStage">
-    <div class="hero-slide hero-slide--video is-active" data-interval="30000" data-title="Welcome to NIT Rourkela" data-kind="Campus film" aria-roledescription="slide" aria-label="1 of 6: Welcome to NIT Rourkela, campus film">
+    <div class="hero-slide hero-slide--video is-active" role="group" data-interval="30000" data-title="Welcome to NIT Rourkela" data-kind="Campus film" aria-roledescription="slide" aria-label="1 of 6: Welcome to NIT Rourkela, campus film">
       <div class="hero-media">
-        <video muted playsinline loop preload="metadata" poster="docs/Slider/hero-poster.jpg" aria-label="Campus film: the Main Building of NIT Rourkela">
+        <video muted playsinline loop preload="metadata" poster="docs/Slider/hero-poster.jpg" aria-label="Campus film: the Main Building of NIT Rourkela" aria-describedby="heroFilmDesc">
           <source src="docs/Slider/hero.mp4" type="video/mp4"/>
         </video>
       </div>
     </div>
-    <div class="hero-slide" data-interval="6000" data-title="National Cyber Security Awareness Month" data-kind="October 2026" aria-roledescription="slide" aria-label="2 of 6: National Cyber Security Awareness Month, October 2026">
+    <div class="hero-slide" role="group" data-interval="6000" data-title="National Cyber Security Awareness Month" data-kind="October 2026" aria-roledescription="slide" aria-label="2 of 6: National Cyber Security Awareness Month, October 2026">
       <div class="hero-media">
-        <div class="hero-fill" style="background-image:url('docs/Slider/12102026164440120Cyber Security.jpg')"></div>
-        <img alt="National Cyber Security Awareness Month, October 2026: Stay aware, stay secure, stay safe online. Report cyber fraud: call 1930 or visit cybercrime.gov.in" loading="lazy" src="docs/Slider/12102026164440120Cyber Security.jpg" width="1920" height="1010"/>
+        <img alt="National Cyber Security Awareness Month, October 2026: stay aware, stay secure. Report cyber fraud on 1930 or at cybercrime.gov.in" loading="lazy" src="docs/Slider/12102026164440120Cyber Security.jpg" width="1920" height="1010"/>
       </div>
     </div>
-    <div class="hero-slide" data-interval="6000" data-title="Global South–Japan Tech Talent Internship 2026" data-kind="Career seminar, 5 October 2026" aria-roledescription="slide" aria-label="3 of 6: Career Seminar, Global South–Japan Tech Talent Internship 2026">
+    <div class="hero-slide" role="group" data-interval="6000" data-title="Global South–Japan Tech Talent Internship 2026" data-kind="Career seminar, 5 October 2026" aria-roledescription="slide" aria-label="3 of 6: Career Seminar, Global South–Japan Tech Talent Internship 2026">
       <div class="hero-media">
-        <div class="hero-fill" style="background-image:url('docs/Slider/28092026201750363For Website.jpg')"></div>
         <img alt="GSO JTI Career Seminar: Global South–Japan Tech Talent Internship 2026, 5th October 2026, Career Development Centre, NIT Rourkela" loading="lazy" src="docs/Slider/28092026201750363For Website.jpg" width="1920" height="1010"/>
       </div>
     </div>
-    <div class="hero-slide" data-interval="6000" data-title="17th Odisha Environment Congress" data-kind="3–5 November 2026" aria-roledescription="slide" aria-label="4 of 6: 17th Odisha Environment Congress, 3 to 5 November 2026">
+    <div class="hero-slide" role="group" data-interval="6000" data-title="17th Odisha Environment Congress" data-kind="3–5 November 2026" aria-roledescription="slide" aria-label="4 of 6: 17th Odisha Environment Congress, 3 to 5 November 2026">
       <div class="hero-media">
-        <div class="hero-fill" style="background-image:url('docs/Slider/28092026122848510Environment Congress.jpg.jpeg')"></div>
         <img alt="17th Odisha Environment Congress 2026, Environment and Technology, 3–5 November 2026 at NIT Rourkela" loading="lazy" src="docs/Slider/28092026122848510Environment Congress.jpg.jpeg" width="1920" height="1010"/>
       </div>
     </div>
-    <div class="hero-slide" data-interval="6000" data-title="Research Impact Conclave" data-kind="ANRF + NIT Rourkela, 15–16 October 2026" aria-roledescription="slide" aria-label="5 of 6: ANRF and NIT Rourkela Research Impact Conclave, 15 to 16 October 2026">
+    <div class="hero-slide" role="group" data-interval="6000" data-title="Research Impact Conclave" data-kind="ANRF + NIT Rourkela, 15–16 October 2026" aria-roledescription="slide" aria-label="5 of 6: ANRF and NIT Rourkela Research Impact Conclave, 15 to 16 October 2026">
       <div class="hero-media">
-        <div class="hero-fill" style="background-image:url('docs/Slider/08102026094147725Research Impact conlave.jpg')"></div>
         <img alt="ANRF + NIT Rourkela Research Impact Conclave: Synergy for Sustainability, 15–16 October 2026" loading="lazy" src="docs/Slider/08102026094147725Research Impact conlave.jpg" width="1920" height="1010"/>
       </div>
     </div>
-    <div class="hero-slide" data-interval="6000" data-title="Zero Ragging" data-kind="NIT Rourkela campus" aria-roledescription="slide" aria-label="6 of 6: Zero Ragging, NIT Rourkela campus">
+    <div class="hero-slide" role="group" data-interval="6000" data-title="Zero Ragging" data-kind="NIT Rourkela campus" aria-roledescription="slide" aria-label="6 of 6: Zero Ragging, NIT Rourkela campus">
       <div class="hero-media">
-        <div class="hero-fill" style="background-image:url('docs/Slider/04082026172959867Anti-Ragging_NITR-Web.jpg.jpeg')"></div>
-        <img alt="Zero Ragging, NIT Rourkela Campus. Ragging is a criminal offence. Do let us know if you are suffering: 7894252258, 9733504234, 8895853758, 9438715089" loading="lazy" src="docs/Slider/04082026172959867Anti-Ragging_NITR-Web.jpg.jpeg" width="1920" height="1010"/>
+        <img alt="Zero Ragging at NIT Rourkela. Ragging is a criminal offence. Helplines: 7894252258, 9733504234, 8895853758, 9438715089" loading="lazy" src="docs/Slider/04082026172959867Anti-Ragging_NITR-Web.jpg.jpeg" width="1920" height="1010"/>
       </div>
     </div>
   </div>
@@ -479,12 +481,12 @@ window.dataLayer = window.dataLayer || [];
     <div class="wrap hero-rail-row">
       <p class="hero-caption" aria-live="polite"><span class="hero-count">1 / 6</span><span class="hero-title">Welcome to NIT Rourkela</span><span class="hero-kind">Campus film</span></p>
       <ol class="hero-thumbs" id="heroThumbs">
-        <li><button type="button" aria-label="Show slide 1: campus film" class="is-active"><img src="docs/Slider/hero-poster.jpg" alt="" loading="lazy"/><i class="bi bi-play-fill" aria-hidden="true"></i><span class="hero-prog"></span></button></li>
-        <li><button type="button" aria-label="Show slide 2: Cyber Security Awareness Month"><img src="docs/Slider/12102026164440120Cyber Security.jpg" alt="" loading="lazy"/><span class="hero-prog"></span></button></li>
-        <li><button type="button" aria-label="Show slide 3: Career Seminar"><img src="docs/Slider/28092026201750363For Website.jpg" alt="" loading="lazy"/><span class="hero-prog"></span></button></li>
-        <li><button type="button" aria-label="Show slide 4: Odisha Environment Congress"><img src="docs/Slider/28092026122848510Environment Congress.jpg.jpeg" alt="" loading="lazy"/><span class="hero-prog"></span></button></li>
-        <li><button type="button" aria-label="Show slide 5: Research Impact Conclave"><img src="docs/Slider/08102026094147725Research Impact conlave.jpg" alt="" loading="lazy"/><span class="hero-prog"></span></button></li>
-        <li><button type="button" aria-label="Show slide 6: Zero Ragging"><img src="docs/Slider/04082026172959867Anti-Ragging_NITR-Web.jpg.jpeg" alt="" loading="lazy"/><span class="hero-prog"></span></button></li>
+        <li><button type="button" aria-label="Show slide 1: campus film" class="is-active"><img src="docs/Slider/thumbs/hero-poster.webp" alt="" loading="lazy" width="240" height="135"/><i class="bi bi-play-fill" aria-hidden="true"></i><span class="hero-prog"></span></button></li>
+        <li><button type="button" aria-label="Show slide 2: Cyber Security Awareness Month"><img src="docs/Slider/thumbs/12102026164440120Cyber Security.webp" alt="" loading="lazy" width="240" height="126"/><span class="hero-prog"></span></button></li>
+        <li><button type="button" aria-label="Show slide 3: Career Seminar"><img src="docs/Slider/thumbs/28092026201750363For Website.webp" alt="" loading="lazy" width="240" height="126"/><span class="hero-prog"></span></button></li>
+        <li><button type="button" aria-label="Show slide 4: Odisha Environment Congress"><img src="docs/Slider/thumbs/28092026122848510Environment Congress.webp" alt="" loading="lazy" width="240" height="126"/><span class="hero-prog"></span></button></li>
+        <li><button type="button" aria-label="Show slide 5: Research Impact Conclave"><img src="docs/Slider/thumbs/08102026094147725Research Impact conlave.webp" alt="" loading="lazy" width="240" height="126"/><span class="hero-prog"></span></button></li>
+        <li><button type="button" aria-label="Show slide 6: Zero Ragging"><img src="docs/Slider/thumbs/04082026172959867Anti-Ragging_NITR-Web.webp" alt="" loading="lazy" width="240" height="126"/><span class="hero-prog"></span></button></li>
       </ol>
       <div class="hero-ctrls">
         <button class="hero-btn" type="button" data-hero="prev" aria-label="Previous slide"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
@@ -496,188 +498,57 @@ window.dataLayer = window.dataLayer || [];
 </section>
 
 
-<section class="about-section-3d" id="about-section-3d">
-  <!-- Magic UI Dot Pattern Background (for this section only) -->
-  <svg aria-hidden="true" class="about-dot-pattern" width="100%" height="100%">
-    <defs>
-      <pattern id="magicui-about-dots" width="20" height="20" patternUnits="userSpaceOnUse" patternContentUnits="userSpaceOnUse" x="0" y="0">
-        <circle id="pattern-circle" cx="1" cy="1" r="1"></circle>
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" stroke-width="0" fill="url(#magicui-about-dots)"></rect>
-  </svg>
-
-  <!-- Glowing 3D ambient light orbs -->
-  <div class="about-3d-orb about-3d-orb-1" aria-hidden="true"></div>
-  <div class="about-3d-orb about-3d-orb-2" aria-hidden="true"></div>
-
-  <div class="about-3d-container">
-
-    <!-- 3 Notched Project Cards: Borderless Layout matching 21st.dev reference -->
-    <div class="notched-cards-grid">
-      <!-- Card 1: About the Institute -->
-      <a href="/Institute/Welcome/" class="notched-card monochrome" style="--card-accent: #771D1D;" aria-label="About the Institute">
-        <div class="notched-card-cover">
-          <img src="assets/images/campus.jpeg" alt="NIT Rourkela Main Campus" loading="lazy">
-          
-          <div class="notched-badge">Estd. 1961</div>
-
-          <!-- Signature Inverted Corner Notch Cutout -->
-          <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
-            <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
-          </svg>
-
-          <!-- Circular Action Button -->
-          <div class="notched-arrow-btn">
-            <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </div>
+<!-- About the Institute, its Vision and Mission, and the Director's message: one screen (assets/site/about.css) -->
+<section class="ab" id="about-nitr" data-chapter="white" aria-labelledby="abTitle">
+  <div class="container ab-wrap">
+    <div class="ab-main">
+      <div class="ab-intro">
+        <span class="ab-eyebrow"><span class="ab-dot" aria-hidden="true"></span>Estd. 1961</span>
+        <h2 class="ab-title" id="abTitle">About the Institute</h2>
+        <p class="ab-lede">Elevated from Regional Engineering College, Rourkela to a premier national university, producing world-class engineers, scientists, and leaders across 20 specialized departments.</p>
+        <ul class="ab-facts">
+          <li><b>1961</b><span class="ab-note">Founded as Regional Engineering College, Rourkela</span><span class="ab-note-short">Founded</span></li>
+          <li><b>20</b><span class="ab-note">Academic departments</span><span class="ab-note-short">Departments</span></li>
+          <li><b>INI</b><span class="ab-note">Institute of National Importance</span><span class="ab-note-short">National Importance</span></li>
+        </ul>
+        <a class="ab-link" href="/Institute/Welcome/">More about the Institute <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <!-- Phones and tablets: one of the three at a time (assets/site/about.js) -->
+      <div class="ab-tabs" aria-label="Vision, Mission and the Director's message">
+        <button type="button" id="abTabVision" data-ab-tab="abPanelVision"><i class="bi bi-eye" aria-hidden="true"></i>Vision</button>
+        <button type="button" id="abTabMission" data-ab-tab="abPanelMission"><i class="bi bi-bullseye" aria-hidden="true"></i>Mission</button>
+        <button type="button" id="abTabDirector" data-ab-tab="abPanelDirector"><i class="bi bi-quote" aria-hidden="true"></i>Director</button>
+      </div>
+      <div class="ab-vm">
+        <div class="ab-card ab-vision" id="abPanelVision">
+          <h3><i class="bi bi-eye" aria-hidden="true"></i>Institute Vision</h3>
+          <p>To become an internationally acclaimed institution of higher learning serving as a source of knowledge and expertise, and a preferred destination for undergraduate and graduate studies.</p>
         </div>
-
-        <div class="notched-content">
-          <h3 class="notched-title">About the Institute</h3>
-          <p class="notched-desc">
-            Elevated from Regional Engineering College, Rourkela to a premier national university, producing world-class engineers, scientists, and leaders across 20 specialized departments.
-          </p>
-          <div class="notched-tags">
-            <span class="notched-tag">National Importance</span>
-            <span class="notched-tag">NIRF Top Ranked</span>
-            <span class="notched-tag">Research Hub</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 2: Institute Vision (B&W default, blooms to Color on hover) -->
-      <a href="/Institute/Welcome/" class="notched-card monochrome" style="--card-accent: #D75151;" aria-label="Institute Vision">
-        <div class="notched-card-cover">
-          <img src="assets/images/gallery7.webp" alt="Academic Precinct at NIT Rourkela" loading="lazy">
-          
-          <div class="notched-badge">Strategic Vision</div>
-
-          <!-- Signature Inverted Corner Notch Cutout -->
-          <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
-            <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
-          </svg>
-
-          <div class="notched-arrow-btn accent-orange">
-            <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </div>
-        </div>
-
-        <div class="notched-content">
-          <h3 class="notched-title">Institute Vision</h3>
-          <p class="notched-desc">
-            To become an internationally acclaimed institution of higher learning serving as a source of knowledge and expertise, and a preferred destination for undergraduate and graduate studies.
-          </p>
-          <div class="notched-tags">
-            <span class="notched-tag">Global Acclaim</span>
-            <span class="notched-tag">Knowledge Fountain</span>
-            <span class="notched-tag">Premier Destination</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 3: Institute Mission -->
-      <a href="/Institute/Welcome/" class="notched-card monochrome" style="--card-accent: #771D1D;" aria-label="Institute Mission">
-        <div class="notched-card-cover">
-          <img src="assets/images/gallery9.webp" alt="Technology Precinct at NIT Rourkela" loading="lazy">
-          
-          <div class="notched-badge">Core Purpose</div>
-
-          <!-- Signature Inverted Corner Notch Cutout -->
-          <svg viewBox="0 0 100 100" class="notched-svg-cutout" aria-hidden="true">
-            <path d="M 100 0 C 100 16 92 28 80 34 A 38 38 0 0 0 34 80 C 28 92 16 100 0 100 L 100 100 Z"></path>
-          </svg>
-
-          <div class="notched-arrow-btn">
-            <svg viewBox="0 0 24 24" class="notched-arrow-icon" aria-hidden="true">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </div>
-        </div>
-
-        <div class="notched-content">
-          <h3 class="notched-title">Institute Mission</h3>
-          <p class="notched-desc">
-            To advance and spread knowledge in science and technology leading to the creation of wealth and welfare of humanity, powered by Industry 4.0 learning frameworks and cutting-edge research.
-          </p>
-          <div class="notched-tags">
-            <span class="notched-tag">Knowledge Creation</span>
-            <span class="notched-tag">Humanity &amp; Welfare</span>
-            <span class="notched-tag">Industry 4.0</span>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- Full-Width Horizontal Director's Message Card -->
-    <div class="director-featured-wrapper">
-      <div class="director-card-wide" data-card="director">
-        <!-- Photo Column on the Left -->
-        <div class="director-wide-media">
-          <img src="assets/images/director.webp" alt="Prof. K. Umamaheshwar Rao - Director, NIT Rourkela" loading="lazy">
-          <div class="director-wide-scrim"></div>
-          
-          <div class="director-wide-badge">
-            <span class="director-badge-dot"></span>
-            <span>Director &bull; Leadership</span>
-          </div>
-        </div>
-
-        <!-- Rich Text Column on the Right Covering the Entire Space -->
-        <div class="director-wide-content">
-          <div>
-            <div class="director-wide-kicker">
-              <span class="director-badge-dot"></span>
-              <span>Message from the Director</span>
-            </div>
-
-            <h3 class="director-wide-name">
-              <span class="name-first">Prof. K.</span> <span class="name-last">Umamaheshwar Rao</span>
-            </h3>
-            <p class="director-wide-role">Director &bull; National Institute of Technology Rourkela</p>
-
-            <blockquote class="director-wide-quote">
-              &ldquo;With sixty dedicated years of service to the nation, NIT Rourkela stands as a global beacon of academic rigor, research excellence, and sustainable innovation.&rdquo;
-            </blockquote>
-
-            <div class="director-wide-paragraphs">
-              <p class="director-wide-paragraph">
-                It is a privilege for me to serve as Director of NIT Rourkela. Our institution is built upon strong foundational pillars of teaching excellence, cutting-edge translational research, and dedicated service to the nation. We cultivate visionary engineers, scientists, and entrepreneurs ready to lead in an increasingly complex and interconnected world.
-              </p>
-              <p class="director-wide-paragraph">
-                As we navigate the transformative demands of Industry 4.0 and emerging computational disciplines, our focus remains firmly on interdisciplinary learning, fostering world-class incubation, and creating sustainable technological wealth and welfare for all humanity.
-              </p>
-            </div>
-          </div>
-
-          <div class="director-wide-footer">
-            <div class="director-credentials">
-              <span class="cred-tag">Director's Desk</span>
-              <span>&bull;</span>
-              <span>Office of the Director, NIT Rourkela</span>
-            </div>
-
-            <a href="/About/DirectorsMessage/" class="btn-director-action">
-              <span>Read Full Director's Address</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+        <div class="ab-card ab-mission" id="abPanelMission">
+          <h3><i class="bi bi-bullseye" aria-hidden="true"></i>Institute Mission</h3>
+          <p>To advance and spread knowledge in science and technology leading to the creation of wealth and welfare of humanity, powered by Industry 4.0 learning frameworks and cutting-edge research.</p>
         </div>
       </div>
+    </div>
+    <div class="ab-director" id="abPanelDirector">
+      <h3 class="ab-kicker"><span class="ab-dot" aria-hidden="true"></span>Message from the Director</h3>
+      <blockquote class="ab-quote">
+        <i class="bi bi-quote" aria-hidden="true"></i>
+        <p>With sixty dedicated years of service to the nation, NIT Rourkela stands as a global beacon of academic rigor, research excellence, and sustainable innovation.</p>
+      </blockquote>
+      <p class="ab-msg">It is a privilege for me to serve as Director of NIT Rourkela. Our institution is built upon strong foundational pillars of teaching excellence, cutting-edge translational research, and dedicated service to the nation. We cultivate visionary engineers, scientists, and entrepreneurs ready to lead in an increasingly complex and interconnected world.</p>
+      <div class="ab-sign">
+        <img src="assets/images/director.webp" alt="" loading="lazy" width="553" height="608">
+        <p><span class="ab-name">Prof. K. Umamaheshwar Rao</span><span class="ab-role">Director, National Institute of Technology Rourkela</span></p>
+      </div>
+      <a class="ab-link" href="/About/DirectorsMessage/">Read the Director's message <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
     </div>
   </div>
 </section>
 <!-- start About section with Video -->
 <!-- End About section with video -->
 <!-- start Announcement, Recruitment, Upcoming Events section -->
-<section class="news-section">
+<section class="news-section" data-chapter="white">
 <div class="container-fluid">
 <div class="news-section-row">
 <!-- 1. Placement Statistics (Full Width Top Showcase) -->
@@ -705,7 +576,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="spinner-border text-danger" role="status">
 <span class="visually-hidden">Loading placement report...</span>
 </div>
-<p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #1a2238;">Loading Placement Report...</p>
+<p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #150202;">Loading Placement Report...</p>
 </div>
 <iframe id="placementIframe" title="NIT Rourkela Placement Report 2025-26" src="placement-report.html" frameborder="0"></iframe>
 </div>
@@ -748,7 +619,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="item-notice nb-card">
 <div class="nb-head">
 <h2 class="nb-title">Notice Board</h2>
-<a class="nb-all" id="noticesAllLink" href="/Home/AllNotice/" data-announcement-href="/Home/AllNotice/" data-recruitment-href="/Career/">View all <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="nb-all" id="noticesAllLink" aria-label="View all announcements" href="/Home/AllNotice/" data-announcement-href="/Home/AllNotice/" data-recruitment-href="/Career/">View all <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 <nav>
 <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -767,70 +638,55 @@ window.dataLayer = window.dataLayer || [];
 <div class="scrollgroup">
 <div class="scrollitem">
 <a href="docs/Announcement/28092026121528023.pdf">
-<b>Notice for Admission to PhD (Full-Time) under “Visvesvaraya Scheme Phase - II, 2026</b> <span class="nb-new">New</span>
-</a>
+<b>Notice for Admission to PhD (Full-Time) under “Visvesvaraya Scheme Phase - II, 2026</b> <span class="nb-new">New</span> <span class="gg-file">(PDF, 731 KB)</span></a>
 <span>28 Sep 2026</span>
 </div>
 <div class="scrollitem">
 <a href="docs/Announcement/28092026121320123.pdf">
-<b>Advertisement for Post – Doctoral Fellow (PDF) recruitment under Visvesvaraya Scheme 2026</b> <span class="nb-new">New</span>
-</a>
+<b>Advertisement for Post – Doctoral Fellow (PDF) recruitment under Visvesvaraya Scheme 2026</b> <span class="nb-new">New</span> <span class="gg-file">(PDF, 619 KB)</span></a>
 <span>28 Sep 2026</span>
 </div>
 <div class="scrollitem">
 <a href="docs/Announcement/Advertisement dtd 16.09.2026 Published for 07 NITs.pdf">
 <b>Appointment of Director, one each, in
 
-07 National Institutes of Technology (NITs) against upcoming vacancies</b> <span class="nb-new">New</span>
-</a>
+07 National Institutes of Technology (NITs) against upcoming vacancies</b> <span class="nb-new">New</span> <span class="gg-file">(PDF, 1.7 MB)</span></a>
 <span>25 Sep 2026</span>
 </div>
 <div class="scrollitem">
 <a href="docs/Announcement/14072026180430277.pdf">
 
-                                            Fee structure JoSAA/CSAB/DASA (AY 2026-27)
-
-                                        </a>
+                                            Fee structure JoSAA/CSAB/DASA (AY 2026-27) <span class="gg-file">(PDF, 1.3 MB)</span></a>
 <span>14 Jul 2026</span>
 </div>
 <div class="scrollitem">
 <a href="docs/Announcement/10072026171540377.pdf">
 
-                                            Fee Structure (PG)-2026-27
-
-                                        </a>
+                                            Fee Structure (PG)-2026-27 <span class="gg-file">(PDF, 594 KB)</span></a>
 <span>06 Jul 2026</span>
 </div>
 <div class="scrollitem">
 <a href="docs/Announcement/05032025125911362.pdf">
 
-                                            Allocation of division on CGPA basis
-
-                                        </a>
+                                            Allocation of division on CGPA basis <span class="gg-file">(PDF, 38 KB)</span></a>
 <span>05 Mar 2025</span>
 </div>
 <div class="scrollitem">
 <a href="docs/Announcement/16012019192348556.pdf">
 
-                                            Establishment of Prof. S.S.Pani Endowment Chair Professor
-
-                                        </a>
+                                            Establishment of Prof. S.S.Pani Endowment Chair Professor <span class="gg-file">(PDF, 1.1 MB)</span></a>
 <span>16 Jan 2019</span>
 </div>
 <div class="scrollitem">
 <a href="docs/Announcement/28022018190346623.pdf">
 
-                                            Notice for caution regarding fraudulent recruitment/admission
-
-                                        </a>
+                                            Notice for caution regarding fraudulent recruitment/admission <span class="gg-file">(PDF, 476 KB)</span></a>
 <span>28 Feb 2018</span>
 </div>
 <div class="scrollitem">
 <a href="docs/Announcement/13032021173643119.pdf">
 
-                                            CGPA to Percentage (%) Conversion
-
-                                        </a>
+                                            CGPA to Percentage (%) Conversion <span class="gg-file">(PDF, 2.9 MB)</span></a>
 <span>21 Feb 2017</span>
 </div>
 </div><!-- End scrollgroup -->
@@ -856,7 +712,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="item-event nb-card">
 <div class="nb-head">
 <h2 class="nb-title">Events &amp; Seminars</h2>
-<a class="nb-all" id="eventsAllLink" href="/Home/AllEvents" data-events-href="/Home/AllEvents" data-seminars-href="/Research/Seminars/">View all <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="nb-all" id="eventsAllLink" aria-label="View all events" href="/Home/AllEvents" data-events-href="/Home/AllEvents" data-seminars-href="/Research/Seminars/">View all <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 <div class="event-tabs" role="tablist" aria-label="Upcoming events and seminars">
 <button type="button" role="tab" id="tabEvents" aria-controls="panelEvents" aria-selected="true">Events</button>
@@ -869,63 +725,63 @@ window.dataLayer = window.dataLayer || [];
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Conference</span><span class="ev-date">10–12 Dec 2026</span></span>
 <p class="ev-title">International Bio Engineering Conference (IBEC-2026)</p>
-<a class="ev-more" href="docs/Conference/BM/03092026123557435B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/Conference/BM/03092026123557435B.pdf" aria-label="Know More: International Bio Engineering Conference (IBEC-2026) (PDF, 741 KB)">Know More <span class="gg-file">(PDF, 741 KB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Conference</span><span class="ev-date">10–12 Dec 2026</span></span>
 <p class="ev-title">13th International and 53rd National Conference on Fluid Mechanics &amp; Fluid Power (FMFP2026)</p>
-<a class="ev-more" href="docs/Conference/ME/11092026183901028B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/Conference/ME/11092026183901028B.pdf" aria-label="Know More: 13th International and 53rd National Conference on Fluid Mechanics &amp; Fluid Power (FMFP2026) (PDF, 1.4 MB)">Know More <span class="gg-file">(PDF, 1.4 MB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Workshop</span><span class="ev-date">07–11 Dec 2026</span></span>
 <p class="ev-title">Electrochemical Impedance Spectroscopy: Theory and Practice</p>
-<a class="ev-more" href="docs/Workshop/MM/21082026212706794B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/Workshop/MM/21082026212706794B.pdf" aria-label="Know More: Electrochemical Impedance Spectroscopy: Theory and Practice (PDF, 801 KB)">Know More <span class="gg-file">(PDF, 801 KB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Workshop</span><span class="ev-date">07–11 Dec 2026</span></span>
 <p class="ev-title">ELECTROCHEMICAL IMPEDANCE SPECTROSCOPY: Theory and Practice</p>
-<a class="ev-more" href="docs/Workshop/MM/24082026100758526B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/Workshop/MM/24082026100758526B.pdf" aria-label="Know More: ELECTROCHEMICAL IMPEDANCE SPECTROSCOPY: Theory and Practice (PDF, 800 KB)">Know More <span class="gg-file">(PDF, 800 KB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Conference</span><span class="ev-date">04–06 Dec 2026</span></span>
 <p class="ev-title">2026 2nd IEEE International Conference on Smart Power Control &amp; Renewable Energy (ICSPCRE-2026)</p>
-<a class="ev-more" href="docs/Conference/EE/30072026172030486B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/Conference/EE/30072026172030486B.pdf" aria-label="Know More: 2026 2nd IEEE International Conference on Smart Power Control &amp; Renewable Energy (ICSPCRE-2026) (PDF, 720 KB)">Know More <span class="gg-file">(PDF, 720 KB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Conference</span><span class="ev-date">03–05 Dec 2026</span></span>
 <p class="ev-title">International Conference on Processing &amp; Characterization of Materials (ICPCM 2026)</p>
-<a class="ev-more" href="docs/Conference/MM/03092026162124983B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/Conference/MM/03092026162124983B.pdf" aria-label="Know More: International Conference on Processing &amp; Characterization of Materials (ICPCM 2026) (PDF, 1.4 MB)">Know More <span class="gg-file">(PDF, 1.4 MB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Continuing Education</span><span class="ev-date">23–27 Nov 2026</span></span>
 <p class="ev-title">Drone Surveying &amp; Mapping for Mining Professionals-II</p>
-<a class="ev-more" href="docs/CEP/MN/24082026103220402B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/CEP/MN/24082026103220402B.pdf" aria-label="Know More: Drone Surveying &amp; Mapping for Mining Professionals-II (PDF, 1.2 MB)">Know More <span class="gg-file">(PDF, 1.2 MB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Continuing Education</span><span class="ev-date">23–27 Nov 2026</span></span>
 <p class="ev-title">Short Term Course ABHEDYA 2026 (Applied Basics of Hardware Engineering, Design, Security &amp; Assurance)</p>
-<a class="ev-more" href="docs/CEP/CS/09102026153012891B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/CEP/CS/09102026153012891B.pdf" aria-label="Know More: Short Term Course ABHEDYA 2026 (Applied Basics of Hardware Engineering, Design, Security &amp; Assurance) (PDF, 1.4 MB)">Know More <span class="gg-file">(PDF, 1.4 MB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Conference</span><span class="ev-date">17–19 Nov 2026</span></span>
 <p class="ev-title">34th National Conference Condensed Matter Days-2026 (CMDAYS-2026)</p>
-<a class="ev-more" href="docs/Conference/PH/30062026181239287B.pdf">Know More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="docs/Conference/PH/30062026181239287B.pdf" aria-label="Know More: 34th National Conference Condensed Matter Days-2026 (CMDAYS-2026) (PDF, 1.2 MB)">Know More <span class="gg-file">(PDF, 1.2 MB)</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 </ul>
@@ -936,70 +792,70 @@ window.dataLayer = window.dataLayer || [];
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Departmental Seminar</span><span class="ev-date">13 Oct</span></span>
 <p class="ev-title">Boundary layer flow and heat transfer in a special third-grade fluid over a shrinking sheet with magnetic field and radiation</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje3aCSyFFz0QqbqwEfZL9yLg3ShSKSoRzc3_D2w5_c621ipfxq1tMzKpdr7vBQREECpEyTlRWDAg4LC11OXVZe7Q9X5CapAEhwnVVH1PzXbpTA">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje3aCSyFFz0QqbqwEfZL9yLg3ShSKSoRzc3_D2w5_c621ipfxq1tMzKpdr7vBQREECpEyTlRWDAg4LC11OXVZe7Q9X5CapAEhwnVVH1PzXbpTA" aria-label="Read More: Boundary layer flow and heat transfer in a special third-grade fluid over a shrinking sheet with magnetic field and radiation">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Departmental Seminar</span><span class="ev-date">13 Oct</span></span>
 <p class="ev-title">Numerical investigation of heat transfer and flow stability in a shear driven Carreau fluid</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje3vy8cLuurUQU5TZzXRBSvMeTh9WKFDE-QCEGk1XH0byiTdlBdsx0hQG6r7Gjv5goxvZsBFvq6cs55Fs8EqA2DpcMSkdg56YSWwu3cDkfwwJw">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje3vy8cLuurUQU5TZzXRBSvMeTh9WKFDE-QCEGk1XH0byiTdlBdsx0hQG6r7Gjv5goxvZsBFvq6cs55Fs8EqA2DpcMSkdg56YSWwu3cDkfwwJw" aria-label="Read More: Numerical investigation of heat transfer and flow stability in a shear driven Carreau fluid">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Departmental Seminar</span><span class="ev-date">13 Oct</span></span>
 <p class="ev-title">Conference return seminar on Data-Driven Approach to Derive Polymorph-Specific Order Parameters for Crystal Nucleation presented at ICMS 2026 (5-8 October 2026) at IISc Bangalore</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje10GBQyrldEwMmor7mScQKcloZFi7-fNfiGaJrbNDym-PE9bGkVSxxmzuf1Kw9I32gJ5nO7nA54PHAUy8-qwVHM0Xn9DpJGapspu2DGbeKliQ">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje10GBQyrldEwMmor7mScQKcloZFi7-fNfiGaJrbNDym-PE9bGkVSxxmzuf1Kw9I32gJ5nO7nA54PHAUy8-qwVHM0Xn9DpJGapspu2DGbeKliQ" aria-label="Read More: Conference return seminar on Data-Driven Approach to Derive Polymorph-Specific Order Parameters for Crystal Nucleation presented at ICMS 2026 (5-8 October 2026) at IISc Bangalore">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Registration Seminar</span><span class="ev-date">13 Oct</span></span>
 <p class="ev-title">Finite-sample inference for comparing quantiles across several normal populations: A Simulation Study</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje2AX_Myx3yJOp1kf3mGcO3UeSeKL0exsFT_3LGCszASUffIV69Hc-oDwUVtXPq8rVnnJYTJkdu2l0sP1GBjZf95tMMnvqY9pYzHzZGz0RJUCw">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje2AX_Myx3yJOp1kf3mGcO3UeSeKL0exsFT_3LGCszASUffIV69Hc-oDwUVtXPq8rVnnJYTJkdu2l0sP1GBjZf95tMMnvqY9pYzHzZGz0RJUCw" aria-label="Read More: Finite-sample inference for comparing quantiles across several normal populations: A Simulation Study">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Synopsis Seminar</span><span class="ev-date">13 Oct</span></span>
 <p class="ev-title">Deep Learning based Abdominal Multi-Organ and Kidney Disease Segmentation from CT Images</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje1DMSU27WiSVFQdmnaQw82VV022iF_7eanUsI0wBG6HQE5CJ85NPVxv8KZRStZ-HCo80V8EGX7w87hSXvWekXJK4QI43-7fR4UYKn4uGsJ2iQ">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje1DMSU27WiSVFQdmnaQw82VV022iF_7eanUsI0wBG6HQE5CJ85NPVxv8KZRStZ-HCo80V8EGX7w87hSXvWekXJK4QI43-7fR4UYKn4uGsJ2iQ" aria-label="Read More: Deep Learning based Abdominal Multi-Organ and Kidney Disease Segmentation from CT Images">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Progress Seminar</span><span class="ev-date">13 Oct</span></span>
 <p class="ev-title">Evolution of the Dalma meta-igneous suite and associated felsic rocks: implications for the tectonic history of the North Singhbhum Mobile Belt, Eastern India</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje2BHdoMR2AxEq9perRiPpY1uQKfULoiXwG0PfCyhju2wSubVlvhV2XjN1Tp4YW-CNF-q5PQkjbR-evmldlmTwqzg_sMAG9fH8h-bXDUJonzFw">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje2BHdoMR2AxEq9perRiPpY1uQKfULoiXwG0PfCyhju2wSubVlvhV2XjN1Tp4YW-CNF-q5PQkjbR-evmldlmTwqzg_sMAG9fH8h-bXDUJonzFw" aria-label="Read More: Evolution of the Dalma meta-igneous suite and associated felsic rocks: implications for the tectonic history of the North Singhbhum Mobile Belt, Eastern India">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Registration Seminar</span><span class="ev-date">13 Oct</span></span>
 <p class="ev-title">Passive Acoustic Detection and Classification of Underwater Targets using Hybrid Signal Processing and Machine Learning Strategies</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje28D8lcEOloKnfKVmelurXVheFI_DRpztHpsKxsFqC1BVkU-SyaMiFFUwGj0hcVsPFdsDNPk0xRPXGVO6Q7-a3yRDKbHaFozONEansz5onDlA">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje28D8lcEOloKnfKVmelurXVheFI_DRpztHpsKxsFqC1BVkU-SyaMiFFUwGj0hcVsPFdsDNPk0xRPXGVO6Q7-a3yRDKbHaFozONEansz5onDlA" aria-label="Read More: Passive Acoustic Detection and Classification of Underwater Targets using Hybrid Signal Processing and Machine Learning Strategies">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Registration Seminar</span><span class="ev-date">13 Oct</span></span>
 <p class="ev-title">Interference-Aware Adaptive Data Rate Optimization for Dense LoRaWAN Networks Using Reinforcement Learning</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje1REkCY8RymTtrpiVFqzYCvy4v7N9uIHiEwLfrG8FcUcg2TVU6UaCl0Rti9krjUSBgAB2BkNXdzsdxg8wLK9JOnvlWqH7Rd3mAU4VBgCRM4Hg">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje1REkCY8RymTtrpiVFqzYCvy4v7N9uIHiEwLfrG8FcUcg2TVU6UaCl0Rti9krjUSBgAB2BkNXdzsdxg8wLK9JOnvlWqH7Rd3mAU4VBgCRM4Hg" aria-label="Read More: Interference-Aware Adaptive Data Rate Optimization for Dense LoRaWAN Networks Using Reinforcement Learning">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Registration Seminar</span><span class="ev-date">14 Oct</span></span>
 <p class="ev-title">Development of AI-Driven Framework for Healthcare Systems</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje3mz_ezyMAfjs6ALq6fZGbsvLGrWS4tLGUHiYcXFNAYKX_lCb-_vm3wIM0usK6Oe_pXGUdpNggoDi51ZTls394Jpw3TEYbU17VMAZD0A6a7Ew">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje3mz_ezyMAfjs6ALq6fZGbsvLGrWS4tLGUHiYcXFNAYKX_lCb-_vm3wIM0usK6Oe_pXGUdpNggoDi51ZTls394Jpw3TEYbU17VMAZD0A6a7Ew" aria-label="Read More: Development of AI-Driven Framework for Healthcare Systems">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 <li>
 <div class="desc">
 <span class="ev-meta"><span class="ev-kind">Progress Seminar</span><span class="ev-date">14 Oct</span></span>
 <p class="ev-title">Identification, Functional Validation, and Therapeutic Targeting of Liver Fibrosis-Associated Genes Using Genome Editing and Novel Anti-Fibrotic Phytocompounds</p>
-<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje0Ua4u7fj7ql0Fp9RQ6Ct3lw_DAp-t3MZKUmFO1VgcrJcwM0gOavKZqCmi1l0JPAC5KjuscQGgfvfrr_-Bq8Nc-847q0AEYFrLwZeZOiSDqHQ">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+<a class="ev-more" href="/Research/ViewSeminar/?id=CfDJ8ITBfTALY3BEiHl9qNgHje0Ua4u7fj7ql0Fp9RQ6Ct3lw_DAp-t3MZKUmFO1VgcrJcwM0gOavKZqCmi1l0JPAC5KjuscQGgfvfrr_-Bq8Nc-847q0AEYFrLwZeZOiSDqHQ" aria-label="Read More: Identification, Functional Validation, and Therapeutic Targeting of Liver Fibrosis-Associated Genes Using Genome Editing and Novel Anti-Fibrotic Phytocompounds">Read More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 </div>
 </li>
 </ul>
@@ -1010,8 +866,8 @@ window.dataLayer = window.dataLayer || [];
 </div>
 </section>
 <!-- end Announcement, Recruitment, Upcoming Events section -->
-<!--Start Latest News and Media Coverage-->
-<section class="upcoming-section secondBG">
+<!--Start Latest News-->
+<section class="upcoming-section secondBG" data-chapter="white">
 <div class="container">
 <div class="upcoming-row">
 <div class="item-event">
@@ -1023,7 +879,7 @@ window.dataLayer = window.dataLayer || [];
 </div>
 <a class="nr-viewall" href="/Home/AllNews/">View all <i class="bi bi-arrow-right"></i></a>
 </div>
-<div class="nr-ticker" aria-label="Headlines">
+<div class="nr-ticker" role="marquee" aria-label="Headlines">
 <span class="nr-ticker-label"><i class="bi bi-lightning-charge-fill"></i> Headlines</span>
 <div class="nr-ticker-track">
 <ul class="nr-ticker-list">
@@ -1038,7 +894,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="nr-grid">
 <article class="nr-card nr-featured" data-nr-index="0" data-nr-tag="Placements" data-nr-img="docs/News/placement2025.webp" data-nr-link="/Home/AllNews/?id=10109" data-nr-summary="A record placement season: 1,340 offers from top recruiters across core engineering, IT, consulting and analytics for the 2025–26 batch.">
 <button type="button" class="nr-media" data-nr-open="0" aria-label="Quick view: NIT Rourkela received 1,340 offers in 2025–26 Placement Drive">
-<img alt="NIT Rourkela Latest News NIT Rourkela received 1,340 offers in 2025–26 Placement Drive" loading="lazy" src="docs/News/placement2025.webp"/>
+<img alt="NIT Rourkela Latest News NIT Rourkela received 1,340 offers in 2025–26 Placement Drive" loading="lazy" src="docs/News/placement2025.webp" width="600" height="450"/>
 <span class="nr-badge nr-badge-hot"><i class="bi bi-star-fill"></i> Featured</span>
 <span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
 </button>
@@ -1054,7 +910,7 @@ window.dataLayer = window.dataLayer || [];
 </article>
 <article class="nr-card" data-nr-index="1" data-nr-tag="Research" data-nr-img="docs/News/ReconfigurableFactoralAntenna.webp" data-nr-link="/Home/AllNews/?id=10107" data-nr-summary="Researchers at NIT Rourkela have built a reconfigurable fractal antenna for next-generation space and wireless communication systems.">
 <button type="button" class="nr-media" data-nr-open="1" aria-label="Quick view: Reconfigurable fractal antenna">
-<img alt="NIT Rourkela Latest News NIT Rourkela Researchers Develop Reconfigurable Fractal Antenna for Next-Generation Space and Wireless Applications" loading="lazy" src="docs/News/ReconfigurableFactoralAntenna.webp"/>
+<img alt="NIT Rourkela Latest News NIT Rourkela Researchers Develop Reconfigurable Fractal Antenna for Next-Generation Space and Wireless Applications" loading="lazy" src="docs/News/ReconfigurableFactoralAntenna.webp" width="600" height="450"/>
 <span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
 </button>
 <div class="nr-body">
@@ -1065,7 +921,7 @@ window.dataLayer = window.dataLayer || [];
 </article>
 <article class="nr-card" data-nr-index="2" data-nr-tag="Research" data-nr-img="docs/News/ChiplessRFID.webp" data-nr-link="/Home/AllNews/?id=10106" data-nr-summary="A new chipless RFID sensor from NIT Rourkela enables low-cost, battery-free environmental monitoring.">
 <button type="button" class="nr-media" data-nr-open="2" aria-label="Quick view: Chipless RFID sensor">
-<img alt="NIT Rourkela Latest News NIT Rourkela Researchers Develop Advanced Chipless RFID Sensor for Environmental Monitoring" loading="lazy" src="docs/News/ChiplessRFID.webp"/>
+<img alt="NIT Rourkela Latest News NIT Rourkela Researchers Develop Advanced Chipless RFID Sensor for Environmental Monitoring" loading="lazy" src="docs/News/ChiplessRFID.webp" width="600" height="450"/>
 <span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
 </button>
 <div class="nr-body">
@@ -1076,7 +932,7 @@ window.dataLayer = window.dataLayer || [];
 </article>
 <article class="nr-card" data-nr-index="3" data-nr-tag="Global" data-nr-img="docs/News/India-Bhutan-Student-Faculty-Exchange.webp" data-nr-link="/Home/AllNews/?id=10105" data-nr-summary="Students and faculty from India and Bhutan collaborated on solid waste management in an exchange programme that concluded in Bhutan.">
 <button type="button" class="nr-media" data-nr-open="3" aria-label="Quick view: India–Bhutan exchange programme">
-<img alt="NIT Rourkela Latest News India–Bhutan Student–Faculty Exchange Programme on Solid Waste Management Concludes in Bhutan" loading="lazy" src="docs/News/India-Bhutan-Student-Faculty-Exchange.webp"/>
+<img alt="NIT Rourkela Latest News India–Bhutan Student–Faculty Exchange Programme on Solid Waste Management Concludes in Bhutan" loading="lazy" src="docs/News/India-Bhutan-Student-Faculty-Exchange.webp" width="600" height="450"/>
 <span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
 </button>
 <div class="nr-body">
@@ -1087,7 +943,7 @@ window.dataLayer = window.dataLayer || [];
 </article>
 <article class="nr-card" data-nr-index="4" data-nr-tag="Rankings" data-nr-img="docs/News/AsiaUniversity2026.webp" data-nr-link="/Home/AllNews/?id=10104" data-nr-summary="NIT Rourkela retains the top spot among NITs in the THE Asia University Rankings 2026, ranking 186th in Asia and 8th in India.">
 <button type="button" class="nr-media" data-nr-open="4" aria-label="Quick view: THE Asia Rankings 2026">
-<img alt="NIT Rourkela Latest News THE Asia Rankings 2026: NIT Rourkela Retains Top Spot Among NITs; Secures 186th Rank in Asia, 8th in India!" loading="lazy" src="docs/News/AsiaUniversity2026.webp"/>
+<img alt="NIT Rourkela Latest News THE Asia Rankings 2026: NIT Rourkela Retains Top Spot Among NITs; Secures 186th Rank in Asia, 8th in India!" loading="lazy" src="docs/News/AsiaUniversity2026.webp" width="600" height="450"/>
 <span class="nr-badge">#1 among NITs</span>
 <span class="nr-zoom"><i class="bi bi-arrows-angle-expand"></i></span>
 </button>
@@ -1103,7 +959,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="nr-modal-backdrop" data-nr-close></div>
 <div class="nr-modal-panel" tabindex="-1">
 <button type="button" class="nr-modal-close" data-nr-close aria-label="Close"><i class="bi bi-x-lg"></i></button>
-<div class="nr-modal-media"><img alt="" id="nr-modal-img" src=""/></div>
+<div class="nr-modal-media"><img alt="" id="nr-modal-img"/></div>
 <div class="nr-modal-body">
 <div class="nr-modal-meta"><span class="nr-tag" id="nr-modal-tag"></span><span class="nr-modal-count" id="nr-modal-count"></span></div>
 <h3 id="nr-modal-title"></h3>
@@ -1119,65 +975,57 @@ window.dataLayer = window.dataLayer || [];
 </div>
 </div>
 </div>
-<div class="item-resources">
-<h2>Social Media</h2>
-<div class="social-hub wow fadeInUp" data-wow-delay="300ms" data-wow-duration="2000ms">
-<div class="hub-hero">
-<h3>Be part of the <span>NITR</span> story</h3>
-<p>Campus moments, research breakthroughs, placements and events, straight from NIT Rourkela.</p>
-<span class="hub-tag">#NITRourkela</span>
 </div>
+</div>
+</section>
+<!-- Social Media (from the component library, nitrkl-components/components/09-newsroom/parts/06-social-cards). assets/site/social-cards.css -->
+<section class="social-section" id="social-media" data-chapter="white" aria-labelledby="socialTitle">
+<div class="container">
+<div class="sm-head">
+<span class="sm-eyebrow"><span class="sm-dot" aria-hidden="true"></span>Stay connected</span>
+<h2 class="sm-title" id="socialTitle">Social Media</h2>
+</div>
+<div class="social-hub">
 <ul class="hub-grid">
 <li>
 <a class="hub-card is-instagram outside-link" href="https://www.instagram.com/nitrourkela1961/" rel="noopener" target="_blank" aria-label="Follow NIT Rourkela on Instagram">
-<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-instagram"></i></span><i class="fa-solid fa-arrow-up-right-from-square hub-arrow"></i></span>
+<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span><i class="bi bi-box-arrow-up-right hub-arrow" aria-hidden="true"></i></span>
 <span><span class="hub-name">Instagram</span><span class="hub-handle">@nitrourkela1961</span></span>
 <p class="hub-blurb">Reels and stories from campus life.</p>
-<span class="hub-cta">Follow <i class="bi bi-arrow-right"></i></span>
+<span class="hub-cta">Follow <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
 </a>
 </li>
 <li>
 <a class="hub-card is-facebook outside-link" href="https://www.facebook.com/share/1ZLvg3dqeG/" rel="noopener" target="_blank" aria-label="Follow NIT Rourkela on Facebook">
-<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-facebook-f"></i></span><i class="fa-solid fa-arrow-up-right-from-square hub-arrow"></i></span>
+<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span><i class="bi bi-box-arrow-up-right hub-arrow" aria-hidden="true"></i></span>
 <span><span class="hub-name">Facebook</span><span class="hub-handle">NIT Rourkela</span></span>
 <p class="hub-blurb">News, albums and community updates.</p>
-<span class="hub-cta">Like page <i class="bi bi-arrow-right"></i></span>
+<span class="hub-cta">Like page <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
 </a>
 </li>
 <li>
 <a class="hub-card is-linkedin outside-link" href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" rel="noopener" target="_blank" aria-label="Follow NIT Rourkela on LinkedIn">
-<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-linkedin-in"></i></span><i class="fa-solid fa-arrow-up-right-from-square hub-arrow"></i></span>
+<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span><i class="bi bi-box-arrow-up-right hub-arrow" aria-hidden="true"></i></span>
 <span><span class="hub-name">LinkedIn</span><span class="hub-handle">NIT Rourkela</span></span>
 <p class="hub-blurb">Alumni, careers and research network.</p>
-<span class="hub-cta">Connect <i class="bi bi-arrow-right"></i></span>
+<span class="hub-cta">Connect <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
 </a>
 </li>
 <li>
 <a class="hub-card is-x outside-link" href="https://x.com/nitrourkela" rel="noopener" target="_blank" aria-label="Follow NIT Rourkela on X">
-<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-x-twitter"></i></span><i class="fa-solid fa-arrow-up-right-from-square hub-arrow"></i></span>
+<span class="hub-card-top"><span class="hub-icon"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></span><i class="bi bi-box-arrow-up-right hub-arrow" aria-hidden="true"></i></span>
 <span><span class="hub-name">X</span><span class="hub-handle">@nitrourkela</span></span>
 <p class="hub-blurb">Live announcements and quick updates.</p>
-<span class="hub-cta">Follow <i class="bi bi-arrow-right"></i></span>
+<span class="hub-cta">Follow <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
 </a>
 </li>
 </ul>
-<div class="hub-strip">
-<p><b>Follow us everywhere</b>, one tap away</p>
-<ul>
-<li><a class="outside-link is-instagram" href="https://www.instagram.com/nitrourkela1961/" rel="noopener" target="_blank" title="Instagram" aria-label="NIT Rourkela on Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-<li><a class="outside-link is-facebook" href="https://www.facebook.com/share/1ZLvg3dqeG/" rel="noopener" target="_blank" title="Facebook" aria-label="NIT Rourkela on Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-<li><a class="outside-link is-linkedin" href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" rel="noopener" target="_blank" title="LinkedIn" aria-label="NIT Rourkela on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
-<li><a class="outside-link is-x" href="https://x.com/nitrourkela" rel="noopener" target="_blank" title="X" aria-label="NIT Rourkela on X"><i class="fa-brands fa-x-twitter"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 </div>
 </section>
 <!--End Latest News and Media Coverage-->
 <!--start IP@NITR-->
-<section class="ipd-section" id="ip-section" aria-labelledby="ipd-title">
+<section class="ipd-section" data-chapter="cinnamon" id="ip-section" aria-labelledby="ipd-title">
   <div class="ipd-inner">
     <div class="ipd-head">
       <div>
@@ -1190,7 +1038,7 @@ window.dataLayer = window.dataLayer || [];
     <div class="ipd-sheet" id="ipd-sheet" role="tabpanel" aria-live="polite">
       <div class="ipd-ruler" aria-hidden="true"></div>
       <figure class="ipd-figure">
-        <img class="ipd-drawing" src="docs/Innovations/images/578250.webp" alt="Technical drawing: Nanostructured Si-void-C yolk/shell architecture: a high performance Li-ion battery anode and the preparation method thereof" loading="lazy">
+        <img class="ipd-drawing" src="docs/Innovations/images/578250.webp" alt="Technical drawing: Nanostructured Si-void-C yolk/shell architecture: a high performance Li-ion battery anode and the preparation method thereof" loading="lazy" width="600" height="450">
         <span class="ipd-plotter" aria-hidden="true"></span>
         <figcaption class="ipd-figlabel">Fig. 1</figcaption>
       </figure>
@@ -1210,24 +1058,24 @@ window.dataLayer = window.dataLayer || [];
     </div>
 
     <ul class="ipd-tabs" role="tablist" aria-label="Inventions">
-        <li><button type="button" class="ipd-tab" role="tab" aria-selected="true" tabindex="0" aria-controls="ipd-sheet" data-src="docs/Innovations/images/578250.webp" data-title="Nanostructured Si-void-C yolk/shell architecture: a high performance Li-ion battery anode and the preparation method thereof" data-field="Energy storage" data-href="/Home/IntellectualProperty/?id=8">
-          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/578250.webp" alt="" loading="lazy"></span>
+        <li role="presentation"><button type="button" class="ipd-tab" role="tab" aria-selected="true" tabindex="0" aria-controls="ipd-sheet" data-src="docs/Innovations/images/578250.webp" data-title="Nanostructured Si-void-C yolk/shell architecture: a high performance Li-ion battery anode and the preparation method thereof" data-field="Energy storage" data-href="/Home/IntellectualProperty/?id=8">
+          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/578250.webp" alt="" loading="lazy" width="600" height="450"></span>
           <span>Si-void-C battery anode</span>
         </button></li>
-        <li><button type="button" class="ipd-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="ipd-sheet" data-src="docs/Innovations/images/580748.webp" data-title="Unauthorized Person Detection using Thermal Imaging and Gait Recognition for Intra-Building Security" data-field="Building security" data-href="/Home/IntellectualProperty/?id=7">
-          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/580748.webp" alt="" loading="lazy"></span>
+        <li role="presentation"><button type="button" class="ipd-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="ipd-sheet" data-src="docs/Innovations/images/580748.webp" data-title="Unauthorized Person Detection using Thermal Imaging and Gait Recognition for Intra-Building Security" data-field="Building security" data-href="/Home/IntellectualProperty/?id=7">
+          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/580748.webp" alt="" loading="lazy" width="600" height="450"></span>
           <span>Thermal gait recognition for security</span>
         </button></li>
-        <li><button type="button" class="ipd-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="ipd-sheet" data-src="docs/Innovations/images/579221.webp" data-title="Assistive Robotic System and Method for Enhancing Social Skills in User with Autism Spectrum Disorder" data-field="Assistive robotics" data-href="/Home/IntellectualProperty/?id=6">
-          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/579221.webp" alt="" loading="lazy"></span>
+        <li role="presentation"><button type="button" class="ipd-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="ipd-sheet" data-src="docs/Innovations/images/579221.webp" data-title="Assistive Robotic System and Method for Enhancing Social Skills in User with Autism Spectrum Disorder" data-field="Assistive robotics" data-href="/Home/IntellectualProperty/?id=6">
+          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/579221.webp" alt="" loading="lazy" width="600" height="450"></span>
           <span>Social-skills robot for autism</span>
         </button></li>
-        <li><button type="button" class="ipd-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="ipd-sheet" data-src="docs/Innovations/images/578843.webp" data-title="Apparatus and Method for Calibrating Infrared (IR)/ Thermal Cameras" data-field="Thermal imaging" data-href="/Home/IntellectualProperty/?id=5">
-          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/578843.webp" alt="" loading="lazy"></span>
+        <li role="presentation"><button type="button" class="ipd-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="ipd-sheet" data-src="docs/Innovations/images/578843.webp" data-title="Apparatus and Method for Calibrating Infrared (IR)/ Thermal Cameras" data-field="Thermal imaging" data-href="/Home/IntellectualProperty/?id=5">
+          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/578843.webp" alt="" loading="lazy" width="600" height="450"></span>
           <span>IR camera calibration rig</span>
         </button></li>
-        <li><button type="button" class="ipd-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="ipd-sheet" data-src="docs/Innovations/images/IP_IoT.webp" data-title="An IoT-Enabled Computer Vision Aided Multimodal Temperature-Based Color Analysis Device" data-field="IoT sensing" data-href="/Home/IntellectualProperty/?id=4">
-          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/IP_IoT.webp" alt="" loading="lazy"></span>
+        <li role="presentation"><button type="button" class="ipd-tab" role="tab" aria-selected="false" tabindex="-1" aria-controls="ipd-sheet" data-src="docs/Innovations/images/IP_IoT.webp" data-title="An IoT-Enabled Computer Vision Aided Multimodal Temperature-Based Color Analysis Device" data-field="IoT sensing" data-href="/Home/IntellectualProperty/?id=4">
+          <span class="ipd-tab-thumb"><img src="docs/Innovations/images/IP_IoT.webp" alt="" loading="lazy" width="600" height="450"></span>
           <span>IoT colour analysis device</span>
         </button></li>
     </ul>
@@ -1235,7 +1083,7 @@ window.dataLayer = window.dataLayer || [];
 </section>
 <!--end IP@NITR-->
 <!--Start Research and Innovations-->
-<section class="ri-section" id="research-section" aria-labelledby="ri-title">
+<section class="ri-section" data-chapter="white" id="research-section" aria-labelledby="ri-title">
   <div class="ri-inner">
     <div class="ri-head">
       <div>
@@ -1247,7 +1095,7 @@ window.dataLayer = window.dataLayer || [];
 
     <ul class="ri-stories" aria-label="Research stories">
       <li class="ri-story is-open">
-        <img class="ri-story-img" src="docs/CurrentResearch/images/AircraftLandingGear.webp" alt="" loading="lazy">
+        <img class="ri-story-img" src="docs/CurrentResearch/images/AircraftLandingGear.webp" alt="" loading="lazy" width="600" height="450">
         <button type="button" class="ri-story-toggle" aria-expanded="true" aria-controls="ri-story-0">
           <span class="ri-story-vtitle">Durable material for aircraft landing gear</span>
           <span class="ri-story-vtopic">Materials engineering</span>
@@ -1259,7 +1107,7 @@ window.dataLayer = window.dataLayer || [];
         </div>
       </li>
       <li class="ri-story">
-        <img class="ri-story-img" src="docs/CurrentResearch/images/Multi-Sensor-AI-System-for-Accurate-Patient-Sleep-Posture-Detection.webp" alt="" loading="lazy">
+        <img class="ri-story-img" src="docs/CurrentResearch/images/Multi-Sensor-AI-System-for-Accurate-Patient-Sleep-Posture-Detection.webp" alt="" loading="lazy" width="600" height="450">
         <button type="button" class="ri-story-toggle" aria-expanded="false" aria-controls="ri-story-1">
           <span class="ri-story-vtitle">AI that reads patient sleep posture</span>
           <span class="ri-story-vtopic">Healthcare AI</span>
@@ -1271,7 +1119,7 @@ window.dataLayer = window.dataLayer || [];
         </div>
       </li>
       <li class="ri-story">
-        <img class="ri-story-img" src="docs/CurrentResearch/images/DetectIntrudersinRestrictedZones.webp" alt="" loading="lazy">
+        <img class="ri-story-img" src="docs/CurrentResearch/images/DetectIntrudersinRestrictedZones.webp" alt="" loading="lazy" width="600" height="450">
         <button type="button" class="ri-story-toggle" aria-expanded="false" aria-controls="ri-story-2">
           <span class="ri-story-vtitle">Intruder detection for restricted zones</span>
           <span class="ri-story-vtopic">Security systems</span>
@@ -1283,7 +1131,7 @@ window.dataLayer = window.dataLayer || [];
         </div>
       </li>
       <li class="ri-story">
-        <img class="ri-story-img" src="docs/CurrentResearch/images/AlteringEffectsGlobalWarming.webp" alt="" loading="lazy">
+        <img class="ri-story-img" src="docs/CurrentResearch/images/AlteringEffectsGlobalWarming.webp" alt="" loading="lazy" width="600" height="450">
         <button type="button" class="ri-story-toggle" aria-expanded="false" aria-controls="ri-story-3">
           <span class="ri-story-vtitle">Global warming and the Indian monsoon</span>
           <span class="ri-story-vtopic">Climate science</span>
@@ -1295,7 +1143,7 @@ window.dataLayer = window.dataLayer || [];
         </div>
       </li>
       <li class="ri-story">
-        <img class="ri-story-img" src="docs/CurrentResearch/images/SmartRoadsideSystem.webp" alt="" loading="lazy">
+        <img class="ri-story-img" src="docs/CurrentResearch/images/SmartRoadsideSystem.webp" alt="" loading="lazy" width="600" height="450">
         <button type="button" class="ri-story-toggle" aria-expanded="false" aria-controls="ri-story-4">
           <span class="ri-story-vtitle">Roadside sensing for blind corners</span>
           <span class="ri-story-vtopic">Smart transport</span>
@@ -1311,7 +1159,7 @@ window.dataLayer = window.dataLayer || [];
 </section>
 <!--end Research and Innovations-->
 <!--Start Research Output (statistics)-->
-<section class="ri-section ri-output-section" id="research-output" aria-labelledby="ro-title">
+<section class="ri-section ri-output-section" data-chapter="white" id="research-output" aria-labelledby="ro-title">
   <div class="ri-inner">
     <div class="ri-output">
       <h2 class="ri-output-title" id="ro-title">Research output</h2>
@@ -1356,7 +1204,7 @@ window.dataLayer = window.dataLayer || [];
 </section>
 <!--End Research and Innovation and Research Statistics-->
 <!--start Incubation@NITR-->
-<section class="fwp-incubation-section" id="incubation-section">
+<section class="fwp-incubation-section" data-chapter="white" id="incubation-section">
 <div class="fwp-container">
   <!-- Header with Live Controls -->
   <div class="fwp-header">
@@ -1386,13 +1234,13 @@ window.dataLayer = window.dataLayer || [];
         <div class="fwp-panel-card">
           <!-- Slide 1: Stethaim -->
           <div class="fwp-media-slide active" data-slide="0">
-            <img src="docs/Entrepreneurship/images/Stethaim.webp" alt="Stethaim Auscultation Device" class="fwp-media-img" loading="lazy">
+            <img src="docs/Entrepreneurship/images/Stethaim.webp" alt="Stethaim Auscultation Device" class="fwp-media-img" loading="lazy" width="600" height="450">
             <div class="fwp-media-scrim">
               <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> HealthTech &bull; AI Diagnostics</span>
               <h3 class="fwp-media-title">Stethaim</h3>
               <p class="fwp-media-desc-primary">Respiratory diseases such as COPD, pneumonia, and asthma remain major health concerns. Stethaim is an AI-powered smart auscultation device that captures lung sounds, detects wheezes and crackles, measures respiratory rate, and provides structured clinical insights for early diagnosis.</p>
               <p class="fwp-media-desc-secondary">Clinical-grade acoustics developed and incubated at FTBI &bull; TIIR NIT Rourkela.</p>
-              <a href="https://www.stethaim.com" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+              <a href="https://www.stethaim.com" target="_blank" rel="noopener noreferrer" class="fwp-explore-link outside-link">
                 <span>Explore Startup</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -1401,13 +1249,13 @@ window.dataLayer = window.dataLayer || [];
 
           <!-- Slide 2: IVAPLUS -->
           <div class="fwp-media-slide" data-slide="1">
-            <img src="docs/Entrepreneurship/images/Companypic.webp" alt="IVAPLUS Software" class="fwp-media-img" loading="lazy">
+            <img src="docs/Entrepreneurship/images/Companypic.webp" alt="IVAPLUS Software" class="fwp-media-img" loading="lazy" width="1600" height="1074">
             <div class="fwp-media-scrim">
               <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Enterprise AI &bull; EdTech</span>
               <h3 class="fwp-media-title">IVAPLUS Software</h3>
               <p class="fwp-media-desc-primary">Specializing in building highly scalable, cloud-ready, comprehensive AI-driven solutions with primary focus on end-to-end automation of enterprise processes, examination administration, and automated learning evaluation suites.</p>
               <p class="fwp-media-desc-secondary">Scale-ready cloud architecture powering large academic institutions and enterprise workflows.</p>
-              <a href="https://www.ivaplus.co.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+              <a href="https://www.ivaplus.co.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link outside-link">
                 <span>Explore Startup</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -1416,13 +1264,13 @@ window.dataLayer = window.dataLayer || [];
 
           <!-- Slide 3: IOTA Design -->
           <div class="fwp-media-slide" data-slide="2">
-            <img src="docs/Entrepreneurship/images/IOTA.webp" alt="IOTA 3D Bioprinting" class="fwp-media-img" loading="lazy">
+            <img src="docs/Entrepreneurship/images/IOTA.webp" alt="IOTA 3D Bioprinting" class="fwp-media-img" loading="lazy" width="600" height="450">
             <div class="fwp-media-scrim">
               <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> DeepTech &bull; Biomedical R&amp;D</span>
               <h3 class="fwp-media-title">IOTA Design &amp; Innovations</h3>
               <p class="fwp-media-desc-primary">DeepTech R&amp;D company specializing in advanced medical devices and 3D printing technologies. Developed an indigenous 3D bioprinter for cell printing in biotech research, along with diagnostics for early detection of Dry Eye and Parkinson’s disease.</p>
               <p class="fwp-media-desc-secondary">Breakthrough biomedical instrumentation advancing cellular research across Indian laboratories.</p>
-              <a href="https://iotadesign.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+              <a href="https://iotadesign.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link outside-link">
                 <span>Explore Startup</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -1431,13 +1279,13 @@ window.dataLayer = window.dataLayer || [];
 
           <!-- Slide 4: Quidle -->
           <div class="fwp-media-slide" data-slide="3">
-            <img src="docs/Entrepreneurship/images/Quidle.webp" alt="Quidle Green Solutions" class="fwp-media-img" loading="lazy">
+            <img src="docs/Entrepreneurship/images/Quidle.webp" alt="Quidle Green Solutions" class="fwp-media-img" loading="lazy" width="600" height="450">
             <div class="fwp-media-scrim">
               <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> CleanTech &bull; Sustainability</span>
               <h3 class="fwp-media-title">Quidle Enterprise</h3>
               <p class="fwp-media-desc-primary">A DPIIT-recognized green venture focused on sustainable urban ecology solutions. Specializes in urban micro-gardening, architectural vertical green walls, and innovative smart planters for modern homes, universities, and commercial complexes.</p>
               <p class="fwp-media-desc-secondary">Government-recognized green innovation turning urban infrastructure into thriving ecosystems.</p>
-              <a href="https://quidle.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+              <a href="https://quidle.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link outside-link">
                 <span>Explore Startup</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -1446,13 +1294,13 @@ window.dataLayer = window.dataLayer || [];
 
           <!-- Slide 5: Hoardspace -->
           <div class="fwp-media-slide" data-slide="4">
-            <img src="docs/Entrepreneurship/images/hoardspace.webp" alt="Hoardspace Advertising" class="fwp-media-img" loading="lazy">
+            <img src="docs/Entrepreneurship/images/hoardspace.webp" alt="Hoardspace Advertising" class="fwp-media-img" loading="lazy" width="600" height="450">
             <div class="fwp-media-scrim">
               <span class="fwp-media-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> AdTech &bull; DOOH Marketplace</span>
               <h3 class="fwp-media-title">Hoardspace Media</h3>
               <p class="fwp-media-desc-primary">Founded by student entrepreneurs from NIT Rourkela, Hoardspace provides an intelligent digital marketplace for Out-of-Home (OOH) and Digital Out-of-Home (DOOH) advertising, enabling brands to discover, compare, and book billboards and digital displays in real time.</p>
               <p class="fwp-media-desc-secondary">Student-led innovation pioneering programmatic outdoor advertising across Indian tier-1 and tier-2 hubs.</p>
-              <a href="https://www.hoardspace.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link">
+              <a href="https://www.hoardspace.in/" target="_blank" rel="noopener noreferrer" class="fwp-explore-link outside-link">
                 <span>Explore Startup</span>
                 <i class="fa-solid fa-arrow-right"></i>
               </a>
@@ -1538,7 +1386,7 @@ window.dataLayer = window.dataLayer || [];
 <!--start Faculty Awards-->
 <!--start Achievements Carousel (Profile Card Testimonial Style)-->
 <!--start Achievements Showcase (Unified Faculty & Student with Toolbar)-->
-<section class="fasa-section" id="achievements-section" aria-label="Faculty and Student Achievements">
+<section class="fasa-section" data-chapter="cinnamon" id="achievements-section" aria-label="Faculty and Student Achievements">
   <!-- Glowing ambient light orbs -->
   <div class="fasa-glow-orb fasa-glow-1" aria-hidden="true"></div>
   <div class="fasa-glow-orb fasa-glow-2" aria-hidden="true"></div>
@@ -1553,10 +1401,10 @@ window.dataLayer = window.dataLayer || [];
         </div>
         <h2 class="fasa-section-main-title">ACHIEVEMENTS</h2>
       </div>
-      <div class="fasa-toolbar" role="tablist" aria-label="Achievements Filter">
-        <button class="fasa-toolbar-btn is-active" data-category="all" type="button">All</button>
-        <button class="fasa-toolbar-btn" data-category="faculty" type="button">Faculty</button>
-        <button class="fasa-toolbar-btn" data-category="student" type="button">Student</button>
+      <div class="fasa-toolbar" role="group" aria-label="Filter achievements">
+        <button class="fasa-toolbar-btn is-active" data-category="all" type="button" aria-pressed="true">All</button>
+        <button class="fasa-toolbar-btn" data-category="faculty" type="button" aria-pressed="false">Faculty</button>
+        <button class="fasa-toolbar-btn" data-category="student" type="button" aria-pressed="false">Student</button>
       </div>
     </div>
 
@@ -1637,7 +1485,7 @@ window.dataLayer = window.dataLayer || [];
 </section>
 <!--end Achievements Showcase-->
 <!--start Social Initiatives (Diagonal Alternating Flow, No Carousel, No Boxes)-->
-<section class="social-initiatives-section" id="social-initiatives" aria-label="Social Initiatives at NIT Rourkela">
+<section class="social-initiatives-section" data-chapter="white" id="social-initiatives" aria-label="Social Initiatives at NIT Rourkela">
   <div class="si-container">
     <!-- Section Header (Clean Title Only) -->
     <div class="si-section-header">
@@ -1650,7 +1498,7 @@ window.dataLayer = window.dataLayer || [];
       <!-- Item 1: NSS (Image Right, Text Left) -->
       <article class="si-item si-image-right">
         <div class="si-text-col">
-          <span class="si-item-num">01</span>
+          <span class="si-item-num" aria-hidden="true">01</span>
           <span class="si-item-badge">NATIONAL SERVICE</span>
           <h3 class="si-item-title">National Service Scheme (NSS)</h3>
           <p class="si-item-desc">
@@ -1667,7 +1515,7 @@ window.dataLayer = window.dataLayer || [];
         <div class="si-media-col">
           <div class="si-img-wrapper">
             <span class="si-media-tag">NSS NITR</span>
-            <img src="docs/SocialInitiatives/NSS.jpg" alt="National Service Scheme (NSS) Volunteers at NIT Rourkela" loading="lazy" />
+            <img src="docs/SocialInitiatives/NSS.jpg" alt="National Service Scheme (NSS) Volunteers at NIT Rourkela" loading="lazy" width="395" height="250"/>
           </div>
         </div>
       </article>
@@ -1677,11 +1525,11 @@ window.dataLayer = window.dataLayer || [];
         <div class="si-media-col">
           <div class="si-img-wrapper">
             <span class="si-media-tag">ROTARACT CLUB</span>
-            <img src="docs/SocialInitiatives/Rotract.jpg" alt="Rotaract Club Youth Community Outreach at NIT Rourkela" loading="lazy" />
+            <img src="docs/SocialInitiatives/Rotract.jpg" alt="Rotaract Club Youth Community Outreach at NIT Rourkela" loading="lazy" width="395" height="250"/>
           </div>
         </div>
         <div class="si-text-col">
-          <span class="si-item-num">02</span>
+          <span class="si-item-num" aria-hidden="true">02</span>
           <span class="si-item-badge">YOUTH &amp; HEALTH LEADERSHIP</span>
           <h3 class="si-item-title">The Rotaract Club</h3>
           <p class="si-item-desc">
@@ -1692,15 +1540,14 @@ window.dataLayer = window.dataLayer || [];
             <svg class="si-link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+            </svg> <span class="gg-file">(PDF, 10.9 MB)</span></a>
         </div>
       </article>
 
       <!-- Item 3: AASRA (Image Right, Text Left - DIAGONAL from Item 2!) -->
       <article class="si-item si-image-right">
         <div class="si-text-col">
-          <span class="si-item-num">03</span>
+          <span class="si-item-num" aria-hidden="true">03</span>
           <span class="si-item-badge">CHILD DEVELOPMENT &amp; EDUCATION</span>
           <h3 class="si-item-title">AASRA</h3>
           <p class="si-item-desc">
@@ -1717,7 +1564,7 @@ window.dataLayer = window.dataLayer || [];
         <div class="si-media-col">
           <div class="si-img-wrapper">
             <span class="si-media-tag">AASRA NITR</span>
-            <img src="docs/SocialInitiatives/AASRA.jpg" alt="AASRA Education and Mentorship for Underprivileged Children" loading="lazy" />
+            <img src="docs/SocialInitiatives/AASRA.jpg" alt="AASRA Education and Mentorship for Underprivileged Children" loading="lazy" width="395" height="250"/>
           </div>
         </div>
       </article>
@@ -1727,11 +1574,11 @@ window.dataLayer = window.dataLayer || [];
         <div class="si-media-col">
           <div class="si-img-wrapper">
             <span class="si-media-tag">UBA MISSION</span>
-            <img src="docs/SocialInitiatives/UBA.jpg" alt="Unnat Bharat Abhiyan Rural Transformation Project" loading="lazy" />
+            <img src="docs/SocialInitiatives/UBA.jpg" alt="Unnat Bharat Abhiyan Rural Transformation Project" loading="lazy" width="395" height="250"/>
           </div>
         </div>
         <div class="si-text-col">
-          <span class="si-item-num">04</span>
+          <span class="si-item-num" aria-hidden="true">04</span>
           <span class="si-item-badge">RURAL INNOVATION</span>
           <h3 class="si-item-title">Unnat Bharat Abhiyan (UBA)</h3>
           <p class="si-item-desc">
@@ -1758,273 +1605,128 @@ window.dataLayer = window.dataLayer || [];
   </div>
 </section>
 <!--end Social Initiatives-->
-<!--start awards,recognittion and study@NITR -->
-<section class="study-at-nitr-section" id="study-at-nitr" aria-label="Academic Programmes at NIT Rourkela">
-  <div class="san-section-anchor" id="study-anchor"></div>
-  
+<!-- Study@NITR (from the component library, nitrkl-components/components/16-study): the programme list on crimson, the reading stage on the campus. assets/site/study.css, study.js -->
+<section class="study-at-nitr-section" id="study-at-nitr" data-chapter="cinnamon" aria-labelledby="study-title">
   <div class="san-split-wrapper">
-    <!-- LEFT PANEL: Crimson Editorial Navigation Panel (Casa Vicens Split Recording Match) -->
     <div class="san-menu-panel">
       <div class="san-menu-inner">
-        <!-- Section Heading: Study @ NITR -->
-        <div class="san-menu-header">
-          <h2 class="san-menu-title">Study @ NITR</h2>
-        </div>
-
-        <!-- Main Programme Navigation List (Editorial Serif Display) -->
-        <ul class="san-nav-list" role="tablist" aria-label="Academic Programmes">
-          <!-- 01: Undergraduate -->
-          <li class="san-nav-item active" data-index="0" role="tab" aria-selected="true" tabindex="0">
-            <a href="#study-at-nitr" class="san-nav-link">
-              <span class="san-item-title">Undergraduate</span>
-              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-
-          <!-- 02: Postgraduate -->
-          <li class="san-nav-item" data-index="1" role="tab" aria-selected="false" tabindex="0">
-            <a href="#study-at-nitr" class="san-nav-link">
-              <span class="san-item-title">Postgraduate</span>
-              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-
-          <!-- 03: Doctoral -->
-          <li class="san-nav-item" data-index="2" role="tab" aria-selected="false" tabindex="0">
-            <a href="#study-at-nitr" class="san-nav-link">
-              <span class="san-item-title">Doctoral</span>
-              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-
-          <!-- 04: Executive Ph.D. -->
-          <li class="san-nav-item" data-index="3" role="tab" aria-selected="false" tabindex="0">
-            <a href="#study-at-nitr" class="san-nav-link">
-              <span class="san-item-title">Executive Ph.D.</span>
-              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
-
-          <!-- 05: Part Time Programmes -->
-          <li class="san-nav-item" data-index="4" role="tab" aria-selected="false" tabindex="0">
-            <a href="#study-at-nitr" class="san-nav-link">
-              <span class="san-item-title">Part Time Programmes</span>
-              <span class="san-nav-arrow" aria-hidden="true">&rarr;</span>
-            </a>
-          </li>
+        <h2 class="title san-menu-title" id="study-title">Study @ NITR</h2>
+        <ul class="san-nav-list" role="tablist" aria-label="Academic Programmes" aria-orientation="vertical">
+          <li class="san-nav-item active" data-index="0" role="tab" aria-selected="true" aria-controls="san-pane-0" tabindex="0"><span class="san-item-title">Undergraduate</span><span class="san-nav-arrow" aria-hidden="true">&rarr;</span></li>
+          <li class="san-nav-item" data-index="1" role="tab" aria-selected="false" aria-controls="san-pane-1" tabindex="-1"><span class="san-item-title">Postgraduate</span><span class="san-nav-arrow" aria-hidden="true">&rarr;</span></li>
+          <li class="san-nav-item" data-index="2" role="tab" aria-selected="false" aria-controls="san-pane-2" tabindex="-1"><span class="san-item-title">Doctoral</span><span class="san-nav-arrow" aria-hidden="true">&rarr;</span></li>
+          <li class="san-nav-item" data-index="3" role="tab" aria-selected="false" aria-controls="san-pane-3" tabindex="-1"><span class="san-item-title">Executive Ph.D.</span><span class="san-nav-arrow" aria-hidden="true">&rarr;</span></li>
+          <li class="san-nav-item" data-index="4" role="tab" aria-selected="false" aria-controls="san-pane-4" tabindex="-1"><span class="san-item-title">Part Time Programmes</span><span class="san-nav-arrow" aria-hidden="true">&rarr;</span></li>
         </ul>
-
-        <!-- Secondary Sublinks Grid -->
-        <div class="san-sublinks-wrapper">
-          <div class="san-sublinks-grid">
-            <a href="https://josaa.nic.in/" target="_blank" rel="noopener" class="san-sublink-item">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <span>JoSAA Counselling</span>
-            </a>
-            <a href="https://csab.nic.in/" target="_blank" rel="noopener" class="san-sublink-item">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <span>CSAB Portal</span>
-            </a>
-            <a href="https://ccmt.nic.in/" target="_blank" rel="noopener" class="san-sublink-item">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <span>CCMT PG Portal</span>
-            </a>
-            <a href="https://online-inspire.gov.in/" target="_blank" rel="noopener" class="san-sublink-item">
-              <i class="fa-solid fa-award"></i>
-              <span>DST Fellowships</span>
-            </a>
-            <a href="/Academic/Admission/" class="san-sublink-item">
-              <i class="fa-solid fa-scroll"></i>
-              <span>Academic Regulations</span>
-            </a>
-            <a href="/Institute/Rules_Regulations/" class="san-sublink-item">
-              <i class="fa-solid fa-file-invoice"></i>
-              <span>Fee Ordinances</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Bottom Footer: Social & Institute Portals -->
+        <ul class="san-sublinks-grid">
+          <li><a href="https://josaa.nic.in/" target="_blank" rel="noopener" class="san-sublink-item"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>JoSAA Counselling</a></li>
+          <li><a href="https://csab.nic.in/" target="_blank" rel="noopener" class="san-sublink-item"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>CSAB Portal</a></li>
+          <li><a href="https://ccmt.nic.in/" target="_blank" rel="noopener" class="san-sublink-item"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>CCMT PG Portal</a></li>
+          <li><a href="https://online-inspire.gov.in/" target="_blank" rel="noopener" class="san-sublink-item"><i class="bi bi-award" aria-hidden="true"></i>DST Fellowships</a></li>
+          <li><a href="/Academic/Admission/" class="san-sublink-item"><i class="bi bi-book" aria-hidden="true"></i>Academic Regulations</a></li>
+          <li><a href="/Institute/Rules_Regulations/" class="san-sublink-item"><i class="bi bi-receipt" aria-hidden="true"></i>Fee Ordinances</a></li>
+        </ul>
         <div class="san-menu-footer">
-          <div class="san-footer-socials">
-            <a href="https://www.instagram.com/nitrourkela1961/" target="_blank" rel="noopener" class="san-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://twitter.com/nitrourkela" target="_blank" rel="noopener" class="san-social-btn" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.facebook.com/nitrkl1" target="_blank" rel="noopener" class="san-social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" target="_blank" rel="noopener" class="san-social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com/@NITROURKELA1961" target="_blank" rel="noopener" class="san-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          </div>
-          <a href="https://eapplication.nitrkl.ac.in/nitris/" target="_blank" rel="noopener" class="san-portal-link">
-            <span>NITRis ERP</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          <ul class="san-footer-socials">
+            <li><a href="https://www.instagram.com/nitrourkela1961/" target="_blank" rel="noopener" class="san-social-btn outside-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/nitrourkela" target="_blank" rel="noopener" class="san-social-btn outside-link" title="X / Twitter" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.facebook.com/nitrkl1" target="_blank" rel="noopener" class="san-social-btn outside-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.linkedin.com/school/national-institute-of-technology-rourkela/" target="_blank" rel="noopener" class="san-social-btn outside-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+            <li><a href="https://www.youtube.com/@NITROURKELA1961" target="_blank" rel="noopener" class="san-social-btn outside-link" title="YouTube" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a></li>
+          </ul>
+          <a href="https://eapplication.nitrkl.ac.in/nitris/" target="_blank" rel="noopener" class="san-portal-link">NITRis ERP <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT PANEL: Atmospheric Stage with 100% Readable Full Text and Calm Backgrounds -->
     <div class="san-stage-panel">
-      <!-- Watermark Ghost Background Typography -->
-      <div class="san-watermark-wrapper" aria-hidden="true">
-        <div class="san-watermark-top">National Institute of Technology</div>
-        <div class="san-watermark-main">STUDY@NITR</div>
-      </div>
-
-      <!-- Top Right Header Action Badges -->
-      <div class="san-stage-toolbar">
-        <a href="/Academic/Admission/" class="san-toolbar-pill">
-          <i class="fa-solid fa-graduation-cap"></i> Admissions 2026
-        </a>
-      </div>
-
-      <!-- Center Panes: Full Original Text Displayed with Absolute Clarity -->
       <div class="san-panes-wrapper">
-
-        <!-- Pane 0: Undergraduate -->
-        <div class="san-pane active" data-slide="0" role="tabpanel" aria-label="Undergraduate Programmes">
+        <div class="san-pane active" id="san-pane-0" data-slide="0" role="tabpanel" aria-label="Undergraduate Programmes">
           <div class="san-pane-bg" style="background-image: url('assets/images/campus.jpeg');"></div>
           <div class="san-pane-scrim"></div>
           <div class="san-content-card">
-            <h2 class="san-content-title">UNDERGRADUATE</h2>
-            <p>
-              Admission to undergraduate courses is made in the autumn semester at the first-year level through JEE (Main) or similar test approved by NIT Council, the counselling for which is done by Joint Seat Allocation Authority (<a class="san-inline-link" href="https://josaa.nic.in/" target="_blank" rel="noopener">JoSAA</a>) and Central Seat Allocation Board (<a class="san-inline-link" href="https://csab.nic.in/" target="_blank" rel="noopener">CSAB</a>) or its equivalent approved by the NIT Council and/or Central Government. Besides, a specified number of foreign nationals selected under the policy of the Government of India may be admitted directly to the 1st-year of any of the programmes.
-            </p>
+            <h3 class="san-content-title">Undergraduate</h3>
+            <p>Admission to undergraduate courses is made in the autumn semester at the first-year level through JEE (Main) or similar test approved by NIT Council, the counselling for which is done by Joint Seat Allocation Authority (<a class="san-inline-link" href="https://josaa.nic.in/" target="_blank" rel="noopener">JoSAA</a>) and Central Seat Allocation Board (<a class="san-inline-link" href="https://csab.nic.in/" target="_blank" rel="noopener">CSAB</a>) or its equivalent approved by the NIT Council and/or Central Government. Besides, a specified number of foreign nationals selected under the policy of the Government of India may be admitted directly to the 1st-year of any of the programmes.</p>
             <div class="san-pane-footer">
-              <a href="https://josaa.nic.in/" target="_blank" rel="noopener" class="san-btn-action">
-                <span>JoSAA Portal</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <a href="https://csab.nic.in/" target="_blank" rel="noopener" class="san-btn-action">
-                <span>CSAB Portal</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <a href="https://josaa.nic.in/" target="_blank" rel="noopener" class="btn btn--light">JoSAA Portal <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <a href="https://csab.nic.in/" target="_blank" rel="noopener" class="btn btn--light">CSAB Portal <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Pane 1: Postgraduate -->
-        <div class="san-pane" data-slide="1" role="tabpanel" aria-label="Postgraduate Programmes">
+        <div class="san-pane" id="san-pane-1" data-slide="1" role="tabpanel" aria-label="Postgraduate Programmes">
           <div class="san-pane-bg" style="background-image: url('assets/images/gallery3.webp');"></div>
           <div class="san-pane-scrim"></div>
           <div class="san-content-card">
-            <h2 class="san-content-title">POSTGRADUATE</h2>
-            
+            <h3 class="san-content-title">Postgraduate</h3>
             <h4 class="san-content-subtitle">M. Tech.</h4>
-            <p>
-              The courses leading to M. Tech. degree are open to candidates who have obtained the requisite qualification with 60% marks or 6.50 CGPA in aggregate in the qualifying examination. Admission for the GATE qualified candidates is made through Common Admission Process called Central Counselling for Master’s of Technology (<a class="san-inline-link" href="https://ccmt.nic.in/" target="_blank" rel="noopener">CCMT</a>). Relaxation up to 5% of marks or 0.5 CGPA is allowed by senate for sponsored candidates with proven research or profession experience.
-            </p>
-
+            <p>The courses leading to M. Tech. degree are open to candidates who have obtained the requisite qualification with 60% marks or 6.50 CGPA in aggregate in the qualifying examination. Admission for the GATE qualified candidates is made through Common Admission Process called Central Counselling for Master’s of Technology (<a class="san-inline-link" href="https://ccmt.nic.in/" target="_blank" rel="noopener">CCMT</a>). Relaxation up to 5% of marks or 0.5 CGPA is allowed by senate for sponsored candidates with proven research or profession experience.</p>
             <h4 class="san-content-subtitle">M.Sc.</h4>
-            <p>
-              For admission to M. Sc., candidates must have required B. Sc. degree with the subject applied for as one of the subjects (either Pass or Honours), Mathematics in +2 levels is compulsory for all courses except Life Science. The admission to the above programmes is made through Centralized Counselling for M.Sc.
-            </p>
-
+            <p>For admission to M. Sc., candidates must have required B. Sc. degree with the subject applied for as one of the subjects (either Pass or Honours), Mathematics in +2 levels is compulsory for all courses except Life Science. The admission to the above programmes is made through Centralized Counselling for M.Sc.</p>
             <h4 class="san-content-subtitle">M. A. (Development Studies)</h4>
-            <p>
-              The requisite academic qualification for MA in Development Studies is B. Tech. / B. A. / B. Sc. / B. Com. with 55% marks or 6.00 CGPA. Amongst B. A. / B. Sc. / B. Com. applicants with honours are given preference. Admission to the programme is made on the basis of career marks.
-            </p>
-
+            <p>The requisite academic qualification for MA in Development Studies is B. Tech. / B. A. / B. Sc. / B. Com. with 55% marks or 6.00 CGPA. Amongst B. A. / B. Sc. / B. Com. applicants with honours are given preference. Admission to the programme is made on the basis of career marks.</p>
             <h4 class="san-content-subtitle">M. B. A.</h4>
-            <p>
-              Minimum eligibility criterion for admission to MBA is any Graduate with 60% or 6.5 CGPA (on 10-point scale) and 55% or 6.0 CGPA in case of SC/ST candidates. Applicants who have qualified at national/international tests for admission to business schools with high scores get preference. Final selection is based on group discussion and personal interview conducted at the Institute, along with academic career and score of national or international tests.
-            </p>
-
+            <p>Minimum eligibility criterion for admission to MBA is any Graduate with 60% or 6.5 CGPA (on 10-point scale) and 55% or 6.0 CGPA in case of SC/ST candidates. Applicants who have qualified at national/international tests for admission to business schools with high scores get preference. Final selection is based on group discussion and personal interview conducted at the Institute, along with academic career and score of national or international tests.</p>
             <h4 class="san-content-subtitle">M.Tech (Research)</h4>
-            <p>
-              A few departments offer M.Tech by research. This course don’t have a time bound and the course work will be decided by the Masters Scrutiny Committee (MSC). This course requires a submission of original research in form of a thesis..The minimum qualification required for admission to the program is one of the following.
-            </p>
+            <p>A few departments offer M.Tech by research. This course don’t have a time bound and the course work will be decided by the Masters Scrutiny Committee (MSC). This course requires a submission of original research in form of a thesis..The minimum qualification required for admission to the program is one of the following.</p>
             <ol class="san-eligibility-list">
               <li>B.E/B.Tech/B.Pharm/MCA or equivalent in relevant discipline with 7.0 CGPA or 65% marks in aggregate.</li>
               <li>M.Sc in Basic Sciences with CGPA 6.5 or 60% marks in aggregate in relevant disciplines.</li>
               <li>M.B.B.S with CGPA 6.5 or 60% marks in aggregate.</li>
               <li>M.Sc./M.A/MBA/M.Com. in Humanities and Social Sciences or Management with CGPA 6.5 or 60% marks.</li>
             </ol>
-
             <div class="san-pane-footer">
-              <a href="https://ccmt.nic.in/" target="_blank" rel="noopener" class="san-btn-action">
-                <span>CCMT PG Portal</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <a href="/Academic/Admission/" class="san-btn-action">
-                <span>Academic Admissions</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <a href="https://ccmt.nic.in/" target="_blank" rel="noopener" class="btn btn--light">CCMT PG Portal <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <a href="/Academic/Admission/" class="btn btn--light">Academic Admissions <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Pane 2: Doctoral -->
-        <div class="san-pane" data-slide="2" role="tabpanel" aria-label="Doctoral Programmes">
+        <div class="san-pane" id="san-pane-2" data-slide="2" role="tabpanel" aria-label="Doctoral Programmes">
           <div class="san-pane-bg" style="background-image: url('assets/images/gallery1.webp');"></div>
           <div class="san-pane-scrim"></div>
           <div class="san-content-card">
-            <h2 class="san-content-title">DOCTORAL</h2>
-            <p>
-              The institute offers various research centric courses in various departments/ Centers like Post Doc, PhD, M.Tech. research under various schemes with fellowship like <a class="san-inline-link" href="https://online-inspire.gov.in/" target="_blank" rel="noopener">DST Inspire</a>, <a class="san-inline-link" href="https://www.meity.gov.in/offerings/schemes-and-services/details/visvesvaraya-phd-scheme-for-electronics-it" target="_blank" rel="noopener">Visvesvaraya PhD Scheme for Electronics and IT</a>, and sponsored programs like QIP and self-financed.
-            </p>
-
+            <h3 class="san-content-title">Doctoral</h3>
+            <p>The institute offers various research centric courses in various departments/ Centers like Post Doc, PhD, M.Tech. research under various schemes with fellowship like <a class="san-inline-link" href="https://online-inspire.gov.in/" target="_blank" rel="noopener">DST Inspire</a>, <a class="san-inline-link" href="https://www.meity.gov.in/offerings/schemes-and-services/details/visvesvaraya-phd-scheme-for-electronics-it" target="_blank" rel="noopener">Visvesvaraya PhD Scheme for Electronics and IT</a>, and sponsored programs like QIP and self-financed.</p>
             <h4 class="san-content-subtitle">Doctor of Philosophy (Ph.D.)</h4>
-            <p>
-              The Institute provides facilities for research leading to the Degree of Doctor of Philosophy (PhD) in Engineering, Science, Management, Planning and Architecture, Humanities and Social Sciences in various disciplines. Candidates except the members of the Institute faculty, QIP scholars and scholars nominated by the Central Government have to be selected by Departmental Research Committee (DRC) on the basis of their academic background, performance in written test and/or interview.
-            </p>
-
+            <p>The Institute provides facilities for research leading to the Degree of Doctor of Philosophy (PhD) in Engineering, Science, Management, Planning and Architecture, Humanities and Social Sciences in various disciplines. Candidates except the members of the Institute faculty, QIP scholars and scholars nominated by the Central Government have to be selected by Departmental Research Committee (DRC) on the basis of their academic background, performance in written test and/or interview.</p>
             <div class="san-pane-footer">
-              <a href="/Academic/Admission/" class="san-btn-action">
-                <span>Doctoral Admissions</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
-              <a href="/Research/PublicationsPatents/" class="san-btn-action">
-                <span>Research Facilities</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <a href="/Academic/Admission/" class="btn btn--light">Doctoral Admissions <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+              <a href="/Research/PublicationsPatents/" class="btn btn--light">Research Facilities <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Pane 3: Executive Ph.D. -->
-        <div class="san-pane" data-slide="3" role="tabpanel" aria-label="Executive Ph.D. Programmes">
+        <div class="san-pane" id="san-pane-3" data-slide="3" role="tabpanel" aria-label="Executive Ph.D. Programmes">
           <div class="san-pane-bg" style="background-image: url('assets/images/gallery9.webp');"></div>
           <div class="san-pane-scrim"></div>
           <div class="san-content-card">
-            <h2 class="san-content-title">EXECUTIVE PH.D.</h2>
-            <p>
-              NIT Rourkela has opened its doors for working professionals by offering programmes which are designed to enable them to pursue their doctorate degree while continuing in their Job/Profession in order to help them to accelerate their career. Candidates with minimum eligibility criteria as per NIT guidelines can apply and they will be selected based upon their academic background, performance in written test and/or interview.
-            </p>
-
+            <h3 class="san-content-title">Executive Ph.D.</h3>
+            <p>NIT Rourkela has opened its doors for working professionals by offering programmes which are designed to enable them to pursue their doctorate degree while continuing in their Job/Profession in order to help them to accelerate their career. Candidates with minimum eligibility criteria as per NIT guidelines can apply and they will be selected based upon their academic background, performance in written test and/or interview.</p>
             <div class="san-pane-footer">
-              <a href="/Academic/Admission/" class="san-btn-action">
-                <span>Apply for Executive Ph.D.</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <a href="/Academic/Admission/" class="btn btn--light">Apply for Executive Ph.D. <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
 
-        <!-- Pane 4: Part Time Programmes -->
-        <div class="san-pane" data-slide="4" role="tabpanel" aria-label="Part Time Programmes">
+        <div class="san-pane" id="san-pane-4" data-slide="4" role="tabpanel" aria-label="Part Time Programmes">
           <div class="san-pane-bg" style="background-image: url('assets/images/gallery4.webp');"></div>
           <div class="san-pane-scrim"></div>
           <div class="san-content-card">
-            <h2 class="san-content-title">PART TIME PROGRAMMES</h2>
-            <p>
-              NIT Rourkela has opened its doors for working professionals. These programmes are designed to enable them to pursue higher study while continuing in their Job/Profession in order to help them to accelerate their career.
-            </p>
-
+            <h3 class="san-content-title">Part Time Programmes</h3>
+            <p>NIT Rourkela has opened its doors for working professionals. These programmes are designed to enable them to pursue higher study while continuing in their Job/Profession in order to help them to accelerate their career.</p>
             <div class="san-pane-footer">
-              <a href="/Academic/Admission/" class="san-btn-action">
-                <span>Explore Part Time Programmes</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              <a href="/Academic/Admission/" class="btn btn--light">Explore Part Time Programmes <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 <!--end awards,recognittion and study@NITR-->
 <!--start thought of the day-->
-<section class="bottom-section">
+<section class="bottom-section" data-chapter="cinnamon">
 <div class="item">
 <h2>Thought of the Day</h2>
 <h5>Anger and intolerance are the enemies of correct understanding.</h5>
@@ -2044,7 +1746,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="col-lg-3 col-sm-6">
 <div class="single-funfact-wrap">
 <div class="funfact-icon">
-<img alt="NIT Rourkela Department Icon" class="img-fluid" loading="lazy" src="assets/images/department-p.png"/>
+<img alt="NIT Rourkela Department Icon" class="img-fluid" loading="lazy" src="assets/images/department-p.png" width="106" height="106"/>
 </div>
 <div class="funfact-info">
 <h5 class="funfact-count">20</h5>
@@ -2055,7 +1757,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="col-lg-3 col-sm-6">
 <div class="single-funfact-wrap">
 <div class="funfact-icon">
-<img alt="NIT Rourkela Students Icon" class="img-fluid" loading="lazy" src="assets/images/student-icon-p.png"/>
+<img alt="NIT Rourkela Students Icon" class="img-fluid" loading="lazy" src="assets/images/student-icon-p.png" width="83" height="106"/>
 </div>
 <div class="funfact-info">
 <h5><span class="funfact-count">8000</span>+</h5>
@@ -2066,7 +1768,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="col-lg-3 col-sm-6">
 <div class="single-funfact-wrap">
 <div class="funfact-icon">
-<img alt="NIT Rourkela Faculty Icon" class="img-fluid" loading="lazy" src="assets/images/faculty-p.png"/>
+<img alt="NIT Rourkela Faculty Icon" class="img-fluid" loading="lazy" src="assets/images/faculty-p.png" width="108" height="102"/>
 </div>
 <div class="funfact-info">
 <h5><span class="funfact-count">410</span>+</h5>
@@ -2077,7 +1779,7 @@ window.dataLayer = window.dataLayer || [];
 <div class="col-lg-3 col-sm-6">
 <div class="single-funfact-wrap">
 <div class="funfact-icon">
-<img alt="NIT Rourkela Staff Icon" class="img-fluid" loading="lazy" src="assets/images/staff-p.png"/>
+<img alt="NIT Rourkela Staff Icon" class="img-fluid" loading="lazy" src="assets/images/staff-p.png" width="107" height="102"/>
 </div>
 <div class="funfact-info">
 <h5><span class="funfact-count">300</span>+</h5>
@@ -2121,7 +1823,7 @@ window.dataLayer = window.dataLayer || [];
           <li><a href="https://ics.nitrkl.ac.in/">Institute Counselling Service</a></li>
           <li><a href="/ICC/">Internal Complaint Committee</a></li>
           <li><a href="/Student/Advertisements/">Admission Advt. &amp; Notices</a></li>
-          <li><a href="docs/Transparency Audit Document.pdf" target="_blank">Right to Information</a></li>
+          <li><a href="docs/Transparency Audit Document.pdf" target="_blank" rel="noopener">Right to Information <span class="gg-file">(PDF, 291 KB)</span></a></li>
         </ul>
       </nav>
       <nav class="f-links" aria-labelledby="f-oth">
@@ -2133,9 +1835,9 @@ window.dataLayer = window.dataLayer || [];
           <li><a href="https://gati.nitrkl.ac.in/">GATI</a></li>
           <li><a href="https://telemanas.mohfw.gov.in/home">Tele MANAS</a></li>
           <li><a href="/BIS/Dashboard/">BIS Dashboard</a></li>
-          <li><a class="outside-link" href="https://www.meity.gov.in/offerings/schemes-and-services/details/visvesvaraya-phd-scheme-for-electronics-it-QM1MDOtQWa" target="_blank">Visvesvaraya PhD Scheme</a></li>
+          <li><a class="outside-link" href="https://www.meity.gov.in/offerings/schemes-and-services/details/visvesvaraya-phd-scheme-for-electronics-it-QM1MDOtQWa" target="_blank" rel="noopener">Visvesvaraya PhD Scheme</a></li>
           <li><a href="https://uba.nitrkl.ac.in/">Unnat Bharat Abhiyan</a></li>
-          <li><a href="https://www.ftbi-nitrkl.org/">FTBI</a></li>
+          <li><a class="outside-link" href="https://www.ftbi-nitrkl.org/">FTBI</a></li>
           <li><a href="https://nitrianparent.nitrkl.ac.in/">NITRian Parent</a></li>
           <li><a href="https://crf.nitrkl.ac.in/">Central Research Facility</a></li>
           <li><a href="https://nitrourkela.kvs.ac.in/en">Kendriya Vidyalaya</a></li>
@@ -2171,7 +1873,7 @@ window.dataLayer = window.dataLayer || [];
       <p>Last Updated On: <time id="lastUpdated" datetime="2026-10-26">26 Oct 2026</time></p>
     </div>
   </div>
-  <p class="f-name" aria-hidden="true">NIT Rourkela</p>
+  <p class="f-name" aria-hidden="true" data-text="NIT Rourkela"></p>
   <div class="gov-logo">
     <div class="wrap gov-row">
       <a class="outside-link" href="https://www.education.gov.in/"><img alt="Ministry of Education, Government of India" src="assets/images/gov7.png" loading="lazy" width="200" height="87"/></a>
@@ -2205,18 +1907,19 @@ window.dataLayer = window.dataLayer || [];
 <script src="assets/js/layout.js"></script>
 <script src="assets/js/nitrkl-accessibility.js"></script>
 <script src="assets/js/newsroom.js"></script>
+<script src="assets/site/about.js"></script>
 <script>
 </script>
 <!-- Google Translate Script -->
 <script type="text/javascript">
 </script>
-<script defer="" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+<!-- Third-party: async so a slow or blocked Google never holds up the page (DBIM 10.4.1) -->
+<script async src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="assets/js/loader.js"></script>
 <script src="assets/js/research-innovations.js"></script>
 <script src="assets/js/ip-drawings.js"></script>
-<script src="assets/js/about-3d.js"></script>
 <script src="assets/js/features-with-panel.js"></script>
-<script src="assets/js/study-at-nitr.js"></script>
+<script src="assets/site/study.js"></script>
 <script src="assets/js/achievements-carousel.js"></script>
 </body>
 </html>

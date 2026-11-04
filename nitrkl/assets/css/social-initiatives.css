@@ -15,7 +15,7 @@
   width: 100%;
   background: #ffffff;
   padding: 100px 0 120px 0;
-  color: #111827;
+  color: #150202;
   font-family: 'Noto Sans', sans-serif !important;
   box-sizing: border-box;
   overflow: hidden;
@@ -58,7 +58,7 @@
 .si-main-title {
   font-size: 2.75rem;
   font-weight: 900;
-  color: #111827;
+  color: #150202;
   letter-spacing: -0.03em;
   margin: 0;
   line-height: 1.15;
@@ -129,7 +129,7 @@
 .si-item-title {
   font-size: 2.15rem;
   font-weight: 800;
-  color: #111827;
+  color: #150202;
   line-height: 1.22;
   letter-spacing: -0.025em;
   margin: 0 0 16px 0;
@@ -138,14 +138,14 @@
 .si-item-desc {
   font-size: 1.05rem;
   line-height: 1.78;
-  color: #374151;
+  color: #606060;
   margin: 0 0 28px 0;
   font-weight: 400;
 }
 
 .si-item-desc strong {
   font-weight: 700;
-  color: #111827;
+  color: #150202;
 }
 
 /* Elegant Underline Action Link with Arrow */
@@ -194,7 +194,7 @@
   aspect-ratio: 16 / 10;
   border-radius: 0;
   overflow: hidden;
-  background: #f3f4f6;
+  background: #ebeaea;
   border: none !important;
   box-shadow: 0 22px 50px -15px rgba(119, 29, 29, 0.16), 0 12px 25px -10px rgba(0, 0, 0, 0.08);
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;

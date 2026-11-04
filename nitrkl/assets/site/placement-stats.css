@@ -9,3 +9,11 @@
 .news-section .placement-embed-frame-wrap.is-fitted:not(:fullscreen) .placement-embed-viewport { height: auto; }
 .news-section .placement-embed-frame-wrap.is-fitted:not(:fullscreen) .placement-embed-viewport iframe { display: block; overflow: hidden; }
 .news-section .placement-embed-frame-wrap:fullscreen .placement-embed-viewport iframe { height: 100% !important; }
+
+/* Phones: the section and card padding left the report a 177px column on a 320px screen; give it the
+   width (DBIM 7.2: text stays legible on smaller screens) */
+@media (max-width: 767px) {
+  .news-section { padding: 24px 12px !important; }
+  .news-section .news-section-row .item-news.item-news { padding: 16px 12px; }
+  .news-section .news-section-row .item-news .placement-title-wrap { margin-bottom: 14px; }
+}

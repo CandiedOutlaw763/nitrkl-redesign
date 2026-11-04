@@ -11,43 +11,43 @@
    ========================================================================== */
 :root {
   --nitrkl-acc-font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --nitrkl-acc-primary: #2563eb;
-  --nitrkl-acc-primary-hover: #1d4ed8;
-  --nitrkl-acc-blue-bg: #eef2ff;
-  --nitrkl-acc-blue-text: #3b82f6;
-  --nitrkl-acc-blue-hover: #e0e7ff;
-  --nitrkl-acc-green-bg: #ecfdf5;
-  --nitrkl-acc-green-text: #059669;
-  --nitrkl-acc-green-hover: #d1fae5;
-  --nitrkl-acc-peach-bg: #fff7ed;
-  --nitrkl-acc-peach-text: #ea580c;
-  --nitrkl-acc-peach-hover: #ffedd5;
-  --nitrkl-acc-gray-bg: #f1f5f9;
-  --nitrkl-acc-gray-text: #334155;
-  --nitrkl-acc-gray-hover: #e2e8f0;
-  --nitrkl-acc-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  --nitrkl-acc-primary: #606060;
+  --nitrkl-acc-primary-hover: #606060;
+  --nitrkl-acc-blue-bg: #ebeaea;
+  --nitrkl-acc-blue-text: #8e8e8e;
+  --nitrkl-acc-blue-hover: #ebeaea;
+  --nitrkl-acc-green-bg: #ffffff;
+  --nitrkl-acc-green-text: #8E8E8E;
+  --nitrkl-acc-green-hover: #ebeaea;
+  --nitrkl-acc-peach-bg: #ffffff;
+  --nitrkl-acc-peach-text: #d75151;
+  --nitrkl-acc-peach-hover: #ebeaea;
+  --nitrkl-acc-gray-bg: #ffffff;
+  --nitrkl-acc-gray-text: #606060;
+  --nitrkl-acc-gray-hover: #ebeaea;
+  --nitrkl-acc-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 /* ==========================================================================
-   2. Floating Trigger Button (Bottom Left with Margin & Enhanced Outer Border)
+   2. Floating Trigger Button (middle of the right-hand edge; 44px, the touch target size)
    ========================================================================== */
 .nitrkl-acc-trigger {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
-  top: auto;
-  transform: none;
-  width: 52px;
-  height: 52px;
+  right: 16px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
   background: var(--nitrkl-acc-primary);
   color: #ffffff;
-  border: 3.5px solid #ffffff;
-  border-radius: 16px;
+  border: 3px solid #ffffff;
+  border-radius: 12px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.75), 0 10px 25px rgba(15, 23, 42, 0.35);
+  box-shadow: 0 0 0 2px rgba(96, 96, 96, 0.75), 0 10px 25px rgba(0, 0, 0, 0.35);
   z-index: 999998;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   outline: none;
@@ -57,25 +57,25 @@
 .nitrkl-acc-trigger:hover,
 .nitrkl-acc-trigger:focus-visible {
   background: var(--nitrkl-acc-primary-hover);
-  transform: translateY(-3px) scale(1.06);
-  box-shadow: 0 0 0 3px var(--nitrkl-acc-primary), 0 14px 30px rgba(15, 23, 42, 0.45);
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 0 0 3px var(--nitrkl-acc-primary), 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
 .nitrkl-acc-trigger:focus-visible {
-  outline: 3px solid #facc15;
+  outline: 3px solid #faaaaa;
   outline-offset: 4px;
 }
 
 .nitrkl-acc-trigger-icon {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   fill: #ffffff;
   pointer-events: none;
 }
 
 .nitrkl-acc-trigger.active {
-  background: #1e40af;
-  box-shadow: 0 0 0 2.5px #1e40af, 0 10px 25px rgba(15, 23, 42, 0.4);
+  background: #606060;
+  box-shadow: 0 0 0 2.5px #606060, 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Badge for active count */
@@ -83,7 +83,7 @@
   position: absolute;
   top: -5px;
   right: -5px;
-  background: #ef4444;
+  background: #d75151;
   color: #ffffff;
   font-size: 11px;
   font-weight: 700;
@@ -99,14 +99,14 @@
 }
 
 /* ==========================================================================
-   3. Accessibility Modal / Card Flyout
+   3. Accessibility Modal / Card Flyout (opens to the left of the button, centred on it)
    ========================================================================== */
 .nitrkl-acc-card {
   position: fixed;
-  right: 24px;
-  bottom: 88px;
-  top: auto;
-  transform: translateY(16px) scale(0.97);
+  right: 72px;
+  top: 50%;
+  bottom: auto;
+  transform: translate(16px, -50%) scale(0.97);
   width: 350px;
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 110px);
@@ -124,22 +124,22 @@
   flex-direction: column;
   overflow: hidden;
   font-family: var(--nitrkl-acc-font);
-  color: #1e293b;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  color: #150202;
+  border: 1px solid rgba(235, 234, 234, 0.8);
 }
 
 .nitrkl-acc-card.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
+  transform: translate(0, -50%) scale(1);
 }
 
 /* Backdrop for Mobile or Click-outside */
 .nitrkl-acc-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.25);
+  background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(2px);
   z-index: 999997;
   opacity: 0;
@@ -158,21 +158,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid #ffffff;
 }
 
 .nitrkl-acc-title {
   margin: 0;
   font-size: 1.25rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #150202;
   letter-spacing: -0.01em;
 }
 
 .nitrkl-acc-close-btn {
   background: transparent;
   border: none;
-  color: #64748b;
+  color: #606060;
   width: 32px;
   height: 32px;
   border-radius: 8px;
@@ -186,8 +186,8 @@
 }
 
 .nitrkl-acc-close-btn:hover {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: #ffffff;
+  color: #150202;
 }
 
 .nitrkl-acc-close-btn:focus-visible {
@@ -202,7 +202,7 @@
   flex-direction: column;
   gap: 16px;
   scrollbar-width: thin;
-  scrollbar-color: #cbd5e1 transparent;
+  scrollbar-color: #c6c6c6 transparent;
 }
 
 .nitrkl-acc-body::-webkit-scrollbar {
@@ -210,7 +210,7 @@
 }
 
 .nitrkl-acc-body::-webkit-scrollbar-thumb {
-  background-color: #cbd5e1;
+  background-color: #c6c6c6;
   border-radius: 10px;
 }
 
@@ -225,7 +225,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #64748b;
+  color: #606060;
   margin-bottom: 10px;
 }
 
@@ -272,7 +272,7 @@
 }
 
 .nitrkl-acc-btn:focus-visible {
-  outline: 3px solid #facc15 !important;
+  outline: 3px solid #faaaaa !important;
   outline-offset: 2px !important;
 }
 
@@ -284,14 +284,14 @@
 
 .nitrkl-btn-blue:hover {
   background: var(--nitrkl-acc-blue-hover);
-  color: #2563eb;
+  color: #606060;
   transform: translateY(-1px);
 }
 
 .nitrkl-btn-blue.active {
-  background: #2563eb;
+  background: #606060;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 12px rgba(96, 96, 96, 0.35);
 }
 
 /* Visual Preferences (Green Pills) */
@@ -302,14 +302,14 @@
 
 .nitrkl-btn-green:hover {
   background: var(--nitrkl-acc-green-hover);
-  color: #047857;
+  color: #606060;
   transform: translateY(-1px);
 }
 
 .nitrkl-btn-green.active {
-  background: #059669;
+  background: #8E8E8E;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.35);
+  box-shadow: 0 4px 12px rgba(142, 142, 142, 0.35);
 }
 
 /* Reading Assistance (Peach Pills) */
@@ -320,14 +320,14 @@
 
 .nitrkl-btn-peach:hover {
   background: var(--nitrkl-acc-peach-hover);
-  color: #c2410c;
+  color: #a72626;
   transform: translateY(-1px);
 }
 
 .nitrkl-btn-peach.active {
-  background: #ea580c;
+  background: #d75151;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+  box-shadow: 0 4px 12px rgba(215, 81, 81, 0.35);
 }
 
 /* Active Indicator Pip */
@@ -360,11 +360,11 @@
 
 .nitrkl-btn-reset:hover {
   background: var(--nitrkl-acc-gray-hover);
-  color: #0f172a;
+  color: #150202;
 }
 
 .nitrkl-btn-reset:active {
-  background: #cbd5e1;
+  background: #c6c6c6;
 }
 
 .nitrkl-reset-icon {
@@ -384,7 +384,7 @@
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(30px);
-  background: #0f172a;
+  background: #150202;
   color: #ffffff;
   padding: 10px 18px;
   border-radius: 30px;
@@ -487,16 +487,16 @@ html.nitrkl-mode-high-contrast body {
 html.nitrkl-mode-high-contrast *:not(.nitrkl-acc-card):not(.nitrkl-acc-card *):not(.nitrkl-acc-trigger):not(.nitrkl-acc-trigger *) {
   background-color: #000000 !important;
   color: #ffffff !important;
-  border-color: #facc15 !important;
+  border-color: #faaaaa !important;
 }
 
 html.nitrkl-mode-high-contrast a:not(.nitrkl-acc-btn) {
-  color: #fde047 !important;
+  color: #fcdada !important;
   text-decoration: underline !important;
 }
 
 html.nitrkl-mode-high-contrast a:hover:not(.nitrkl-acc-btn) {
-  background-color: #262626 !important;
+  background-color: #150202 !important;
   color: #ffffff !important;
 }
 
@@ -506,13 +506,13 @@ html.nitrkl-mode-high-contrast h3,
 html.nitrkl-mode-high-contrast h4,
 html.nitrkl-mode-high-contrast h5,
 html.nitrkl-mode-high-contrast h6 {
-  color: #facc15 !important;
+  color: #faaaaa !important;
 }
 
 html.nitrkl-mode-high-contrast button:not(.nitrkl-acc-btn) {
-  background-color: #171717 !important;
-  color: #facc15 !important;
-  border: 2px solid #facc15 !important;
+  background-color: #150202 !important;
+  color: #faaaaa !important;
+  border: 2px solid #faaaaa !important;
 }
 
 /* --- F. Saturation Controls --- */
@@ -526,10 +526,10 @@ html.nitrkl-mode-sat-decrease {
 
 /* --- G. Highlight Links --- */
 body.nitrkl-mode-highlight-links a:not(.nitrkl-acc-ignore):not(.nitrkl-acc-btn) {
-  background-color: #fef08a !important;
+  background-color: #fcdada !important;
   color: #000000 !important;
   text-decoration: underline 3px solid #000000 !important;
-  outline: 2px solid #ca8a04 !important;
+  outline: 2px solid #d75151 !important;
   outline-offset: 2px !important;
   font-weight: 700 !important;
   border-radius: 2px !important;
@@ -549,7 +549,7 @@ body.nitrkl-mode-hide-images svg:not(.nitrkl-acc-trigger-icon):not(.nitrkl-reset
 body.nitrkl-mode-hide-images [style*="background-image"]:not(.nitrkl-acc-card) {
   opacity: 0.05 !important;
   filter: grayscale(100%) blur(4px) !important;
-  outline: 2px dashed #94a3b8 !important;
+  outline: 2px dashed #8e8e8e !important;
 }
 
 /* --- J. Check Images (Alt Text Inspection Badges) --- */
@@ -579,15 +579,15 @@ body.nitrkl-mode-hide-images [style*="background-image"]:not(.nitrkl-acc-card) {
 }
 
 .nitrkl-img-check-badge.ok {
-  background: #166534 !important;
+  background: #606060 !important;
   color: #ffffff !important;
-  border: 1px solid #22c55e !important;
+  border: 1px solid #c6c6c6 !important;
 }
 
 .nitrkl-img-check-badge.missing {
-  background: #991b1b !important;
+  background: #a72626 !important;
   color: #ffffff !important;
-  border: 1px solid #ef4444 !important;
+  border: 1px solid #d75151 !important;
   animation: nitrkl-pulse 1.6s infinite !important;
 }
 
@@ -597,12 +597,12 @@ body.nitrkl-mode-hide-images [style*="background-image"]:not(.nitrkl-acc-card) {
 }
 
 .nitrkl-img-check-missing {
-  outline: 4px dashed #ef4444 !important;
+  outline: 4px dashed #d75151 !important;
   outline-offset: 2px !important;
 }
 
 .nitrkl-img-check-ok {
-  outline: 3px solid #22c55e !important;
+  outline: 3px solid #c6c6c6 !important;
   outline-offset: 2px !important;
 }
 
@@ -611,24 +611,21 @@ body.nitrkl-mode-hide-images [style*="background-image"]:not(.nitrkl-acc-card) {
    ========================================================================== */
 @media (max-width: 640px) {
   .nitrkl-acc-trigger {
-    bottom: 18px;
-    right: 16px;
-    width: 48px;
-    height: 48px;
+    right: 10px;
   }
 
+  /* phones: the panel spans the screen, centred on the button's height */
   .nitrkl-acc-card {
     left: 12px;
     right: 12px;
-    bottom: 78px;
     width: auto;
     max-width: none;
     max-height: 75vh;
-    transform: translateY(16px) scale(0.96);
+    transform: translate(0, -50%) scale(0.96);
   }
 
   .nitrkl-acc-card.open {
-    transform: translateY(0) scale(1);
+    transform: translate(0, -50%) scale(1);
   }
 }
 

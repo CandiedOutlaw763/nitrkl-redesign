@@ -154,7 +154,7 @@
           fullBtn.style.background = "";
         } else {
           container.style.maxWidth = "100%";
-          fullBtn.style.background = "#f3f4f6";
+          fullBtn.style.background = "#ebeaea";
         }
       });
     }

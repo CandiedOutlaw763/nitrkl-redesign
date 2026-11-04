@@ -1,6 +1,9 @@
-/* NIT Rourkela homepage: Gen-Z header (see header.css). The navigation and language blocks of
-   the Gen-Z site.js, with the menu's classes renamed gz-*. Google Translate itself is set up by
-   layout.js (googleTranslateElementInit), which renders into #google_translate_element. */
+/* NIT Rourkela homepage: header (see header.css). Navigation, sticky colour, scroll progress,
+   language menu and the header's accessibility button.
+   Ported from the component library (nitrkl-components/components/02-header/header.js). The helpers it
+   took from core/core.js (window.NITR) are defined here and the menu's classes are renamed gz-*.
+   Google Translate itself is set up by layout.js (googleTranslateElementInit), which renders into
+   #google_translate_element. */
 (function () {
   'use strict';
 
@@ -13,8 +16,7 @@
      --------------------------------------------------------------- */
   var nav = $('#navigation1');
   var masthead = $('.masthead');
-  if (!nav) return;
-  if (masthead && 'IntersectionObserver' in window) {
+  if (nav && masthead && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
       nav.classList.toggle('is-stuck', !entries[0].isIntersecting);
       paintNav();
@@ -65,14 +67,15 @@
   }
   if (navToggle) navToggle.addEventListener('click', function () { toggleMobileNav(); });
 
-  /* The sticky bar takes the colour of the chapter passing beneath it. */
+  /* The sticky bar takes the colour of the section passing beneath it (DBIM palette). */
   var CHAPTER = {
-    dark: ['#150202', '#fff'], terra: ['#aa3618', '#fff'], white: ['#fff', '#150202'], paper: ['#f9f8f8', '#150202'],
-    gold: ['#af8025', '#150202'], teal: ['#0f7677', '#fff'], plum: ['#31024f', '#fff'], cinnamon: ['#771d1d', '#fff']
+    dark: ['#150202', '#fff'], terra: ['#a72626', '#fff'], white: ['#fff', '#150202'], paper: ['#ebeaea', '#150202'],
+    gold: ['#fcdada', '#150202'], teal: ['#150202', '#fff'], plum: ['#150202', '#fff'], cinnamon: ['#771d1d', '#fff']
   };
   var chapters = $$('[data-chapter]');
   var lastChapter = null;
   function paintNav() {
+    if (!nav) return;
     var probe = nav.getBoundingClientRect().bottom + 1;
     var current = null;
     if (nav.classList.contains('is-stuck')) {
@@ -84,19 +87,27 @@
     if (current === lastChapter) return;
     lastChapter = current;
     if (current && CHAPTER[current]) {
+      var light = CHAPTER[current][1] !== '#fff';
       nav.style.setProperty('--nav-bg', CHAPTER[current][0]);
       nav.style.setProperty('--nav-fg', CHAPTER[current][1]);
+      nav.style.setProperty('--accent', light ? '#a72626' : '#faaaaa');
+      nav.style.setProperty('--focus', light ? '#a72626' : '#fff');
     } else {
-      nav.style.removeProperty('--nav-bg');
-      nav.style.removeProperty('--nav-fg');
+      ['--nav-bg', '--nav-fg', '--accent', '--focus'].forEach(function (p) { nav.style.removeProperty(p); });
     }
   }
+
+  var bar = $('.scroll-progress span');
   var ticking = false;
-  window.addEventListener('scroll', function () {
-    if (!ticking) { requestAnimationFrame(function () { paintNav(); ticking = false; }); ticking = true; }
-  }, { passive: true });
-  window.addEventListener('resize', paintNav);
-  paintNav();
+  function onScroll() {
+    var h = doc.documentElement.scrollHeight - window.innerHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (h > 0 ? window.scrollY / h : 0) + ')';
+    paintNav();
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
 
   /* ---------------------------------------------------------------
      Language selection (अ | A), backed by Google Translate
@@ -116,6 +127,9 @@
       if (b.dataset.lang === current) b.setAttribute('aria-current', 'true');
       b.addEventListener('click', function () {
         var code = b.dataset.lang;
+        // Choosing Hindi or Odia, under the note in this menu, is consent to the Google Translate
+        // (functional) cookie; the cookie banner's other choices are kept (guidelines.js)
+        if (code !== 'en' && window.nitrklAllowFunctional) window.nitrklAllowFunctional();
         var combo = $('.goog-te-combo');
         if (combo) {
           combo.value = code === 'en' ? '' : code;
@@ -128,6 +142,23 @@
         $$('[data-lang]', langMenu).forEach(function (x) { x.toggleAttribute('aria-current', x === b); });
         toggleLang(false);
       });
+    });
+  }
+
+  /* Accessibility controls in the header (DBIM 5.4) open the same panel as the floating button.
+     The panel (nitrkl-accessibility.js) is built after this script runs, so it is found on use. */
+  var accBtn = $('.uc-acc');
+  if (accBtn) {
+    accBtn.addEventListener('click', function () {
+      var t = $('.nitrkl-acc-trigger');
+      if (t) t.click();
+    });
+    window.addEventListener('load', function () {
+      var card = $('#nitrkl-accessibility-card');
+      if (card && 'MutationObserver' in window) {
+        new MutationObserver(function () { accBtn.setAttribute('aria-expanded', String(card.classList.contains('open'))); })
+          .observe(card, { attributes: true, attributeFilter: ['class'] });
+      }
     });
   }
 })();

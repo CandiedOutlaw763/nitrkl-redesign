@@ -5,10 +5,10 @@
    ========================================================================== */
 
 .ri-section {
-  --ri-ink: #1F1414;
-  --ri-ink-2: #5A4646;
-  --ri-muted: #8A7272;
-  --ri-line: #EADADA;
+  --ri-ink: #150202;
+  --ri-ink-2: #606060;
+  --ri-muted: #8E8E8E;
+  --ri-line: #FCDADA;
   --ri-grid: rgba(167, 38, 38, 0.07);
   --ri-dark: #771D1D;
   --ri-red: #A72626;
@@ -102,7 +102,7 @@
   flex: 1 1 0;
   min-width: 0;
   overflow: hidden;
-  background: #2A0B0B;
+  background: #150202;
   transition: flex-grow 0.7s var(--ri-ease);
 }
 
@@ -130,7 +130,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(31, 8, 8, 0.92) 0%, rgba(31, 8, 8, 0.35) 45%, rgba(31, 8, 8, 0) 70%);
+  background: linear-gradient(0deg, rgba(21, 2, 2, 0.92) 0%, rgba(21, 2, 2, 0.35) 45%, rgba(21, 2, 2, 0) 70%);
   pointer-events: none;
 }
 
@@ -322,7 +322,7 @@
 .ri-bar-track {
   position: relative;
   height: 14px;
-  background: #F6EEEE;
+  background: #EBEAEA;
 }
 
 .ri-bar-fill {
@@ -445,7 +445,7 @@
   gap: 10px 28px;
   margin: 0;
   padding: 16px clamp(20px, 3vw, 32px);
-  background: #FBF4F4;
+  background: #FFFFFF;
   border-top: 1px solid var(--ri-line);
   font-size: 0.92rem;
   color: var(--ri-ink-2);

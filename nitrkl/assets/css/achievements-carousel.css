@@ -23,7 +23,7 @@
   --fasa-tint: #FAAAAA;
   --fasa-light: #FCDADA;
   --fasa-bg: #771D1D;
-  --fasa-surface: #561212;
+  --fasa-surface: #771D1D;
   --fasa-border: rgba(250, 170, 170, 0.28);
   --fasa-text-main: #ffffff;
   --fasa-text-muted: #FCDADA;
@@ -127,7 +127,7 @@
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: rgba(25, 6, 6, 0.75);
+  background: rgba(21, 2, 2, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 0;
   padding: 4px;
@@ -283,8 +283,8 @@
 
 .fasa-cta-btn:hover {
   transform: translateY(-2px);
-  background: #901f1f;
-  border-color: #901f1f;
+  background: #a72626;
+  border-color: #a72626;
   color: #ffffff;
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
 }
@@ -333,7 +333,7 @@
   height: 48px;
   border-radius: 0;
   border: 1.5px solid rgba(250, 170, 170, 0.35);
-  background: rgba(45, 10, 10, 0.6);
+  background: rgba(21, 2, 2, 0.6);
   color: #FCDADA;
   display: inline-flex;
   align-items: center;
@@ -422,7 +422,7 @@
   height: 36px;
   border-radius: 0;
   border: 1px solid rgba(250, 170, 170, 0.35);
-  background: rgba(45, 10, 10, 0.5);
+  background: rgba(21, 2, 2, 0.5);
   color: #FCDADA;
   display: inline-flex;
   align-items: center;
@@ -525,7 +525,7 @@
 .fasa-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(119, 29, 29, 0.08) 0%, transparent 40%, rgba(30, 8, 8, 0.75) 100%);
+  background: linear-gradient(180deg, rgba(119, 29, 29, 0.08) 0%, transparent 40%, rgba(21, 2, 2, 0.75) 100%);
   pointer-events: none;
 }
 
@@ -533,7 +533,7 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background: rgba(45, 10, 10, 0.92);
+  background: rgba(21, 2, 2, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(250, 170, 170, 0.45);
@@ -705,7 +705,7 @@
   align-items: center !important;
   gap: 6px !important;
   padding: 9px 22px !important;
-  background: rgba(30, 8, 8, 0.75) !important;
+  background: rgba(21, 2, 2, 0.75) !important;
   border: 1px solid rgba(255, 255, 255, 0.18) !important;
   border-radius: 0 !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35) !important;
@@ -733,7 +733,7 @@
   margin: 12px 0 !important;
   display: grid !important;
   grid-template-columns: 88px 1fr !important;
-  background: rgba(25, 6, 6, 0.8) !important;
+  background: rgba(21, 2, 2, 0.8) !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-radius: 0 !important;
   padding: 8px !important;
@@ -748,7 +748,7 @@
   border-color: #A72626 !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.6) !important;
-  background: rgba(35, 8, 8, 0.92) !important;
+  background: rgba(21, 2, 2, 0.92) !important;
 }
 
 /* Date Badge on Left */
@@ -801,7 +801,7 @@
 .seminar-centered-section .seminar-scroll li .desc .title {
   font-size: 0.95rem !important;
   line-height: 1.45 !important;
-  color: #f3f4f6 !important;
+  color: #ebeaea !important;
   margin: 0 !important;
   font-weight: 500 !important;
 }

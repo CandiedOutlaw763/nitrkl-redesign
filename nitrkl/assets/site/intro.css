@@ -5,12 +5,12 @@
 
 /* Tokens from the Gen-Z site.css, scoped to the intro so they don't reach the rest of the page. */
 .intro, .intro-skip {
-  --paper: #f9f8f8;
+  --paper: #ffffff;
   --ink: #150202;
   --cin: #771d1d;
-  --terra: #c35839;
-  --terra-deep: #aa3618;
-  --grey-3: #5c5757;
+  --terra: #d75151;
+  --terra-deep: #a72626;
+  --grey-3: #606060;
   --display: "Noto Sans", sans-serif;
   --font: "Noto Sans", "Segoe UI", system-ui, sans-serif;
   --font-hi: "Noto Sans Devanagari", var(--font);
@@ -27,7 +27,7 @@ html.intro-on .intro {
   position: fixed;
   inset: 0;
   z-index: 1000010; /* above the accessibility widget (1000000) */
-  background: var(--paper, #f9f8f8);
+  background: var(--paper, #ffffff);
   /* Failsafe: if the script never finishes, the veil still lifts. */
   animation: intro-failsafe .4s ease 10s forwards;
 }
@@ -83,12 +83,12 @@ html.intro-on .intro-skip {
   color: var(--ink, #150202);
   font: 500 var(--fs-p2, 14px)/1.2 var(--font, "Noto Sans", sans-serif);
   text-decoration: underline;
-  text-decoration-color: var(--terra, #c35839);
+  text-decoration-color: var(--terra, #d75151);
   text-underline-offset: 4px;
   cursor: pointer;
   animation: intro-failsafe .4s ease 10s forwards;
 }
-html.intro-on .intro-skip:hover { color: var(--terra-deep, #aa3618); }
+html.intro-on .intro-skip:hover { color: var(--terra-deep, #a72626); }
 html.intro-on .intro-skip.is-gone { opacity: 0; pointer-events: none; transition: opacity .2s ease; }
 
 @keyframes intro-failsafe { to { opacity: 0; visibility: hidden; pointer-events: none; } }

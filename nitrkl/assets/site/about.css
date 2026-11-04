@@ -1,0 +1,198 @@
+/* NIT Rourkela homepage: About the Institute, its Vision and Mission, and the Director's message,
+   in one screen. Desktop: the institute and two statement tiles on the left, the Director's message
+   in a dark panel on the right; the section fills the screen below the sticky menu and its spacing
+   follows the window height. Below 992px the blocks stack. DBIM 3.0 palette and type scale (--t-*
+   from guidelines.css). Replaces about-3d.css / about-3d.js. */
+
+.ab {
+  --cin: #771d1d;
+  --cin-2: #a72626;
+  --cin-4: #faaaaa;
+  --cin-5: #fcdada;
+  --ink: #150202;
+  --paper: #ebeaea;
+  --muted: #606060;
+  --gap: clamp(12px, 2.2vh, 24px);
+  position: relative;
+  padding-block: clamp(16px, 3vh, 48px);
+  background: #fff;
+  color: var(--ink);
+  font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+  text-align: left;
+}
+.ab *, .ab *::before, .ab *::after { box-sizing: border-box; }
+.ab p { margin: 0; text-align: left; }
+.ab h2, .ab h3 { margin: 0; }
+
+.ab-wrap { display: grid; gap: var(--gap); }
+.ab-main { display: grid; gap: var(--gap); align-content: start; }
+
+/* ---------- About the Institute ---------- */
+.ab-eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  font-size: var(--t-sm); font-weight: 800; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--cin-2);
+}
+.ab-dot { width: 8px; height: 8px; transform: rotate(45deg); background: var(--cin-2); }
+.ab-title {
+  position: relative; display: inline-block;
+  margin-top: 6px !important; padding-bottom: 10px;
+  font-weight: 800; line-height: 1.1; letter-spacing: -.02em; color: var(--ink);
+}
+.ab-title::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, #a72626 0%, #d75151 65%, transparent 100%);
+}
+.ab-lede { margin-top: clamp(10px, 1.6vh, 16px) !important; font-size: var(--t-p1); line-height: 1.55; max-width: 62ch; }
+
+.ab-facts {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: clamp(12px, 2vh, 20px) 0 0; padding: 0; list-style: none;
+  border-block: 1px solid var(--paper);
+}
+.ab-facts li { padding: clamp(8px, 1.4vh, 14px) 16px; }
+.ab-facts li + li { border-left: 1px solid var(--paper); }
+.ab-facts li:first-child { padding-left: 0; }
+.ab-facts b {
+  display: block; font-size: var(--t-h2); font-weight: 800; line-height: 1.1;
+  font-stretch: 75%; color: var(--cin);
+}
+.ab-facts span { display: block; margin-top: 2px; font-size: var(--t-p2); line-height: 1.35; color: var(--muted); }
+
+.ab-link {
+  display: inline-flex; align-items: center; gap: 8px; align-self: start; justify-self: start;
+  margin-top: clamp(10px, 1.6vh, 16px);
+  font-size: var(--t-p2); font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--cin); text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px;
+}
+.ab-link i { color: currentColor !important; transition: transform .25s ease; }
+.ab-link:hover { color: var(--cin-2); }
+.ab-link:hover i { transform: translateX(4px); }
+.ab-link:focus-visible { outline: 3px solid var(--cin-2); outline-offset: 3px; }
+
+/* ---------- Vision and Mission ---------- */
+.ab-vm { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap); }
+.ab-card { display: flex; flex-direction: column; gap: clamp(6px, 1.2vh, 12px); padding: clamp(14px, 2.4vh, 24px); }
+.ab-card h3 { display: flex; align-items: center; gap: 10px; font-weight: 700; line-height: 1.3; }
+.ab-card p { font-size: var(--t-p1); line-height: 1.55; }
+.ab-vision { background: var(--cin-5); color: var(--ink); border-top: 4px solid var(--cin-2); }
+.ab-vision h3, .ab-vision h3 i { color: var(--cin) !important; }
+.ab-mission { background: var(--cin); color: #fff; border-top: 4px solid var(--cin-4); }
+.ab-mission h3, .ab-mission h3 i { color: #fff !important; }
+
+/* ---------- Director's message ---------- */
+.ab-director {
+  position: relative; display: flex; flex-direction: column; gap: clamp(10px, 1.8vh, 18px);
+  padding: clamp(18px, 3.2vh, 36px) clamp(20px, 2.4vw, 36px);
+  background: var(--ink); color: #fff; overflow: hidden;
+}
+/* a key-colour edge and a faint glow, so the panel reads as part of the Cinnamon Red family */
+.ab-director::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--cin-2); }
+.ab-director::after {
+  content: ""; position: absolute; right: -30%; top: -40%; width: 80%; aspect-ratio: 1; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(167, 38, 38, .35), transparent);
+}
+.ab-director > * { position: relative; z-index: 1; }
+/* #main: outranks guidelines.css's "#main h3" size, as this is a label, not a heading-sized title */
+#main .ab .ab-kicker {
+  display: flex; align-items: center; gap: 10px;
+  font-size: var(--t-sm) !important; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--cin-4);
+}
+.ab-kicker .ab-dot { background: var(--cin-4); }
+.ab-quote { margin: 0; padding: 0; border: 0; }
+.ab-quote > i { color: var(--cin-4) !important; width: 32px; height: 32px; }
+.ab-quote > i::before { -webkit-mask-size: 28px 28px; mask-size: 28px 28px; }
+.ab-quote p { margin-top: 4px; font-size: var(--t-h3); font-weight: 600; line-height: 1.4; font-style: italic; color: #fff; }
+.ab-msg { font-size: var(--t-p1); line-height: 1.55; color: rgba(255, 255, 255, .86); }
+
+.ab-sign {
+  display: flex; align-items: center; gap: 14px; margin-top: auto;
+  padding-top: clamp(10px, 1.8vh, 18px); border-top: 1px solid rgba(255, 255, 255, .16);
+}
+.ab-sign img {
+  flex: 0 0 auto; width: clamp(52px, 7vh, 68px); height: clamp(52px, 7vh, 68px);
+  border-radius: 50%; object-fit: cover; object-position: 50% 15%;
+  border: 2px solid var(--cin-4); background: var(--cin);
+}
+.ab-sign p { display: grid; gap: 2px; }
+.ab-name { font-size: var(--t-p1); font-weight: 700; color: #fff; }
+.ab-role { font-size: var(--t-p2); color: rgba(255, 255, 255, .78); }
+.ab-director .ab-link { margin-top: 0; color: #fff; }
+.ab-director .ab-link:hover { color: var(--cin-4); }
+.ab-director .ab-link:focus-visible { outline-color: #fff; }
+
+/* ---------- Desktop: one screen ---------- */
+@media (min-width: 992px) {
+  .ab {
+    display: flex; align-items: center;
+    min-height: calc(100svh - 60px);
+  }
+  .ab > .container { width: 100%; }
+  .ab-wrap { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(20px, 2.6vw, 40px); align-items: stretch; }
+  /* Vision and Mission run down to the foot of the Director's panel */
+  .ab-main { grid-template-rows: auto 1fr; }
+}
+
+/* Short desktop windows (1280x720 and the like): the facts drop their notes */
+@media (min-width: 992px) and (max-height: 760px) {
+  .ab-facts span { font-size: var(--t-sm); }
+  .ab-lede, .ab-card p, .ab-msg { line-height: 1.5; }
+}
+
+/* ---------- Phones and tablets: one screen ----------
+   about.js adds .ab--tabs below 992px: the Vision, the Mission and the Director's message share one
+   slot (the tallest sets its height, so switching never moves the page) and three tabs pick which
+   shows. Without the script the three simply stack. */
+.ab-tabs { display: none; }
+.ab-facts .ab-note-short { display: none; }
+
+.ab--tabs .ab-main,
+.ab--tabs .ab-vm { display: contents; }
+.ab--tabs .ab-wrap { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "tabs" "panel"; }
+.ab--tabs .ab-intro { grid-area: intro; }
+.ab--tabs .ab-tabs { grid-area: tabs; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--cin); }
+.ab--tabs .ab-vision,
+.ab--tabs .ab-mission,
+.ab--tabs .ab-director { grid-area: panel; visibility: hidden; }
+.ab--tabs .is-active { visibility: visible; }
+.ab--tabs .ab-card { align-self: start; }
+.ab--tabs .ab-card h3 { display: none; }
+.ab--tabs [role="tabpanel"]:focus-visible { outline: 3px solid var(--cin-2); outline-offset: 2px; }
+
+.ab-tabs button {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  min-width: 0; min-height: 44px; margin: 0; padding: 0 8px;
+  border: 0; border-radius: 0; background: #fff; color: var(--cin);
+  font: inherit; font-size: var(--t-p1); font-weight: 700; cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+.ab-tabs button + button { border-left: 1px solid var(--cin); }
+.ab-tabs button i { color: currentColor !important; }
+.ab-tabs button:hover { background: var(--cin-5); }
+.ab-tabs button[aria-selected="true"] { background: var(--cin); color: #fff; }
+.ab-tabs button:focus-visible { outline: 3px solid var(--cin-2); outline-offset: 2px; position: relative; z-index: 1; }
+
+/* What gives way, in this order, until the section fits the screen below the menu (about.js
+   measures): the Director's paragraph (his full message is a link away), the institute's
+   description, some spacing, then the facts row */
+.ab--fit-1 .ab-msg { display: none; }
+.ab--fit-2 .ab-lede { display: none; }
+.ab--fit-3 { padding-block: 8px; --gap: 10px; }
+.ab--fit-3 .ab-director { padding: 14px 16px; gap: 8px; }
+.ab--fit-3 .ab-card { padding: 12px 14px; }
+.ab--fit-3 .ab-sign { padding-top: 8px; }
+.ab--fit-3 .ab-sign img { width: 44px; height: 44px; }
+.ab--fit-3 .ab-title { margin-top: 2px !important; padding-bottom: 6px; }
+.ab--fit-3 .ab-link { margin-top: 6px; }
+.ab--fit-4 .ab-facts { display: none; }
+
+@media (max-width: 575px) {
+  .ab-facts li { padding-inline: 10px; }
+  .ab-facts .ab-note { display: none; }
+  .ab-facts .ab-note-short { display: block; }
+  .ab-quote > i { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ab-link i { transition: none; }
+}

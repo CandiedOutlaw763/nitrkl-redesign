@@ -1,0 +1,66 @@
+/* NIT Rourkela: inner content pages (Screen Reader Access and the like). The page body between the
+   site header and footer: breadcrumb, title, text, tables. DBIM 3.0 palette and type scale
+   (--t-* from guidelines.css), left-aligned text, 72ch measure. */
+
+.cp {
+  --cin: #771d1d;
+  --cin-2: #a72626;
+  --cin-5: #fcdada;
+  --ink: #150202;
+  --paper: #ebeaea;
+  --grey-3: #606060;
+  --gutter: clamp(16px, 3vw, 40px);
+  display: block;
+  background: #fff;
+  color: var(--ink);
+  font-family: "Noto Sans", "Segoe UI", system-ui, sans-serif;
+  font-size: var(--t-p1);
+  line-height: 1.6;
+  padding: 32px 0 64px;
+}
+.cp *, .cp *::before, .cp *::after { box-sizing: border-box; }
+.cp:focus { outline: none; }
+.cp-wrap { max-width: 1040px; margin-inline: auto; padding-inline: var(--gutter); }
+
+/* Breadcrumb */
+.cp-crumbs ol { display: flex; flex-wrap: wrap; gap: 4px 0; margin: 0 0 16px; padding: 0; list-style: none; font-size: var(--t-p2); }
+.cp-crumbs li + li::before { content: "/"; margin-inline: 8px; color: var(--grey-3); }
+.cp-crumbs a { color: var(--cin-2); text-decoration: underline; text-underline-offset: 3px; }
+.cp-crumbs [aria-current] { color: var(--grey-3); }
+
+/* Text */
+.cp h1 {
+  margin: 0 0 16px; font-size: var(--t-h1); font-weight: 700; line-height: 1.2;
+  font-stretch: 75%; text-transform: uppercase; color: var(--cin);
+}
+.cp h2 { margin: 40px 0 12px; font-size: var(--t-h2); font-weight: 700; line-height: 1.3; color: var(--ink); }
+.cp p, .cp li { max-width: 72ch; text-align: left; }
+.cp p { margin: 0 0 12px; }
+.cp ul { margin: 0 0 12px; padding-left: 1.25em; }
+.cp li { margin-bottom: 6px; }
+.cp a { color: var(--cin-2); text-decoration: underline; text-underline-offset: 3px; }
+.cp a:hover { color: var(--cin); }
+.cp a:focus-visible { outline: 3px solid var(--cin-2); outline-offset: 2px; }
+.cp-lede { font-size: var(--t-h3); line-height: 1.5; }
+.cp kbd {
+  display: inline-block; padding: 0 6px; border: 1px solid var(--grey-3); border-bottom-width: 2px;
+  font-family: inherit; font-size: var(--t-p2); font-weight: 600; line-height: 1.6; color: var(--ink); background: var(--paper);
+}
+
+/* Tables scroll inside their own box on narrow screens, never the page (reflow at 320px) */
+.cp-table { overflow-x: auto; margin: 0 0 12px; border: 1px solid var(--paper); }
+.cp table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: var(--t-p2); }
+.cp caption { padding: 12px 16px; text-align: left; font-weight: 600; caption-side: top; color: var(--grey-3); }
+.cp th, .cp td { padding: 12px 16px; text-align: left; vertical-align: top; border-top: 1px solid var(--paper); }
+.cp thead th { background: var(--cin); color: #fff; border-top: 0; }
+.cp tbody th { font-weight: 600; }
+.cp tbody tr:nth-child(even) { background: #fff; }
+.cp tbody tr:nth-child(odd) { background: var(--cin-5); }
+
+.cp-note { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--paper); font-size: var(--t-p2); color: var(--grey-3); }
+
+@media print {
+  .cp { padding: 0; }
+  .cp-table { overflow: visible; border: 0; }
+  .cp table { min-width: 0; }
+}

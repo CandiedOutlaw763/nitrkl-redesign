@@ -7,7 +7,7 @@
   --gg-key: #771d1d;      /* DBIM Cinnamon Red, key colour (darkest shade) */
   --gg-ink: #150202;      /* DBIM Deep Earthy Brown: text on light backgrounds */
   --gg-linen: #ebeaea;    /* DBIM Linen: outlines, quiet backgrounds */
-  --gg-amber: #f9b117;
+  --gg-amber: #d75151;    /* focus accent: Cinnamon Red 3rd shade (3.9:1 on white); name kept from the Gen-Z tokens */
 }
 
 /* ---------- Typeface: Noto Sans throughout (Bootstrap's body font is system-ui) ---------- */
@@ -154,3 +154,244 @@ main#main:focus { outline: none; }
   max-width: 1320px;
   margin-inline: auto;
 }
+
+/* =========================================================================
+   DBIM 4.3 type scale. Every text style snaps to one of the six sizes in DBIM Tables 3 and 4:
+   desktop H1 36 / H2 24 / H3 20 / P1 16 / P2 14 / small 12; mobile (below 768px) one step
+   down: 24 / 20 / 16 / 14 / 12 / 10. Large figures (stats, ranks) use the H1 size.
+   !important on font-size only: the section stylesheets set these sizes with high specificity.
+   ========================================================================= */
+:root {
+  --t-h1: 36px;
+  --t-h2: 24px;
+  --t-h3: 20px;
+  --t-p1: 16px;
+  --t-p2: 14px;
+  --t-sm: 12px;
+}
+@media (max-width: 767px) {
+  :root {
+    --t-h1: 24px;
+    --t-h2: 20px;
+    --t-h3: 16px;
+    --t-p1: 14px;
+    --t-p2: 12px;
+    --t-sm: 10px;
+  }
+}
+
+/* Heading 1: the institute name; large figures. (Decorative, aria-hidden display text such as the
+   footer's giant name and the Study@NITR watermark is not content text and keeps its size.) */
+.site-header .mast-en,
+.funfact-count,
+.ri-pubs .ri-big strong,
+.news-section .admision-link .item h4.counter { font-size: var(--t-h1) !important; line-height: 1.2; }
+
+/* Heading 2: every section title; the hero caption */
+#main h2,
+#main h2 > span,
+.hero .hero-title,
+.hero .hero-count,
+.ri-fig dd { font-size: var(--t-h2) !important; line-height: 1.25; }
+.gg-consent h2 { font-size: var(--t-h3) !important; }
+
+/* Heading 3 / subtitle */
+#main h3,
+#main h3 > span,
+.site-footer .f-links h3,
+.site-footer .f-addr,
+.si-item-num { font-size: var(--t-h3) !important; line-height: 1.3; }
+
+/* Paragraph 1: titles of items inside cards and lists, body copy (the #main ones outrank "#main h3") */
+#main .newsroom .nr-featured .nr-body h3,
+#main .si-item-title,
+.fwp-item-title,
+.fwp-item-title span,
+.news-section .scrollgroup .scrollitem a,
+.news-section .scrollgroup .scrollitem a b,
+.news-section .nb-card .ev-title,
+.news-section .nb-card .ev-date,
+.news-section .nb-card .nav-tabs button,
+.news-section .nb-card .event-tabs button,
+.news-section .embed-heading,
+#placementIframeLoader p,
+.ipd-out-field, .ipd-sheetno,
+.ri-lede, .ri-bar-value,
+.director-wide-quote,
+.director-wide-paragraph,
+.fwp-media-desc-primary,
+.san-inline-link, .san-eligibility-list li,
+.mainnav .nav-mini-logo span,
+.mainnav .nav-toggle-text,
+.fasa-count-current,
+.mainnav .nav-top,
+.director-wide-role,
+.ipd-lede, .ipd-lede strong, .ipd-row dd,
+.ri-story-vtitle,
+.san-content-card > p { font-size: var(--t-p1) !important; }
+
+/* Paragraph 2: compact news rows beside the featured story */
+#main .newsroom .nr-card:not(.nr-featured) .nr-body h3,
+.ipd-all, .ipd-more, .ipd-tab span,
+.ri-bar-label, .ri-fig dt, .ri-outreach, .ri-outreach span, .ri-outreach b, .ri-outreach-label, .ri-all, .ri-story-link,
+.nr-ticker-list button, .nr-link, .nr-viewall, .nr-btn,
+.hub-cta, .hub-handle,
+.notched-desc,
+.fasa-secondary-link, .fasa-toolbar-btn, .fasa-cta-btn span,
+.fwp-media-desc-secondary, .fwp-explore-link span,
+.si-action-link span,
+.san-sublink-item span, .san-btn-action span,
+.btn-director-action span { font-size: var(--t-p2) !important; }
+
+/* Small text */
+.news-section .nb-card .ev-more,
+.news-section .nb-card .nb-new,
+.news-section .nb-card .ev-kind,
+.news-section .scrollgroup .scrollitem > span,
+.ipd-row dt, .ri-tip, .ri-story-topic,
+.nr-badge, .nr-eyebrow, .nr-tag, .nr-ticker-label,
+.si-item-badge, .si-media-tag,
+.notched-tag, .cred-tag, .director-wide-badge span, .director-wide-kicker span, .director-credentials span,
+.fasa-kicker-label, .fasa-card-tag,
+.fwp-view-all span, .fwp-media-badge,
+.san-portal-link span,
+.embed-action-btn .action-label,
+.news-section .admision-link .owl-item > .item,
+.ri-story-vtopic,
+.gg-skip,
+.gg-file { font-size: var(--t-sm) !important; }
+
+/* DBIM 4.5 iii: line height 1.2 to 1.5 times the type size */
+.director-wide-paragraph,
+.fwp-media-desc-primary,
+.si-item-desc { line-height: 1.5 !important; }
+
+/* =========================================================================
+   Contrast (GIGW 3.0 Accessibility 14, WCAG 1.4.3: 4.5:1 for text)
+   ========================================================================= */
+/* "Headlines": white on the orange end of its gradient was 3.3:1; keep it in the Cinnamon Red group */
+.newsroom .nr-ticker-label { background: linear-gradient(135deg, #771d1d, #a72626) !important; }
+
+/* Keyboard focus is always visible (GIGW 3.0 Accessibility 33, WCAG 2.4.7) */
+#main a:focus-visible,
+#main button:focus-visible,
+.site-header a:focus-visible,
+.site-header button:focus-visible,
+.mainnav a:focus-visible,
+.mainnav button:focus-visible,
+.site-footer a:focus-visible,
+.site-footer button:focus-visible { outline: 3px solid var(--gg-amber) !important; outline-offset: 2px; }
+
+/* Size and format after each downloadable file (GIGW 3.0 Quality 6) */
+.gg-file { font-weight: 600; white-space: nowrap; opacity: .85; }
+
+/* =========================================================================
+   Print on A4 (GIGW 3.0 Quality 20): content only, no fixed or interactive chrome
+   ========================================================================= */
+@media print {
+  @page { size: A4; margin: 15mm; }
+  #intro, .intro-skip, .gg-skip, .gg-consent, .gg-pause, .mainnav, .site-header .util,
+  .site-header .mast-search, .nitrkl-acc-trigger, .nitrkl-acc-card, .chat, .hero-rail,
+  .scroll-progress, iframe { display: none !important; }
+  body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+  * { box-shadow: none !important; animation: none !important; transition: none !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; word-break: break-all; }
+  section, .nb-card, article { break-inside: avoid; }
+}
+
+/* =========================================================================
+   DBIM 2 colour, after the palette pass: details that needed a role-aware choice
+   ========================================================================= */
+/* Thought / Word of the Day sat on a navy texture (outside the palette); key colour instead, white text 10:1 */
+.bottom-section .item { background: #771d1d !important; }
+/* Incubation list numbers: #A72626 on white (the lighter tint was 2.6:1) */
+.fwp-item .fwp-item-num { color: #a72626 !important; }
+.fwp-item[aria-selected="true"] .fwp-item-num, .fwp-item.is-active .fwp-item-num { color: #fff !important; }
+/* Focus on the key-coloured footer and hero rail: white, the palette's colour on dark backgrounds */
+.site-footer :focus-visible,
+.site-footer a:focus-visible,
+.site-footer button:focus-visible,
+.hero-rail :focus-visible { outline-color: #fff !important; }
+/* The footer's giant name is decoration (aria-hidden): drawn as generated content, not page text */
+.site-footer .f-name::before { content: attr(data-text); }
+
+/* =========================================================================
+   Preferred language dialog (GIGW 3.0 5.4.10), shown once before entering the site
+   ========================================================================= */
+.gg-lang-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000006; /* above the cookie banner, below the opening sequence */
+  background: rgba(0, 0, 0, .6);
+}
+.gg-lang {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1000007;
+  width: min(92vw, 480px);
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  background: #fff;
+  color: var(--gg-ink);
+  border-top: 4px solid var(--gg-key);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, .6);
+}
+.gg-lang h2 { margin: 0 0 8px; font-size: var(--t-h3) !important; font-weight: 700; line-height: 1.35; color: var(--gg-ink); }
+.gg-lang h2 span { display: block; font-size: var(--t-p1); font-weight: 600; color: var(--gg-key); }
+.gg-lang h2 [lang="hi"] { font-family: "Noto Sans Devanagari", "Noto Sans", sans-serif; }
+.gg-lang h2 [lang="or"] { font-family: "Noto Sans Oriya", "Noto Sans", sans-serif; }
+.gg-lang p { margin: 0 0 16px; font-size: var(--t-p2); line-height: 1.5; color: var(--gg-ink); }
+.gg-lang-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.gg-lang-options .gg-btn { width: 100%; font-size: var(--t-p1); }
+.gg-lang-options [lang="hi"] { font-family: "Noto Sans Devanagari", "Noto Sans", sans-serif; }
+.gg-lang-options [lang="or"] { font-family: "Noto Sans Oriya", "Noto Sans", sans-serif; }
+@media (max-width: 420px) { .gg-lang-options { grid-template-columns: minmax(0, 1fr); } }
+
+/* Reflow at 320px (GIGW 3.0 Accessibility 17, WCAG 1.4.10): the top bar's portal links and user
+   controls wrap onto a second line instead of running off the screen */
+@media (max-width: 1100px) {
+  .site-header .util ul { flex-wrap: wrap; justify-content: center; row-gap: 4px; column-gap: 14px; }
+}
+
+/* Text spacing (GIGW 3.0 Accessibility 19, WCAG 1.4.12): the sideways story titles on the collapsed
+   Research and Innovations tabs wrap onto a second line instead of being cut off */
+.ri-story-vtitle { white-space: normal; text-overflow: clip; overflow: visible; max-height: 86%; }
+
+/* Owl Carousel's default dot colours (vendor theme) in the DBIM palette: Grey 01, active key colour */
+.owl-theme .owl-dots .owl-dot span { background: #c6c6c6 !important; }
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span { background: #771d1d !important; }
+
+/* =========================================================================
+   Short screens and zoom (GIGW 3.0 Accessibility 17, WCAG 1.4.10 reflow; 200% and 400% zoom):
+   overlays never run off the screen, and the sticky menu lets go when height is scarce
+   ========================================================================= */
+/* Accessibility tools: the panel body scrolls inside the panel instead of being cut off */
+.nitrkl-acc-card { max-height: calc(100dvh - 100px); }
+.nitrkl-acc-card .nitrkl-acc-body { flex: 1 1 auto; min-height: 0; }
+/* Language choice and cookie consent: never taller than the screen; they scroll inside instead */
+.gg-lang { max-height: calc(100dvh - 16px); overflow-y: auto; }
+.gg-consent { max-height: 100dvh; overflow-y: auto; overscroll-behavior: contain; }
+@media (max-height: 420px) {
+  .nitrkl-acc-card, .nitrkl-acc-card.open { top: 8px; bottom: 8px; max-height: none; transform: none; }
+  .gg-lang { padding: 16px; }
+  .gg-lang h2 { margin-bottom: 4px; }
+  .gg-lang p { margin-bottom: 10px; }
+  .gg-consent-inner { padding-block: 10px; }
+}
+/* Anything the browser scrolls into view (keyboard focus, the skip link, in-page links) stops below
+   the sticky menu instead of under it (WCAG 2.4.7 focus visible) */
+html { scroll-padding-top: 76px; }
+@media (max-width: 720px) { html { scroll-padding-top: 72px; } }
+@media (max-height: 300px) {
+  /* DBIM A.4: the header/navigation stays sticky "depending on screen size". Only on extremely short
+     views (around 400% zoom) would a sticky bar hide a third of the screen, so there it scrolls away */
+  .mainnav { position: relative; }
+  html { scroll-padding-top: 0; }
+}
+
+/* Visual stability (DBIM 10.3.1): every <img> carries its real width and height so the browser
+   reserves its space before it loads. Zero-specificity height:auto keeps the attributes from
+   stretching an image whose CSS sets only a width; section rules that set a height still win. */
+:where(img) { height: auto; }

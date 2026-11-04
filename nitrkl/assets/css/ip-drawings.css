@@ -5,13 +5,13 @@
    ========================================================================== */
 
 .ipd-section {
-  --ipd-table: #4A1212;
-  --ipd-table-2: #3A0D0D;
+  --ipd-table: #771D1D;
+  --ipd-table-2: #150202;
   --ipd-paper: #FFFFFF;
-  --ipd-ink: #1F1414;
-  --ipd-ink-2: #5A4646;
-  --ipd-rule: #2B1A1A;
-  --ipd-hair: #E4D6D6;
+  --ipd-ink: #150202;
+  --ipd-ink-2: #606060;
+  --ipd-rule: #150202;
+  --ipd-hair: #EBEAEA;
   --ipd-red: #A72626;
   --ipd-dark: #771D1D;
   --ipd-coral: #D75151;
@@ -109,7 +109,7 @@
   border-bottom: 1.5px solid var(--ipd-rule);
   background-image:
     repeating-linear-gradient(90deg, var(--ipd-rule) 0 1px, transparent 1px 40px),
-    repeating-linear-gradient(90deg, rgba(43, 26, 26, 0.55) 0 1px, transparent 1px 8px);
+    repeating-linear-gradient(90deg, rgba(21, 2, 2, 0.55) 0 1px, transparent 1px 8px);
   background-size: 100% 12px, 100% 6px;
   background-position: 0 100%, 0 100%;
   background-repeat: no-repeat;

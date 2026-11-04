@@ -1,0 +1,85 @@
+/* NIT Rourkela homepage: icons (DBIM 3, Iconography).
+   One icon style across the site: line icons from Bootstrap Icons (MIT), as SVG files in icons/.
+   The page keeps its <i class="bi bi-..."> / <i class="fa-... fa-..."> markup, so scripts that swap
+   icon classes keep working; each class maps to its SVG, drawn as a mask in the icon's colour.
+   Size: DBIM's 24x24px frame with 2px padding (DBIM 3.4). Replaces the Bootstrap Icons and
+   Font Awesome icon fonts, which are not PNG, SVG or WEBP. */
+
+:is(i.bi, i.fa, i.fa-solid, i.fa-brands, i.fa-regular) {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  font-style: normal;
+  line-height: 1;
+  vertical-align: middle;
+}
+:is(i.bi, i.fa, i.fa-solid, i.fa-brands, i.fa-regular)::before {
+  content: "" !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  -webkit-mask: var(--gg-icon) center / 20px 20px no-repeat;
+  mask: var(--gg-icon) center / 20px 20px no-repeat;
+  font-family: inherit !important;
+}
+
+.bi-arrow-right, .fa-arrow-right { --gg-icon: url("icons/arrow-right.svg"); }
+.fa-arrow-up-right-from-square, .bi-box-arrow-up-right { --gg-icon: url("icons/box-arrow-up-right.svg"); }
+.fa-x-twitter { --gg-icon: url("icons/twitter-x.svg"); }
+.fa-wand-magic-sparkles { --gg-icon: url("icons/magic.svg"); }
+.fa-linkedin-in { --gg-icon: url("icons/linkedin.svg"); }
+.fa-instagram { --gg-icon: url("icons/instagram.svg"); }
+.fa-facebook-f { --gg-icon: url("icons/facebook.svg"); }
+.bi-arrows-angle-expand { --gg-icon: url("icons/arrows-angle-expand.svg"); }
+.fa-youtube { --gg-icon: url("icons/youtube.svg"); }
+.bi-play-fill, .fa-play { --gg-icon: url("icons/play.svg"); }
+.bi-pause-fill, .fa-pause { --gg-icon: url("icons/pause.svg"); }
+.fa-expand { --gg-icon: url("icons/arrows-fullscreen.svg"); }
+.fa-compress { --gg-icon: url("icons/fullscreen-exit.svg"); }
+.bi-chevron-right { --gg-icon: url("icons/chevron-right.svg"); }
+.bi-chevron-left { --gg-icon: url("icons/chevron-left.svg"); }
+.fa-rotate-right { --gg-icon: url("icons/arrow-clockwise.svg"); }
+.fa-graduation-cap { --gg-icon: url("icons/mortarboard.svg"); }
+.fa-file-invoice, .fa-scroll { --gg-icon: url("icons/file-earmark-text.svg"); }
+.fa-award, .bi-award { --gg-icon: url("icons/award.svg"); }
+.bi-x-lg { --gg-icon: url("icons/x-lg.svg"); }
+.bi-universal-access { --gg-icon: url("icons/universal-access.svg"); }
+.bi-telephone { --gg-icon: url("icons/telephone.svg"); }
+.bi-star-fill { --gg-icon: url("icons/star.svg"); }
+.bi-search { --gg-icon: url("icons/search.svg"); }
+.bi-people { --gg-icon: url("icons/people.svg"); }
+.bi-lightning-charge-fill { --gg-icon: url("icons/lightning-charge.svg"); }
+.bi-house-door-fill { --gg-icon: url("icons/house-door.svg"); }
+.bi-eye { --gg-icon: url("icons/eye.svg"); }
+.bi-bullseye { --gg-icon: url("icons/bullseye.svg"); }
+.bi-book { --gg-icon: url("icons/book.svg"); }
+.bi-receipt { --gg-icon: url("icons/receipt.svg"); }
+.bi-quote { --gg-icon: url("icons/quote.svg"); }
+.bi-envelope { --gg-icon: url("icons/envelope.svg"); }
+.bi-arrow-up { --gg-icon: url("icons/arrow-up.svg"); }
+.bi-arrow-left { --gg-icon: url("icons/arrow-left.svg"); }
+
+/* The 24px frame is never squeezed by a flex or grid parent */
+:is(i.bi, i.fa, i.fa-solid, i.fa-brands, i.fa-regular) { min-width: 24px; min-height: 24px; }
+
+/* DBIM 3.7 iii: icons are in the key colour (darkest shade) or Inclusive White, by background */
+/* On light backgrounds: key colour */
+.newsroom .nr-link i, .newsroom .nr-viewall i, .newsroom .nr-zoom i,
+.fwp-toggle-btn i { color: #771d1d !important; }
+/* On dark backgrounds, and where a hover or active state turns the background dark: white */
+.fwp-media-badge i,
+.san-sublink-item i,
+.newsroom .nr-featured .nr-link i,
+.newsroom .nr-zoom:hover i, .newsroom .nr-zoom:focus-visible i,
+.newsroom .nr-viewall:hover i,
+.fwp-toggle-btn:hover i, .fwp-toggle-btn:focus-visible i, .fwp-toggle-btn.is-active i { color: #fff !important; }
+/* Social Media cards: the platform badge is key-coloured, so its icon is white; the corner arrow and
+   the call to action's arrow are key-coloured, and white with the text on the hover wash */
+.social-hub .hub-icon i { color: #fff; }
+.social-hub .hub-card .hub-arrow { color: #771d1d; }
+.social-hub .hub-cta i { color: inherit; }
+/* Header user controls (DBIM 5.4): skip to main content, screen reader access */
+.bi-box-arrow-in-right { --gg-icon: url("icons/box-arrow-in-right.svg"); }
+.bi-volume-up { --gg-icon: url("icons/volume-up.svg"); }

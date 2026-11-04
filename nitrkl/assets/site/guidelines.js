@@ -3,7 +3,9 @@
       Events & Seminars lists, the NIRF carousel and the Latest News ticker each get a pause/play
       button, pause on hover and keyboard focus, and start paused under prefers-reduced-motion.
    2. Cookie consent (DBIM 7.6): a banner at the foot of the page to accept, reject or customise
-      non-essential cookies; the choice is kept in an essential cookie with an expiry date. */
+      non-essential cookies; the choice is kept in an essential cookie with an expiry date.
+   3. Names for the NIRF carousel's dot buttons; consent recorded when Hindi or Odia is chosen in
+      the header. The Latest News story rotation has its own controls (newsroom.js). */
 (function () {
   'use strict';
 
@@ -179,5 +181,116 @@
     });
     li.appendChild(a);
     policies.appendChild(li);
+  }
+
+  /* ---------------------------------------------------------------
+     Choosing Hindi or Odia in the header's language menu is consent to the Google Translate
+     (functional) cookie, as the note in that menu says; any analytics choice is kept (header.js)
+     --------------------------------------------------------------- */
+  window.nitrklAllowFunctional = function () {
+    var c = readConsent() || { functional: false, analytics: false };
+    if (c.functional) return;
+    saveConsent({ functional: true, analytics: !!c.analytics });
+    var open = $('.gg-consent');
+    if (open) open.remove();
+  };
+
+  /* ---------------------------------------------------------------
+     Preferred language before entering the site (GIGW 3.0 guideline 5.4.10): a one-time dialog
+     offering English, Hindi and Odia. Hindi/Odia switch the page through Google Translate, as the
+     header's language menu does; English just closes it. The choice is remembered for a year.
+     --------------------------------------------------------------- */
+  function languageChooser() {
+    var LANGS = [
+      { code: 'en', label: 'English', lang: 'en' },
+      { code: 'hi', label: 'हिन्दी', lang: 'hi' },
+      { code: 'or', label: 'ଓଡ଼ିଆ', lang: 'or' }
+    ];
+    var opener = doc.activeElement;
+    var backdrop = doc.createElement('div');
+    backdrop.className = 'gg-lang-backdrop';
+    var dlg = doc.createElement('div');
+    dlg.className = 'gg-lang';
+    dlg.setAttribute('role', 'dialog');
+    dlg.setAttribute('aria-modal', 'true');
+    dlg.setAttribute('aria-labelledby', 'ggLangTitle');
+    dlg.setAttribute('aria-describedby', 'ggLangHelp');
+    dlg.innerHTML =
+      '<h2 id="ggLangTitle">Choose your language <span lang="hi">भाषा चुनें</span> <span lang="or">ଭାଷା ବାଛନ୍ତୁ</span></h2>' +
+      '<p id="ggLangHelp">You can change it later from the अ | A menu at the top of every page.</p>' +
+      '<div class="gg-lang-options">' +
+      LANGS.map(function (l) { return '<button type="button" class="gg-btn' + (l.code === 'en' ? ' gg-btn--solid' : '') + '" data-lang-choice="' + l.code + '" lang="' + l.lang + '">' + l.label + '</button>'; }).join('') +
+      '</div>';
+    doc.body.appendChild(backdrop);
+    doc.body.appendChild(dlg);
+    var buttons = $$('button', dlg);
+
+    function remember(code) {
+      doc.cookie = 'nitrkl-lang=' + code + ';path=/;max-age=' + (365 * 24 * 3600) + ';SameSite=Lax';
+    }
+    function close() {
+      doc.removeEventListener('keydown', onKey, true);
+      dlg.remove();
+      backdrop.remove();
+      if (opener && opener.focus && opener !== doc.body) opener.focus(); else { var m = $('#main'); if (m) { m.setAttribute('tabindex', '-1'); m.focus({ preventScroll: true }); } }
+    }
+    function choose(code) {
+      remember(code);
+      if (code === 'en') { close(); return; }
+      doc.cookie = 'googtrans=/en/' + code + ';path=/';
+      location.reload();
+    }
+    function onKey(e) {
+      if (e.key === 'Escape') { e.preventDefault(); choose('en'); return; }
+      if (e.key !== 'Tab') return;
+      var first = buttons[0], last = buttons[buttons.length - 1];
+      if (e.shiftKey && doc.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && doc.activeElement === last) { e.preventDefault(); first.focus(); }
+      else if (!dlg.contains(doc.activeElement)) { e.preventDefault(); first.focus(); }
+    }
+    buttons.forEach(function (b) { b.addEventListener('click', function () { choose(b.getAttribute('data-lang-choice')); }); });
+    doc.addEventListener('keydown', onKey, true);
+    buttons[0].focus();
+  }
+  var chosen = /(?:^|;\s*)nitrkl-lang=/.test(doc.cookie) || /googtrans=\/en\/\w+/.test(doc.cookie);
+  if (!chosen) {
+    if (doc.documentElement.classList.contains('intro-on')) doc.addEventListener('nitrkl:intro-done', languageChooser, { once: true });
+    else languageChooser();
+  }
+
+  /* ---------------------------------------------------------------
+     Links that leave for a non-government website (GIGW 3.0 Lifecycle 4): layout.js already asks
+     for confirmation on click; screen reader users also hear it on focus, before activating
+     --------------------------------------------------------------- */
+  var extLinks = $$('a.outside-link');
+  if (extLinks.length) {
+    var notes = { tab: 'External website, opens in a new tab', same: 'External website' };
+    Object.keys(notes).forEach(function (k) {
+      var s = doc.createElement('span');
+      s.id = 'ggExt-' + k;
+      s.className = 'visually-hidden';
+      s.textContent = notes[k];
+      doc.body.appendChild(s);
+    });
+    extLinks.forEach(function (a) {
+      var id = a.target === '_blank' ? 'ggExt-tab' : 'ggExt-same';
+      var cur = a.getAttribute('aria-describedby');
+      a.setAttribute('aria-describedby', cur ? cur + ' ' + id : id);
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     NIRF carousel dots: Owl Carousel renders them as unnamed buttons (WCAG 4.1.2)
+     --------------------------------------------------------------- */
+  function nameDots() {
+    $$('#nirfSection .owl-dot').forEach(function (d, i, all) {
+      d.setAttribute('aria-label', 'Show ranking group ' + (i + 1) + ' of ' + all.length);
+      d.setAttribute('aria-current', d.classList.contains('active') ? 'true' : 'false');
+    });
+  }
+  if (nirf && window.jQuery) {
+    window.jQuery(nirf).on('initialized.owl.carousel refreshed.owl.carousel changed.owl.carousel', function () { setTimeout(nameDots, 0); });
+    window.addEventListener('load', nameDots);
+    nameDots();
   }
 })();

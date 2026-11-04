@@ -153,7 +153,7 @@
       if (!cardsTrack) return;
       filteredList = getFiltered();
       cardsTrack.innerHTML = filteredList.map((item, idx) => `
-        <div class="fasa-card-item ${idx === currentIndex ? 'is-active' : ''}" data-index="${idx}" aria-label="${item.name}">
+        <div class="fasa-card-item ${idx === currentIndex ? 'is-active' : ''}" data-index="${idx}">
           <img src="${item.image}" alt="${item.name}" loading="lazy" />
           <div class="fasa-card-overlay"></div>
           <div class="fasa-card-tag">${item.badge}</div>
@@ -198,7 +198,11 @@
         if (headlineEl) headlineEl.textContent = item.name;
         if (descEl) descEl.textContent = item.description;
         if (categoryTag) categoryTag.textContent = item.categoryLabel;
-        if (knowmoreBtn) knowmoreBtn.setAttribute('href', item.knowMoreUrl);
+        if (knowmoreBtn) {
+          knowmoreBtn.setAttribute('href', item.knowMoreUrl);
+          // Name the story the link opens; starts with the visible "Know More" (WCAG 2.4.4, 2.5.3)
+          knowmoreBtn.setAttribute('aria-label', 'Know More: ' + item.name);
+        }
         if (allLink) {
           allLink.setAttribute('href', item.allUrl);
           allLink.textContent = item.category === 'faculty' ? 'View All Faculty Awards →' : 'View All Student Honors →';
@@ -284,8 +288,9 @@
         const cat = btn.getAttribute('data-category');
         if (cat === currentCategory) return;
 
-        toolbarBtns.forEach(b => b.classList.remove('is-active'));
+        toolbarBtns.forEach(b => { b.classList.remove('is-active'); b.setAttribute('aria-pressed', 'false'); });
         btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
 
         currentCategory = cat;
         currentIndex = 0;

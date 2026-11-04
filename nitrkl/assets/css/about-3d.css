@@ -40,7 +40,7 @@
 .about-section-3d {
   position: relative;
   background: #ffffff;
-  color: #111827;
+  color: #150202;
   padding: 85px 0 95px 0;
   overflow: hidden;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -94,7 +94,7 @@
 .about-3d-orb-2 {
   width: 500px;
   height: 500px;
-  background: rgba(218, 137, 86, 0.04);
+  background: rgba(250, 170, 170, 0.04);
   bottom: -150px;
   right: -100px;
 }
@@ -187,7 +187,7 @@
 .card-3d-title {
   font-size: 32px;
   font-weight: 800;
-  color: #0f172a;
+  color: #150202;
   letter-spacing: -0.02em;
   line-height: 1.25;
   margin: 0 0 10px 0;
@@ -207,13 +207,13 @@
 
 .card-3d-text {
   font-size: 15px;
-  color: #475569;
+  color: #606060;
   line-height: 1.7;
   margin-bottom: 16px;
 }
 
 .card-3d-text strong {
-  color: #0f172a;
+  color: #150202;
 }
 
 /* Vision & Mission 3D Pods */
@@ -228,8 +228,8 @@
 }
 
 .vm-pod-3d {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  border: 1px solid #ebeaea;
   border-radius: 18px;
   padding: 16px 14px;
   display: flex;
@@ -240,7 +240,7 @@
 }
 
 .vm-pod-3d:hover {
-  background: #f1f5f9;
+  background: #ffffff;
   border-color: rgba(119, 29, 29, 0.3);
   transform: translateY(-4px) translateZ(15px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
@@ -269,7 +269,7 @@
 .vm-info h5 {
   font-size: 14.5px;
   font-weight: 700;
-  color: #0f172a;
+  color: #150202;
   margin: 0 0 4px 0;
   display: flex;
   align-items: center;
@@ -284,7 +284,7 @@
 
 .vm-info p {
   font-size: 12px;
-  color: #64748b;
+  color: #606060;
   line-height: 1.5;
   margin: 0;
 }
@@ -364,7 +364,7 @@
   height: 8px;
   border-radius: 50%;
   background: #D75151;
-  box-shadow: 0 0 8px rgba(218, 137, 86, 0.5);
+  box-shadow: 0 0 8px rgba(250, 170, 170, 0.5);
 }
 
 .editorial-stage {
@@ -382,7 +382,7 @@
   flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
-  background: #f1f5f9;
+  background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
   z-index: 1;
@@ -440,7 +440,7 @@
   font-size: 40px;
   font-weight: 300;
   letter-spacing: -0.03em;
-  color: #475569;
+  color: #606060;
   margin: 0;
 }
 
@@ -448,7 +448,7 @@
   font-size: 40px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #0f172a 0%, #771D1D 60%, #A72626 100%);
+  background: linear-gradient(135deg, #150202 0%, #771D1D 60%, #A72626 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
@@ -468,8 +468,8 @@
   height: 62px;
   min-width: 62px;
   border-radius: 50%;
-  border: 1px solid #e2e8f0;
-  background: #f8fafc;
+  border: 1px solid #ebeaea;
+  background: #ffffff;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -508,7 +508,7 @@
 .editorial-bio-text {
   font-size: 13.5px;
   line-height: 1.75;
-  color: #334155;
+  color: #606060;
   margin: 0;
 }
 
@@ -599,7 +599,7 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.15;
-  color: #0f172a;
+  color: #150202;
   margin: 0 0 14px 0;
 }
 
@@ -611,7 +611,7 @@
 
 .notched-section-subtitle {
   font-size: 15.5px;
-  color: #475569;
+  color: #606060;
   line-height: 1.6;
   margin: 0;
 }
@@ -633,7 +633,7 @@
   gap: 4px;
   padding: 5px 6px;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #ebeaea;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   margin-bottom: 28px;
@@ -650,21 +650,21 @@
   background: transparent;
   border: none;
   border-radius: 6px;
-  color: #374151;
+  color: #606060;
   cursor: pointer;
   transition: all 0.2s ease;
   font-family: 'Noto Sans', sans-serif !important;
 }
 
 .preview-tool-btn:hover {
-  background: #f3f4f6;
-  color: #111827;
+  background: #ebeaea;
+  color: #150202;
 }
 
 .preview-toolbar-divider {
   width: 1px;
   height: 20px;
-  background: #e5e7eb;
+  background: #ebeaea;
   margin: 0 6px;
 }
 
@@ -675,20 +675,20 @@
   border-radius: 6px;
   border: none;
   background: transparent;
-  color: #6b7280;
+  color: #606060;
   cursor: pointer;
   font-family: 'Noto Sans', sans-serif !important;
   transition: all 0.2s ease;
 }
 
 .view-mode-pill.active {
-  background: #111827;
+  background: #150202;
   color: #ffffff;
 }
 
 .view-mode-pill:not(.active):hover {
-  background: #f3f4f6;
-  color: #111827;
+  background: #ebeaea;
+  color: #150202;
 }
 
 /* ==========================================================================
@@ -706,7 +706,7 @@
   padding: 0 !important;
   overflow: visible;
   text-decoration: none !important;
-  color: #111827;
+  color: #150202;
   font-family: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   transition: transform 0.3s ease;
 }
@@ -714,7 +714,7 @@
 .notched-card:hover {
   transform: translateY(-4px);
   text-decoration: none !important;
-  color: #111827;
+  color: #150202;
 }
 
 /* Card Media Cover (Aspect 4/3, square corners, borderless) */
@@ -724,7 +724,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: 0;
-  background: #f3f4f6;
+  background: #ebeaea;
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
@@ -793,9 +793,9 @@
   width: 58px;
   height: 58px;
   border-radius: 0;
-  background: #f3f4f6;
+  background: #ebeaea;
   border: none;
-  color: #111827;
+  color: #150202;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -806,7 +806,7 @@
 /* Card 2 Terracotta Orange Button (Matching Screenshot) */
 .notched-arrow-btn.accent-orange {
   background: #D75151;
-  color: #111827;
+  color: #150202;
 }
 
 .notched-arrow-icon {
@@ -825,7 +825,7 @@
 }
 
 .notched-card:hover .notched-arrow-btn:not(.accent-orange) {
-  background: #e5e7eb;
+  background: #ebeaea;
 }
 
 .notched-card:hover .notched-arrow-icon {
@@ -847,7 +847,7 @@
 .notched-title {
   font-size: 24px;
   font-weight: 800;
-  color: #111827;
+  color: #150202;
   letter-spacing: -0.02em;
   margin: 0 0 8px 0;
   line-height: 1.25;
@@ -863,7 +863,7 @@
 .notched-desc {
   font-size: 14.5px;
   line-height: 1.6;
-  color: #6b7280;
+  color: #606060;
   margin: 0 0 16px 0;
   font-family: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
@@ -885,16 +885,16 @@
   text-transform: uppercase;
   padding: 5px 12px;
   border-radius: 0;
-  background: #f3f4f6;
+  background: #ebeaea;
   border: none !important;
-  color: #4b5563;
+  color: #606060;
   font-family: 'Noto Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   transition: background-color 0.2s, color 0.2s;
 }
 
 .notched-card:hover .notched-tag {
-  background: #e5e7eb;
-  color: #111827;
+  background: #ebeaea;
+  color: #150202;
 }
 
 /* Featured Director Block below 3 Notched Cards */
@@ -929,7 +929,7 @@
   width: 380px;
   min-width: 340px;
   height: 480px;
-  background: #f1f5f9;
+  background: #ffffff;
   border-radius: 0;
   overflow: hidden;
   border: none !important;
@@ -981,7 +981,7 @@
   height: 7px;
   border-radius: 0;
   background: #D75151;
-  box-shadow: 0 0 8px rgba(218, 137, 86, 0.6);
+  box-shadow: 0 0 8px rgba(250, 170, 170, 0.6);
 }
 
 /* Right Content Area Covering the Entire Space */
@@ -1019,12 +1019,12 @@
 
 .director-wide-name .name-first {
   font-weight: 300;
-  color: #475569;
+  color: #606060;
 }
 
 .director-wide-name .name-last {
   font-weight: 800;
-  background: linear-gradient(135deg, #0f172a 0%, #771D1D 60%, #A72626 100%);
+  background: linear-gradient(135deg, #150202 0%, #771D1D 60%, #A72626 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1032,7 +1032,7 @@
 .director-wide-role {
   font-size: 13.5px;
   font-weight: 600;
-  color: #64748b;
+  color: #606060;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin: 0 0 20px 0;
@@ -1042,7 +1042,7 @@
   font-size: 16.5px;
   font-weight: 500;
   line-height: 1.6;
-  color: #0f172a;
+  color: #150202;
   border-left: 3px solid #771D1D;
   padding-left: 18px;
   margin: 0 0 18px 0;
@@ -1059,7 +1059,7 @@
 .director-wide-paragraph {
   font-size: 14px;
   line-height: 1.75;
-  color: #334155;
+  color: #606060;
   margin: 0;
 }
 
@@ -1069,7 +1069,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 20px;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid #ffffff;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -1079,7 +1079,7 @@
   align-items: center;
   gap: 10px;
   font-size: 12.5px;
-  color: #64748b;
+  color: #606060;
   font-weight: 600;
 }
 
@@ -1151,8 +1151,8 @@
    ========================================================================== */
 
 .about-section-3d.dark {
-  background: #09090b !important;
-  color: #f4f4f5 !important;
+  background: #150202 !important;
+  color: #ebeaea !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
 
@@ -1161,85 +1161,85 @@
 }
 
 .about-section-3d.dark .preview-toolbar {
-  background: #18181b !important;
-  border-color: #27272a !important;
+  background: #150202 !important;
+  border-color: #150202 !important;
 }
 
 .about-section-3d.dark .preview-tool-btn {
-  color: #a1a1aa !important;
+  color: #8e8e8e !important;
 }
 
 .about-section-3d.dark .preview-tool-btn:hover {
-  background: #27272a !important;
-  color: #fafafa !important;
+  background: #150202 !important;
+  color: #ffffff !important;
 }
 
 .about-section-3d.dark .preview-toolbar-divider {
-  background: #27272a !important;
+  background: #150202 !important;
 }
 
 .about-section-3d.dark .view-mode-pill {
-  color: #a1a1aa !important;
+  color: #8e8e8e !important;
 }
 
 .about-section-3d.dark .view-mode-pill.active {
-  background: #fafafa !important;
-  color: #09090b !important;
+  background: #ffffff !important;
+  color: #150202 !important;
 }
 
 .about-section-3d.dark .notched-section-title {
-  color: #fafafa !important;
+  color: #ffffff !important;
 }
 
 .about-section-3d.dark .notched-section-subtitle {
-  color: #a1a1aa !important;
+  color: #8e8e8e !important;
 }
 
 .about-section-3d.dark .notched-title {
-  color: #fafafa !important;
+  color: #ffffff !important;
 }
 
 .about-section-3d.dark .notched-desc {
-  color: #a1a1aa !important;
+  color: #8e8e8e !important;
 }
 
 .about-section-3d.dark .notched-svg-cutout {
-  fill: #09090b !important;
+  fill: #150202 !important;
 }
 
 .about-section-3d.dark .notched-arrow-btn {
-  --notch-color: #09090b;
+  --notch-color: #150202;
 }
 
 .about-section-3d.dark .notched-arrow-btn:not(.accent-orange) {
-  background: #27272a !important;
-  color: #fafafa !important;
+  background: #150202 !important;
+  color: #ffffff !important;
 }
 
 .about-section-3d.dark .notched-tag {
-  background: #27272a !important;
-  color: #d4d4d8 !important;
+  background: #150202 !important;
+  color: #c6c6c6 !important;
 }
 
 .about-section-3d.dark .notched-card:hover .notched-tag {
-  background: #3f3f46 !important;
+  background: #606060 !important;
   color: #ffffff !important;
 }
 
 .about-section-3d.dark .director-wide-quote {
-  color: #fafafa !important;
+  color: #ffffff !important;
 }
 
 .about-section-3d.dark .director-wide-paragraph {
-  color: #d4d4d8 !important;
+  color: #c6c6c6 !important;
 }
 
 .about-section-3d.dark .director-wide-footer {
-  border-top-color: #27272a !important;
+  border-top-color: #150202 !important;
 }
 
 .about-section-3d.dark .director-wide-name .name-first {
-  color: #a1a1aa !important;
+  color: #8e8e8e !important;
 }
 
 

@@ -27,10 +27,15 @@
 
     /* Quick-view modal */
     var stories = cards.map(function (card) {
+        var img = card.querySelector('.nr-media img');
+        var badge = card.querySelector('.nr-badge:not(.nr-badge-hot)');
         return {
             title: card.querySelector('h3').textContent.trim(),
             tag: card.getAttribute('data-nr-tag'),
             img: card.getAttribute('data-nr-img'),
+            alt: img ? img.alt : '',
+            label: card.querySelector('.nr-media').getAttribute('aria-label'),
+            badge: badge ? badge.textContent.trim() : '',
             link: card.getAttribute('data-nr-link'),
             summary: card.getAttribute('data-nr-summary')
         };
@@ -74,6 +79,7 @@
 
     function open(i) {
         lastFocus = document.activeElement;
+        rotation.hold();
         fill((current = i));
         modal.hidden = false;
         document.body.classList.add('nr-lock');
@@ -86,9 +92,149 @@
     function close() {
         modal.classList.remove('is-open');
         document.body.classList.remove('nr-lock');
-        setTimeout(function () { modal.hidden = true; }, reduceMotion ? 0 : 350);
+        setTimeout(function () { modal.hidden = true; rotation.hold(); }, reduceMotion ? 0 : 350);
         if (lastFocus) lastFocus.focus();
     }
+
+    /* Rotation: every few seconds the next story moves into the featured card and the four cards
+       beside it show the stories after it, so no story appears twice. A pause button, previous and
+       next (GIGW 3.0 Accessibility 25, WCAG 2.2.2); it holds while hovered, while anything inside has
+       keyboard focus, while the quick view is open and while off screen, and starts paused under
+       prefers-reduced-motion (and ?static). */
+    var rotation = (function () {
+        var grid = root.querySelector('.nr-grid');
+        var featured = root.querySelector('.nr-featured');
+        var noop = { hold: function () {} };
+        if (!grid || !featured || stories.length < 2) return noop;
+
+        var INTERVAL = 6000;
+        var staticMode = /[?&]static\b/.test(location.search);
+        var offset = 0, timer = null, switching = false;
+        var paused = reduceMotion || staticMode, hovering = false, focused = false, onScreen = true;
+        var featuredBody = featured.querySelector('.nr-body');
+
+        // Controls under the featured story
+        var bar = document.createElement('div');
+        bar.className = 'nr-rotate';
+        bar.setAttribute('role', 'group');
+        bar.setAttribute('aria-label', 'Story rotation');
+        bar.innerHTML =
+            '<span class="nr-rotate-prog" aria-hidden="true"><span></span></span>' +
+            '<button type="button" class="gg-pause" data-nr-rot="prev" aria-label="Previous story" title="Previous story"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>' +
+            '<button type="button" class="gg-pause" data-nr-rot="pause"></button>' +
+            '<button type="button" class="gg-pause" data-nr-rot="next" aria-label="Next story" title="Next story"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>' +
+            '<span class="nr-rotate-count"></span>';
+        featured.appendChild(bar);
+        var pauseBtn = bar.querySelector('[data-nr-rot="pause"]');
+        var prog = bar.querySelector('.nr-rotate-prog span');
+        var count = bar.querySelector('.nr-rotate-count');
+
+        function setPauseUI() {
+            var label = (paused ? 'Play' : 'Pause') + ' story rotation';
+            pauseBtn.setAttribute('aria-pressed', String(paused));
+            pauseBtn.setAttribute('aria-label', label);
+            pauseBtn.title = label;
+            pauseBtn.innerHTML = '<i class="bi ' + (paused ? 'bi-play-fill' : 'bi-pause-fill') + '" aria-hidden="true"></i>';
+        }
+
+        function fillCard(card, i, isFeatured) {
+            var s = stories[i];
+            var media = card.querySelector('.nr-media');
+            var img = media.querySelector('img');
+            card.setAttribute('data-nr-index', i);
+            Array.prototype.forEach.call(card.querySelectorAll('[data-nr-open]'), function (b) { b.setAttribute('data-nr-open', i); });
+            media.setAttribute('aria-label', isFeatured ? 'Quick view: ' + s.title : s.label);
+            img.src = s.img;
+            img.alt = s.alt;
+            card.querySelector('.nr-tag').textContent = s.tag;
+            card.querySelector('h3').textContent = s.title;
+            var p = card.querySelector('.nr-body > p');
+            if (p) p.textContent = s.summary;
+            Array.prototype.forEach.call(card.querySelectorAll('.nr-link'), function (a) { a.href = s.link; });
+            if (!isFeatured) {
+                // A story's own badge (e.g. a ranking) travels with it; the featured card keeps "Featured"
+                var badge = media.querySelector('.nr-badge');
+                if (s.badge && !badge) {
+                    badge = document.createElement('span');
+                    badge.className = 'nr-badge';
+                    media.insertBefore(badge, media.querySelector('.nr-zoom'));
+                }
+                if (badge) { if (s.badge) badge.textContent = s.badge; else badge.remove(); }
+            }
+        }
+
+        function render() {
+            cards.forEach(function (card, k) { fillCard(card, (offset + k) % stories.length, k === 0); });
+            count.textContent = (offset + 1) + ' / ' + stories.length;
+        }
+
+        function go(next, manual) {
+            if (switching) return;
+            offset = (next + stories.length) % stories.length;
+            // Announce a story the user asked for; stay quiet while it changes by itself
+            featuredBody.setAttribute('aria-live', manual ? 'polite' : 'off');
+            if (reduceMotion) { render(); schedule(); return; }
+            switching = true;
+            grid.classList.add('is-switching');
+            setTimeout(function () {
+                render();
+                grid.classList.remove('is-switching');
+                switching = false;
+                schedule();
+            }, 260);
+        }
+
+        function running() { return !paused && !hovering && !focused && onScreen && modal.hidden; }
+
+        function schedule() {
+            clearTimeout(timer);
+            timer = null;
+            prog.style.transition = 'none';
+            prog.style.transform = 'scaleX(0)';
+            if (!running()) return;
+            void prog.offsetWidth;
+            if (!reduceMotion) {
+                prog.style.transition = 'transform ' + INTERVAL + 'ms linear';
+                prog.style.transform = 'scaleX(1)';
+            }
+            timer = setTimeout(function () { go(offset + 1, false); }, INTERVAL);
+        }
+
+        // Restart the count only when the state actually changes
+        var wasRunning = null;
+        function hold() {
+            var now = running();
+            if (now === wasRunning) return;
+            wasRunning = now;
+            schedule();
+        }
+
+        bar.addEventListener('click', function (e) {
+            var b = e.target.closest('[data-nr-rot]');
+            if (!b) return;
+            var act = b.getAttribute('data-nr-rot');
+            if (act === 'pause') { paused = !paused; setPauseUI(); wasRunning = null; hold(); }
+            else go(offset + (act === 'next' ? 1 : -1), true);
+        });
+        grid.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; hold(); } });
+        grid.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; hold(); } });
+        // Keyboard focus only: a mouse click on Play focuses the button too, and must not hold it
+        grid.addEventListener('focusin', function (e) {
+            var kb = true;
+            try { kb = e.target.matches(':focus-visible'); } catch (err) {}
+            focused = kb; hold();
+        });
+        grid.addEventListener('focusout', function (e) { if (!grid.contains(e.relatedTarget)) { focused = false; hold(); } });
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (en) { onScreen = en[0].isIntersecting; hold(); }).observe(grid);
+        }
+
+        featuredBody.setAttribute('aria-live', 'off');
+        setPauseUI();
+        render();
+        hold();
+        return { hold: hold };
+    })();
 
     root.addEventListener('click', function (e) {
         var trigger = e.target.closest('[data-nr-open]');

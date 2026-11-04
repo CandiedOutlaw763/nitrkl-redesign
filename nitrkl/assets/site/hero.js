@@ -1,5 +1,8 @@
-/* NIT Rourkela homepage: Gen-Z hero (see hero.css). The hero block of the Gen-Z site.js.
-   Loaded after GSAP and ScrollTrigger; without them it still works, just without the motion. */
+/* NIT Rourkela homepage: hero carousel (see hero.css).
+   Ported from the component library (nitrkl-components/components/03-hero/hero.js). The helpers it
+   took from core/core.js (window.NITR) are defined here and the pause button swaps the site's icon
+   classes. Loaded after GSAP and ScrollTrigger;
+   without them it still works, just without the motion. */
 (function () {
   'use strict';
 
@@ -13,9 +16,8 @@
   if (animate && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
 
   /* ---------------------------------------------------------------
-     Hero: the campus film and the banners. Each slide's blurred fill and
-     its banner sit in one .hero-media layer, and only that layer moves, so
-     background and foreground travel together. Pauses on hover and focus;
+     Hero: the campus film and the banners. Each banner sits in one
+     .hero-media layer, and only that layer moves. Pauses on hover and focus;
      no autoplay with reduced motion.
      --------------------------------------------------------------- */
   (function hero() {
@@ -29,24 +31,23 @@
     var current = 0, timer = null, busy = false, progTween = null;
     var paused = reduced || staticMode, held = false, started = false;
 
-    /* Fit header + hero to the first screen: hand the stage's height cap the real height of
-       everything above the hero and of the caption rail (both change across breakpoints). */
+    /* The stage's height cap leaves room for the caption rail, whose height changes across
+       breakpoints: hand the CSS its real height. */
     var rail = $('.hero-rail', root);
-    function fitFirstScreen() {
-      var above = root.getBoundingClientRect().top + window.scrollY;
-      root.style.setProperty('--hero-above', Math.round(above) + 'px');
+    function measureRail() {
       if (rail) root.style.setProperty('--hero-rail', Math.round(rail.offsetHeight) + 'px');
     }
-    fitFirstScreen();
-    window.addEventListener('resize', fitFirstScreen);
-    window.addEventListener('load', fitFirstScreen);
-    if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(fitFirstScreen);
+    measureRail();
+    window.addEventListener('resize', measureRail);
+    window.addEventListener('load', measureRail);
+    if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(measureRail);
 
     function setPauseUI() {
       if (!pauseBtn) return;
       pauseBtn.setAttribute('aria-pressed', String(paused));
       pauseBtn.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
-      $('i', pauseBtn).className = paused ? 'bi bi-play-fill' : 'bi bi-pause-fill';
+      var icon = $('i', pauseBtn);
+      if (icon) icon.className = paused ? 'bi bi-play-fill' : 'bi bi-pause-fill';
     }
     function caption(i) {
       var s = slides[i];
@@ -101,7 +102,7 @@
             setVideo(from, false); busy = false;
           }
         })
-          // The incoming slide is wiped in while its whole media layer (fill + banner) settles;
+          // The incoming slide is wiped in while its media layer settles;
           // the outgoing layer drifts the other way. One duration and one curve for both.
           .fromTo(to, { clipPath: dir > 0 ? 'inset(0% 0% 0% 100%)' : 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.1 }, 0)
           .fromTo(toMedia, { xPercent: dir * 12, scale: 1.06 }, { xPercent: 0, scale: 1, duration: 1.1 }, 0)
@@ -110,13 +111,19 @@
         from.classList.remove('is-active'); to.classList.add('is-active'); setVideo(from, false);
       }
       current = next;
+      held = shouldHold();
       schedule();
     }
-    function hold(on) {
+    // The pointer holds a banner so it can be read; the film plays on regardless. Keyboard focus in the
+    // carousel holds the timer on any slide. Nothing here stops the film: only the pause button does.
+    var hovering = false, focused = false;
+    function shouldHold() { return focused || (hovering && !$('video', slides[current])); }
+    function hold() {
+      var on = shouldHold();
       if (held === on) return;
       held = on;
-      if (on) { clearTimeout(timer); if (progTween) progTween.pause(); var v = $('video', slides[current]); if (v) v.pause(); }
-      else if (!paused) { setVideo(slides[current], true); schedule(); }
+      if (on) { clearTimeout(timer); if (progTween) progTween.pause(); }
+      else if (!paused) schedule();
     }
 
     thumbs.forEach(function (t, i) { t.addEventListener('click', function () { go(i, i > current ? 1 : -1); }); });
@@ -128,10 +135,10 @@
       setVideo(slides[current], !paused);
       if (paused) { clearTimeout(timer); progress(current, 0); } else schedule();
     });
-    root.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') hold(true); });
-    root.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') hold(false); });
-    root.addEventListener('focusin', function () { hold(true); });
-    root.addEventListener('focusout', function (e) { if (!root.contains(e.relatedTarget)) hold(false); });
+    root.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') { hovering = true; hold(); } });
+    root.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hovering = false; hold(); } });
+    root.addEventListener('focusin', function () { focused = true; hold(); });
+    root.addEventListener('focusout', function (e) { if (!root.contains(e.relatedTarget)) { focused = false; hold(); } });
 
     var sx = null;
     stage.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') sx = e.clientX; });
@@ -149,7 +156,8 @@
       new IntersectionObserver(function (en) {
         if (paused) return;
         if (!en[0].isIntersecting) { clearTimeout(timer); if (progTween) progTween.pause(); setVideo(slides[current], false); }
-        else if (!held) { if (!started) start(); else { setVideo(slides[current], true); schedule(); } }
+        else if (!started) start();
+        else { setVideo(slides[current], true); if (!held) schedule(); }
       }).observe(stage);
     }
     slides.forEach(function (s, k) { s.setAttribute('aria-hidden', String(k !== 0)); });
