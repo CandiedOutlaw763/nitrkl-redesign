@@ -445,6 +445,36 @@
   overflow: hidden;
 }
 
+/* "View invention" and the arrows stay whole on every invention: the rows keep their height and
+   the title row gives way, scrolling inside if a long title still does not fit */
+.ipd-block > .ipd-row {
+  flex-shrink: 0;
+}
+
+.ipd-block > .ipd-row-title {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+/* Short desktop windows: tighter rows and the assignee row (always the
+   institute itself, already named by the section) left out, as on phones */
+@media (min-width: 992px) and (max-height: 760px) {
+  .ipd-block .ipd-row,
+  .ipd-block .ipd-row-pair > dl {
+    padding: 7px 14px;
+  }
+  .ipd-block .ipd-row-pair {
+    padding: 0;
+  }
+  .ipd-block .ipd-row-title dd {
+    line-height: 1.35;
+  }
+  .ipd-block > .ipd-row:not(.ipd-row-title):not(.ipd-row-pair):not(.ipd-actions) {
+    display: none;
+  }
+}
+
 .ipd-row {
   padding: 9px 16px;
 }
