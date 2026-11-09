@@ -123,11 +123,9 @@
 
 /* ---------- Desktop: one screen ---------- */
 @media (min-width: 992px) {
-  .ab {
-    display: flex; align-items: center;
-    min-height: calc(100svh - 60px);
-  }
-  .ab > .container { width: 100%; }
+  /* As tall as its content, which fits one screen; no filler height on tall screens, so the gap to
+     the next section stays small (the padding follows the window height, about.css top) */
+  .ab { padding-block: clamp(16px, 3vh, 40px); }
   .ab-wrap { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(20px, 2.6vw, 40px); align-items: stretch; }
   /* Vision and Mission run down to the foot of the Director's panel */
   .ab-main { grid-template-rows: auto 1fr; }

@@ -75,10 +75,11 @@
 .newsroom .nr-zoom:hover i, .newsroom .nr-zoom:focus-visible i,
 .newsroom .nr-viewall:hover i,
 .fwp-toggle-btn:hover i, .fwp-toggle-btn:focus-visible i, .fwp-toggle-btn.is-active i { color: #fff !important; }
-/* Social Media cards: the platform badge is key-coloured, so its icon is white; the corner arrow and
-   the call to action's arrow are key-coloured, and white with the text on the hover wash */
+/* Social Media cards: the platform badge carries the platform's logo colours, so its icon is white;
+   the corner arrow and the call to action's arrow take the platform's colour (--brand,
+   social-cards.css), and white with the text on the hover wash */
 .social-hub .hub-icon i { color: #fff; }
-.social-hub .hub-card .hub-arrow { color: #771d1d; }
+.social-hub .hub-card .hub-arrow { color: var(--brand, #771d1d); }
 .social-hub .hub-cta i { color: inherit; }
 /* Header user controls (DBIM 5.4): skip to main content, screen reader access */
 .bi-box-arrow-in-right { --gg-icon: url("icons/box-arrow-in-right.svg"); }

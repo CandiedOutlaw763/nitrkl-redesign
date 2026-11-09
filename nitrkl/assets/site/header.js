@@ -72,7 +72,9 @@
     dark: ['#150202', '#fff'], terra: ['#a72626', '#fff'], white: ['#fff', '#150202'], paper: ['#ebeaea', '#150202'],
     gold: ['#fcdada', '#150202'], teal: ['#150202', '#fff'], plum: ['#150202', '#fff'], cinnamon: ['#771d1d', '#fff']
   };
-  var chapters = $$('[data-chapter]');
+  // The menu is kept light over every section for easier reading (header.css, "Light main menu"):
+  // no chapters to follow, so paintNav leaves it in its own colours
+  var chapters = [];
   var lastChapter = null;
   function paintNav() {
     if (!nav) return;

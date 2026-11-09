@@ -36,8 +36,10 @@
     var rail = $('.hero-rail', root);
     function measureRail() {
       if (rail) root.style.setProperty('--hero-rail', Math.round(rail.offsetHeight) + 'px');
-    }
-    measureRail();
+      // everything above the hero (utility bar, masthead, menu), so the header and the whole
+      // hero share the first screen
+      root.style.setProperty('--hero-above', Math.round(root.getBoundingClientRect().top + window.scrollY) + 'px');
+    }    measureRail();
     window.addEventListener('resize', measureRail);
     window.addEventListener('load', measureRail);
     if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(measureRail);

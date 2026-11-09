@@ -96,20 +96,8 @@
 .site-footer .f-lineage { margin-top: clamp(16px, 2vw, 24px); }
 .site-footer .f-bottom { gap: 8px 32px; padding: 12px 0; margin-top: 12px; border-top: 1px solid rgba(255,255,255,.18); }
 .site-footer .f-bottom ul a { display: inline-flex; align-items: center; min-height: 24px; }
-/* The watermark name at the foot: the same size, set at the font's normal width (not 75%) and
-   letter-spaced to run across the footer between its side margins at any screen width.
-   7.57em is "NIT ROURKELA" in Noto Sans Black at normal width with no spacing; the spacing shares
-   what is left of the line between its 12 characters, and text-indent balances the space after
-   the last letter so the name stays centred. */
-.site-footer .f-name {
-  --fn: clamp(40px, 6vw, 104px);
-  --fn-ls: max(0px, calc((100vw - 2 * var(--gutter) - 7.57 * var(--fn) - 20px) / 12));
-  font-size: var(--fn);
-  font-stretch: 100%;
-  letter-spacing: var(--fn-ls);
-  text-indent: var(--fn-ls);
-  padding-top: 4px;
-}
+/* The watermark name in the font's most condensed width (Noto Sans goes down to 62.5%) */
+.site-footer .f-name { font-stretch: 62.5%; }
 .site-footer .gov-row { gap: clamp(16px, 3vw, 48px); padding-block: 12px; }
 .site-footer .gov-row img { height: 40px; }
 

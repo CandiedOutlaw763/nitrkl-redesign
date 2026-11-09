@@ -46,6 +46,10 @@
   max-height: calc(100svh - var(--nav-h) - var(--hero-rail, 88px)); min-height: 320px; overflow: hidden; background: var(--ink);
 }
 
+/* The header (utility bar, masthead, menu) and the whole hero, caption rail included, fit the first
+   screen at any size. hero.js measures the height above the hero into --hero-above. */
+.hero-stage { max-height: calc(100svh - var(--hero-above, 249px) - var(--hero-rail, 88px)); min-height: 160px; }
+
 .hero-slide { position: absolute; inset: 0; visibility: hidden; overflow: hidden; }
 
 .hero-slide.is-active,
@@ -104,9 +108,9 @@
 }
 
 @media (max-width: 720px) {
-  /* Phones: the stage keeps the banner's own shape. The library's 320px floor is taller than a
-     phone-width banner (about 190px), so filling the frame cut 40% off the banners' sides. */
-  .hero-stage { max-height: none; min-height: 0; }
+  /* Phones: a lower floor than the library's 320px, which is taller than a phone-width banner
+     (about 190px); the stage keeps the banner's own shape unless the first screen needs it shorter */
+  .hero-stage { min-height: 140px; }
   .hero-rail-row { min-height: 76px; gap: 12px; }
   .hero-ctrls .hero-btn[data-hero="prev"] { display: none; }
 }

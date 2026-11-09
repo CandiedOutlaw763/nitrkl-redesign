@@ -10,6 +10,10 @@
 .news-section .placement-embed-frame-wrap.is-fitted:not(:fullscreen) .placement-embed-viewport iframe { display: block; overflow: hidden; }
 .news-section .placement-embed-frame-wrap:fullscreen .placement-embed-viewport iframe { height: 100% !important; }
 
+/* The gap above the section (after About the Institute) follows the window height instead of a fixed
+   50px. section.: outweighs placement-events-layout.css, which loads later with !important */
+section.news-section { padding-top: clamp(16px, 2.5vh, 32px) !important; }
+
 /* Phones: the section and card padding left the report a 177px column on a 320px screen; give it the
    width (DBIM 7.2: text stays legible on smaller screens) */
 @media (max-width: 767px) {

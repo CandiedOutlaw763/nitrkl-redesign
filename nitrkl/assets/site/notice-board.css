@@ -114,6 +114,11 @@
 .news-section .news-section-row .item-notice.nb-card .scrollbox,
 .news-section .news-section-row .item-notice.nb-card .list { height: var(--nb-list-h) !important; overflow: hidden; }
 .news-section .news-section-row .item-event.nb-card .event-scroll { height: var(--nb-list-h) !important; overflow: hidden; margin: 0; padding: 0; }
+/* The lists move their first item to the end every few seconds: never let the browser anchor the
+   page on an item in them (CSS scroll anchoring), or it scrolls the page to follow the moved item */
+.news-section .news-section-row .item-notice.nb-card .scrollbox,
+.news-section .news-section-row .item-notice.nb-card .list,
+.news-section .news-section-row .item-event.nb-card .event-scroll { overflow-anchor: none; }
 
 /* ---------- Rows: date and type first, then the title ---------- */
 .news-section .news-section-row .item-notice.nb-card .scrollgroup .scrollitem,

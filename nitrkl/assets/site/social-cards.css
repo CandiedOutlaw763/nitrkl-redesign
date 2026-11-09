@@ -112,7 +112,7 @@
   border-radius: 14px;
   font-size: var(--t-h3);
   color: #fff;
-  background: var(--brand-bg);
+  background: var(--logo-bg, var(--brand-bg));
   box-shadow: 0 8px 18px rgba(21, 2, 2, 0.15);
   transition: background 0.35s ease, transform 0.35s ease;
 }
@@ -190,13 +190,32 @@
   gap: 10px;
 }
 
-/* Brand palettes: all in the key colour (DBIM 3.0), kept as hooks per platform */
-.social-hub .hub-card.is-instagram,
-.social-hub .hub-card.is-facebook,
-.social-hub .hub-card.is-linkedin,
+/* Brand palettes: each platform in its own logo colours.
+   --logo-bg  the icon badge, the platform's logo colours
+   --brand-bg the hover sweep under white text, darkened where the logo colour is too light for it
+   --brand    the call to action on white, a shade that keeps 4.5:1 (WCAG 1.4.3) */
+.social-hub .hub-card.is-instagram {
+  --logo-bg: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  --brand-bg: linear-gradient(135deg, #833ab4 0%, #c13584 100%);
+  --brand: #a3297a;
+}
+
+.social-hub .hub-card.is-facebook {
+  --logo-bg: #1877f2;
+  --brand-bg: #1462cc;
+  --brand: #1462cc;
+}
+
+.social-hub .hub-card.is-linkedin {
+  --logo-bg: #0a66c2;
+  --brand-bg: #0a66c2;
+  --brand: #0a66c2;
+}
+
 .social-hub .hub-card.is-x {
-  --brand: #771d1d;
-  --brand-bg: linear-gradient(135deg, #771d1d 0%, #a72626 100%);
+  --logo-bg: #000;
+  --brand-bg: #000;
+  --brand: #000;
 }
 
 /* Tablets: two by two */

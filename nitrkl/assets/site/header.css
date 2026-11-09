@@ -51,10 +51,11 @@
 .scroll-progress { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 120; pointer-events: none; }
 .scroll-progress span { display: block; height: 100%; background: var(--cin-3); transform-origin: 0 50%; transform: scaleX(0); }
 
-.site-header .util,
+.site-header .util { --accent: var(--cin-4); --focus: var(--white); }
+/* The main menu is light (see "Light main menu" below): the mid red for accent and focus */
 .mainnav,
 .mainnav .mega,
-.mainnav .gz-nav-dropdown { --accent: var(--cin-4); --focus: var(--white); }
+.mainnav .gz-nav-dropdown { --accent: var(--cin-2); --focus: var(--cin-2); }
 
 /* Headings and figures at a condensed width of Noto Sans */
 .site-header .mast-en,
@@ -99,9 +100,11 @@
 .site-header .util-controls { gap: 4px !important; }
 .site-header .uc { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 10px; font-weight: 600; }
 .site-header .uc:hover { background: rgba(255,255,255,.14); text-decoration: none !important; }
-.site-header .uc-acc { width: 40px; justify-content: center; padding: 0; background: rgba(255,255,255,.14); }
+/* Blue, like the floating accessibility button (DBIM 3.0 functional blue; white icon 4.5:1) */
+.site-header .uc-acc { width: 40px; justify-content: center; padding: 0; background: #0d6efd; color: var(--white); }
 .site-header .uc-acc:hover,
-.site-header .uc-acc[aria-expanded="true"] { background: var(--white); color: var(--cin); }
+.site-header .uc-acc[aria-expanded="true"] { background: #0a58ca; color: var(--white); }
+.site-header .uc-acc i { color: var(--white) !important; }
 
 /* ---------- Masthead ---------- */
 /* Search at most 360px (the library's 380px less the page scrollbar), so the English name stays on
@@ -136,7 +139,8 @@
 .mainnav .nav-mini-logo img { width: 40px; height: 40px; background: var(--white); border-radius: 50%; padding: 2px; }
 .mainnav.is-stuck .nav-mini-logo { display: flex; }
 .mainnav .gz-nav-toggle { display: none; }
-.mainnav .gz-nav-menu { display: flex; align-items: stretch; margin-left: auto; }
+/* Centred in the bar (beside the mini logo once the bar is stuck) */
+.mainnav .gz-nav-menu { display: flex; align-items: stretch; margin-inline: auto; }
 .mainnav .gz-nav-menu > li { display: flex; }
 .mainnav .gz-nav-menu > li.has-drop { position: relative; }
 .mainnav .gz-nav-menu > li > a,
@@ -197,6 +201,165 @@
 .mainnav .gz-nav-dropdown li a:hover,
 .mainnav .mega-col ul li a:focus-visible,
 .mainnav .gz-nav-dropdown li a:focus-visible { color: var(--white); text-decoration: underline; transform: translateX(4px); }
+
+/* ---------- Main menu finish: a deep ink-to-cinnamon bar with a key-colour edge, the home key as a
+   cinnamon tile, a soft highlight under the item in use, and dropdown panels with a gradient edge,
+   marked headings and a sliding arrow on each link. Square corners, DBIM palette only. Once stuck
+   the bar still takes the colour of the section beneath it (header.js sets --nav-bg). ---------- */
+.mainnav { background: var(--nav-bg, linear-gradient(90deg, #150202 0%, #1f0404 55%, #3a0a0a 100%)); }
+.mainnav::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; pointer-events: none;
+  background: linear-gradient(90deg, var(--cin) 0%, var(--cin-3) 30%, var(--cin-4) 50%, var(--cin-3) 70%, var(--cin) 100%);
+  transition: opacity .3s;
+}
+.mainnav.is-stuck::before { opacity: 0; }   /* the scroll progress line takes over at the top of the window */
+
+/* Items: a quiet highlight on hover, the accent underline grows from the middle, the open item keeps both */
+.mainnav .gz-nav-menu > li > a,
+.mainnav .nav-top { letter-spacing: .01em; }
+.mainnav .gz-nav-menu > li > a::before,
+.mainnav .nav-top::before { bottom: 8px; height: 2px; transform-origin: 50% 50%; }
+.mainnav .gz-nav-menu > li:hover > .nav-top,
+.mainnav .gz-nav-menu > li > a:hover,
+.mainnav .gz-nav-menu > li.is-open > .nav-top { background: color-mix(in srgb, currentColor 9%, transparent); }
+.mainnav .gz-nav-menu > li.is-open > .nav-top { color: var(--accent); }
+
+/* The home key: a cinnamon tile at the start of the menu */
+.mainnav .gz-nav-menu > li.nav-home > a { width: var(--nav-h); padding: 0; justify-content: center; background: var(--cin); color: var(--white); }
+.mainnav .gz-nav-menu > li.nav-home > a::before { display: none; }
+.mainnav .gz-nav-menu > li.nav-home > a:hover { background: var(--cin-2); }
+.mainnav .gz-nav-menu > li.nav-home > a i { color: var(--white) !important; }
+
+/* Desktop menu panels (the phone menu keeps its flat, transparent lists) */
+@media (min-width: 1101px) {
+  /* Panels: a gradient edge along the top, a deep shadow and a faint cinnamon glow in the corner */
+  .mainnav .mega,
+  .mainnav .gz-nav-dropdown {
+    background:
+      radial-gradient(60% 120% at 100% 0%, rgba(167, 38, 38, .28), transparent 60%),
+      linear-gradient(180deg, #1f0404 0%, #150202 100%);
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--cin-2), var(--cin-4), var(--cin-2)) 1;
+    box-shadow: 0 28px 56px rgba(0, 0, 0, .38);
+  }
+  .mainnav .mega-name { position: relative; padding-left: 18px; }
+  .mainnav .mega-name::before {
+    content: ""; position: absolute; left: 0; top: .45em; width: 8px; height: 8px; transform: rotate(45deg); background: var(--cin-4);
+  }
+  .mainnav .mega-name::after {
+    content: ""; display: block; width: 48px; height: 3px; margin-top: 12px;
+    background: linear-gradient(90deg, var(--cin-4), transparent);
+  }
+  .mainnav .mega-col .mega-h {
+    padding-bottom: 8px; border-bottom: 1px solid rgba(255, 255, 255, .14);
+    font-size: var(--t-p2); letter-spacing: .08em; text-transform: uppercase;
+  }
+
+  /* Links: a small arrow slides in ahead of the one under the pointer or keyboard */
+  .mainnav .mega-col ul li a,
+  .mainnav .gz-nav-dropdown li a { position: relative; }
+  .mainnav .mega-col ul li a::before,
+  .mainnav .gz-nav-dropdown li a::before {
+    content: ""; position: absolute; top: 50%; width: 6px; height: 6px; margin-top: -3px;
+    border-top: 2px solid var(--cin-4); border-right: 2px solid var(--cin-4);
+    transform: rotate(45deg); opacity: 0; transition: opacity .2s, left .3s var(--ease);
+  }
+  .mainnav .mega-col ul li a::before { left: -14px; }
+  .mainnav .gz-nav-dropdown li a::before { left: 8px; }
+  .mainnav .mega-col ul li a:hover::before,
+  .mainnav .mega-col ul li a:focus-visible::before { opacity: 1; left: -10px; }
+  .mainnav .gz-nav-dropdown li a:hover::before,
+  .mainnav .gz-nav-dropdown li a:focus-visible::before { opacity: 1; left: 12px; }
+  .mainnav .gz-nav-dropdown li a:hover,
+  .mainnav .gz-nav-dropdown li a:focus-visible { background: rgba(255, 255, 255, .06); }
+}
+
+/* ---------- Light main menu, for easier reading: white into the palette's light pink, dark
+   text, the mid red for accents; the dropdown panels and the phone menu are light too. It stays
+   light over every section (header.js no longer recolours it). ---------- */
+.mainnav {
+  background: linear-gradient(90deg, var(--white) 0%, var(--white) 50%, var(--cin-5) 100%);
+  color: var(--ink);
+  border-bottom: 1px solid var(--linen);
+  box-shadow: 0 6px 18px rgba(21, 2, 2, .06);
+}
+.mainnav .gz-nav-menu > li.is-open > .nav-top { color: var(--cin); }
+@media (min-width: 1101px) {
+  .mainnav .mega,
+  .mainnav .gz-nav-dropdown {
+    background:
+      radial-gradient(60% 120% at 100% 0%, rgba(250, 170, 170, .28), transparent 60%),
+      var(--white);
+    color: var(--ink);
+    box-shadow: 0 28px 56px rgba(21, 2, 2, .16);
+  }
+  .mainnav .mega-name { color: var(--cin); }
+  .mainnav .mega-name::before { background: var(--cin-2); }
+  .mainnav .mega-name::after { background: linear-gradient(90deg, var(--cin-2), transparent); }
+  .mainnav .mega-col .mega-h { border-bottom-color: var(--linen); }
+  .mainnav .mega-col ul li a,
+  .mainnav .gz-nav-dropdown li a { color: var(--ink); }
+  .mainnav .mega-col ul li a:hover,
+  .mainnav .mega-col ul li a:focus-visible,
+  .mainnav .gz-nav-dropdown li a:hover,
+  .mainnav .gz-nav-dropdown li a:focus-visible { color: var(--cin); }
+  .mainnav .mega-col ul li a::before,
+  .mainnav .gz-nav-dropdown li a::before { border-color: var(--cin-2); }
+  .mainnav .gz-nav-dropdown li a:hover,
+  .mainnav .gz-nav-dropdown li a:focus-visible { background: var(--cin-5); }
+}
+@media (min-width: 1101px) {
+  /* The mega panels drop within the width of the menu itself (home key to last item), not the
+     whole screen: the menu list is their containing block */
+  .mainnav .gz-nav-menu { position: relative; }
+  .mainnav .mega .wrap { max-width: none; padding-inline: clamp(20px, 2vw, 32px); }
+  /* The panel's own title column repeats the highlighted heading above it: its width goes to the
+     link columns instead */
+  .mainnav .mega-name { display: none; }
+  .mainnav .mega-row,
+  .mainnav .mega-row:has(.mega-col:nth-child(4):last-child) { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: clamp(20px, 2.2vw, 32px); padding-block: 24px 28px; }
+  .mainnav .mega-col ul li a { padding-block: 4px; }
+  .mainnav .mega-col .mega-h + ul + .mega-h { margin-top: 20px; }
+  /* Never taller than the screen below the stuck bar; a long panel scrolls inside itself */
+  .mainnav .mega { max-height: calc(100svh - var(--nav-h) - 16px); overflow-y: auto; overscroll-behavior: contain; }
+
+  /* The heading whose menu is open: a red gradient sweeping through its letters (three passes,
+     then it rests: under 5s, WCAG 2.2.2) */
+  .mainnav .gz-nav-menu > li.is-open > .nav-top,
+  .mainnav .gz-nav-menu > li:hover > .nav-top,
+  .mainnav .gz-nav-menu > li:focus-within > .nav-top {
+    background-image: linear-gradient(90deg, var(--cin) 0%, var(--cin-2) 25%, var(--cin) 50%, var(--cin-2) 75%, var(--cin) 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: var(--cin);
+    animation: nav-heading-sweep 1.5s linear 3;
+  }
+  .mainnav .gz-nav-menu > li.is-open > .nav-top::after,
+  .mainnav .gz-nav-menu > li:hover > .nav-top::after,
+  .mainnav .gz-nav-menu > li:focus-within > .nav-top::after { border-color: var(--cin); }
+  .mainnav .gz-nav-menu > li.is-open,
+  .mainnav .gz-nav-menu > li:hover:has(> .nav-top),
+  .mainnav .gz-nav-menu > li:focus-within:has(> .nav-top) { background: color-mix(in srgb, var(--cin-5) 80%, transparent); }
+}
+@keyframes nav-heading-sweep { from { background-position: 0% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .mainnav .gz-nav-menu > li > .nav-top { animation: none !important; }
+}
+
+/* nav.: outweighs the phone-menu rules in "Responsive" below, which come later in this file */
+@media (max-width: 1100px) {
+  nav.mainnav .gz-nav-menu { background: var(--white); color: var(--ink); border-top: 1px solid var(--linen); }
+  nav.mainnav .mega,
+  nav.mainnav .gz-nav-dropdown { color: var(--ink); }
+  nav.mainnav .mega-col ul li a,
+  nav.mainnav .gz-nav-dropdown li a { color: var(--ink); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mainnav .mega-col ul li a::before,
+  .mainnav .gz-nav-dropdown li a::before,
+  .mainnav::before { transition: none; }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1280px) {

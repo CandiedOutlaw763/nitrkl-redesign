@@ -39,7 +39,8 @@
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
-  background: var(--nitrkl-acc-primary);
+  /* DBIM 3.0 functional blue; white icon on it 4.5:1 */
+  background: #0d6efd;
   color: #ffffff;
   border: 3px solid #ffffff;
   border-radius: 12px;
@@ -56,9 +57,9 @@
 
 .nitrkl-acc-trigger:hover,
 .nitrkl-acc-trigger:focus-visible {
-  background: var(--nitrkl-acc-primary-hover);
+  background: #0a58ca;
   transform: translateY(-50%) scale(1.06);
-  box-shadow: 0 0 0 3px var(--nitrkl-acc-primary), 0 14px 30px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 0 0 3px #0d6efd, 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
 .nitrkl-acc-trigger:focus-visible {
@@ -74,8 +75,8 @@
 }
 
 .nitrkl-acc-trigger.active {
-  background: #606060;
-  box-shadow: 0 0 0 2.5px #606060, 0 10px 25px rgba(0, 0, 0, 0.4);
+  background: #0a58ca;
+  box-shadow: 0 0 0 2.5px #0a58ca, 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Badge for active count */
