@@ -224,11 +224,11 @@
 .mainnav .gz-nav-menu > li.is-open > .nav-top { background: color-mix(in srgb, currentColor 9%, transparent); }
 .mainnav .gz-nav-menu > li.is-open > .nav-top { color: var(--accent); }
 
-/* The home key: a cinnamon tile at the start of the menu */
-.mainnav .gz-nav-menu > li.nav-home > a { width: var(--nav-h); padding: 0; justify-content: center; background: var(--cin); color: var(--white); }
-.mainnav .gz-nav-menu > li.nav-home > a::before { display: none; }
-.mainnav .gz-nav-menu > li.nav-home > a:hover { background: var(--cin-2); }
-.mainnav .gz-nav-menu > li.nav-home > a i { color: var(--white) !important; }
+/* The home key: no fill of its own, on the bar's gradient like the other items; the icon in the key
+   colour, with the same hover highlight and underline as the rest of the menu */
+.mainnav .gz-nav-menu > li.nav-home > a { width: var(--nav-h); padding: 0; justify-content: center; background: transparent; color: var(--cin); }
+.mainnav .gz-nav-menu > li.nav-home > a::before { left: 14px; right: 14px; }
+.mainnav .gz-nav-menu > li.nav-home > a i { color: var(--cin) !important; }
 
 /* Desktop menu panels (the phone menu keeps its flat, transparent lists) */
 @media (min-width: 1101px) {
@@ -278,7 +278,7 @@
    text, the mid red for accents; the dropdown panels and the phone menu are light too. It stays
    light over every section (header.js no longer recolours it). ---------- */
 .mainnav {
-  background: linear-gradient(90deg, var(--white) 0%, var(--white) 50%, var(--cin-5) 100%);
+  background: linear-gradient(90deg, var(--cin-5) 0%, var(--white) 30%, var(--white) 70%, var(--cin-5) 100%);
   color: var(--ink);
   border-bottom: 1px solid var(--linen);
   box-shadow: 0 6px 18px rgba(21, 2, 2, .06);
@@ -307,6 +307,15 @@
   .mainnav .gz-nav-dropdown li a::before { border-color: var(--cin-2); }
   .mainnav .gz-nav-dropdown li a:hover,
   .mainnav .gz-nav-dropdown li a:focus-visible { background: var(--cin-5); }
+}
+@media (min-width: 1101px) {
+  /* The mini logo that appears once the bar is stuck sits over the bar's left end, outside the
+     menu's layout, so the centred menu never moves; narrower desktops show just the seal */
+  .mainnav .nav-inner { position: relative; }
+  .mainnav .nav-mini-logo { position: absolute; left: var(--gutter); top: 50%; transform: translateY(-50%); margin: 0; }
+}
+@media (min-width: 1101px) and (max-width: 1399px) {
+  .mainnav .nav-mini-logo span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
 @media (min-width: 1101px) {
   /* The mega panels drop within the width of the menu itself (home key to last item), not the

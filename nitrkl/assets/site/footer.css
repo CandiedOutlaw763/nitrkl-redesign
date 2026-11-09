@@ -108,3 +108,32 @@
   .site-footer .f-cols { grid-template-columns: 1fr; }
   .site-footer .f-contact { display: grid; }
 }
+
+/* ---------- Back to top: a cinnamon pill with a white rim and an up arrow (the library's "Ask NITR"
+   button shape), beside the accessibility button in the bottom-right corner. Hidden at the top of
+   the page; footer.js shows it once the page is scrolled. ---------- */
+.to-top {
+  position: fixed; right: 72px; bottom: 16px; z-index: 999997;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 48px; border-radius: 999px;
+  background: #771d1d; color: #fff; border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(96, 96, 96, .55), 0 10px 25px rgba(0, 0, 0, .3);
+  text-decoration: none;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .25s, visibility .25s, transform .3s cubic-bezier(.16, 1, .3, 1), background-color .2s;
+}
+.to-top.is-visible { opacity: 1; visibility: visible; transform: none; }
+.to-top i { color: #fff !important; }
+.to-top:hover { background: #150202; transform: translateY(-2px); }
+.to-top:focus-visible { outline: 3px solid #a72626; outline-offset: 3px; }
+@media (max-width: 640px) {
+  .to-top { right: 64px; bottom: 16px; width: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .to-top { transition: opacity .2s, visibility .2s; transform: none; }
+}
+@media print {
+  .to-top { display: none !important; }
+}
+/* The header takes focus after "Back to top" (footer.js); it is a landmark, not a control: no ring */
+.site-header[tabindex="-1"]:focus { outline: none; }

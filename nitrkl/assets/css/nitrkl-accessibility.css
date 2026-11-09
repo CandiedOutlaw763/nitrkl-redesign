@@ -29,14 +29,15 @@
 }
 
 /* ==========================================================================
-   2. Floating Trigger Button (middle of the right-hand edge; 44px, the touch target size)
+   2. Floating Trigger Button (bottom-right corner, beside the back-to-top button; 44px, the
+   touch target size)
    ========================================================================== */
 .nitrkl-acc-trigger {
   position: fixed;
   right: 16px;
-  top: 50%;
-  bottom: auto;
-  transform: translateY(-50%);
+  bottom: 18px;
+  top: auto;
+  transform: none;
   width: 44px;
   height: 44px;
   /* DBIM 3.0 functional blue; white icon on it 4.5:1 */
@@ -58,7 +59,7 @@
 .nitrkl-acc-trigger:hover,
 .nitrkl-acc-trigger:focus-visible {
   background: #0a58ca;
-  transform: translateY(-50%) scale(1.06);
+  transform: scale(1.06);
   box-shadow: 0 0 0 3px #0d6efd, 0 14px 30px rgba(0, 0, 0, 0.45);
 }
 
@@ -100,14 +101,14 @@
 }
 
 /* ==========================================================================
-   3. Accessibility Modal / Card Flyout (opens to the left of the button, centred on it)
+   3. Accessibility Modal / Card Flyout (opens above the button in the bottom-right corner)
    ========================================================================== */
 .nitrkl-acc-card {
   position: fixed;
-  right: 72px;
-  top: 50%;
-  bottom: auto;
-  transform: translate(16px, -50%) scale(0.97);
+  right: 16px;
+  bottom: 76px;
+  top: auto;
+  transform: translateY(16px) scale(0.97);
   width: 350px;
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 110px);
@@ -133,7 +134,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translate(0, -50%) scale(1);
+  transform: translateY(0) scale(1);
 }
 
 /* Backdrop for Mobile or Click-outside */
@@ -615,18 +616,18 @@ body.nitrkl-mode-hide-images [style*="background-image"]:not(.nitrkl-acc-card) {
     right: 10px;
   }
 
-  /* phones: the panel spans the screen, centred on the button's height */
+  /* phones: the panel spans the screen, above the buttons */
   .nitrkl-acc-card {
     left: 12px;
     right: 12px;
     width: auto;
     max-width: none;
     max-height: 75vh;
-    transform: translate(0, -50%) scale(0.96);
+    transform: translateY(16px) scale(0.96);
   }
 
   .nitrkl-acc-card.open {
-    transform: translate(0, -50%) scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
