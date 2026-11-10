@@ -70,7 +70,10 @@
     for (var k = 1; k <= LEVELS; k++) section.classList.remove('ab--fit-' + k);
     if (!mq.matches) return;
     var room = window.innerHeight - (nav ? nav.getBoundingClientRect().height : 0);
+    // measured with the tallest of the three in the slot (about.css, .ab--measure), so every tab fits
+    section.classList.add('ab--measure');
     for (var n = 1; n <= LEVELS && section.offsetHeight > room; n++) section.classList.add('ab--fit-' + n);
+    section.classList.remove('ab--measure');
   }
 
   var timer = null;

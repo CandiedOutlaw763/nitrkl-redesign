@@ -139,8 +139,8 @@
 
 /* ---------- Phones and tablets: one screen ----------
    about.js adds .ab--tabs below 992px: the Vision, the Mission and the Director's message share one
-   slot (the tallest sets its height, so switching never moves the page) and three tabs pick which
-   shows. Without the script the three simply stack. */
+   slot and three tabs pick which shows; the slot is as tall as the one showing, so a short statement
+   leaves no empty space under it. Without the script the three simply stack. */
 .ab-tabs { display: none; }
 .ab-facts .ab-note-short { display: none; }
 
@@ -151,8 +151,14 @@
 .ab--tabs .ab-tabs { grid-area: tabs; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--cin); }
 .ab--tabs .ab-vision,
 .ab--tabs .ab-mission,
-.ab--tabs .ab-director { grid-area: panel; visibility: hidden; }
-.ab--tabs .is-active { visibility: visible; }
+.ab--tabs .ab-director { grid-area: panel; display: none; }
+.ab--tabs .is-active { display: flex; }
+/* While about.js measures the one-screen fit, all three share the slot (hidden), so the tallest,
+   the Director's message, sets the height it fits to */
+.ab--tabs.ab--measure .ab-vision,
+.ab--tabs.ab--measure .ab-mission,
+.ab--tabs.ab--measure .ab-director { display: flex; visibility: hidden; }
+.ab--tabs.ab--measure .is-active { visibility: visible; }
 .ab--tabs .ab-card { align-self: start; }
 .ab--tabs .ab-card h3 { display: none; }
 .ab--tabs [role="tabpanel"]:focus-visible { outline: 3px solid var(--cin-2); outline-offset: 2px; }
