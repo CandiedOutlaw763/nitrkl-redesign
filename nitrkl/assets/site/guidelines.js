@@ -1,11 +1,11 @@
 /* NIT Rourkela homepage: GIGW 3.0 and DBIM 3.0 behaviours (see guidelines.css).
    1. Moving content can be paused (GIGW 3.0 Accessibility 25, WCAG 2.2.2): the Notice Board and
-      Events & Seminars lists, the NIRF carousel and the Latest News ticker each get a pause/play
-      button, pause on hover and keyboard focus, and start paused under prefers-reduced-motion.
+      Events & Seminars lists and the Latest News ticker each get a pause/play button, pause on
+      hover and keyboard focus, and start paused under prefers-reduced-motion.
    2. Cookie consent (DBIM 7.6): a banner at the foot of the page to accept, reject or customise
       non-essential cookies; the choice is kept in an essential cookie with an expiry date.
-   3. Names for the NIRF carousel's dot buttons; consent recorded when Hindi or Odia is chosen in
-      the header. The Latest News story rotation has its own controls (newsroom.js). */
+   3. Consent recorded when Hindi or Odia is chosen in the header. The Latest News story rotation
+      has its own controls (newsroom.js). */
 (function () {
   'use strict';
 
@@ -79,15 +79,6 @@
     var te = evLists.map(function (ul) { return ticker(ul, 'li', 3000); });
     var eHead = $('.item-event .nb-head');
     if (eHead) eHead.insertBefore(pauseButton('scrolling events and seminars', function (p) { te.forEach(function (t) { t.pause(p); }); }, reduced), $('.nb-all', eHead));
-  }
-
-  /* NIRF carousel (Owl Carousel, autoplay set in custome-script.js) */
-  var nirf = $('#nirfSection .admissions-slider');
-  var nirfHead = $('#nirfSection .placement-title-wrap');
-  if (nirf && nirfHead && window.jQuery) {
-    var owlPause = function (p) { window.jQuery(nirf).trigger(p ? 'stop.owl.autoplay' : 'play.owl.autoplay', [4000]); };
-    nirfHead.appendChild(pauseButton('NIRF ranking carousel', owlPause, reduced));
-    if (reduced) window.addEventListener('load', function () { owlPause(true); });
   }
 
   /* Latest News headline ticker (a CSS animation) */
@@ -279,18 +270,4 @@
     });
   }
 
-  /* ---------------------------------------------------------------
-     NIRF carousel dots: Owl Carousel renders them as unnamed buttons (WCAG 4.1.2)
-     --------------------------------------------------------------- */
-  function nameDots() {
-    $$('#nirfSection .owl-dot').forEach(function (d, i, all) {
-      d.setAttribute('aria-label', 'Show ranking group ' + (i + 1) + ' of ' + all.length);
-      d.setAttribute('aria-current', d.classList.contains('active') ? 'true' : 'false');
-    });
-  }
-  if (nirf && window.jQuery) {
-    window.jQuery(nirf).on('initialized.owl.carousel refreshed.owl.carousel changed.owl.carousel', function () { setTimeout(nameDots, 0); });
-    window.addEventListener('load', nameDots);
-    nameDots();
-  }
 })();

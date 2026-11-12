@@ -147,7 +147,10 @@
             img.src = s.img;
             img.alt = s.alt;
             card.querySelector('.nr-tag').textContent = s.tag;
-            card.querySelector('h3').textContent = s.title;
+            // the headline is itself the link to the story
+            var title = card.querySelector('h3 .nr-title-link') || card.querySelector('h3');
+            title.textContent = s.title;
+            if (title.tagName === 'A') title.href = s.link;
             var p = card.querySelector('.nr-body > p');
             if (p) p.textContent = s.summary;
             Array.prototype.forEach.call(card.querySelectorAll('.nr-link'), function (a) { a.href = s.link; });
@@ -291,8 +294,6 @@
     head.from(root.querySelector('.nr-eyebrow'), { y: 20, opacity: 0, duration: 0.5, ease: 'power2.out' })
         .from(root.querySelector('.nr-title'), { y: 40, opacity: 0, duration: 0.7, ease: 'power3.out' }, '-=0.25')
         .fromTo(root.querySelector('.nr-title'), { '--nr-underline': 0 }, { '--nr-underline': 1, duration: 0.8, ease: 'power2.inOut' }, '-=0.3')
-        // a fade only: the 30px slide could be left stuck, pushing "View all" past the news column
-        .from(root.querySelector('.nr-viewall'), { opacity: 0, duration: 0.5, ease: 'power2.out', clearProps: 'opacity,transform' }, '-=0.7')
         .fromTo(root.querySelector('.nr-ticker'), { clipPath: 'inset(0 100% 0 0 round 0px)' }, { clipPath: 'inset(0 0% 0 0 round 0px)', duration: 0.9, ease: 'power3.inOut' }, '-=0.4');
 
     // Featured story: image wipes in, text follows

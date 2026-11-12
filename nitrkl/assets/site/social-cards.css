@@ -192,17 +192,20 @@
 
 /* Brand palettes: each platform in its own logo colours.
    --logo-bg  the icon badge, the platform's logo colours
-   --brand-bg the hover sweep under white text, darkened where the logo colour is too light for it
+   --brand-bg the hover sweep, the same original logo colours; the white text on it carries a soft
+              shadow, for the light corner of Instagram's gradient
    --brand    the call to action on white, a shade that keeps 4.5:1 (WCAG 1.4.3) */
+.social-hub .hub-card:hover :is(.hub-name, .hub-handle, .hub-cta),
+.social-hub .hub-card:focus-visible :is(.hub-name, .hub-handle, .hub-cta) { text-shadow: 0 1px 3px rgba(21, 2, 2, .55); }
 .social-hub .hub-card.is-instagram {
   --logo-bg: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
-  --brand-bg: linear-gradient(135deg, #833ab4 0%, #c13584 100%);
+  --brand-bg: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
   --brand: #a3297a;
 }
 
 .social-hub .hub-card.is-facebook {
   --logo-bg: #1877f2;
-  --brand-bg: #1462cc;
+  --brand-bg: #1877f2;
   --brand: #1462cc;
 }
 

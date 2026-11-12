@@ -15,12 +15,23 @@ section.upcoming-section.secondBG .upcoming-row { display: grid; grid-template-c
 section.upcoming-section.secondBG .item-social.social-section { padding: 0; background: none; overflow: visible; }
 section.upcoming-section.secondBG .item-social .sm-head { margin-bottom: 10px; }
 @media (min-width: 992px) {
-  /* The column runs the full height of the news beside it and the four cards share it equally, so
-     both columns end on the same line */
-  section.upcoming-section.secondBG .item-social { display: flex; flex-direction: column; }
-  section.upcoming-section.secondBG .item-social .social-hub { flex: 1 1 auto; display: flex; flex-direction: column; }
-  section.upcoming-section.secondBG .item-social .hub-grid { flex: 1 1 auto; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 10px; }
-  section.upcoming-section.secondBG .item-social .hub-card { gap: 6px; padding: clamp(10px, 1.6vh, 16px); }
+  /* Four square cards, two by two, at the top of the column; the one-line description is left out
+     so each card's content fits its square */
+  section.upcoming-section.secondBG .item-social .hub-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  section.upcoming-section.secondBG .item-social .hub-card { aspect-ratio: 1 / 1; height: auto; gap: 6px; padding: clamp(10px, 1.6vh, 16px); }
+  section.upcoming-section.secondBG .item-social .hub-blurb { display: none; }
+  /* The handle stays on one line; narrow squares (smaller desktops) take smaller type and spacing so
+     everything fits inside them */
+  section.upcoming-section.secondBG .item-social .hub-card { container-type: inline-size; }
+  section.upcoming-section.secondBG .item-social .hub-handle { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; word-break: normal; }
+  /* the card's content width (inside its padding): about 111px on 1024px screens, 130px on 1366px */
+  @container (max-width: 120px) {
+    section.upcoming-section.secondBG .item-social .hub-icon { width: 32px; height: 32px; }
+    section.upcoming-section.secondBG .item-social .hub-name { font-size: var(--t-p1); }
+    /* !important: guidelines.css sets these two at the Paragraph 2 size with !important */
+    section.upcoming-section.secondBG .item-social .hub-handle,
+    section.upcoming-section.secondBG .item-social .hub-cta { font-size: var(--t-sm) !important; }
+  }
   section.upcoming-section.secondBG .item-social .hub-icon { width: clamp(34px, 5vh, 46px); height: clamp(34px, 5vh, 46px); }
 }
 
@@ -101,3 +112,58 @@ section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-link 
    section's sideways overflow (clip, not hidden: no scroll box) (GIGW 3.0 Accessibility 17, reflow) */
 section.upcoming-section.secondBG { overflow-x: clip; }
 section.upcoming-section.secondBG .newsroom .nr-head { flex-wrap: wrap; row-gap: 8px; }
+
+/* ---------- Desktop: Latest News as tall as Social Media beside it ----------
+   The news column takes no height of its own (contain: size): the row is as tall as the Social
+   Media column and the news fills it, so both end on the same line. In that height: the featured
+   story is a photo with its tag, headline and rotation controls over a dark fade at its foot (the
+   photo opens the quick view), and the other four share the rest equally, thumbnail and two-line
+   headline. Each headline links to its story. */
+section.upcoming-section.secondBG .nr-title-link { color: inherit; text-decoration: none; }
+section.upcoming-section.secondBG .nr-title-link:hover,
+section.upcoming-section.secondBG .nr-title-link:focus-visible { text-decoration: underline; text-underline-offset: .2em; }
+section.upcoming-section.secondBG .nr-title-link:focus-visible { outline: 3px solid #a72626; outline-offset: 2px; }
+
+@media (min-width: 992px) {
+  section.upcoming-section.secondBG .upcoming-row > .item-event { contain: size; align-self: stretch; display: flex; flex-direction: column; }
+  section.upcoming-section.secondBG .item-event > .newsroom { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+  section.upcoming-section.secondBG .newsroom .nr-head { margin-bottom: 10px; }
+  section.upcoming-section.secondBG .newsroom .nr-ticker { margin-bottom: 10px; flex: 0 0 auto; }
+  section.upcoming-section.secondBG .newsroom .nr-grid {
+    flex: 1 1 auto; min-height: 0;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 8px 12px;
+  }
+
+  /* Featured: the photo fills the card; tag, headline and controls over a fade at its foot */
+  section.upcoming-section.secondBG .newsroom .nr-card.nr-featured { grid-row: 1 / -1; position: relative; display: block; min-height: 0; overflow: hidden; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-media { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; min-height: 0; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-body {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; pointer-events: none;
+    gap: 6px; padding: 40px 14px 52px; justify-content: flex-end;
+    background: linear-gradient(180deg, transparent 0%, rgba(21, 2, 2, .78) 38%, rgba(21, 2, 2, .92) 100%);
+  }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-body > * { pointer-events: auto; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-body h3 { min-height: 0; color: #fff; -webkit-line-clamp: 2; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-body p,
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-actions { display: none; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-tag { align-self: flex-start; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-rotate {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+    padding: 8px 14px 10px; background: none; border-top: 0;
+  }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-rotate .gg-pause { color: #fff; border-color: rgba(255, 255, 255, .7); background: rgba(21, 2, 2, .35); }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-rotate .gg-pause:hover { background: #fff; color: #771d1d; border-color: #fff; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-rotate .gg-pause:focus-visible { outline-color: #fff; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-rotate-count { color: #fff; }
+  section.upcoming-section.secondBG .newsroom .nr-featured .nr-rotate-prog span { background: #faaaaa; }
+
+  /* The other four: thumbnail and two-line headline, sharing the height equally */
+  section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) { grid-template-columns: 92px minmax(0, 1fr); min-height: 0; overflow: hidden; }
+  section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-media { height: 100%; min-height: 0; }
+  section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-body { justify-content: center; padding: 6px 10px; }
+  section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-tag,
+  section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-link,
+  section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-badge { display: none; }
+  section.upcoming-section.secondBG .newsroom .nr-card:not(.nr-featured) .nr-body h3 { min-height: 0; -webkit-line-clamp: 2; }
+}

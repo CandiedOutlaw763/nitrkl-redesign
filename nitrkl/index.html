@@ -506,11 +506,16 @@ window.dataLayer = window.dataLayer || [];
         <span class="ab-eyebrow"><span class="ab-dot" aria-hidden="true"></span>Estd. 1961</span>
         <h2 class="ab-title" id="abTitle">About the Institute</h2>
         <p class="ab-lede">Elevated from Regional Engineering College, Rourkela to a premier national university, producing world-class engineers, scientists, and leaders across 20 specialized departments.</p>
-        <ul class="ab-facts">
-          <li><b>1961</b><span class="ab-note">Founded as Regional Engineering College, Rourkela</span><span class="ab-note-short">Founded</span></li>
-          <li><b>20</b><span class="ab-note">Academic departments</span><span class="ab-note-short">Departments</span></li>
-          <li><b>INI</b><span class="ab-note">Institute of National Importance</span><span class="ab-note-short">National Importance</span></li>
-        </ul>
+        <div class="ab-nirf">
+          <h3 class="ab-nirf-title">NIRF Ranking 2025</h3>
+          <ul class="ab-nirf-list">
+            <li class="ab-nirf--pale"><b>13</b><span>Engineering</span></li>
+            <li class="ab-nirf--mid"><b>09</b><span>SDG</span></li>
+            <li class="ab-nirf--soft"><b>30</b><span>Research</span></li>
+            <li class="ab-nirf--key"><b>34</b><span>Overall</span></li>
+            <li class="ab-nirf--key"><b>07</b><span>Architecture</span></li>
+          </ul>
+        </div>
         <a class="ab-link" href="/Institute/Welcome/">More about the Institute <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
       <!-- Phones and tablets: one of the three at a time (assets/site/about.js) -->
@@ -582,39 +587,6 @@ window.dataLayer = window.dataLayer || [];
 </div>
 </div>
 </div>
-<!-- 2. NIRF Ranking -->
-<div class="item-news item-nirf" id="nirfSection">
-<div class="placement-title-wrap">
-<h2>NIRF Ranking 2025</h2>
-</div>
-<div class="item-campus">
-<div class="admision-link">
-<div class="owl-carousel owl-theme admissions-slider">
-<div class="item" style="background-color: #771d1d;">
-<h4 class="counter">07</h4>
-                                Architecture
-                            </div>
-<div class="item" style="background-color: #fcdada; color: #150202;">
-<h4 class="counter">13</h4>
-                                Engineering
-                            </div>
-<div class="item" style="background-color: #a72626;">
-<h4 class="counter">09</h4>
-                                SDG
-                            </div>
-<div class="item" style="background-color: #faaaaa; color: #150202;">
-<h4 class="counter">30</h4>
-                                Research
-                            </div>
-<div class="item" style="background-color: #771d1d;">
-<h4 class="counter">34</h4>
-                                Overall
-                            </div>
-</div>
-</div>
-</div>
-</div>
-
 <!-- 3. Announcements & Recruitment -->
 <div class="item-notice nb-card">
 <div class="nb-head">
@@ -877,7 +849,6 @@ window.dataLayer = window.dataLayer || [];
 <span class="nr-eyebrow"><span class="nr-pulse"></span>Newsroom</span>
 <h2 class="nr-title">Latest News</h2>
 </div>
-<a class="nr-viewall" href="/Home/AllNews/">View all <i class="bi bi-arrow-right"></i></a>
 </div>
 <div class="nr-ticker" role="marquee" aria-label="Headlines">
 <span class="nr-ticker-label"><i class="bi bi-lightning-charge-fill"></i> Headlines</span>
@@ -900,7 +871,7 @@ window.dataLayer = window.dataLayer || [];
 </button>
 <div class="nr-body">
 <span class="nr-tag">Placements</span>
-<h3>NIT Rourkela received 1,340 offers in 2025–26 Placement Drive</h3>
+<h3><a class="nr-title-link" href="/Home/AllNews/?id=10109">NIT Rourkela received 1,340 offers in 2025–26 Placement Drive</a></h3>
 <p>A record placement season: 1,340 offers from top recruiters across core engineering, IT, consulting and analytics.</p>
 <div class="nr-actions">
 <button type="button" class="nr-btn" data-nr-open="0">Quick view <i class="bi bi-eye"></i></button>
@@ -915,7 +886,7 @@ window.dataLayer = window.dataLayer || [];
 </button>
 <div class="nr-body">
 <span class="nr-tag">Research</span>
-<h3>NIT Rourkela Researchers Develop Reconfigurable Fractal Antenna for Next-Generation Space and Wireless Applications</h3>
+<h3><a class="nr-title-link" href="/Home/AllNews/?id=10107">NIT Rourkela Researchers Develop Reconfigurable Fractal Antenna for Next-Generation Space and Wireless Applications</a></h3>
 <a class="nr-link" href="/Home/AllNews/?id=10107">Read story <i class="bi bi-arrow-right"></i></a>
 </div>
 </article>
@@ -926,7 +897,7 @@ window.dataLayer = window.dataLayer || [];
 </button>
 <div class="nr-body">
 <span class="nr-tag">Research</span>
-<h3>NIT Rourkela Researchers Develop Advanced Chipless RFID Sensor for Environmental Monitoring</h3>
+<h3><a class="nr-title-link" href="/Home/AllNews/?id=10106">NIT Rourkela Researchers Develop Advanced Chipless RFID Sensor for Environmental Monitoring</a></h3>
 <a class="nr-link" href="/Home/AllNews/?id=10106">Read story <i class="bi bi-arrow-right"></i></a>
 </div>
 </article>
@@ -937,7 +908,7 @@ window.dataLayer = window.dataLayer || [];
 </button>
 <div class="nr-body">
 <span class="nr-tag">Global</span>
-<h3>India–Bhutan Student–Faculty Exchange Programme on Solid Waste Management Concludes in Bhutan</h3>
+<h3><a class="nr-title-link" href="/Home/AllNews/?id=10105">India–Bhutan Student–Faculty Exchange Programme on Solid Waste Management Concludes in Bhutan</a></h3>
 <a class="nr-link" href="/Home/AllNews/?id=10105">Read story <i class="bi bi-arrow-right"></i></a>
 </div>
 </article>
@@ -949,7 +920,7 @@ window.dataLayer = window.dataLayer || [];
 </button>
 <div class="nr-body">
 <span class="nr-tag">Rankings</span>
-<h3>THE Asia Rankings 2026: NIT Rourkela Retains Top Spot Among NITs; Secures 186th Rank in Asia, 8th in India!</h3>
+<h3><a class="nr-title-link" href="/Home/AllNews/?id=10104">THE Asia Rankings 2026: NIT Rourkela Retains Top Spot Among NITs; Secures 186th Rank in Asia, 8th in India!</a></h3>
 <a class="nr-link" href="/Home/AllNews/?id=10104">Read story <i class="bi bi-arrow-right"></i></a>
 </div>
 </article>

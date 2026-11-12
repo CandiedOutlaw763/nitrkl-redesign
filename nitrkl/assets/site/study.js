@@ -47,6 +47,102 @@
     var items = $$('.san-nav-item'), panes = $$('.san-pane');
     if (!items.length) return;
     var hoverTimer = null, current = 0;
+    var section = items[0].closest('.study-at-nitr-section');
+    var list = items[0].parentNode, wrapper = panes[0].parentNode;
+
+    /* Phones and tablets (below 1101px, where the list and the stage stack): an accordion. Each
+       programme's pane moves into the list right under its name, opens when the name is tapped and
+       closes on a second tap; one is open at a time and the stage panel is hidden (study.css). The
+       list stops being a tab list then: each name is a button that expands its pane. */
+    var mq = window.matchMedia('(max-width: 1100px)');
+    var acc = false, slots = [], listAttrs = {};
+    function setAcc(on) {
+      if (on === acc) return;
+      acc = on;
+      section.classList.toggle('san--acc', on);
+      if (on) {
+        // a plain container of buttons and their panes: no list or tab-list semantics left over
+        listAttrs = { label: list.getAttribute('aria-label'), orient: list.getAttribute('aria-orientation') };
+        list.setAttribute('role', 'none');
+        list.removeAttribute('aria-label');
+        list.removeAttribute('aria-orientation');
+        items.forEach(function (it, k) {
+          var slot = doc.createElement('li');
+          slot.className = 'san-acc-slot';
+          slot.setAttribute('role', 'none');
+          it.after(slot);
+          slot.appendChild(panes[k]);
+          slots[k] = slot;
+          it.setAttribute('role', 'button');
+          it.removeAttribute('aria-selected');
+          it.tabIndex = 0;
+          panes[k].removeAttribute('role');
+          panes[k].setAttribute('role', 'region');
+          panes[k].setAttribute('aria-label', it.textContent.replace('→', '').trim());
+        });
+        toggle(-1);
+      } else {
+        list.setAttribute('role', 'tablist');
+        if (listAttrs.label) list.setAttribute('aria-label', listAttrs.label);
+        if (listAttrs.orient) list.setAttribute('aria-orientation', listAttrs.orient);
+        items.forEach(function (it, k) {
+          wrapper.appendChild(panes[k]);
+          if (slots[k]) slots[k].remove();
+          it.setAttribute('role', 'tab');
+          it.removeAttribute('aria-expanded');
+          panes[k].setAttribute('role', 'tabpanel');
+          panes[k].hidden = false;
+        });
+        slots = [];
+        select(current >= 0 ? current : 0);
+      }
+    }
+    // Accordion: open item i (closing any other), or close it if it is already open; -1 closes all.
+    // The pane's height slides open or shut (none under prefers-reduced-motion).
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var EASE = 'cubic-bezier(.16, 1, .3, 1)';
+    function slide(pane, on, animate) {
+      if (pane._slide) { pane._slide.cancel(); pane._slide = null; }
+      if (!animate || reduced || !pane.animate) {
+        pane.hidden = !on;
+        pane.classList.toggle('active', on);
+        return;
+      }
+      if (on) {
+        pane.hidden = false;
+        pane.classList.add('active');
+        var h = pane.scrollHeight;
+        pane._slide = pane.animate(
+          [{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }],
+          { duration: 420, easing: EASE }
+        );
+        pane._slide.onfinish = function () { pane._slide = null; };
+      } else {
+        if (pane.hidden) return;
+        pane._slide = pane.animate(
+          [{ height: pane.offsetHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
+          { duration: 300, easing: EASE }
+        );
+        pane._slide.onfinish = function () {
+          pane._slide = null;
+          pane.hidden = true;
+          pane.classList.remove('active');
+        };
+      }
+    }
+    function toggle(i, animate) {
+      var open = i >= 0 && !items[i].classList.contains('active') ? i : -1;
+      current = open;
+      items.forEach(function (it, k) {
+        var on = k === open;
+        it.classList.toggle('active', on);
+        it.setAttribute('aria-expanded', String(on));
+        panes[k].inert = false;
+        panes[k].removeAttribute('aria-hidden');
+        slide(panes[k], on, animate);
+      });
+    }
+
     function select(i, focus) {
       current = i;
       items.forEach(function (it, k) {
@@ -67,15 +163,19 @@
     }
     items.forEach(function (it, i) {
       it.addEventListener('mouseenter', function () {
-        if (!window.matchMedia('(hover: hover)').matches) return;
+        if (acc || !window.matchMedia('(hover: hover)').matches) return;
         clearTimeout(hoverTimer);
         hoverTimer = setTimeout(function () { select(i); }, 60);
       });
       it.addEventListener('mouseleave', function () { clearTimeout(hoverTimer); });
-      it.addEventListener('click', function () { clearTimeout(hoverTimer); select(i); });
+      it.addEventListener('click', function () {
+        clearTimeout(hoverTimer);
+        if (acc) toggle(i, true); else select(i);
+      });
       it.addEventListener('keydown', function (e) {
         var k = e.key, n = null;
-        if (k === 'Enter' || k === ' ') { e.preventDefault(); select(i); return; }
+        if (k === 'Enter' || k === ' ') { e.preventDefault(); if (acc) toggle(i, true); else select(i); return; }
+        if (acc) return;   // accordion: Tab moves between the names, as between any buttons
         if (k === 'ArrowDown' || k === 'ArrowRight') n = (current + 1) % items.length;
         if (k === 'ArrowUp' || k === 'ArrowLeft') n = (current - 1 + items.length) % items.length;
         if (k === 'Home') n = 0;
@@ -84,6 +184,9 @@
       });
     });
     select(0);
+    setAcc(mq.matches);
+    if (mq.addEventListener) mq.addEventListener('change', function () { setAcc(mq.matches); });
+    else if (mq.addListener) mq.addListener(function () { setAcc(mq.matches); });
 
     // A pane that covers several programmes (Postgraduate) shows one programme at a time, chosen
     // from a row of buttons, so its text fits the reading panel without scrolling. Built from the

@@ -161,6 +161,23 @@
   .san-sublinks-grid { grid-template-columns: 1fr; }
 }
 
+/* Phones and tablets: an accordion (study.js adds .san--acc below 1101px). Each programme's
+   information opens right under its name; the separate stage panel is not needed. */
+.san--acc .san-stage-panel { display: none; }
+.san--acc .san-acc-slot { list-style: none; }
+/* isolation: keeps the campus photo (z-index -1) inside the pane instead of behind the crimson list;
+   overflow: the pane's height slides open and shut (study.js) */
+.san--acc .san-pane { margin: 2px 0 12px; isolation: isolate; overflow: hidden; }
+.san--acc .san-pane-scrim { background: rgba(21, 2, 2, .7); }
+.san--acc .san-pane-bg { transform: none; }
+.san--acc .san-pane[hidden] { display: none; }
+.san--acc .san-content-card { padding: 18px 16px 20px; }
+.san--acc .san-content-title { display: none; }           /* the name above already says it */
+.san--acc .san-pane-footer { margin-top: 18px; }
+.san--acc .san-nav-arrow { opacity: 1; transform: none; transition: transform .3s var(--ease); }
+.san--acc .san-nav-item.active .san-nav-arrow { transform: rotate(90deg); }
+.san--acc .san-menu-inner { gap: 28px; }
+
 @media (min-width: 1101px) {
   .san-menu-title.title { font-size: var(--t-h2); }
   /* Study@NITR: the programme list and the reading panel share one screen */
