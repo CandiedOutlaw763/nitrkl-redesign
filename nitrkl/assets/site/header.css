@@ -68,11 +68,18 @@
 .site-header .util-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
 .site-header .util ul { display: flex; align-items: center; gap: 20px; }
 .site-header .util a { text-decoration: none; }
-.site-header .util-links a { display: inline-flex; align-items: center; min-height: 36px; }
-.site-header .util a:hover { text-decoration: underline; }
+.site-header .util-links a,
+.site-header .util-portals a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 8px; }
+.site-header .util-links,
+.site-header .util-portals { gap: 4px !important; }
 .site-header .util-social { gap: 2px !important; }
 .site-header .util-social a { width: 36px; height: 36px; display: grid; place-items: center; }
-.site-header .util-social a:hover { background: rgba(255,255,255,.14); text-decoration: none; }
+/* Hover, as on the language button: white behind, the key colour in front (Bootstrap's a:hover
+   would otherwise turn the text red on the red bar) */
+.site-header .util a:hover,
+.site-header .util .uc:hover { background: var(--white); color: var(--cin); text-decoration: none; }
+.site-header .util a:hover i,
+.site-header .util .uc:hover i { color: var(--cin) !important; }
 
 .site-header .lang { position: relative; }
 .site-header .lang-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 12px; font-weight: 700; font-size: var(--t-p1); background: rgba(255,255,255,.14); color: var(--white); }
@@ -99,12 +106,15 @@
 /* DBIM 5.4 user controls: skip to main content, screen reader access, language, accessibility */
 .site-header .util-controls { gap: 4px !important; }
 .site-header .uc { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 10px; font-weight: 600; }
-.site-header .uc:hover { background: rgba(255,255,255,.14); text-decoration: none !important; }
-/* Blue, like the floating accessibility button (DBIM 3.0 functional blue; white icon 4.5:1) */
-.site-header .uc-acc { width: 40px; justify-content: center; padding: 0; background: #0d6efd; color: var(--white); }
+.site-header .uc:hover { text-decoration: none !important; }
+/* The accessibility button joins the language button, after its "A": अ | A | (icon), on the same
+   light tint, with a divider like the one between अ and A. Each half turns white on hover. */
+.site-header .util-controls > .lang + li { margin-left: -4px; }
+.site-header .uc-acc { position: relative; width: 40px; justify-content: center; padding: 0; background: rgba(255,255,255,.14); color: var(--white); }
+.site-header .uc-acc::before { content: ""; position: absolute; left: 0; top: 50%; width: 2px; height: 16px; margin-top: -8px; background: currentColor; opacity: .6; }
 .site-header .uc-acc:hover,
-.site-header .uc-acc[aria-expanded="true"] { background: #0a58ca; color: var(--white); }
-.site-header .uc-acc i { color: var(--white) !important; }
+.site-header .uc-acc[aria-expanded="true"] { background: var(--white); color: var(--cin); }
+.site-header .uc-acc i { color: currentColor !important; font-size: 1.15em; }
 
 /* ---------- Masthead ---------- */
 /* Search at most 360px (the library's 380px less the page scrollbar), so the English name stays on
@@ -305,8 +315,10 @@
   .mainnav .gz-nav-dropdown li a:focus-visible { color: var(--cin); }
   .mainnav .mega-col ul li a::before,
   .mainnav .gz-nav-dropdown li a::before { border-color: var(--cin-2); }
+  /* Research, Alumni and Resources: their links light up as the mega panels' do (key colour,
+     underline, arrow, a small nudge), with no tinted bar behind */
   .mainnav .gz-nav-dropdown li a:hover,
-  .mainnav .gz-nav-dropdown li a:focus-visible { background: var(--cin-5); }
+  .mainnav .gz-nav-dropdown li a:focus-visible { background: transparent; }
 }
 @media (min-width: 1101px) {
   /* The mini logo that appears once the bar is stuck sits over the bar's left end, outside the
@@ -348,7 +360,14 @@
   .mainnav .gz-nav-menu > li:focus-within > .nav-top::after { border-color: var(--cin); }
   .mainnav .gz-nav-menu > li.is-open,
   .mainnav .gz-nav-menu > li:hover:has(> .nav-top),
-  .mainnav .gz-nav-menu > li:focus-within:has(> .nav-top) { background: color-mix(in srgb, var(--cin-5) 80%, transparent); }
+  .mainnav .gz-nav-menu > li:focus-within:has(> .nav-top),
+  .mainnav .gz-nav-menu > li.nav-home:hover,
+  .mainnav .gz-nav-menu > li.nav-home:focus-within { background: color-mix(in srgb, var(--cin-5) 80%, transparent); }
+  /* The home key takes the same highlight as the headings: the pink tile on its item, not a tint
+     of its own on the link */
+  .mainnav .gz-nav-menu > li.nav-home > a:hover,
+  .mainnav .gz-nav-menu > li.nav-home > a:focus-visible { background: transparent; }
+  .mainnav .gz-nav-menu > li.nav-home:focus-within > a::before { transform: scaleX(1); }
 }
 @keyframes nav-heading-sweep { from { background-position: 0% 0; } to { background-position: -200% 0; } }
 @media (prefers-reduced-motion: reduce) {
