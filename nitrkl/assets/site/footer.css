@@ -137,3 +137,17 @@
 }
 /* The header takes focus after "Back to top" (footer.js); it is a landmark, not a control: no ring */
 .site-header[tabindex="-1"]:focus { outline: none; }
+
+/* ---------- Fun facts (departments, students, faculty, staff), just above the footer ----------
+   Phones: a 2 x 2 grid, each fact's icon centred above its figure and label, so the four line up
+   instead of each row centring on its own width (theme-style.min.css lays them out inline). */
+@media (max-width: 767px) {
+  #funfact-area .row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; margin: 0; }
+  #funfact-area .row > [class*="col-"] { width: auto; max-width: none; padding: 0; }
+  #funfact-area .single-funfact-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
+  #funfact-area .single-funfact-wrap .funfact-icon { width: 48px; height: 48px; display: grid; place-items: center; }
+  #funfact-area .single-funfact-wrap .funfact-icon img { max-height: 48px; width: auto; }
+  #funfact-area .single-funfact-wrap .funfact-info,
+  #funfact-area .single-funfact-wrap .funfact-info h5,
+  #funfact-area .single-funfact-wrap .funfact-info p { padding-left: 0; text-align: center; }
+}

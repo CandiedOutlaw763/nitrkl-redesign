@@ -446,3 +446,27 @@
     gap: 12px;
   }
 }
+
+/* Phones and tablets: make the swipe obvious. More of the next card peeks in, and under the row a
+   "Swipe" hint with one dot per initiative (si-swipe.js); the current card's dot is filled. */
+.si-swipe { display: none; }
+@media (max-width: 899px) {
+  .si-item,
+  .si-item.si-image-left { flex-basis: min(76%, 320px); }
+  .si-swipe { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px 0; }
+  .si-swipe-hint { display: inline-flex; align-items: center; gap: 6px; font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #a72626; }
+  .si-swipe-hint i { color: currentColor !important; width: 18px; height: 18px; min-width: 18px; min-height: 18px; }
+  .si-swipe-dots { display: flex; gap: 2px; }
+  .si-swipe-dots button {
+    position: relative; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer;
+  }
+  .si-swipe-dots button::before {
+    content: ""; position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px;
+    border: 2px solid #771d1d; border-radius: 50%; background: transparent; transition: background-color .2s, transform .2s;
+  }
+  .si-swipe-dots button.is-active::before { background: #771d1d; transform: scale(1.15); }
+  .si-swipe-dots button:focus-visible { outline: 3px solid #a72626; outline-offset: 0; }
+}
+@media (max-width: 899px) and (prefers-reduced-motion: reduce) {
+  .si-swipe-dots button::before { transition: none; }
+}
