@@ -470,3 +470,26 @@
 @media (max-width: 899px) and (prefers-reduced-motion: reduce) {
   .si-swipe-dots button::before { transition: none; }
 }
+
+/* Phones and tablets: one initiative fills the row at a time, with no edge of the cards either
+   side showing. Each card is the row's full width and carries the side gutter as its own padding,
+   so a snapped card lines up exactly with the screen. si-swipe.js moves to the next card every few
+   seconds (pause button beside the dots; stops while touched, hovered or focused). */
+@media (max-width: 899px) {
+  .si-diagonal-feed {
+    gap: 0;
+    padding: 0 0 12px;
+    scroll-padding-inline: 0;
+    overscroll-behavior-x: contain;
+  }
+  .si-item,
+  .si-item.si-image-left {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding-inline: 20px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .si-swipe-end { display: flex; align-items: center; gap: 8px; }
+  .si-swipe-end .gg-pause { width: 28px; height: 28px; font-size: .875rem; }
+}

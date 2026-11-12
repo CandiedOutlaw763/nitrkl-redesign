@@ -109,6 +109,28 @@
   .site-footer .f-contact { display: grid; }
 }
 
+/* ---------- Links without underlines; hover turns a link white with the key colour on it (as the
+   social buttons do), never red text on the red footer. The visitor count sits beside the date of
+   the last update. ---------- */
+.site-footer a,
+.site-footer a:hover,
+.site-footer button,
+.site-footer button:hover { text-decoration: none !important; }
+.site-footer .f-contact a,
+.site-footer .f-links ul:not(.f-social) a,
+.site-footer .f-bottom ul a,
+.site-footer .f-bottom .gg-cookie-settings {
+  padding-inline: 6px; margin-inline: -6px; transition: background-color .2s, color .2s;
+}
+.site-footer .f-contact a:hover,
+.site-footer .f-links ul:not(.f-social) a:hover,
+.site-footer .f-bottom ul a:hover,
+.site-footer .f-bottom .gg-cookie-settings:hover { background: var(--white); color: var(--cin) !important; }
+.site-footer .f-links ul:not(.f-social) a:hover .gg-file { color: inherit; }
+.site-footer .f-bottom ul { column-gap: 24px; }
+.site-footer .f-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; }
+.site-footer .f-visitors { display: inline-flex; align-items: center; gap: 8px; }
+
 /* ---------- Back to top: a cinnamon pill with a white rim and an up arrow (the library's "Ask NITR"
    button shape), beside the accessibility button in the bottom-right corner. Hidden at the top of
    the page; footer.js shows it once the page is scrolled. ---------- */

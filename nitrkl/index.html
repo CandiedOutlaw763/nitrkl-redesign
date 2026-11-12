@@ -510,10 +510,10 @@ window.dataLayer = window.dataLayer || [];
           <h3 class="ab-nirf-title">NIRF Ranking 2025</h3>
           <ul class="ab-nirf-list">
             <li class="ab-nirf--pale"><b>13</b><span>Engineering</span></li>
+            <li class="ab-nirf--soft"><b>07</b><span>Architecture</span></li>
+            <li class="ab-nirf--warm"><b>30</b><span>Research</span></li>
             <li class="ab-nirf--mid"><b>09</b><span>SDG</span></li>
-            <li class="ab-nirf--soft"><b>30</b><span>Research</span></li>
             <li class="ab-nirf--key"><b>34</b><span>Overall</span></li>
-            <li class="ab-nirf--key"><b>07</b><span>Architecture</span></li>
           </ul>
         </div>
         <a class="ab-link" href="/Institute/Welcome/">More about the Institute <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
@@ -556,38 +556,7 @@ window.dataLayer = window.dataLayer || [];
 <section class="news-section" data-chapter="white">
 <div class="container-fluid">
 <div class="news-section-row">
-<!-- 1. Placement Statistics (Full Width Top Showcase) -->
-<div class="item-news" id="placementSection">
-<div class="placement-title-wrap">
-<h2>Placement Statistics</h2>
-</div>
-<!-- The Annual Placement Report, shown directly (no banner preview) -->
-<div class="placement-embed-frame-wrap" id="placementEmbedFrameWrap">
-<div class="placement-embed-header-bar">
-<div class="embed-header-left">
-<h4 class="embed-heading">Annual Placement Report 2025–26</h4>
-</div>
-<div class="embed-header-actions">
-<button type="button" class="embed-action-btn" id="embedReloadBtn" title="Reload Placement Report">
-<i class="fa-solid fa-rotate-right"></i> <span class="action-label">Reload</span>
-</button>
-<button type="button" class="embed-action-btn" id="embedFullscreenBtn" title="View Fullscreen">
-<i class="fa-solid fa-expand"></i> <span class="action-label">Fullscreen</span>
-</button>
-</div>
-</div>
-<div class="placement-embed-viewport">
-<div class="placement-iframe-loader" id="placementIframeLoader">
-<div class="spinner-border text-danger" role="status">
-<span class="visually-hidden">Loading placement report...</span>
-</div>
-<p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #150202;">Loading Placement Report...</p>
-</div>
-<iframe id="placementIframe" title="NIT Rourkela Placement Report 2025-26" src="placement-report.html" frameborder="0"></iframe>
-</div>
-</div>
-</div>
-<!-- 3. Announcements & Recruitment -->
+<!-- 1. Announcements & Recruitment -->
 <div class="item-notice nb-card">
 <div class="nb-head">
 <h2 class="nb-title">Notice Board</h2>
@@ -680,7 +649,7 @@ window.dataLayer = window.dataLayer || [];
 </div>
 </div>
 
-<!-- 4. Upcoming Events & Seminars -->
+<!-- 2. Upcoming Events & Seminars -->
 <div class="item-event nb-card">
 <div class="nb-head">
 <h2 class="nb-title">Events &amp; Seminars</h2>
@@ -831,6 +800,37 @@ window.dataLayer = window.dataLayer || [];
 </div>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<!-- 3. Placement Statistics (full width, below the Notice Board and Events & Seminars) -->
+<div class="item-news" id="placementSection">
+<div class="placement-title-wrap">
+<h2>Placement Statistics</h2>
+</div>
+<!-- The Annual Placement Report, shown directly (no banner preview) -->
+<div class="placement-embed-frame-wrap" id="placementEmbedFrameWrap">
+<div class="placement-embed-header-bar">
+<div class="embed-header-left">
+<h4 class="embed-heading">Annual Placement Report 2025–26</h4>
+</div>
+<div class="embed-header-actions">
+<button type="button" class="embed-action-btn" id="embedReloadBtn" title="Reload Placement Report">
+<i class="fa-solid fa-rotate-right"></i> <span class="action-label">Reload</span>
+</button>
+<button type="button" class="embed-action-btn" id="embedFullscreenBtn" title="View Fullscreen">
+<i class="fa-solid fa-expand"></i> <span class="action-label">Fullscreen</span>
+</button>
+</div>
+</div>
+<div class="placement-embed-viewport">
+<div class="placement-iframe-loader" id="placementIframeLoader">
+<div class="spinner-border text-danger" role="status">
+<span class="visually-hidden">Loading placement report...</span>
+</div>
+<p style="margin: 0; font-size: 0.95rem; font-weight: 600; color: #150202;">Loading Placement Report...</p>
+</div>
+<iframe id="placementIframe" title="NIT Rourkela Placement Report 2025-26" src="placement-report.html" frameborder="0"></iframe>
 </div>
 </div>
 </div>
@@ -1774,9 +1774,7 @@ window.dataLayer = window.dataLayer || [];
       <ul class="f-contact">
         <li><i class="bi bi-telephone" aria-hidden="true"></i> 0661-246-2020 / 2002</li>
         <li><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:registrar@nitrkl.ac.in">registrar@nitrkl.ac.in</a></li>
-        <li><i class="bi bi-people" aria-hidden="true"></i> Visitor : 142316434</li>
       </ul>
-      <a class="f-top-link" href="#">Back to top <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
     </div>
     <div class="f-cols">
       <nav class="f-links" aria-labelledby="f-imp">
@@ -1839,7 +1837,7 @@ window.dataLayer = window.dataLayer || [];
         <li><a href="/Home/Copyright/">Copyright</a></li>
       </ul>
       <p>Copyright © 2026 National Institute of Technology Rourkela. All Rights Reserved.</p>
-      <p>Last Updated On: <time id="lastUpdated" datetime="2026-10-26">26 Oct 2026</time></p>
+      <p class="f-meta"><span>Last Updated On: <time id="lastUpdated" datetime="2026-10-26">26 Oct 2026</time></span><span class="f-visitors"><i class="bi bi-people" aria-hidden="true"></i> Visitor : 142316434</span></p>
     </div>
   </div>
   <p class="f-name" aria-hidden="true" data-text="NIT Rourkela"></p>

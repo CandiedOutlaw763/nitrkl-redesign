@@ -7,6 +7,7 @@
 .ab {
   --cin: #771d1d;
   --cin-2: #a72626;
+  --cin-3: #d75151;
   --cin-4: #faaaaa;
   --cin-5: #fcdada;
   --ink: #150202;
@@ -45,7 +46,8 @@
 }
 .ab-lede { margin-top: clamp(10px, 1.6vh, 16px) !important; font-size: var(--t-p1); line-height: 1.55; max-width: 62ch; }
 
-/* NIRF Ranking 2025: five tiles in the palette's tints, as on the former NIRF card */
+/* NIRF Ranking 2025: five tiles stepping through the palette, lightest to the key colour, each
+   its own shade; Overall closes the row on the darkest */
 .ab-nirf { margin-top: clamp(12px, 2vh, 20px); }
 /* #main: outweighs guidelines.css's "#main h3" size; this is a label above the tiles */
 #main .ab .ab-nirf-title {
@@ -64,6 +66,7 @@
 .ab-nirf-list span { font-size: var(--t-p2); line-height: 1.25; overflow-wrap: anywhere; }
 .ab-nirf--pale { background: var(--cin-5); color: var(--ink); }
 .ab-nirf--soft { background: var(--cin-4); color: var(--ink); }
+.ab-nirf--warm { background: var(--cin-3); color: var(--ink); }   /* ink on #d75151: 5.3:1 */
 .ab-nirf--mid { background: var(--cin-2); color: #fff; }
 .ab-nirf--key { background: var(--cin); color: #fff; }
 
