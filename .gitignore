@@ -25,3 +25,8 @@ dist/
 /Screen Recording fasa.mp4
 /DBIM.pdf
 /GIWG3.O.pdf
+
+# Redesign build: crawl cache and build output stay out of the repository
+/cache/
+/site/
+__pycache__/
